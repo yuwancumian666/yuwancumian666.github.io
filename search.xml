@@ -11,7 +11,7 @@
   <entry>
     <title><![CDATA[VPS使用指南]]></title>
     <url>%2F2019%2F03%2F02%2Fhow-to-start-a-vps%2F</url>
-    <content type="text"><![CDATA[默念二十四字社会主义核心价值观 安装ShadowsocksR使用root用户登录，运行以下命令： 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849# 安装ShadowsocksRwget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocksR.shchmod +x shadowsocksR.sh./shadowsocksR.sh 2&gt;&amp;1 | tee shadowsocksR.log# 卸载ShadowsocksR./shadowsocksR.sh uninstall# 安装 BBRwget --no-check-certificate https://raw.githubusercontent.com/yuwancumian666/how-to-start-a-new-VPS/master/tcp.shchmod +x tcp.sh./tcp.sh``` ## 多用户配置示例``` json&#123; "server":"0.0.0.0", "server_ipv6":"[::]", "local_address":"127.0.0.1", "local_port":1080, "port_password":&#123; "10657":"***", "10658":"***", "10659":"***", "10660":"***" &#125;, "timeout":120, "method":"aes-256-cfb", "protocol":"origin", "protocol_param":"", "obfs":"plain", "obfs_param":"", "redirect":"", "dns_ipv6":false, "fast_open":false, "workers":1&#125;``` # 更改Python软连接查看已安装python版本 `ls /usr/bin```` shellrm /usr/bin/pythonln -s /usr/bin/python3.5 /usr/bin/python 定时任务 crontab1234crontab -e#30 22 * * * python ~/email/pymail.py &gt;&gt; ~/email/pymail.log# 修改默认编辑器select-editor]]></content>
+    <content type="text"><![CDATA[默念二十四字社会主义核心价值观 安装ShadowsocksR使用root用户登录，运行以下命令： 123456789101112131415161718192021222324252627282930313233343536373839# 安装ShadowsocksRwget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocksR.shchmod +x shadowsocksR.sh./shadowsocksR.sh 2&gt;&amp;1 | tee shadowsocksR.log# 卸载ShadowsocksR./shadowsocksR.sh uninstall# 安装 BBRwget --no-check-certificate https://raw.githubusercontent.com/yuwancumian666/how-to-start-a-new-VPS/master/tcp.shchmod +x tcp.sh./tcp.sh``` ## 多用户配置示例``` json&#123; "server":"0.0.0.0", "server_ipv6":"[::]", "local_address":"127.0.0.1", "local_port":1080, "port_password":&#123; "10657":"***", "10658":"***", "10659":"***", "10660":"***" &#125;, "timeout":120, "method":"aes-256-cfb", "protocol":"origin", "protocol_param":"", "obfs":"plain", "obfs_param":"", "redirect":"", "dns_ipv6":false, "fast_open":false, "workers":1&#125; 更改Python软连接查看已安装python版本 ls /usr/bin 12rm /usr/bin/pythonln -s /usr/bin/python3.5 /usr/bin/python 定时任务 crontab1234crontab -e#30 22 * * * python ~/email/pymail.py &gt;&gt; ~/email/pymail.log# 修改默认编辑器select-editor]]></content>
       <categories>
         <category>Software</category>
       </categories>
@@ -210,6 +210,18 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[Hive 文本格式]]></title>
+    <url>%2F2018%2F02%2F06%2Fhive-text-encoding%2F</url>
+    <content type="text"><![CDATA[文本格式给定数据格式： 建表： 123456789101112CREATE TABLE employees(ename STRING,salary FLOAT,subordinates ARRAY&lt;STRING&gt;,deductions MAP&lt;STRING, FLOAT&gt;,address STRUCT&lt;street:STRING, city:STRING, state:STRING, zip:INT&gt;)ROW FORMAT DELIMITED FIELDS TERMINATED BY '\001'COLLECTION ITEMS TERMINATED BY '\002'MAP KEYS TERMINATED BY '\003'LINES TERMINATED BY '\n' STORED AS TEXTFILE; 导入数据：LOAD DATA LOCAL INPATH &#39;/home/user/test_data/employees.txt&#39; INTO TABLE employees; HQL 日期日期对于大多数据库来说都是一个坎， 在 Hive 里建立一个叫 “Dual {DUMMY} value:X” 的表，能做到存进去什么值，取出来什么值 12CREATE TABLE dual (dummy STRING);LOAD DATA LOCAL INPATH &apos;/home/user/dual.txt&apos; # dual.txt的内容:X 获得时间戳：select unix_timestamp() from dual;查询时间：select from_unixtime(1517882632, &#39;yyyyMMdd&#39;) from dual; 表操作表名的更改 ALTER ALTER TABLE re_useri RENAME TO u_re_useri; 前后对比元数据，DFS文件夹，show tables表名均发生改变。 元数据 直接更改元数据TBLS，show tables表名发生改变，DFS文件夹没有改变。更改DBS表后，DFS文件夹没有改变，查询更新后的表，没有数据。更改DFS文件夹名后，查询更新后表名成功。 3.导数据 复制表，改名，导数据 列名更改 元数据 ALTER 123ALTER TABLE u_useri CHANGE COLUMN reid id INTCOMMENT 'rename in 20180206'; # 注释 增加列1234ALTER TABLE u_useriADD COLUMN(addcol3 STRING COMMENT 'add in 20180206'addcol4 INT);]]></content>
+      <categories>
+        <category>大数据</category>
+        <category>Hive</category>
+      </categories>
+      <tags>
+        <tag>Hive</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Hive 数据类型]]></title>
     <url>%2F2018%2F02%2F06%2Fhive-type-of-data%2F</url>
     <content type="text"><![CDATA[I cannot tell why this heart languishes in silence. It is for small needs it never asks, or knows or remembers.我说不出这心为什么那样颓丧着，是为了它那不曾要求，不曾知道，不曾记得的小小的需要。 泰戈尔飞鸟集 基本数据类型未完待续…… 复杂数据类型关系型数据库强烈不建议重复存储我们接触过的大数据数据库比如 Hbase、Hive 不怕重复，但要求的是存储数据的文件不要太小。 类型 | 说明 | 举例Array （数组） | 一组数据类型相同的值 | [1,2,3]Map（集合）| 一组 &lt;K, V&gt;，要求所有键类型相同，所有值类型相同 | {&lt;K, V&gt;, &lt;K, V&gt;}Struct（结构） | 一组不同字段，且每个字段的类型可以不同 | (“str”, 1, 0) 数组假如我们有以下数据： 在 Hive 里创建一个表： 1234567CREATE TABLE loginArray(ip STRING,userid ARRAY&lt;BIGINT&gt;)ROW FORMAT DELIMITED FIELDS TERMINATED BY ','COLLECTION ITEMS TERMINATED BY '|'; 然后导入数据：` LOAD DATA LOCAL INPATH ‘/home/user/test_data/login_array.txt’ INTO TABLE loginArray12345678910111213141516171819202122232425262728293031323334353637查询数据：`SELECT id,userid FROM loginArray`![](https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2018-02-06-array-id-userid.jpg)指定数组元素查询：`SELECT id,userid[0] FROM loginArray` ![](https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2018-02-06-array-ip-userid%5B1%5D.jpg.jpg)查询数组长度（-1为空）：`SELECT size(userid) FROM loginArray`![](https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2018-02-06-array-length.jpg)### 集合#### 标准数据表处理给定测试数据：![](https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2018-02-06-map-1.jpg)数据表示某用户(id)，在某 IP 的主机上玩了哪些游戏以及游戏次数开始建表：``` sqlCREATE TBALE loginmap(IP STRING,userid BIGINT,gameinfo MAP&lt;STRING, INT&gt;)ROW FORMAT DELIMITED FIELDS TERMINATED BY &apos;,&apos;COLLECTION ITEMS TERMINATED BY &apos;|&apos;MAP KEYS TERMINATED BY &apos;:&apos;; 导入数据：DATA LOCAL INPATH '/home/user/test_data/loginmap1.txt' INTO TABLE loginmap;```12345678910111213141516171819202122232425262728293031323334插入数据后表结构如图：![](https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2018-02-06-map-1-all.jpg)#### 含脏数据的表处理测试数据：![](https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2018-02-06-map-2.jpg)导入数据时可以直接覆盖上一张表：![](https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2018-02-06-map-2-all.jpg)在查询某一个键时，因为数据的不统一（如“ wow” 和 “wow”，前者含空格）导致结果不同![](https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2018-02-06-map-different-info.jpg)### 结构数据：![](https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2018-02-06-struct.jpg)建表：``` sqlCREATE TABLE loginstruct(IP STRING,USRINFO STRUCT&lt;userid:BIGINT, uname:STRING&gt;ROW FORMAT DELIMITED FIELDS TERMINATED BY &apos;,&apos;COLLECTION ITEMS TERMINATED BY &apos;|&apos;; 导入数据：LOAD DATA LOCAL INPATH &#39;/home/user/test_data/login_array/loginstruct.txt&#39; INTO TABLE loginstruct 插入后表信息：]]></content>
@@ -232,18 +244,6 @@
       </categories>
       <tags>
         <tag>大数据</tag>
-        <tag>Hive</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Hive 文本格式]]></title>
-    <url>%2F2018%2F02%2F06%2Fhive-text-encoding%2F</url>
-    <content type="text"><![CDATA[文本格式给定数据格式： 建表： 123456789101112CREATE TABLE employees(ename STRING,salary FLOAT,subordinates ARRAY&lt;STRING&gt;,deductions MAP&lt;STRING, FLOAT&gt;,address STRUCT&lt;street:STRING, city:STRING, state:STRING, zip:INT&gt;)ROW FORMAT DELIMITED FIELDS TERMINATED BY '\001'COLLECTION ITEMS TERMINATED BY '\002'MAP KEYS TERMINATED BY '\003'LINES TERMINATED BY '\n' STORED AS TEXTFILE; 导入数据：LOAD DATA LOCAL INPATH &#39;/home/user/test_data/employees.txt&#39; INTO TABLE employees; HQL 日期日期对于大多数据库来说都是一个坎， 在 Hive 里建立一个叫 “Dual {DUMMY} value:X” 的表，能做到存进去什么值，取出来什么值 12CREATE TABLE dual (dummy STRING);LOAD DATA LOCAL INPATH &apos;/home/user/dual.txt&apos; # dual.txt的内容:X 获得时间戳：select unix_timestamp() from dual;查询时间：select from_unixtime(1517882632, &#39;yyyyMMdd&#39;) from dual; 表操作表名的更改 ALTER ALTER TABLE re_useri RENAME TO u_re_useri; 前后对比元数据，DFS文件夹，show tables表名均发生改变。 元数据 直接更改元数据TBLS，show tables表名发生改变，DFS文件夹没有改变。更改DBS表后，DFS文件夹没有改变，查询更新后的表，没有数据。更改DFS文件夹名后，查询更新后表名成功。 3.导数据 复制表，改名，导数据 列名更改 元数据 ALTER 123ALTER TABLE u_useri CHANGE COLUMN reid id INTCOMMENT 'rename in 20180206'; # 注释 增加列1234ALTER TABLE u_useriADD COLUMN(addcol3 STRING COMMENT 'add in 20180206'addcol4 INT);]]></content>
-      <categories>
-        <category>大数据</category>
-        <category>Hive</category>
-      </categories>
-      <tags>
         <tag>Hive</tag>
       </tags>
   </entry>
