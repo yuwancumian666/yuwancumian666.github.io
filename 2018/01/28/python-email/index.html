@@ -119,7 +119,7 @@
     root: '/',
     scheme: 'Pisces',
     version: '7.0.1',
-    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false,"dimmer":false},
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false,"dimmer":false},
     fancybox: true,
     fastclick: false,
     lazyload: false,
@@ -146,7 +146,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python SMTP 发送邮件">
 <meta property="og:url" content="https://yuwancumian666.github.io/2018/01/28/python-email/index.html">
-<meta property="og:site_name" content="Hammer&#39;s Blog">
+<meta property="og:site_name" content="Hummer&#39;s Blog">
 <meta property="og:description" content="Like the metting of the seagulls and the waves we meet and come near. The seagulls fly off, the waves roll away and we depart.我们如海鸥之于波涛相遇似的，遇见了，走近了。海鸥飞去，波涛滚滚地流开，我们也分别了。 泰戈尔飞鸟集">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2018-01-28-example1.png">
@@ -173,7 +173,7 @@
   };
 </script>
 
-  <title>Python SMTP 发送邮件 | Hammer's Blog</title>
+  <title>Python SMTP 发送邮件 | Hummer's Blog</title>
   
 
 
@@ -232,7 +232,7 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Hammer's Blog</span>
+        <span class="site-title">Hummer's Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -440,7 +440,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hammer's Blog">
+      <meta itemprop="name" content="Hummer's Blog">
     </span>
 
     
@@ -778,6 +778,18 @@ mail.attach(HTML)
   </div>
 
   <aside id="sidebar" class="sidebar">
+      <!-- 一言 start -->
+      <div class="sidebar-inner">
+        <div>
+          <div style="display: table-cell;vertical-align: top; color:#B2B7F2;font-size:24px;font-family:'Times New Roman',serif;font-weight:bold;text-align:left;">“</div>
+          <div style="display: table-cell;text-align: left; vertical-align: middle; text-indent: 2em; padding: 0.8em 0.2em 1em 0.2em"><b><span style="color:burlywood;"><span id="hitokoto-content"></span></span></b></div>
+          <div style="display: table-cell; vertical-align: bottom; color:#B2B7F2;font-size:24px;font-family:'Times New Roman',serif;font-weight:bold;text-align:left;">”</div>
+        </div>
+        <div style="text-align: right; font-size: 0.8em; color: black;" id="hitokoto-from"></div>
+        <div style="margin-top: 15px; font-size: 0.8em; color: black;"><a href="https://hitokoto.cn/">Hitokoto</a></div>
+      </div>
+      <div style="height: 15px"></div>
+      <!-- 一言 end -->
     <div class="sidebar-inner">
 
       
@@ -1097,6 +1109,13 @@ mail.attach(HTML)
       
 
       
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
 
     </div>
   </aside>
@@ -1174,11 +1193,6 @@ mail.attach(HTML)
     </footer>
 
     
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
 
     
 
@@ -1218,10 +1232,6 @@ mail.attach(HTML)
 
 
 
-  
-  
-  <script id="ribbon" size="300" alpha="0.6" zindex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
-
 
 
 
@@ -1240,7 +1250,12 @@ mail.attach(HTML)
 
 
   
-
+<script type="text/javascript">
+	$.get('https://v1.hitokoto.cn/?c=a', function (data) {
+		$('#hitokoto-content').css('display', '').text(data.hitokoto);
+		$('#hitokoto-from').css('display', '').text('——' + data.from);
+	});
+</script>
 
   <script src="/js/src/utils.js?v=7.0.1"></script>
 

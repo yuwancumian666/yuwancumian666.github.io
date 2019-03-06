@@ -119,7 +119,7 @@
     root: '/',
     scheme: 'Pisces',
     version: '7.0.1',
-    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false,"dimmer":false},
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false,"dimmer":false},
     fancybox: true,
     fastclick: false,
     lazyload: false,
@@ -146,12 +146,12 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python 爬取磁力链">
 <meta property="og:url" content="https://yuwancumian666.github.io/2018/01/27/crawling-magnet-links-from-the-pirate-bay/index.html">
-<meta property="og:site_name" content="Hammer&#39;s Blog">
+<meta property="og:site_name" content="Hummer&#39;s Blog">
 <meta property="og:description" content="The mystery of creation is like the darkness of night——it is great. Delusions of knowledge are like the fog of the morning.    创造的神秘，有如夜间的黑暗，——是伟大的。而知识的幻影，不过是晨间之雾。 泰戈尔飞鸟集">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2018-01-27-the-pirate-bay-1.png">
 <meta property="og:image" content="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2018-01-27-the-pirate-bay-2.png">
-<meta property="og:updated_time" content="2019-03-04T13:17:46.810Z">
+<meta property="og:updated_time" content="2019-03-06T14:51:11.643Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python 爬取磁力链">
 <meta name="twitter:description" content="The mystery of creation is like the darkness of night——it is great. Delusions of knowledge are like the fog of the morning.    创造的神秘，有如夜间的黑暗，——是伟大的。而知识的幻影，不过是晨间之雾。 泰戈尔飞鸟集">
@@ -172,7 +172,7 @@
   };
 </script>
 
-  <title>Python 爬取磁力链 | Hammer's Blog</title>
+  <title>Python 爬取磁力链 | Hummer's Blog</title>
   
 
 
@@ -231,7 +231,7 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Hammer's Blog</span>
+        <span class="site-title">Hummer's Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -439,7 +439,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hammer's Blog">
+      <meta itemprop="name" content="Hummer's Blog">
     </span>
 
     
@@ -490,7 +490,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-04 13:17:46" itemprop="dateModified" datetime="2019-03-04T13:17:46Z">2019-03-04</time>
+                <time title="修改时间：2019-03-06 14:51:11" itemprop="dateModified" datetime="2019-03-06T14:51:11Z">2019-03-06</time>
               
             
           </span>
@@ -557,79 +557,7 @@
 <h3 id="设计思想"><a href="#设计思想" class="headerlink" title="设计思想"></a>设计思想</h3><p>直接构造搜索页面的 url，把要查询的关键字替换掉浏览器查询的关键字，并借此发送请求。由于该网站构造比较简单，可以在搜索界面直接分析，找出磁力链接并进行翻页。</p>
 <h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><p><strong>使用注意：</strong>要搜索的内容需要写到 name_list （列表）里，作为变量传到 main() 模块里。</p>
 <p>代码为了美观已将制表符替换为四个空格（页面制表符默认显示8个空格）。</p>
-<p><strong>用到的模块</strong></p>
-<pre><code class="python"><span class="keyword">import</span> os
-<span class="keyword">import</span> re
-<span class="keyword">import</span> time
-<span class="keyword">import</span> random
-<span class="keyword">import</span> urlparse
-<span class="keyword">import</span> urllib2 <span class="keyword">as</span> ulb
-<span class="keyword">from</span>     <span class="number">4</span> <span class="keyword">import</span> BeautifulSoup <span class="keyword">as</span>     
-
-
-<span class="string">'''</span>
-<span class="string">该模块接受要下载的url、用户代理（默认‘wswp’）、</span>
-<span class="string">代理服务器（默认为空）和重新尝试次数（默认为2），</span>
-<span class="string">返回该网页的内容和搜索内容的最大页数（只在第一次返回）。</span>
-<span class="string">'''</span>
-<span class="function"><span class="keyword">def</span> <span class="title">download</span><span class="params">(url, user_agent=<span class="string">'wswp'</span>, proxy=None, num_retries=<span class="number">2</span>)</span>:</span>
-    <span class="keyword">print</span> (<span class="string">"Downloading: "</span> + url)
-    headers = {<span class="string">'User-agent'</span>: user_agent}
-    request = ulb.Request(url, headers=headers)
-    opener = ulb.build_opener()
-    <span class="keyword">if</span> proxy:
-        proxy_params = {urlparse.urlparse(url).scheme: proxy}
-        opener.add_handler(ulb.ProxyHandler(proxy_params))
-    <span class="keyword">try</span>:
-        html = opener.open(request).read()
-    <span class="keyword">except</span> ulb.URLError <span class="keyword">as</span> e:
-        <span class="keyword">print</span> (<span class="string">"Download Error:"</span> + e.reason)
-        html = <span class="literal">None</span>
-        <span class="keyword">if</span> num_retries &gt; <span class="number">0</span>:
-            <span class="keyword">if</span> hasattr(e, <span class="string">'code'</span>) <span class="keyword">and</span> <span class="number">500</span> &lt;= e.code &lt; <span class="number">600</span>:
-                <span class="keyword">return</span> download(url, user_agent, num_retries<span class="number">-1</span>)
-    <span class="keyword">if</span> url[<span class="number">-4</span>] == <span class="string">'0'</span>:
-        soup =     (html, <span class="string">"html5lib"</span>)
-        max_href_index = int(soup.find(<span class="string">'div'</span>,align=<span class="string">"center"</span>).contents[<span class="number">-4</span>].string) - <span class="number">1</span>
-        <span class="keyword">return</span> html, max_href_index
-    <span class="keyword">else</span>:
-        <span class="keyword">return</span> html
-
-
-<span class="comment"># 根据给定的网页内容，转化为 BeautifulSoup 文档对象，搜索磁力链节点并以列表形式返回</span>
-<span class="function"><span class="keyword">def</span> <span class="title">get_links</span><span class="params">(html)</span>:</span>
-    soup =     (html, <span class="string">"html5lib"</span>)
-    list = soup.find_all(<span class="string">'a'</span>, href=re.compile(<span class="string">r'^magnet'</span>))
-    <span class="keyword">return</span> list
-
-
-<span class="comment"># 创建一个以关键字命名的文本文件，将下载的磁力链依次写入并保存。</span>
-<span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">(name_list)</span>:</span>    
-    <span class="keyword">for</span> name <span class="keyword">in</span> name_list:
-        page = <span class="number">0</span>
-        f = open(name+<span class="string">'.txt'</span>,<span class="string">'a'</span>)
-        magnet_num = <span class="number">0</span>
-        <span class="keyword">while</span> <span class="literal">True</span>:
-            url = <span class="string">"http://thepiratebay.cd/search/"</span> + name +<span class="string">"/"</span> + str(page) + <span class="string">"/7/"</span>
-            <span class="keyword">if</span> page == <span class="number">0</span>:
-                html, max_page_index = download(url)
-            <span class="keyword">else</span>:
-                html = download(url)
-            magnet_list = get_links(html)
-            <span class="keyword">for</span> magnet <span class="keyword">in</span> magnet_list:
-                f.write(magnet[<span class="string">'href'</span>]+<span class="string">'\n'</span>)
-                magnet_num += <span class="number">1</span>
-            <span class="keyword">if</span> page &lt; max_page_index:
-                page += <span class="number">1</span>
-                print(<span class="string">r"Sleep for one second..."</span>)
-                time.sleep(random.random()*<span class="number">2</span>)
-            <span class="keyword">else</span>:
-                <span class="keyword">break</span>
-        print(<span class="string">"From "</span>+name+<span class="string">" get "</span>+str(magnet_num)+<span class="string">" magnets"</span>)
-        f.flush()
-        f.close()
-        os.rename(name+<span class="string">'.txt'</span>,name+<span class="string">'-'</span>+str(magnet_num)+<span class="string">'.txt'</span>)
-</code></pre>
+<p><strong>用到的模块</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">import</span> urlparse</span><br><span class="line"><span class="keyword">import</span> urllib2 <span class="keyword">as</span> ulb</span><br><span class="line"><span class="keyword">from</span>     <span class="number">4</span> <span class="keyword">import</span> BeautifulSoup <span class="keyword">as</span>     </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">该模块接受要下载的url、用户代理（默认‘wswp’）、</span></span><br><span class="line"><span class="string">代理服务器（默认为空）和重新尝试次数（默认为2），</span></span><br><span class="line"><span class="string">返回该网页的内容和搜索内容的最大页数（只在第一次返回）。</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">download</span><span class="params">(url, user_agent=<span class="string">'wswp'</span>, proxy=None, num_retries=<span class="number">2</span>)</span>:</span></span><br><span class="line">    <span class="keyword">print</span> (<span class="string">"Downloading: "</span> + url)</span><br><span class="line">    headers = &#123;<span class="string">'User-agent'</span>: user_agent&#125;</span><br><span class="line">    request = ulb.Request(url, headers=headers)</span><br><span class="line">    opener = ulb.build_opener()</span><br><span class="line">    <span class="keyword">if</span> proxy:</span><br><span class="line">        proxy_params = &#123;urlparse.urlparse(url).scheme: proxy&#125;</span><br><span class="line">        opener.add_handler(ulb.ProxyHandler(proxy_params))</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        html = opener.open(request).read()</span><br><span class="line">    <span class="keyword">except</span> ulb.URLError <span class="keyword">as</span> e:</span><br><span class="line">        <span class="keyword">print</span> (<span class="string">"Download Error:"</span> + e.reason)</span><br><span class="line">        html = <span class="literal">None</span></span><br><span class="line">        <span class="keyword">if</span> num_retries &gt; <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">if</span> hasattr(e, <span class="string">'code'</span>) <span class="keyword">and</span> <span class="number">500</span> &lt;= e.code &lt; <span class="number">600</span>:</span><br><span class="line">                <span class="keyword">return</span> download(url, user_agent, num_retries<span class="number">-1</span>)</span><br><span class="line">    <span class="keyword">if</span> url[<span class="number">-4</span>] == <span class="string">'0'</span>:</span><br><span class="line">        soup =     (html, <span class="string">"html5lib"</span>)</span><br><span class="line">        max_href_index = int(soup.find(<span class="string">'div'</span>,align=<span class="string">"center"</span>).contents[<span class="number">-4</span>].string) - <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> html, max_href_index</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> html</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 根据给定的网页内容，转化为 BeautifulSoup 文档对象，搜索磁力链节点并以列表形式返回</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_links</span><span class="params">(html)</span>:</span></span><br><span class="line">    soup =     (html, <span class="string">"html5lib"</span>)</span><br><span class="line">    list = soup.find_all(<span class="string">'a'</span>, href=re.compile(<span class="string">r'^magnet'</span>))</span><br><span class="line">    <span class="keyword">return</span> list</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建一个以关键字命名的文本文件，将下载的磁力链依次写入并保存。</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">(name_list)</span>:</span>    </span><br><span class="line">    <span class="keyword">for</span> name <span class="keyword">in</span> name_list:</span><br><span class="line">        page = <span class="number">0</span></span><br><span class="line">        f = open(name+<span class="string">'.txt'</span>,<span class="string">'a'</span>)</span><br><span class="line">        magnet_num = <span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">            url = <span class="string">"http://thepiratebay.cd/search/"</span> + name +<span class="string">"/"</span> + str(page) + <span class="string">"/7/"</span></span><br><span class="line">            <span class="keyword">if</span> page == <span class="number">0</span>:</span><br><span class="line">                html, max_page_index = download(url)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                html = download(url)</span><br><span class="line">            magnet_list = get_links(html)</span><br><span class="line">            <span class="keyword">for</span> magnet <span class="keyword">in</span> magnet_list:</span><br><span class="line">                f.write(magnet[<span class="string">'href'</span>]+<span class="string">'\n'</span>)</span><br><span class="line">                magnet_num += <span class="number">1</span></span><br><span class="line">            <span class="keyword">if</span> page &lt; max_page_index:</span><br><span class="line">                page += <span class="number">1</span></span><br><span class="line">                print(<span class="string">r"Sleep for one second..."</span>)</span><br><span class="line">                time.sleep(random.random()*<span class="number">2</span>)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">        print(<span class="string">"From "</span>+name+<span class="string">" get "</span>+str(magnet_num)+<span class="string">" magnets"</span>)</span><br><span class="line">        f.flush()</span><br><span class="line">        f.close()</span><br><span class="line">        os.rename(name+<span class="string">'.txt'</span>,name+<span class="string">'-'</span>+str(magnet_num)+<span class="string">'.txt'</span>)</span><br></pre></td></tr></table></figure> </p>
 <p><strong>总结</strong></p>
 <p>移步<a href="https://github.com/yuwancumian666/Spiders/tree/master/PirateBay" target="_blank" rel="noopener">Github</a>看代码，有惊喜</p>
 <p>这好像是第一次比较正式的爬虫，代码比较 low，好在能用么么哒(づ￣ 3￣)づ</p>
@@ -726,6 +654,18 @@
   </div>
 
   <aside id="sidebar" class="sidebar">
+      <!-- 一言 start -->
+      <div class="sidebar-inner">
+        <div>
+          <div style="display: table-cell;vertical-align: top; color:#B2B7F2;font-size:24px;font-family:'Times New Roman',serif;font-weight:bold;text-align:left;">“</div>
+          <div style="display: table-cell;text-align: left; vertical-align: middle; text-indent: 2em; padding: 0.8em 0.2em 1em 0.2em"><b><span style="color:burlywood;"><span id="hitokoto-content"></span></span></b></div>
+          <div style="display: table-cell; vertical-align: bottom; color:#B2B7F2;font-size:24px;font-family:'Times New Roman',serif;font-weight:bold;text-align:left;">”</div>
+        </div>
+        <div style="text-align: right; font-size: 0.8em; color: black;" id="hitokoto-from"></div>
+        <div style="margin-top: 15px; font-size: 0.8em; color: black;"><a href="https://hitokoto.cn/">Hitokoto</a></div>
+      </div>
+      <div style="height: 15px"></div>
+      <!-- 一言 end -->
     <div class="sidebar-inner">
 
       
@@ -1045,6 +985,13 @@
       
 
       
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
 
     </div>
   </aside>
@@ -1122,11 +1069,6 @@
     </footer>
 
     
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
 
     
 
@@ -1166,10 +1108,6 @@
 
 
 
-  
-  
-  <script id="ribbon" size="300" alpha="0.6" zindex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
-
 
 
 
@@ -1188,7 +1126,12 @@
 
 
   
-
+<script type="text/javascript">
+	$.get('https://v1.hitokoto.cn/?c=a', function (data) {
+		$('#hitokoto-content').css('display', '').text(data.hitokoto);
+		$('#hitokoto-from').css('display', '').text('——' + data.from);
+	});
+</script>
 
   <script src="/js/src/utils.js?v=7.0.1"></script>
 

@@ -119,7 +119,7 @@
     root: '/',
     scheme: 'Pisces',
     version: '7.0.1',
-    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false,"dimmer":false},
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false,"dimmer":false},
     fancybox: true,
     fastclick: false,
     lazyload: false,
@@ -146,7 +146,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="Scala 函数">
 <meta property="og:url" content="https://yuwancumian666.github.io/2018/03/18/scala-function/index.html">
-<meta property="og:site_name" content="Hammer&#39;s Blog">
+<meta property="og:site_name" content="Hummer&#39;s Blog">
 <meta property="og:description" content="The sadness of my soul is her bride’s veil. It waits to be lifted in the night.我灵魂里的忧郁就是她新婚的面纱。这面纱等候着在夜间卸去。 泰戈尔飞鸟集">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-03-04T14:48:30.403Z">
@@ -169,7 +169,7 @@
   };
 </script>
 
-  <title>Scala 函数 | Hammer's Blog</title>
+  <title>Scala 函数 | Hummer's Blog</title>
   
 
 
@@ -228,7 +228,7 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Hammer's Blog</span>
+        <span class="site-title">Hummer's Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -436,7 +436,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hammer's Blog">
+      <meta itemprop="name" content="Hummer's Blog">
     </span>
 
     
@@ -562,11 +562,11 @@
 <p><em>注意：</em>括号可以加也可以不加，调用时亦然。但是如果定义函数时没加括号，调用时也不能加括号。</p>
 <figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fun1</span> </span>= <span class="string">"Hello World!"</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fun2</span> </span>: <span class="type">String</span> = <span class="string">"Hello World!"</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fun2</span></span>() : <span class="type">String</span> = <span class="string">"Hello World!"</span></span><br></pre></td></tr></table></figure>
 <h3 id="定义函数的几种方法"><a href="#定义函数的几种方法" class="headerlink" title="定义函数的几种方法"></a>定义函数的几种方法</h3><p>Scala 的函数会把函数体的最后一个表达式的值作为函数的返回值返回，而有些情况可能在函数结束前返回一个值，用 <strong>return</strong> 关键字即可</p>
-<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">add</span></span>(x:<span class="type">Int</span>, y:<span class="type">Int</span>) : <span class="type">Int</span> = &#123;</span><br><span class="line">    x + y</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">Fibo</span></span>(n:<span class="type">Int</span>) : <span class="type">Long</span> = &#123;</span><br><span class="line">    <span class="keyword">if</span> (n==<span class="number">1</span> | n==<span class="number">2</span>) <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">4<span class="type">Fibo</span>(n<span class="number">-1</span>) + <span class="type">Fibo</span>(n<span class="number">-2</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">add</span></span>(x:<span class="type">Int</span>, y:<span class="type">Int</span>) : <span class="type">Int</span> = &#123;</span><br><span class="line">    x + y</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">Fibo</span></span>(n:<span class="type">Int</span>) : <span class="type">Long</span> = &#123;</span><br><span class="line">    <span class="keyword">if</span> (n==<span class="number">1</span> | n==<span class="number">2</span>) <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">	<span class="type">Fibo</span>(n<span class="number">-1</span>) + <span class="type">Fibo</span>(n<span class="number">-2</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="表达式块调用函数"><a href="#表达式块调用函数" class="headerlink" title="表达式块调用函数"></a>表达式块调用函数</h3><p>表达式块调用函数就是利用一个表达式块的返回值调用函数</p>
 <figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Fibo</span>&#123;<span class="keyword">val</span> n=<span class="number">2</span>;<span class="number">2</span>*<span class="number">3</span>&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="尾递归"><a href="#尾递归" class="headerlink" title="尾递归"></a>尾递归</h3><p>@annotation.tailrec<br>节省栈空间</p>
-<h3 id="嵌套函数"><a href="#嵌套函数" class="headerlink" title="嵌套函数"></a>嵌套函数</h3><figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">max</span></span>(a:<span class="type">Int</span>, b:<span class="type">Int</span>, c:<span class="type">Int</span>) = &#123;</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">max</span></span>(x:<span class="type">Int</span>, y:<span class="type">Int</span>) = &#123;</span><br><span class="line">4    <span class="keyword">if</span> (x &gt; y) x <span class="keyword">else</span> y</span><br><span class="line">4&#125;</span><br><span class="line">4max (a, maax(b, c))</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// -------------------------------</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">info</span> </span>(name:<span class="type">String</span>, age:<span class="type">Int</span>) = &#123;</span><br><span class="line">    println(<span class="string">s"name:<span class="subst">$name</span>, age:<span class="subst">$age</span>"</span>)</span><br><span class="line">&#125;</span><br><span class="line">info(<span class="string">"tom, 1"</span>)</span><br><span class="line"><span class="comment">// 或</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">info</span> </span>(name:<span class="type">String</span>=<span class="string">"tom"</span>, age:<span class="type">Int</span>) = &#123;</span><br><span class="line">    println(<span class="string">s"name:<span class="subst">$name</span>, age:<span class="subst">$age</span>"</span>)</span><br><span class="line">&#125;</span><br><span class="line">info(name=<span class="string">"tom"</span>, age=<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="嵌套函数"><a href="#嵌套函数" class="headerlink" title="嵌套函数"></a>嵌套函数</h3><figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">max</span></span>(a:<span class="type">Int</span>, b:<span class="type">Int</span>, c:<span class="type">Int</span>) = &#123;</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">max</span></span>(x:<span class="type">Int</span>, y:<span class="type">Int</span>) = &#123;</span><br><span class="line">	    <span class="keyword">if</span> (x &gt; y) x <span class="keyword">else</span> y</span><br><span class="line">	&#125;</span><br><span class="line">	max (a, maax(b, c))</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// -------------------------------</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">info</span> </span>(name:<span class="type">String</span>, age:<span class="type">Int</span>) = &#123;</span><br><span class="line">    println(<span class="string">s"name:<span class="subst">$name</span>, age:<span class="subst">$age</span>"</span>)</span><br><span class="line">&#125;</span><br><span class="line">info(<span class="string">"tom, 1"</span>)</span><br><span class="line"><span class="comment">// 或</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">info</span> </span>(name:<span class="type">String</span>=<span class="string">"tom"</span>, age:<span class="type">Int</span>) = &#123;</span><br><span class="line">    println(<span class="string">s"name:<span class="subst">$name</span>, age:<span class="subst">$age</span>"</span>)</span><br><span class="line">&#125;</span><br><span class="line">info(name=<span class="string">"tom"</span>, age=<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -660,6 +660,18 @@
   </div>
 
   <aside id="sidebar" class="sidebar">
+      <!-- 一言 start -->
+      <div class="sidebar-inner">
+        <div>
+          <div style="display: table-cell;vertical-align: top; color:#B2B7F2;font-size:24px;font-family:'Times New Roman',serif;font-weight:bold;text-align:left;">“</div>
+          <div style="display: table-cell;text-align: left; vertical-align: middle; text-indent: 2em; padding: 0.8em 0.2em 1em 0.2em"><b><span style="color:burlywood;"><span id="hitokoto-content"></span></span></b></div>
+          <div style="display: table-cell; vertical-align: bottom; color:#B2B7F2;font-size:24px;font-family:'Times New Roman',serif;font-weight:bold;text-align:left;">”</div>
+        </div>
+        <div style="text-align: right; font-size: 0.8em; color: black;" id="hitokoto-from"></div>
+        <div style="margin-top: 15px; font-size: 0.8em; color: black;"><a href="https://hitokoto.cn/">Hitokoto</a></div>
+      </div>
+      <div style="height: 15px"></div>
+      <!-- 一言 end -->
     <div class="sidebar-inner">
 
       
@@ -979,6 +991,13 @@
       
 
       
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
 
     </div>
   </aside>
@@ -1056,11 +1075,6 @@
     </footer>
 
     
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
 
     
 
@@ -1100,10 +1114,6 @@
 
 
 
-  
-  
-  <script id="ribbon" size="300" alpha="0.6" zindex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
-
 
 
 
@@ -1122,7 +1132,12 @@
 
 
   
-
+<script type="text/javascript">
+	$.get('https://v1.hitokoto.cn/?c=a', function (data) {
+		$('#hitokoto-content').css('display', '').text(data.hitokoto);
+		$('#hitokoto-from').css('display', '').text('——' + data.from);
+	});
+</script>
 
   <script src="/js/src/utils.js?v=7.0.1"></script>
 
