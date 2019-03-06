@@ -21,6 +21,18 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[在LaTex中使用自定义字体]]></title>
+    <url>%2F2019%2F02%2F22%2F2019-2-22-customize-font-in-latex%2F</url>
+    <content type="text"><![CDATA[挖坑 刚接触LaTex，不太了解编译运行方式，网上搜了好多种方法都一直报错。这个例子刚测试的时候还编译不了，据猜测原因应该是编译缓存未清理或导入宏包的问题。 定义代码段字体下边是一种自定义字体的方法，来自LaTeX技巧006：使用不同的英文字体 \documentclass[UTF8]{article} \usepackage{fontspec} \setmainfont{Times New Roman}%fontspec下这个命令设置全局默认字体 \begin{document} Hello World!\\ %这也是一种调用方式，无须fontspec宏包 \font\rm=&quot;Calibri&quot; at 14pt \rm This is Calibri\\ \font\rm=&quot;Candara&quot; at 14pt \rm This is Candara\\ \font\rm=&quot;Mistral&quot; at 14pt \rm This is Mistral\\ \font\rm=&quot;Bahnschrift&quot; at 14pt \rm This is Bahnschrift\\ \font\rm=&quot;Pristina&quot; at 14pt \rm This is Pristina\\ \font\rm=&quot;Microsoft Uighur&quot; at 14pt \rm This is Microsoft Uighur\\ \font\rm=&quot;Bradley Hand ITC&quot; at 14pt \rm This is Bradley Hand ITC\\ \font\rm=&quot;Nirmala UI&quot; at 14pt \rm This is Nirmala UI\\ \font\rm=&quot;CCBackBeat&quot; at 14pt \rm This is CCBackBeat\\ \font\rm=&quot;Supercell-Magic&quot; \rm This is Supercell-Magic\\ \font\rm=&quot;Supercell-Magic&quot; at 14pt \rm This is Supercell-Magic\\ \font\rm=&quot;Supercell-Magic&quot; at 18pt \rm This is Supercell-Magic\\ \end{document} 显示结果 设置全局（自定义）字体第二天在测试中发现，用如下代码也能实现同样的效果，现在猜测是刚安装的字体VSCode或XeLaTex识别不了的问题。 \documentclass[UTF8]{article} \usepackage{ctex} \usepackage{fontspec} \usepackage{metalogo} \usepackage{amsmath} \usepackage{newtxtt, newtxmath} \setmainfont{CCBackBeat} %英文字体 \setCJKmainfont{DengXian} % 中文字体 \title{论文测试} \author{Teemo} \date{2019年2月22日} \begin{document} \maketitle \tableofcontents \section{输出测试} Hello \XeLaTeX. Body of the article. second not sure \\ fuck LaTex \\ 换行试试？\LaTeX，WithTab Icon,How to add a command \\ 换行]]></content>
+      <categories>
+        <category>LaTex</category>
+      </categories>
+      <tags>
+        <tag>LaTex</tag>
+        <tag>字体</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[软件及开发包安装中的那些坑]]></title>
     <url>%2F2019%2F02%2F22%2F2019-2-22-software-installation-description%2F</url>
     <content type="text"><![CDATA[先把坑都踩一遍是为了以后踩更多的坑。 latexindent 来自：安装LaTex-formatter需要安装的工具 方式：解压缩，（可数的）文件直接拖入目录 目录：C:\Program\texlive\2018\texmf-dist\scripts\latexindent 文件：latexindent.exe 使用方式：选中代码-&gt;右键格式化选定内容 注：更改了该目录下的defaultSettings.yaml的某些设置 1234567891011121314151617181920212223242526# line222~line246indentAfterHeadings: part: indentAfterThisHeading: 1 level: 1 chapter: indentAfterThisHeading: 1 level: 2 section: indentAfterThisHeading: 1 level: 3 subsection: indentAfterThisHeading: 1 level: 4 subsection*: indentAfterThisHeading: 1 level: 4 subsubsection: indentAfterThisHeading: 1 level: 5 paragraph: indentAfterThisHeading: 1 level: 6 subparagraph: indentAfterThisHeading: 1 level: 7 ruby-jekyll大佬Pchou的博客 安装Ruby with Devkit，所有组件都在这里了，注意安装路径不要出现空格 ruby安装完，会提示安装MSYS2，跟着提示走就好。现在新版本的Ruby已经集成了RubyGems) 环境安装好就可以安装Bundle和Jekyll了（gem install jekyll），但是在今天（2019-2-22）安装的过程中发现bundle是安装环境是已经安装好了的。 到博客目录下依次执行以下命令：123bundle installbundle updatebundle exec jekyll serve 关于ryby及Jekyll的某些错误 jekyll 3.7.4 | Error: incompatible character encodings: UTF-8 and GBK不知道如何解决，尝试设置命令行字符编码chcp 65001（不行）已知的可能解决方法：设置 -&gt; 时间和语言 -&gt; 区域 -&gt; 更改日期、时间或数字格式 -&gt; 管理 -&gt; 更改系统区域设置：选中“使用Unicode UTF-8 提供全球语言支持”，然后重启电脑，应该就解决了。 执行bundle命令时出现C:/Program/Ruby25-x64/lib/ruby/2.5.0/rubygems.rb:289:in &#39;find_spec_for_exe&#39;: can&#39;t find gem bundler (&gt;= 0.a) with executable bundle (Gem::GemNotFoundException)，在StackOverflow上找到答案：Gemfile.lock文件最后的BUNDLED WITH版本改为已安装的bundler版本。或者删除Gemfile.lock文件，重新bundle exec jekyll serve VSCode中C/C++找不到头文件可能需要设置这些环境变量： 123456789101112LIBRARY_PATHC:\Program\mingw64\lib\gcc\x86_64-w64-mingw32\7.3.0C_INCLUDE_PATHC:\Program\mingw64\include;C:\Program\mingw64\lib\gcc\x86_64-w64-mingw32\7.3.0\include;CPLUS_INCLUDE_PATHC:\Program\mingw64\include;C:\Program\mingw64\lib\gcc\x86_64-w64-mingw32\7.3.0\include\c++;C:\Program\mingw64\lib\gcc\x86_64-w64-mingw32\7.3.0\include\c++\backward;C:\Program\mingw64\lib\gcc\x86_64-w64-mingw32\7.3.0\include\c++\x86_64-w64-mingw32; CUDA cuDNN复制cuDNN到CUDA目录 123C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.0\bin\cudnn64_7.dllC:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.0\include\cudnn.hC:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.0\lib\x64\cudnn.lib]]></content>
@@ -33,18 +45,6 @@
         <tag>CUDA</tag>
         <tag>GitHub Pages</tag>
         <tag>软件</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[在LaTex中使用自定义字体]]></title>
-    <url>%2F2019%2F02%2F22%2F2019-2-22-customize-font-in-latex%2F</url>
-    <content type="text"><![CDATA[挖坑 刚接触LaTex，不太了解编译运行方式，网上搜了好多种方法都一直报错。这个例子刚测试的时候还编译不了，据猜测原因应该是编译缓存未清理或导入宏包的问题。 定义代码段字体下边是一种自定义字体的方法，来自LaTeX技巧006：使用不同的英文字体 \documentclass[UTF8]{article} \usepackage{fontspec} \setmainfont{Times New Roman}%fontspec下这个命令设置全局默认字体 \begin{document} Hello World!\\ %这也是一种调用方式，无须fontspec宏包 \font\rm=&quot;Calibri&quot; at 14pt \rm This is Calibri\\ \font\rm=&quot;Candara&quot; at 14pt \rm This is Candara\\ \font\rm=&quot;Mistral&quot; at 14pt \rm This is Mistral\\ \font\rm=&quot;Bahnschrift&quot; at 14pt \rm This is Bahnschrift\\ \font\rm=&quot;Pristina&quot; at 14pt \rm This is Pristina\\ \font\rm=&quot;Microsoft Uighur&quot; at 14pt \rm This is Microsoft Uighur\\ \font\rm=&quot;Bradley Hand ITC&quot; at 14pt \rm This is Bradley Hand ITC\\ \font\rm=&quot;Nirmala UI&quot; at 14pt \rm This is Nirmala UI\\ \font\rm=&quot;CCBackBeat&quot; at 14pt \rm This is CCBackBeat\\ \font\rm=&quot;Supercell-Magic&quot; \rm This is Supercell-Magic\\ \font\rm=&quot;Supercell-Magic&quot; at 14pt \rm This is Supercell-Magic\\ \font\rm=&quot;Supercell-Magic&quot; at 18pt \rm This is Supercell-Magic\\ \end{document} 显示结果 设置全局（自定义）字体第二天在测试中发现，用如下代码也能实现同样的效果，现在猜测是刚安装的字体VSCode或XeLaTex识别不了的问题。 \documentclass[UTF8]{article} \usepackage{ctex} \usepackage{fontspec} \usepackage{metalogo} \usepackage{amsmath} \usepackage{newtxtt, newtxmath} \setmainfont{CCBackBeat} %英文字体 \setCJKmainfont{DengXian} % 中文字体 \title{论文测试} \author{Teemo} \date{2019年2月22日} \begin{document} \maketitle \tableofcontents \section{输出测试} Hello \XeLaTeX. Body of the article. second not sure \\ fuck LaTex \\ 换行试试？\LaTeX，WithTab Icon,How to add a command \\ 换行]]></content>
-      <categories>
-        <category>LaTex</category>
-      </categories>
-      <tags>
-        <tag>LaTex</tag>
-        <tag>字体</tag>
       </tags>
   </entry>
   <entry>
@@ -210,15 +210,14 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Hive 分桶]]></title>
-    <url>%2F2018%2F02%2F06%2Fhive-bucket%2F</url>
-    <content type="text"><![CDATA[哈希分区 （不能再用）分桶：为解决数据倾斜以及推行机制带来的负面效应 （P131，Hive编程指南） 排序ORDER BY：运行时走 MapReduce,DISTINCT 走MapReduce对查询的结果进行全局排序，有一个数据通过一个 Reducer 进行处理。弊端：大数据集运行过程消耗太多时间 DISTRIBUTE BY：保证具有相同 Key 记录分发到同一个 Reduce 上 SORT BY：对数据进行局部排序 （P110） CLUSTER BY：如果 distribute by 和 sort by 中涉及到的字段完全相同，且都是升序的时候，CLUSTER BY 就相当于前两个语句。 分桶分区其实是按指定的格式在表下面分出若干个（有限的）文件夹，把相应的文件分到指定的文件夹下，加快查询速度。分桶：默认采用 HashPartition 分区，能够满足把数据近似均匀地分配到不同的桶里，例如有 1234567create table users(userId INT,username STRING)CLUSTERED BY (userid) # 把userid当作key传给hashSORTED BY (userid ASC) # 归并排序INTO 2 BUCKETSROW FORMAT DELIMITED FIELDS TERMINATED BY ',' 视图和索引视图一组 HiveQL 语句，没有实际的数据 建立视图 create view 视图名[(字段名1，字段名2，……)]asHiveQL 查询视图数据：可以像查表一样查询视图结构：desc 视图名 删除视图drop view 视图名 索引建立123hive&gt; create index index_stocks on table stocks(symbol)hive&gt; AS 'org.apache.hadoop.hive.ql.indx.compact.CompactIndexHandler'hive&gt; with deferred rebuild; 查询show formatted index on stocks; 删除drop index if exists index_stocks on stocks; 总结 透彻地掌握分区、分桶 透彻地掌握表连接（坑） 掌握排序、视图 了解优化 了解索引 会启动 MapReduce 的命令 改索引 ORDER BY DISTINCT]]></content>
+    <title><![CDATA[Hive 文本格式]]></title>
+    <url>%2F2018%2F02%2F06%2Fhive-text-encoding%2F</url>
+    <content type="text"><![CDATA[文本格式给定数据格式： 建表： 123456789101112CREATE TABLE employees(ename STRING,salary FLOAT,subordinates ARRAY&lt;STRING&gt;,deductions MAP&lt;STRING, FLOAT&gt;,address STRUCT&lt;street:STRING, city:STRING, state:STRING, zip:INT&gt;)ROW FORMAT DELIMITED FIELDS TERMINATED BY '\001'COLLECTION ITEMS TERMINATED BY '\002'MAP KEYS TERMINATED BY '\003'LINES TERMINATED BY '\n' STORED AS TEXTFILE; 导入数据：LOAD DATA LOCAL INPATH &#39;/home/user/test_data/employees.txt&#39; INTO TABLE employees; HQL 日期日期对于大多数据库来说都是一个坎， 在 Hive 里建立一个叫 “Dual {DUMMY} value:X” 的表，能做到存进去什么值，取出来什么值 12CREATE TABLE dual (dummy STRING);LOAD DATA LOCAL INPATH &apos;/home/user/dual.txt&apos; # dual.txt的内容:X 获得时间戳：select unix_timestamp() from dual;查询时间：select from_unixtime(1517882632, &#39;yyyyMMdd&#39;) from dual; 表操作表名的更改 ALTER ALTER TABLE re_useri RENAME TO u_re_useri; 前后对比元数据，DFS文件夹，show tables表名均发生改变。 元数据 直接更改元数据TBLS，show tables表名发生改变，DFS文件夹没有改变。更改DBS表后，DFS文件夹没有改变，查询更新后的表，没有数据。更改DFS文件夹名后，查询更新后表名成功。 3.导数据 复制表，改名，导数据 列名更改 元数据 ALTER 123ALTER TABLE u_useri CHANGE COLUMN reid id INTCOMMENT 'rename in 20180206'; # 注释 增加列1234ALTER TABLE u_useriADD COLUMN(addcol3 STRING COMMENT 'add in 20180206'addcol4 INT);]]></content>
       <categories>
         <category>大数据</category>
         <category>Hive</category>
       </categories>
       <tags>
-        <tag>大数据</tag>
         <tag>Hive</tag>
       </tags>
   </entry>
@@ -236,14 +235,15 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Hive 文本格式]]></title>
-    <url>%2F2018%2F02%2F06%2Fhive-text-encoding%2F</url>
-    <content type="text"><![CDATA[文本格式给定数据格式： 建表： 123456789101112CREATE TABLE employees(ename STRING,salary FLOAT,subordinates ARRAY&lt;STRING&gt;,deductions MAP&lt;STRING, FLOAT&gt;,address STRUCT&lt;street:STRING, city:STRING, state:STRING, zip:INT&gt;)ROW FORMAT DELIMITED FIELDS TERMINATED BY '\001'COLLECTION ITEMS TERMINATED BY '\002'MAP KEYS TERMINATED BY '\003'LINES TERMINATED BY '\n' STORED AS TEXTFILE; 导入数据：LOAD DATA LOCAL INPATH &#39;/home/user/test_data/employees.txt&#39; INTO TABLE employees; HQL 日期日期对于大多数据库来说都是一个坎， 在 Hive 里建立一个叫 “Dual {DUMMY} value:X” 的表，能做到存进去什么值，取出来什么值 12CREATE TABLE dual (dummy STRING);LOAD DATA LOCAL INPATH &apos;/home/user/dual.txt&apos; # dual.txt的内容:X 获得时间戳：select unix_timestamp() from dual;查询时间：select from_unixtime(1517882632, &#39;yyyyMMdd&#39;) from dual; 表操作表名的更改 ALTER ALTER TABLE re_useri RENAME TO u_re_useri; 前后对比元数据，DFS文件夹，show tables表名均发生改变。 元数据 直接更改元数据TBLS，show tables表名发生改变，DFS文件夹没有改变。更改DBS表后，DFS文件夹没有改变，查询更新后的表，没有数据。更改DFS文件夹名后，查询更新后表名成功。 3.导数据 复制表，改名，导数据 列名更改 元数据 ALTER 123ALTER TABLE u_useri CHANGE COLUMN reid id INTCOMMENT 'rename in 20180206'; # 注释 增加列1234ALTER TABLE u_useriADD COLUMN(addcol3 STRING COMMENT 'add in 20180206'addcol4 INT);]]></content>
+    <title><![CDATA[Hive 分桶]]></title>
+    <url>%2F2018%2F02%2F06%2Fhive-bucket%2F</url>
+    <content type="text"><![CDATA[哈希分区 （不能再用）分桶：为解决数据倾斜以及推行机制带来的负面效应 （P131，Hive编程指南） 排序ORDER BY：运行时走 MapReduce,DISTINCT 走MapReduce对查询的结果进行全局排序，有一个数据通过一个 Reducer 进行处理。弊端：大数据集运行过程消耗太多时间 DISTRIBUTE BY：保证具有相同 Key 记录分发到同一个 Reduce 上 SORT BY：对数据进行局部排序 （P110） CLUSTER BY：如果 distribute by 和 sort by 中涉及到的字段完全相同，且都是升序的时候，CLUSTER BY 就相当于前两个语句。 分桶分区其实是按指定的格式在表下面分出若干个（有限的）文件夹，把相应的文件分到指定的文件夹下，加快查询速度。分桶：默认采用 HashPartition 分区，能够满足把数据近似均匀地分配到不同的桶里，例如有 1234567create table users(userId INT,username STRING)CLUSTERED BY (userid) # 把userid当作key传给hashSORTED BY (userid ASC) # 归并排序INTO 2 BUCKETSROW FORMAT DELIMITED FIELDS TERMINATED BY ',' 视图和索引视图一组 HiveQL 语句，没有实际的数据 建立视图 create view 视图名[(字段名1，字段名2，……)]asHiveQL 查询视图数据：可以像查表一样查询视图结构：desc 视图名 删除视图drop view 视图名 索引建立123hive&gt; create index index_stocks on table stocks(symbol)hive&gt; AS 'org.apache.hadoop.hive.ql.indx.compact.CompactIndexHandler'hive&gt; with deferred rebuild; 查询show formatted index on stocks; 删除drop index if exists index_stocks on stocks; 总结 透彻地掌握分区、分桶 透彻地掌握表连接（坑） 掌握排序、视图 了解优化 了解索引 会启动 MapReduce 的命令 改索引 ORDER BY DISTINCT]]></content>
       <categories>
         <category>大数据</category>
         <category>Hive</category>
       </categories>
       <tags>
+        <tag>大数据</tag>
         <tag>Hive</tag>
       </tags>
   </entry>
