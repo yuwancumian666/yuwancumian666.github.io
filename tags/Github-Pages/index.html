@@ -145,7 +145,7 @@
 <meta name="keywords" content="Hummer">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Hummer&#39;s Blog">
-<meta property="og:url" content="https://yuwancumian666.github.io/tags/Github-Pages/index.html">
+<meta property="og:url" content="https://yuwancumian666.github.io/tags/GitHub-Pages/index.html">
 <meta property="og:site_name" content="Hummer&#39;s Blog">
 <meta property="og:description" content="她的热切的脸，如夜雨似的，搅扰着我的梦魂。">
 <meta property="og:locale" content="zh-CN">
@@ -158,7 +158,7 @@
 
 
 
-  <link rel="canonical" href="https://yuwancumian666.github.io/tags/Github-Pages/">
+  <link rel="canonical" href="https://yuwancumian666.github.io/tags/GitHub-Pages/">
 
 
 
@@ -168,7 +168,7 @@
   };
 </script>
 
-  <title>标签: Github Pages | Hummer's Blog</title>
+  <title>标签: GitHub Pages | Hummer's Blog</title>
   
 
 
@@ -439,7 +439,7 @@
 
     <div id="posts" class="posts-collapse">
       <div class="collection-title">
-        <h1>Github Pages<small>标签</small>
+        <h1>GitHub Pages<small>标签</small>
         </h1>
       </div>
 
@@ -451,17 +451,17 @@
 
       <h2 class="post-title">
         
-          <a class="post-title-link" href="/2018/01/28/cloud-dns-to-github-pages/" itemprop="url">
+          <a class="post-title-link" href="/2019/02/22/2019-2-22-software-installation-description/" itemprop="url">
             
-              <span itemprop="name">给 GitHub Pages 博客配置云解析</span>
+              <span itemprop="name">软件及开发包安装中的那些坑</span>
             
           </a>
         
       </h2>
 
       <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-01-28T00:00:00Z" content="2018-01-28">
-          01-28
+        <time class="post-time" itemprop="dateCreated" datetime="2019-02-22T00:00:00Z" content="2019-02-22">
+          02-22
         </time>
       </div>
 
@@ -514,9 +514,15 @@
       <!-- LOLine start -->
       <div class="sidebar-inner">
         <div>
+          
           <div style="display: table-cell;vertical-align: top; color:#B2B7F2;font-size:24px;font-family:'Times New Roman',serif;font-weight:bold;text-align:left;">“</div>
           <div style="display: table-cell;text-align: left; vertical-align: middle; text-indent: 2em; padding: 0.8em 0.2em 1em 0.2em"><b><span style="color:burlywood;"><span id="loline-content"></span></span></b></div>
-          <div style="display: table-cell; vertical-align: bottom; color:#B2B7F2;font-size:24px;font-family:'Times New Roman',serif;font-weight:bold;text-align:left;">”</div>
+          <div style="display: table-cell; vertical-align: bottom; color:#B2B7F2;font-size:24px;font-family:'Times New Roman',serif;font-weight:bold;text-align:right;">”</div>
+          <!--
+          <blockquote class="blockquote-loline">
+            <b><span style="color:burlywood;"><span id="loline-content"></span></span></b>
+          </blockquote>
+          -->
         </div>
         <div style="text-align: right; font-size: 0.8em; color: black;" id="loline-from"></div>
         <div style="margin-top: 15px; font-size: 0.8em; color: black;"><a href="https://yuwancumian666.github.io/2019/03/08/loline/#more">LOLine</a></div>
@@ -548,7 +554,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">37</span>
+                    <span class="site-state-item-count">38</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -690,7 +696,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">36</span>
+                      
+                    
+                    <span class="site-state-item-count">37</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -967,13 +975,16 @@
 
 
   
-<!-- 
+
+<!-- 一言
 <script type="text/javascript">
 	$.get('https://v1.hitokoto.cn/?c=c', function (data) {
 		$('#hitokoto-content').css('display', '').text(data.hitokoto);
 		$('#hitokoto-from').css('display', '').text('——' + data.from);
 	});
 </script>-->
+
+<!-- Loline 服务器请求方式
 <script type="text/javascript">
 	$.get('https://149.129.113.178:5000/', function (data) {
     console.log('----------------------------------------')
@@ -982,6 +993,22 @@
 		$('#loline-from').css('display', '').text('——' + data.title_zh+' '+data.name_zh);
 	});
 </script>
+-->
+<!-- Loline 加载本地json文件方式 -->
+<script type="text/javascript">
+	$.get('js/src/json/champions.json', function (data) {
+    console.log('----------------------------------------');
+    // console.log(data);
+		function Random(min, max) {
+    	return Math.round(Math.random() * (max - min)) + min;
+		}
+		var ranint = Random(1, data.length)
+		$('#loline-content').css('display', '').text(data[ranint].words);
+		$('#loline-from').css('display', '').text('——' + data[ranint].title_zh+' '+data[ranint].name_zh);
+	});
+</script>
+
+
 
   <script src="/js/src/utils.js?v=7.0.1"></script>
 

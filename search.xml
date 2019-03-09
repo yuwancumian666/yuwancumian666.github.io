@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Loline —— 加载本地json]]></title>
+    <url>%2F2019%2F03%2F10%2Fsidebar-blockquote%2F</url>
+    <content type="text"><![CDATA[在使用Ajax请求json的方式下，遇到了两点麻烦： 阿里云服务器上运行的python脚本总出问题，没有数据返回。 GitHub Pages的博客上需要使用HTTPS来跨域请求，这就需要一个SSl证书，但是自己的证书不会被浏览器信任，而去阿里云申请证书（有免费的）需要注册域名，太麻烦了，所以就改变一下请求json的方式，改用本地加载数据的方式吧。 blah加载本地jsonnext\layout\_scripts\commons.swig123456789101112&lt;script type="text/javascript"&gt; $.get('js/src/json/champions.json', function (data) &#123; console.log('----------------------------------------'); // console.log(data); function Random(min, max) &#123; return Math.round(Math.random() * (max - min)) + min; &#125; var ranint = Random(1, data.length) $('#loline-content').css('display', '').text(data[ranint].words); $('#loline-from').css('display', '').text('——' + data[ranint].title_zh+' '+data[ranint].name_zh); &#125;);&lt;/script&gt; next\layout\_macro\sidebar.swig12345678910&lt;div class="sidebar-inner"&gt; &lt;div&gt; &lt;blockquote class="blockquote-loline"&gt; &lt;b&gt;&lt;span style="color:burlywood;"&gt;&lt;span id="loline-content"&gt;&lt;/span&gt;&lt;/span&gt;&lt;/b&gt; &lt;/blockquote&gt; &lt;/div&gt; &lt;div style="text-align: right; font-size: 0.8em; color: black;" id="loline-from"&gt;&lt;/div&gt; &lt;div style="margin-top: 15px; font-size: 0.8em; color: black;"&gt;&lt;a href="https://yuwancumian666.github.io/2019/03/08/loline/#more"&gt;LOLine&lt;/a&gt;&lt;/div&gt; &lt;/div&gt; &lt;div style="height: 15px"&gt;&lt;/div&gt; blockquote-loline样式查看代码： next\source\css_common\components\tags\blockquote-center.styl1234567891011121314151617181920212223242526272829303132.blockquote-loline &#123; position: relative; margin: 40px 0; padding: 0; border-left: none; text-align: center; &amp;::before, &amp;::after &#123; position: absolute; content: ‘ ‘; display: block; width: 100%; height: 24px; opacity: 0.2; background-repeat: no-repeat; background-position: 0 -6px; background-size: 22px 22px; &#125; &amp;::before &#123; top: -20px; background-image: url($sidebar-quote-left); border-top: 1px solid $grey-light; &#125; &amp;::after &#123; bottom: -20px; background-image: url($sidebar-quote-right); border-bottom: 1px solid $grey-light; background-position: 100% 8px; &#125; p, div &#123; text-align: center; &#125;&#125; 设置base变量在next\source\css\_common\components\tags\blockquote-center.styl中发现可用自定义变量，然后在下方文件中更改了以下原来的svg并新建了两个变量。 next\source\css\_variables\base.styl123// blockquote-loline icon 只是更改了一下颜色$sidebar-quote-left = '../images/sidebar-quote-l.svg'$sidebar-quote-right = '../images/sidebar-quote-r.svg']]></content>
+      <tags>
+        <tag>Loline</tag>
+        <tag>json</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Loline——基于flask的RESTful API]]></title>
     <url>%2F2019%2F03%2F08%2Floline%2F</url>
     <content type="text"><![CDATA[Loline受于一言的启发，利用今天一下午的时间利用flask建立了一个轻量级的RESTful API——Loline。其内容大抵是英雄联盟143位英雄的中英文绰号、名字和pick台词。 下文所列出的部分网站可能需要科学上网才能访问 一开始要收集到所有英雄的全部台词的，发现收集这些东西真的很难。 中文名称及绰号这个是在鹅厂联盟官网资料库收集的，因为用了不懂的技术，网页源代码里边没有要找的数据，自然也不能用简单的爬虫来做这些事。还是浏览器开发者工具帮了忙：在Elements一栏可以复制想要的数据，然后保存到本地文件，就可以用Beautiful Soup来提取数据了。这里提取到的是中英文名称及中文绰号，然后根据英文名称去下一步爬取英文绰号。 英文绰号一开始去了拳头的开发网站，发现根本没有提供这种接口。后来发现在GamePedia的英雄详情页有需要的东西，但也仅仅是lol.qq.com的英文版（能用爬虫解决）。写好爬虫脚本，来回更改执行好几次才把英文绰号保存下来。 在GemaPedia-英雄联盟的主页仔细看了一下，也没找到英雄详细信息的入口，得在搜索栏搜索英雄的名字才能找到，例如：Teemo。 Pick台词然后又是pick台词的收集工作，这是最令人头疼的地方。在百度云搜素引擎上找到了大多数英雄的Word版英雄台词，但因为建立日期比较早，有很多台词已经更改了，再加上处理量比较大、需求量不高，就暂时搁置了那个Word。但总得有点内容吧，就选定了Pick英雄的台词，大都是百度谷歌搜集而来。因为英雄改版重做等原因，有些已经不适用了，然后自己启动游戏训练模式，选好英雄听语音，然后立马关掉……不知道百度、谷歌、开关游戏多少次，才勉强把143位英雄的台词收集完。因为有的英雄台词不太熟悉，可能有的已经过时而没有更改，这就等到发现再说吧。 Api的使用使用方法是同一言一样的，你同样可以参照原文作者的方式，但只需要根据下方代码把themes/next/layout/_macro/sidebar.swig中的id和Hitokoto的小标题改一下就好了。 themes/next/layout/_scripts/commons.swig1234567&lt;script type="text/javascript"&gt; $.get('http://149.129.113.178:5000/', function (data) &#123; console.log('----------------------------------------') console.log(data) $('#loline-content').css('display', '').text(data.words); $('#loline-from').css('display', '').text('——' + data.title_zh+' '+data.name_zh); &#125;); 代码收集数据的时候也写了不少的代码，但保存下来数据之后其中大多数已经没有用了，所以这里只贴出来了Flask的代码。需要请邮件联系获取:smile: 12345678910111213141516171819202122232425262728293031323334#! py -3# -*- coding: utf-8 -*-import jsonimport randomfrom util import load_championsfrom flask import Flask, jsonify, abort, make_response, request# http://www.pythondoc.com/flask-restful/first.htmlapp = Flask(__name__)app.config['JSON_AS_ASCII'] = Falsechampions = load_champions("data/champions.json")@app.route('/', methods=['GET'])def index(): id_ = random.randint(1, len(champions)) print(id_) champion = list(filter(lambda t: t['id'] == id_, champions)) return jsonify(champion[0])def after_requests(response): response.headers['Access-Control-Allow-Origin'] = '*' response.headers['Access-Control-Allow-Methods'] = 'GET' response.headers['Access-Control-Allow-Headers'] = 'Content-Type,Authorization' return response@app.errorhandler(404)def not_found(error): return make_response(jsonify(&#123;'error': 'Not Found'&#125;), 404)if __name__ == '__main__': app.after_request(after_requests) app.run(debug=True)]]></content>
@@ -12,6 +21,7 @@
         <tag>Python</tag>
         <tag>Loline</tag>
         <tag>Flask</tag>
+        <tag>json</tag>
         <tag>英雄联盟</tag>
       </tags>
   </entry>
@@ -220,21 +230,8 @@
         <category>Hive</category>
       </categories>
       <tags>
-        <tag>大数据</tag>
         <tag>Hive</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Hive 数据类型]]></title>
-    <url>%2F2018%2F02%2F06%2Fhive-type-of-data%2F</url>
-    <content type="text"><![CDATA[I cannot tell why this heart languishes in silence. It is for small needs it never asks, or knows or remembers.我说不出这心为什么那样颓丧着，是为了它那不曾要求，不曾知道，不曾记得的小小的需要。 泰戈尔飞鸟集 基本数据类型未完待续…… 复杂数据类型关系型数据库强烈不建议重复存储我们接触过的大数据数据库比如 Hbase、Hive 不怕重复，但要求的是存储数据的文件不要太小。 类型 | 说明 | 举例Array （数组） | 一组数据类型相同的值 | [1,2,3]Map（集合）| 一组 &lt;K, V&gt;，要求所有键类型相同，所有值类型相同 | {&lt;K, V&gt;, &lt;K, V&gt;}Struct（结构） | 一组不同字段，且每个字段的类型可以不同 | (“str”, 1, 0) 数组假如我们有以下数据： 在 Hive 里创建一个表： 1234567CREATE TABLE loginArray(ip STRING,userid ARRAY&lt;BIGINT&gt;)ROW FORMAT DELIMITED FIELDS TERMINATED BY ','COLLECTION ITEMS TERMINATED BY '|'; 然后导入数据：` LOAD DATA LOCAL INPATH ‘/home/user/test_data/login_array.txt’ INTO TABLE loginArray12345678910111213141516171819202122232425262728293031323334353637查询数据：`SELECT id,userid FROM loginArray`![](https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2018-02-06-array-id-userid.jpg)指定数组元素查询：`SELECT id,userid[0] FROM loginArray` ![](https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2018-02-06-array-ip-userid%5B1%5D.jpg.jpg)查询数组长度（-1为空）：`SELECT size(userid) FROM loginArray`![](https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2018-02-06-array-length.jpg)### 集合#### 标准数据表处理给定测试数据：![](https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2018-02-06-map-1.jpg)数据表示某用户(id)，在某 IP 的主机上玩了哪些游戏以及游戏次数开始建表：``` sqlCREATE TBALE loginmap(IP STRING,userid BIGINT,gameinfo MAP&lt;STRING, INT&gt;)ROW FORMAT DELIMITED FIELDS TERMINATED BY &apos;,&apos;COLLECTION ITEMS TERMINATED BY &apos;|&apos;MAP KEYS TERMINATED BY &apos;:&apos;; 导入数据：DATA LOCAL INPATH '/home/user/test_data/loginmap1.txt' INTO TABLE loginmap;```12345678910111213141516171819202122232425262728293031323334插入数据后表结构如图：![](https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2018-02-06-map-1-all.jpg)#### 含脏数据的表处理测试数据：![](https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2018-02-06-map-2.jpg)导入数据时可以直接覆盖上一张表：![](https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2018-02-06-map-2-all.jpg)在查询某一个键时，因为数据的不统一（如“ wow” 和 “wow”，前者含空格）导致结果不同![](https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2018-02-06-map-different-info.jpg)### 结构数据：![](https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2018-02-06-struct.jpg)建表：``` sqlCREATE TABLE loginstruct(IP STRING,USRINFO STRUCT&lt;userid:BIGINT, uname:STRING&gt;ROW FORMAT DELIMITED FIELDS TERMINATED BY &apos;,&apos;COLLECTION ITEMS TERMINATED BY &apos;|&apos;; 导入数据：LOAD DATA LOCAL INPATH &#39;/home/user/test_data/login_array/loginstruct.txt&#39; INTO TABLE loginstruct 插入后表信息：]]></content>
-      <categories>
-        <category>大数据</category>
-        <category>Hive</category>
-      </categories>
-      <tags>
         <tag>大数据</tag>
-        <tag>Hive</tag>
       </tags>
   </entry>
   <entry>
@@ -246,8 +243,8 @@
         <category>Hive</category>
       </categories>
       <tags>
-        <tag>大数据</tag>
         <tag>Hive</tag>
+        <tag>大数据</tag>
       </tags>
   </entry>
   <entry>
@@ -260,6 +257,19 @@
       </categories>
       <tags>
         <tag>Hive</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hive 数据类型]]></title>
+    <url>%2F2018%2F02%2F06%2Fhive-type-of-data%2F</url>
+    <content type="text"><![CDATA[I cannot tell why this heart languishes in silence. It is for small needs it never asks, or knows or remembers.我说不出这心为什么那样颓丧着，是为了它那不曾要求，不曾知道，不曾记得的小小的需要。 泰戈尔飞鸟集 基本数据类型未完待续…… 复杂数据类型关系型数据库强烈不建议重复存储我们接触过的大数据数据库比如 Hbase、Hive 不怕重复，但要求的是存储数据的文件不要太小。 类型 | 说明 | 举例Array （数组） | 一组数据类型相同的值 | [1,2,3]Map（集合）| 一组 &lt;K, V&gt;，要求所有键类型相同，所有值类型相同 | {&lt;K, V&gt;, &lt;K, V&gt;}Struct（结构） | 一组不同字段，且每个字段的类型可以不同 | (“str”, 1, 0) 数组假如我们有以下数据： 在 Hive 里创建一个表： 1234567CREATE TABLE loginArray(ip STRING,userid ARRAY&lt;BIGINT&gt;)ROW FORMAT DELIMITED FIELDS TERMINATED BY ','COLLECTION ITEMS TERMINATED BY '|'; 然后导入数据：` LOAD DATA LOCAL INPATH ‘/home/user/test_data/login_array.txt’ INTO TABLE loginArray12345678910111213141516171819202122232425262728293031323334353637查询数据：`SELECT id,userid FROM loginArray`![](https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2018-02-06-array-id-userid.jpg)指定数组元素查询：`SELECT id,userid[0] FROM loginArray` ![](https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2018-02-06-array-ip-userid%5B1%5D.jpg.jpg)查询数组长度（-1为空）：`SELECT size(userid) FROM loginArray`![](https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2018-02-06-array-length.jpg)### 集合#### 标准数据表处理给定测试数据：![](https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2018-02-06-map-1.jpg)数据表示某用户(id)，在某 IP 的主机上玩了哪些游戏以及游戏次数开始建表：``` sqlCREATE TBALE loginmap(IP STRING,userid BIGINT,gameinfo MAP&lt;STRING, INT&gt;)ROW FORMAT DELIMITED FIELDS TERMINATED BY &apos;,&apos;COLLECTION ITEMS TERMINATED BY &apos;|&apos;MAP KEYS TERMINATED BY &apos;:&apos;; 导入数据：DATA LOCAL INPATH '/home/user/test_data/loginmap1.txt' INTO TABLE loginmap;```12345678910111213141516171819202122232425262728293031323334插入数据后表结构如图：![](https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2018-02-06-map-1-all.jpg)#### 含脏数据的表处理测试数据：![](https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2018-02-06-map-2.jpg)导入数据时可以直接覆盖上一张表：![](https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2018-02-06-map-2-all.jpg)在查询某一个键时，因为数据的不统一（如“ wow” 和 “wow”，前者含空格）导致结果不同![](https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2018-02-06-map-different-info.jpg)### 结构数据：![](https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2018-02-06-struct.jpg)建表：``` sqlCREATE TABLE loginstruct(IP STRING,USRINFO STRUCT&lt;userid:BIGINT, uname:STRING&gt;ROW FORMAT DELIMITED FIELDS TERMINATED BY &apos;,&apos;COLLECTION ITEMS TERMINATED BY &apos;|&apos;; 导入数据：LOAD DATA LOCAL INPATH &#39;/home/user/test_data/login_array/loginstruct.txt&#39; INTO TABLE loginstruct 插入后表信息：]]></content>
+      <categories>
+        <category>大数据</category>
+        <category>Hive</category>
+      </categories>
+      <tags>
+        <tag>Hive</tag>
+        <tag>大数据</tag>
       </tags>
   </entry>
   <entry>
