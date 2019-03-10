@@ -621,8 +621,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/02/06/hive-text-encoding/" rel="next" title="Hive 文本格式">
-                <i class="fa fa-chevron-left"></i> Hive 文本格式
+              <a href="/2018/02/02/python-word-cloud/" rel="next" title="Python 制作词云">
+                <i class="fa fa-chevron-left"></i> Python 制作词云
               </a>
             
           </div>
@@ -631,8 +631,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/02/07/hive-hql/" rel="prev" title="HiveQL">
-                HiveQL <i class="fa fa-chevron-right"></i>
+              <a href="/2018/02/06/hive-text-encoding/" rel="prev" title="Hive 文本格式">
+                Hive 文本格式 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -1201,9 +1201,9 @@
 -->
 <!-- Loline 加载本地json文件方式 -->
 <script type="text/javascript">
-	$.get('https://yuwancumian666.github.io/2018/02/06/hive-bucket/index.html/js/src/json/champions.json', function (data) {
+    console.log('[object global]'+'a----------------------------------------');
+	$.get('[object Object]'+'/json/champions.json', function (data) {
     // console.log(data);
-    console.log('[object Object]----------------------------------------');
 		function Random(min, max) {
     	return Math.round(Math.random() * (max - min)) + min;
 		}

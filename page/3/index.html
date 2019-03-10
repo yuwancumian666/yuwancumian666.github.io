@@ -427,7 +427,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://yuwancumian666.github.io/2018/02/06/hive-bucket/">
+    <link itemprop="mainEntityOfPage" href="https://yuwancumian666.github.io/2018/02/06/hive-type-of-data/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="鱼丸粗面666">
@@ -447,7 +447,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/02/06/hive-bucket/" class="post-title-link" itemprop="url">Hive 分桶</a>
+                <a href="/2018/02/06/hive-type-of-data/" class="post-title-link" itemprop="url">Hive 数据类型</a>
               
             
           </h1>
@@ -489,7 +489,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-04 13:19:40" itemprop="dateModified" datetime="2019-03-04T13:19:40Z">2019-03-04</time>
+                <time title="修改时间：2019-03-04 13:23:19" itemprop="dateModified" datetime="2019-03-04T13:23:19Z">2019-03-04</time>
               
             
           </span>
@@ -549,11 +549,12 @@
 
       
         
-          <p>哈希分区 （不能再用）<br>分桶：为解决数据倾斜以及推行机制带来的负面效应 （P131，<code>Hive编程指南</code>）</p>
+          <blockquote><p>I cannot tell why this heart languishes in silence. It is for small needs it never asks, or knows or remembers.<br>我说不出这心为什么那样颓丧着，是为了它那不曾要求，不曾知道，不曾记得的小小的需要。</p>
+<footer><strong>泰戈尔</strong><cite>飞鸟集</cite></footer></blockquote>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2018/02/06/hive-bucket/#more" rel="contents">
+              <a class="btn" href="/2018/02/06/hive-type-of-data/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -799,7 +800,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://yuwancumian666.github.io/2018/02/06/hive-type-of-data/">
+    <link itemprop="mainEntityOfPage" href="https://yuwancumian666.github.io/2018/02/06/hive-bucket/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="鱼丸粗面666">
@@ -819,7 +820,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/02/06/hive-type-of-data/" class="post-title-link" itemprop="url">Hive 数据类型</a>
+                <a href="/2018/02/06/hive-bucket/" class="post-title-link" itemprop="url">Hive 分桶</a>
               
             
           </h1>
@@ -861,7 +862,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-04 13:23:19" itemprop="dateModified" datetime="2019-03-04T13:23:19Z">2019-03-04</time>
+                <time title="修改时间：2019-03-04 13:19:40" itemprop="dateModified" datetime="2019-03-04T13:19:40Z">2019-03-04</time>
               
             
           </span>
@@ -921,12 +922,11 @@
 
       
         
-          <blockquote><p>I cannot tell why this heart languishes in silence. It is for small needs it never asks, or knows or remembers.<br>我说不出这心为什么那样颓丧着，是为了它那不曾要求，不曾知道，不曾记得的小小的需要。</p>
-<footer><strong>泰戈尔</strong><cite>飞鸟集</cite></footer></blockquote>
+          <p>哈希分区 （不能再用）<br>分桶：为解决数据倾斜以及推行机制带来的负面效应 （P131，<code>Hive编程指南</code>）</p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2018/02/06/hive-type-of-data/#more" rel="contents">
+              <a class="btn" href="/2018/02/06/hive-bucket/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -2761,9 +2761,9 @@
 -->
 <!-- Loline 加载本地json文件方式 -->
 <script type="text/javascript">
-	$.get('https://yuwancumian666.github.io/page/3/index.html/js/src/json/champions.json', function (data) {
+    console.log('[object global]'+'a----------------------------------------');
+	$.get('[object Object]'+'/json/champions.json', function (data) {
     // console.log(data);
-    console.log('[object Object]----------------------------------------');
 		function Random(min, max) {
     	return Math.round(Math.random() * (max - min)) + min;
 		}

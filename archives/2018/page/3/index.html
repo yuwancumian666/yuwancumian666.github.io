@@ -1090,9 +1090,9 @@
 -->
 <!-- Loline 加载本地json文件方式 -->
 <script type="text/javascript">
-	$.get('https://yuwancumian666.github.io/archives/2018/page/3/index.html/js/src/json/champions.json', function (data) {
+    console.log('[object global]'+'a----------------------------------------');
+	$.get('[object Object]'+'/json/champions.json', function (data) {
     // console.log(data);
-    console.log('[object Object]----------------------------------------');
 		function Random(min, max) {
     	return Math.round(Math.random() * (max - min)) + min;
 		}

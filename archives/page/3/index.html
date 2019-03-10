@@ -470,9 +470,9 @@
 
       <h2 class="post-title">
         
-          <a class="post-title-link" href="/2018/02/06/hive-bucket/" itemprop="url">
+          <a class="post-title-link" href="/2018/02/06/hive-type-of-data/" itemprop="url">
             
-              <span itemprop="name">Hive 分桶</span>
+              <span itemprop="name">Hive 数据类型</span>
             
           </a>
         
@@ -540,9 +540,9 @@
 
       <h2 class="post-title">
         
-          <a class="post-title-link" href="/2018/02/06/hive-type-of-data/" itemprop="url">
+          <a class="post-title-link" href="/2018/02/06/hive-bucket/" itemprop="url">
             
-              <span itemprop="name">Hive 数据类型</span>
+              <span itemprop="name">Hive 分桶</span>
             
           </a>
         
@@ -1335,9 +1335,9 @@
 -->
 <!-- Loline 加载本地json文件方式 -->
 <script type="text/javascript">
-	$.get('https://yuwancumian666.github.io/archives/page/3/index.html/js/src/json/champions.json', function (data) {
+    console.log('[object global]'+'a----------------------------------------');
+	$.get('[object Object]'+'/json/champions.json', function (data) {
     // console.log(data);
-    console.log('[object Object]----------------------------------------');
 		function Random(min, max) {
     	return Math.round(Math.random() * (max - min)) + min;
 		}
