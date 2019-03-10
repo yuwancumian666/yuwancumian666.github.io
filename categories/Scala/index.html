@@ -996,15 +996,17 @@
 -->
 <!-- Loline 加载本地json文件方式 -->
 <script type="text/javascript">
-    console.log('[object global]'+'a----------------------------------------');
-	$.get('[object Object]'+'/json/champions.json', function (data) {
-    // console.log(data);
-		function Random(min, max) {
+	$.get("/json/champions.json", function (data) {
+    console.log('url: '+'https://yuwancumian666.github.io/categories/Scala/index.html');
+		// champions = JSON.parse(data);
+		var ranint = function(min, max) {
     	return Math.round(Math.random() * (max - min)) + min;
-		}
-		var ranint = Random(1, data.length)
-		$('#loline-content').css('display', '').text(data[ranint].words);
-		$('#loline-from').css('display', '').text('——' + data[ranint].title_zh+' '+data[ranint].name_zh);
+		}(1, data.length);
+		champion = data[ranint-1];
+		console.log(ranint);
+		console.log(champion);
+		$('#loline-content').css('display', '').text(champion.words);
+		$('#loline-from').css('display', '').text('——' + champion.title_zh+' '+champion.name_zh);
 	});
 </script>
 
