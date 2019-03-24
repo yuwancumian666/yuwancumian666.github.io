@@ -62,6 +62,21 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[软件及开发包安装中的那些坑]]></title>
+    <url>%2F2019%2F02%2F22%2F2019-2-22-software-installation-description%2F</url>
+    <content type="text"><![CDATA[先把坑都踩一遍是为了以后踩更多的坑。 latexindent 来自：安装LaTex-formatter需要安装的工具 方式：解压缩，（可数的）文件直接拖入目录 目录：C:\Program\texlive\2018\texmf-dist\scripts\latexindent 文件：latexindent.exe 使用方式：选中代码-&gt;右键格式化选定内容 注：更改了该目录下的defaultSettings.yaml的某些设置 1234567891011121314151617181920212223242526# line222~line246indentAfterHeadings: part: indentAfterThisHeading: 1 level: 1 chapter: indentAfterThisHeading: 1 level: 2 section: indentAfterThisHeading: 1 level: 3 subsection: indentAfterThisHeading: 1 level: 4 subsection*: indentAfterThisHeading: 1 level: 4 subsubsection: indentAfterThisHeading: 1 level: 5 paragraph: indentAfterThisHeading: 1 level: 6 subparagraph: indentAfterThisHeading: 1 level: 7 ruby-jekyll大佬Pchou的博客 安装Ruby with Devkit，所有组件都在这里了，注意安装路径不要出现空格 ruby安装完，会提示安装MSYS2，跟着提示走就好。现在新版本的Ruby已经集成了RubyGems) 环境安装好就可以安装Bundle和Jekyll了（gem install jekyll），但是在今天（2019-2-22）安装的过程中发现bundle是安装环境是已经安装好了的。 到博客目录下依次执行以下命令：123bundle installbundle updatebundle exec jekyll serve 关于ryby及Jekyll的某些错误 jekyll 3.7.4 | Error: incompatible character encodings: UTF-8 and GBK不知道如何解决，尝试设置命令行字符编码chcp 65001（不行）已知的可能解决方法：设置 -&gt; 时间和语言 -&gt; 区域 -&gt; 更改日期、时间或数字格式 -&gt; 管理 -&gt; 更改系统区域设置：选中“使用Unicode UTF-8 提供全球语言支持”，然后重启电脑，应该就解决了。 执行bundle命令时出现C:/Program/Ruby25-x64/lib/ruby/2.5.0/rubygems.rb:289:in &#39;find_spec_for_exe&#39;: can&#39;t find gem bundler (&gt;= 0.a) with executable bundle (Gem::GemNotFoundException)，在StackOverflow上找到答案：Gemfile.lock文件最后的BUNDLED WITH版本改为已安装的bundler版本。或者删除Gemfile.lock文件，重新bundle exec jekyll serve VSCode中C/C++找不到头文件可能需要设置这些环境变量： 123456789101112LIBRARY_PATHC:\Program\mingw64\lib\gcc\x86_64-w64-mingw32\7.3.0C_INCLUDE_PATHC:\Program\mingw64\include;C:\Program\mingw64\lib\gcc\x86_64-w64-mingw32\7.3.0\include;CPLUS_INCLUDE_PATHC:\Program\mingw64\include;C:\Program\mingw64\lib\gcc\x86_64-w64-mingw32\7.3.0\include\c++;C:\Program\mingw64\lib\gcc\x86_64-w64-mingw32\7.3.0\include\c++\backward;C:\Program\mingw64\lib\gcc\x86_64-w64-mingw32\7.3.0\include\c++\x86_64-w64-mingw32; CUDA cuDNN复制cuDNN到CUDA目录 123C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.0\bin\cudnn64_7.dllC:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.0\include\cudnn.hC:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.0\lib\x64\cudnn.lib]]></content>
+      <categories>
+        <category>Software</category>
+      </categories>
+      <tags>
+        <tag>C/C++</tag>
+        <tag>CUDA</tag>
+        <tag>LaTex</tag>
+        <tag>GitHub Pages</tag>
+        <tag>软件</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[在LaTex中使用自定义字体]]></title>
     <url>%2F2019%2F02%2F22%2F2019-2-22-customize-font-in-latex%2F</url>
     <content type="text"><![CDATA[挖坑 刚接触LaTex，不太了解编译运行方式，网上搜了好多种方法都一直报错。这个例子刚测试的时候还编译不了，据猜测原因应该是编译缓存未清理或导入宏包的问题。 定义代码段字体下边是一种自定义字体的方法，来自LaTeX技巧006：使用不同的英文字体 \documentclass[UTF8]{article} \usepackage{fontspec} \setmainfont{Times New Roman}%fontspec下这个命令设置全局默认字体 \begin{document} Hello World!\\ %这也是一种调用方式，无须fontspec宏包 \font\rm=&quot;Calibri&quot; at 14pt \rm This is Calibri\\ \font\rm=&quot;Candara&quot; at 14pt \rm This is Candara\\ \font\rm=&quot;Mistral&quot; at 14pt \rm This is Mistral\\ \font\rm=&quot;Bahnschrift&quot; at 14pt \rm This is Bahnschrift\\ \font\rm=&quot;Pristina&quot; at 14pt \rm This is Pristina\\ \font\rm=&quot;Microsoft Uighur&quot; at 14pt \rm This is Microsoft Uighur\\ \font\rm=&quot;Bradley Hand ITC&quot; at 14pt \rm This is Bradley Hand ITC\\ \font\rm=&quot;Nirmala UI&quot; at 14pt \rm This is Nirmala UI\\ \font\rm=&quot;CCBackBeat&quot; at 14pt \rm This is CCBackBeat\\ \font\rm=&quot;Supercell-Magic&quot; \rm This is Supercell-Magic\\ \font\rm=&quot;Supercell-Magic&quot; at 14pt \rm This is Supercell-Magic\\ \font\rm=&quot;Supercell-Magic&quot; at 18pt \rm This is Supercell-Magic\\ \end{document} 显示结果 设置全局（自定义）字体第二天在测试中发现，用如下代码也能实现同样的效果，现在猜测是刚安装的字体VSCode或XeLaTex识别不了的问题。 \documentclass[UTF8]{article} \usepackage{ctex} \usepackage{fontspec} \usepackage{metalogo} \usepackage{amsmath} \usepackage{newtxtt, newtxmath} \setmainfont{CCBackBeat} %英文字体 \setCJKmainfont{DengXian} % 中文字体 \title{论文测试} \author{Teemo} \date{2019年2月22日} \begin{document} \maketitle \tableofcontents \section{输出测试} Hello \XeLaTeX. Body of the article. second not sure \\ fuck LaTex \\ 换行试试？\LaTeX，WithTab Icon,How to add a command \\ 换行]]></content>
@@ -71,21 +86,6 @@
       <tags>
         <tag>LaTex</tag>
         <tag>字体</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[软件及开发包安装中的那些坑]]></title>
-    <url>%2F2019%2F02%2F22%2F2019-2-22-software-installation-description%2F</url>
-    <content type="text"><![CDATA[先把坑都踩一遍是为了以后踩更多的坑。 latexindent 来自：安装LaTex-formatter需要安装的工具 方式：解压缩，（可数的）文件直接拖入目录 目录：C:\Program\texlive\2018\texmf-dist\scripts\latexindent 文件：latexindent.exe 使用方式：选中代码-&gt;右键格式化选定内容 注：更改了该目录下的defaultSettings.yaml的某些设置 1234567891011121314151617181920212223242526# line222~line246indentAfterHeadings: part: indentAfterThisHeading: 1 level: 1 chapter: indentAfterThisHeading: 1 level: 2 section: indentAfterThisHeading: 1 level: 3 subsection: indentAfterThisHeading: 1 level: 4 subsection*: indentAfterThisHeading: 1 level: 4 subsubsection: indentAfterThisHeading: 1 level: 5 paragraph: indentAfterThisHeading: 1 level: 6 subparagraph: indentAfterThisHeading: 1 level: 7 ruby-jekyll大佬Pchou的博客 安装Ruby with Devkit，所有组件都在这里了，注意安装路径不要出现空格 ruby安装完，会提示安装MSYS2，跟着提示走就好。现在新版本的Ruby已经集成了RubyGems) 环境安装好就可以安装Bundle和Jekyll了（gem install jekyll），但是在今天（2019-2-22）安装的过程中发现bundle是安装环境是已经安装好了的。 到博客目录下依次执行以下命令：123bundle installbundle updatebundle exec jekyll serve 关于ryby及Jekyll的某些错误 jekyll 3.7.4 | Error: incompatible character encodings: UTF-8 and GBK不知道如何解决，尝试设置命令行字符编码chcp 65001（不行）已知的可能解决方法：设置 -&gt; 时间和语言 -&gt; 区域 -&gt; 更改日期、时间或数字格式 -&gt; 管理 -&gt; 更改系统区域设置：选中“使用Unicode UTF-8 提供全球语言支持”，然后重启电脑，应该就解决了。 执行bundle命令时出现C:/Program/Ruby25-x64/lib/ruby/2.5.0/rubygems.rb:289:in &#39;find_spec_for_exe&#39;: can&#39;t find gem bundler (&gt;= 0.a) with executable bundle (Gem::GemNotFoundException)，在StackOverflow上找到答案：Gemfile.lock文件最后的BUNDLED WITH版本改为已安装的bundler版本。或者删除Gemfile.lock文件，重新bundle exec jekyll serve VSCode中C/C++找不到头文件可能需要设置这些环境变量： 123456789101112LIBRARY_PATHC:\Program\mingw64\lib\gcc\x86_64-w64-mingw32\7.3.0C_INCLUDE_PATHC:\Program\mingw64\include;C:\Program\mingw64\lib\gcc\x86_64-w64-mingw32\7.3.0\include;CPLUS_INCLUDE_PATHC:\Program\mingw64\include;C:\Program\mingw64\lib\gcc\x86_64-w64-mingw32\7.3.0\include\c++;C:\Program\mingw64\lib\gcc\x86_64-w64-mingw32\7.3.0\include\c++\backward;C:\Program\mingw64\lib\gcc\x86_64-w64-mingw32\7.3.0\include\c++\x86_64-w64-mingw32; CUDA cuDNN复制cuDNN到CUDA目录 123C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.0\bin\cudnn64_7.dllC:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.0\include\cudnn.hC:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.0\lib\x64\cudnn.lib]]></content>
-      <categories>
-        <category>Software</category>
-      </categories>
-      <tags>
-        <tag>LaTex</tag>
-        <tag>C/C++</tag>
-        <tag>CUDA</tag>
-        <tag>GitHub Pages</tag>
-        <tag>软件</tag>
       </tags>
   </entry>
   <entry>
@@ -246,8 +246,8 @@
         <category>Hive</category>
       </categories>
       <tags>
-        <tag>Hive</tag>
         <tag>大数据</tag>
+        <tag>Hive</tag>
       </tags>
   </entry>
   <entry>
@@ -259,8 +259,8 @@
         <category>Hive</category>
       </categories>
       <tags>
-        <tag>Hive</tag>
         <tag>大数据</tag>
+        <tag>Hive</tag>
       </tags>
   </entry>
   <entry>
@@ -272,8 +272,8 @@
         <category>Hive</category>
       </categories>
       <tags>
-        <tag>Hive</tag>
         <tag>大数据</tag>
+        <tag>Hive</tag>
       </tags>
   </entry>
   <entry>
