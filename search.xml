@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[图片切割脚本使用]]></title>
+    <url>%2F2019%2F03%2F27%2Fhow-to-cut-tiger%2F</url>
+    <content type="text"><![CDATA[环境要求：python3、PS（或其他能准确获取指定像素点的软件） 在待处理图片文件夹里新建一个cut的文件夹，里边放入一批拍摄角度、对象在图片的位置均相似的图片。Windows的多选是Ctrl+Shoft+左键，MacOS不明:simple_smile: 在脚本的最上方填入“待处理图片的路径”和“输出图片的路径”，如： 123456# csv保存路径csv_path = r'D:\Users\Teemo Nicolas\Downloads\002\\'# 待处理图片路径img_path = r'D:\Users\Teemo Nicolas\Downloads\002\right\cut\\'# 新文件写入路径new_img_path = r'D:\Users\Teemo Nicolas\Downloads\02\right\\' 其中，csv是图片处理记录的数据，没什么重要性，选填，但是执行脚本的时候需要输入“n”或直接把这段功能的代码注释掉掉。 在PS里获取信息。 打开图片后，用矩形选框工具选好位置，其长宽比可固定为3:2；右键单击选框，选择“变换选区”，然后在“信息面板”查看该矩形选框的信息（左上角坐标：X、Y；选框长宽：W、H），将这四个数填入脚本下方对应位置。123456# 起始点坐标，PhotoShop获得start_x = 459start_y = 231# 切割尺寸，PhotoShop获得crop_length = 2649crop_height = 1766 执行代码。首先，脚本会对cut文件夹下中间的那张图片做测试，因为预览图中图片的方向并不一定是其真实方向，可能预览图中老虎头朝上，而文件信息中的老虎是头朝下的，就会出现错误。一般而言，将图片横向放置不会有错。如果测试图片和预期不一致，输入“n”退出程序，然后选一张图片调整为正确的方向重新获取XYWH执行脚本 确认无误后，回车继续，新文件将会保存到new_img_path指定位置（该文件夹必须存在）。]]></content>
+      <tags>
+        <tag>教程</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Electron-Vue遇到的诸多问题]]></title>
     <url>%2F2019%2F03%2F26%2Felectron-issues%2F</url>
     <content type="text"><![CDATA[问题或Bug由于个人水平原因遇到的解决不了或已经解决的问题。 card-columns布局-2019/03/23图片少于4张的时候会显示两列（同理，少于两张会显示1列），这是因为页面设计的排版是面向列布局的，当图片大于4张的时候自动会占满3列。 Vue数据更新，视图不更新-2019/03/24点击文件对话框可以添加图片，但是拖入就添加不了，vue的数据对象也更新了，可能是更新数据的方法有问题。参考Vue中数组和对象更改后视图不刷新的问题尝试了N种方法，仍然tmd解决不了，考虑添加初始化图片。 添加初始化图片仍然不能解决问题，情况是dom中有添加的卡片元素，就是在页面上没有显示。经过多次查找，在.card-columns的外层div上有一个v-show=&#39;showTip&#39;(showTip=false)，而且在设计页面的时候多包上了一层div（具体记不太清楚了，应该是给功能扩展留出的空间）。最后解决的方式是：去掉了多余的div和v-show=false，重新写了一下gallery相关的样式，得以解决。 卡片阴影移位-2019/03/24Bootstrap中.card-columns&gt;card加CSS阴影后，card[1,2]和card[1,3]上方阴影被截取到前一列最下方。猜测时因为.card-columns的面向列排版，导致阴影被错位了。解决方法：在.card的CSS里加一个margin: 8px;，给卡片上方阴影留出空间即可。 ipcRenderer.send()函数不能工作-2019/03/26Console里的错误描述： [Vue warn]: Error in v-on handler: “TypeError: electron__WEBPACK_IMPORTED_MODULE_3___default.a.send is not a function”found in—&gt; at src/renderer/components/Gallery/Gallery.vue at src/renderer/components/MainPage.vue at src/renderer/App.vue TypeError: electron__WEBPACK_IMPORTED_MODULE_3___default.a.send is not a function at VueComponent.drop (Gallery.vue?f747:125) at drop (Gallery.vue?f24d:127) at invokeWithErrorHandling (vue.esm.js?a026:1863) at HTMLDivElement.invoker (vue.esm.js?a026:2188) at HTMLDivElement.original._wrapper (vue.esm.js?a026:7542) 该问题可能的原因是：在引入ipcRenderer的时候写成了import ipcRenderer from &#39;electron&#39;，改成const {ipcRenderer} = require(&#39;electron&#39;)不再显示错误。 ipcRenderer和ipcMainipcRenderer和ipcMain这两个类之间传递的数据是object格式，即使你在ipcRenderer里向ipcMain发送的是数组。只这么单向地说是因为在文件对话框里选择的文件经sender发送到ipcRenderer后，其object格式使用forEach不会报错。具体原因待研究。 全局变量、函数-2019/03/26谷歌了很多种注册全局变量、函数的方法，在我这里都行不通，可能是我个人水平的原因。最后解决的方案是，将三代组件合并成父子两代组件，在父组件里声明大部分变量，然后通过props和this.$emit()方法在父子组件之间通信并同步变量解决了问题。 在使用this.drag_tip_seen_flag = true;this.$emit(&#39;get_drag_tip_seen_flag&#39;, drag_tip_seen_flag)向父组件传递更改过的dragTipSeenFlag变量的情况下，当点击&amp;times;关闭选项卡的时候，Console会出现Vue的警告: [Vue warn]: Avoid mutating a prop directly since the value will be overwritten whenever the parent component re-renders. Instead, use a data or computed property based on the prop’s value. Prop being mutated: “drag_tip_seen_flag”[Vue warn]: Error in v-on handler: “ReferenceError: drag_tip_seen_flag is not defined”found in…… 意思是由于更改了变量而警告改变量可能会被覆盖，需要注意。在把该两行代码换成this.$emit(&#39;get_drag_tip_seen_flag&#39;, true)之后，警告消失。这里的解决方式只是个例，如果父子组件之间互相传递的变量比较多而引发该问题时，就需要考虑换一种方法了。（我是tmd再也不想接触vue的全局变量和全局函数了）]]></content>
@@ -76,6 +84,21 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[软件及开发包安装中的那些坑]]></title>
+    <url>%2F2019%2F02%2F22%2F2019-2-22-software-installation-description%2F</url>
+    <content type="text"><![CDATA[先把坑都踩一遍是为了以后踩更多的坑。 latexindent 来自：安装LaTex-formatter需要安装的工具 方式：解压缩，（可数的）文件直接拖入目录 目录：C:\Program\texlive\2018\texmf-dist\scripts\latexindent 文件：latexindent.exe 使用方式：选中代码-&gt;右键格式化选定内容 注：更改了该目录下的defaultSettings.yaml的某些设置 1234567891011121314151617181920212223242526# line222~line246indentAfterHeadings: part: indentAfterThisHeading: 1 level: 1 chapter: indentAfterThisHeading: 1 level: 2 section: indentAfterThisHeading: 1 level: 3 subsection: indentAfterThisHeading: 1 level: 4 subsection*: indentAfterThisHeading: 1 level: 4 subsubsection: indentAfterThisHeading: 1 level: 5 paragraph: indentAfterThisHeading: 1 level: 6 subparagraph: indentAfterThisHeading: 1 level: 7 ruby-jekyll大佬Pchou的博客 安装Ruby with Devkit，所有组件都在这里了，注意安装路径不要出现空格 ruby安装完，会提示安装MSYS2，跟着提示走就好。现在新版本的Ruby已经集成了RubyGems) 环境安装好就可以安装Bundle和Jekyll了（gem install jekyll），但是在今天（2019-2-22）安装的过程中发现bundle是安装环境是已经安装好了的。 到博客目录下依次执行以下命令：123bundle installbundle updatebundle exec jekyll serve 关于ryby及Jekyll的某些错误 jekyll 3.7.4 | Error: incompatible character encodings: UTF-8 and GBK不知道如何解决，尝试设置命令行字符编码chcp 65001（不行）已知的可能解决方法：设置 -&gt; 时间和语言 -&gt; 区域 -&gt; 更改日期、时间或数字格式 -&gt; 管理 -&gt; 更改系统区域设置：选中“使用Unicode UTF-8 提供全球语言支持”，然后重启电脑，应该就解决了。 执行bundle命令时出现C:/Program/Ruby25-x64/lib/ruby/2.5.0/rubygems.rb:289:in &#39;find_spec_for_exe&#39;: can&#39;t find gem bundler (&gt;= 0.a) with executable bundle (Gem::GemNotFoundException)，在StackOverflow上找到答案：Gemfile.lock文件最后的BUNDLED WITH版本改为已安装的bundler版本。或者删除Gemfile.lock文件，重新bundle exec jekyll serve VSCode中C/C++找不到头文件可能需要设置这些环境变量： 123456789101112LIBRARY_PATHC:\Program\mingw64\lib\gcc\x86_64-w64-mingw32\7.3.0C_INCLUDE_PATHC:\Program\mingw64\include;C:\Program\mingw64\lib\gcc\x86_64-w64-mingw32\7.3.0\include;CPLUS_INCLUDE_PATHC:\Program\mingw64\include;C:\Program\mingw64\lib\gcc\x86_64-w64-mingw32\7.3.0\include\c++;C:\Program\mingw64\lib\gcc\x86_64-w64-mingw32\7.3.0\include\c++\backward;C:\Program\mingw64\lib\gcc\x86_64-w64-mingw32\7.3.0\include\c++\x86_64-w64-mingw32; CUDA cuDNN复制cuDNN到CUDA目录 123C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.0\bin\cudnn64_7.dllC:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.0\include\cudnn.hC:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.0\lib\x64\cudnn.lib]]></content>
+      <categories>
+        <category>Software</category>
+      </categories>
+      <tags>
+        <tag>C/C++</tag>
+        <tag>CUDA</tag>
+        <tag>LaTex</tag>
+        <tag>GitHub Pages</tag>
+        <tag>软件</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[在LaTex中使用自定义字体]]></title>
     <url>%2F2019%2F02%2F22%2F2019-2-22-customize-font-in-latex%2F</url>
     <content type="text"><![CDATA[挖坑 刚接触LaTex，不太了解编译运行方式，网上搜了好多种方法都一直报错。这个例子刚测试的时候还编译不了，据猜测原因应该是编译缓存未清理或导入宏包的问题。 定义代码段字体下边是一种自定义字体的方法，来自LaTeX技巧006：使用不同的英文字体 \documentclass[UTF8]{article} \usepackage{fontspec} \setmainfont{Times New Roman}%fontspec下这个命令设置全局默认字体 \begin{document} Hello World!\\ %这也是一种调用方式，无须fontspec宏包 \font\rm=&quot;Calibri&quot; at 14pt \rm This is Calibri\\ \font\rm=&quot;Candara&quot; at 14pt \rm This is Candara\\ \font\rm=&quot;Mistral&quot; at 14pt \rm This is Mistral\\ \font\rm=&quot;Bahnschrift&quot; at 14pt \rm This is Bahnschrift\\ \font\rm=&quot;Pristina&quot; at 14pt \rm This is Pristina\\ \font\rm=&quot;Microsoft Uighur&quot; at 14pt \rm This is Microsoft Uighur\\ \font\rm=&quot;Bradley Hand ITC&quot; at 14pt \rm This is Bradley Hand ITC\\ \font\rm=&quot;Nirmala UI&quot; at 14pt \rm This is Nirmala UI\\ \font\rm=&quot;CCBackBeat&quot; at 14pt \rm This is CCBackBeat\\ \font\rm=&quot;Supercell-Magic&quot; \rm This is Supercell-Magic\\ \font\rm=&quot;Supercell-Magic&quot; at 14pt \rm This is Supercell-Magic\\ \font\rm=&quot;Supercell-Magic&quot; at 18pt \rm This is Supercell-Magic\\ \end{document} 显示结果 设置全局（自定义）字体第二天在测试中发现，用如下代码也能实现同样的效果，现在猜测是刚安装的字体VSCode或XeLaTex识别不了的问题。 \documentclass[UTF8]{article} \usepackage{ctex} \usepackage{fontspec} \usepackage{metalogo} \usepackage{amsmath} \usepackage{newtxtt, newtxmath} \setmainfont{CCBackBeat} %英文字体 \setCJKmainfont{DengXian} % 中文字体 \title{论文测试} \author{Teemo} \date{2019年2月22日} \begin{document} \maketitle \tableofcontents \section{输出测试} Hello \XeLaTeX. Body of the article. second not sure \\ fuck LaTex \\ 换行试试？\LaTeX，WithTab Icon,How to add a command \\ 换行]]></content>
@@ -88,24 +111,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[软件及开发包安装中的那些坑]]></title>
-    <url>%2F2019%2F02%2F22%2F2019-2-22-software-installation-description%2F</url>
-    <content type="text"><![CDATA[先把坑都踩一遍是为了以后踩更多的坑。 latexindent 来自：安装LaTex-formatter需要安装的工具 方式：解压缩，（可数的）文件直接拖入目录 目录：C:\Program\texlive\2018\texmf-dist\scripts\latexindent 文件：latexindent.exe 使用方式：选中代码-&gt;右键格式化选定内容 注：更改了该目录下的defaultSettings.yaml的某些设置 1234567891011121314151617181920212223242526# line222~line246indentAfterHeadings: part: indentAfterThisHeading: 1 level: 1 chapter: indentAfterThisHeading: 1 level: 2 section: indentAfterThisHeading: 1 level: 3 subsection: indentAfterThisHeading: 1 level: 4 subsection*: indentAfterThisHeading: 1 level: 4 subsubsection: indentAfterThisHeading: 1 level: 5 paragraph: indentAfterThisHeading: 1 level: 6 subparagraph: indentAfterThisHeading: 1 level: 7 ruby-jekyll大佬Pchou的博客 安装Ruby with Devkit，所有组件都在这里了，注意安装路径不要出现空格 ruby安装完，会提示安装MSYS2，跟着提示走就好。现在新版本的Ruby已经集成了RubyGems) 环境安装好就可以安装Bundle和Jekyll了（gem install jekyll），但是在今天（2019-2-22）安装的过程中发现bundle是安装环境是已经安装好了的。 到博客目录下依次执行以下命令：123bundle installbundle updatebundle exec jekyll serve 关于ryby及Jekyll的某些错误 jekyll 3.7.4 | Error: incompatible character encodings: UTF-8 and GBK不知道如何解决，尝试设置命令行字符编码chcp 65001（不行）已知的可能解决方法：设置 -&gt; 时间和语言 -&gt; 区域 -&gt; 更改日期、时间或数字格式 -&gt; 管理 -&gt; 更改系统区域设置：选中“使用Unicode UTF-8 提供全球语言支持”，然后重启电脑，应该就解决了。 执行bundle命令时出现C:/Program/Ruby25-x64/lib/ruby/2.5.0/rubygems.rb:289:in &#39;find_spec_for_exe&#39;: can&#39;t find gem bundler (&gt;= 0.a) with executable bundle (Gem::GemNotFoundException)，在StackOverflow上找到答案：Gemfile.lock文件最后的BUNDLED WITH版本改为已安装的bundler版本。或者删除Gemfile.lock文件，重新bundle exec jekyll serve VSCode中C/C++找不到头文件可能需要设置这些环境变量： 123456789101112LIBRARY_PATHC:\Program\mingw64\lib\gcc\x86_64-w64-mingw32\7.3.0C_INCLUDE_PATHC:\Program\mingw64\include;C:\Program\mingw64\lib\gcc\x86_64-w64-mingw32\7.3.0\include;CPLUS_INCLUDE_PATHC:\Program\mingw64\include;C:\Program\mingw64\lib\gcc\x86_64-w64-mingw32\7.3.0\include\c++;C:\Program\mingw64\lib\gcc\x86_64-w64-mingw32\7.3.0\include\c++\backward;C:\Program\mingw64\lib\gcc\x86_64-w64-mingw32\7.3.0\include\c++\x86_64-w64-mingw32; CUDA cuDNN复制cuDNN到CUDA目录 123C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.0\bin\cudnn64_7.dllC:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.0\include\cudnn.hC:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.0\lib\x64\cudnn.lib]]></content>
-      <categories>
-        <category>Software</category>
-      </categories>
-      <tags>
-        <tag>LaTex</tag>
-        <tag>C/C++</tag>
-        <tag>CUDA</tag>
-        <tag>GitHub Pages</tag>
-        <tag>软件</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[睡前小故事——Day 5]]></title>
-    <url>%2F2019%2F01%2F23%2Fshort-stories-before-bed5%2F</url>
-    <content type="text"><![CDATA[来自知乎的暖心故事 知乎用户-川戈原文链接 1、 书生觉得自己倒霉透了。 进京赶考的路上，书生看到了一群山贼正在打劫车队。饱读诗书的他立刻上前仗义执言，训得匪徒哑口无言。 “现在收手还来得及，否则我立刻就去报官！你们可以保持沉默，但你们说的每一句话，都将成为呈堂证供！”书生指点江山，意气风发。 “你说得对！”为首的蒙面人诚恳地说，“我的确没考虑到这一点。” 书生昂首挺胸，心想最近自己果然口才大有进步，却突然听到了蒙面人的一句话。 “小的们，把这个书生一块儿绑回去，灭口！” 2、 书生昂首挺胸，心想最近自己果然口才大有进步，却突然听到了蒙面人的一句话。 “小的们，把这个书生一块儿绑回去，灭口！” “喂，那个书生，我看你下午那番话，有几分歪才，留寨子里当个军师如何？” 书生挺直了腰，面无惧色：“劫生辰纲的事不怪你们，但想让我同流合污，没门！” 美娇娘嫣然一笑：“那就柴房里关着，关到同意为止呗！” 书生这下急了，进京赶考可耽误不得啊！他连忙服软：“这位大王……” 谁知美娇娘突然翻了脸，狠狠弹了书生一个脑瓜崩，疼得他流出眼泪来。 “不要叫我大王，要叫我女王大人！” 3、 小喽啰们发现，寨主最近特别爱往柴房跑。 本来只想劝书生在山寨入伙，但聊着聊着，美娇娘却发现，和书生聊天太他娘的有意思啦！ “你这样不好，”书生皱起了眉头，“【他娘的】，这是脏话，女孩子家，要温柔才像样！” “温柔？那是弱女子才干的事儿！我可是要当巾帼英雄的人！”美娇娘柳眉一竖，就要发火。 “谁说女英雄就要讲脏话！你知道花木兰吗？你知道穆桂英吗？梁红玉、樊梨花、聂隐娘……” 美娇娘的眼睛里逐渐冒出了小星星：“你懂的好多，快给我讲讲！” 书生得意一笑：“行，那我就给大王你讲讲……” “啪”一个脑瓜崩弹在了书生脑门上。 “说了多少次，不要叫我大王，要叫我女王大人！” 4、 美娇娘逐渐成了书生的迷妹，他的住处啊，从柴房变成了厢房。 这天，美娇娘推开了书生的房门：“我仔细想过了，你的确不适合当我的军师。” 书生喜出望外：“这么说，我可以下山了？” 美娇娘摇了摇头：“我觉得，你还是当我的压寨夫君更好一点。” 书生两眼一黑，差点晕了过去。虽然美娇娘长得好看，心眼不坏，劫富济贫也算个侠盗，对自己也很好——可她是个山贼啊，我家书香门第，怎么能嫁给山贼呢？ 啊呸，我怎么能用“嫁”这个字，应该是“娶”才对。 书生摇了摇头：“对不起，我心仪的姑娘，必须知书达理，才华胜过我才行。” 美娇娘丹凤眼一瞪：“武功胜过你行不行？” 书生一咬牙，闭上了眼睛：“宁为玉碎不为瓦全！” 5、 “不就是才华吗？我现在就去读书！”美娇娘一言不发出了院子，连夜绑来了城里的老秀才，悬梁刺股苦读了三天三夜，“我就不信我学不来！” 第四天，她叹着气踹开了书生的房门：“算了，读书太难了，你还是下山吧。” 书生临走时，突然觉得有些难过。他犹豫了片刻，还是回过头说了一句：“青山不改，绿水长流。大王，后会有期！” “说了不要叫我大王……”美娇娘拳头刚举起来，又突然停住，背过了身子悄悄擦泪，“算了，随你怎么叫吧。” 6、 书生一进城，就被官兵抓了起来。 原来，有人举报他是山贼的同伙，一起劫了生辰纲。书生无处伸冤，直接关进了大牢，赶考的事儿也泡了汤。 问斩前一天晚上，火光大作，嘈杂万分。牢房大门被一刀劈开，一道人影进来，背着书生就走，一路杀出重围，回了山寨。 书生这才注意到，原来救自己的，是美娇娘。 看着她一身是伤，却依然笑颜如花，书生叹了口气：“没办法，这下只能当你的狗头军师了。” “只是军师而已吗？”美娇娘有些失望，“难道一定要才华胜过你，才肯当我压寨夫君？” “唉，真拿你没办法，”书生无奈地叹了口气，“明天开始，我教你读书。” 7、 书生半夜出来赏月，无意中听到美娇娘在和老秀才商量什么。 “读书太难了，有没有快一点的办法？” …… “我明白了，这就证明，他的才华远不如我，他就只能乖乖从了我！” 听着美娇娘豪迈大笑，书生冷哼一声。 我凭本事单的身，想作弊？不可能！ 8、 第二天，美娇娘坏笑着推开书生的门：“喂，我来考考你，若是答错了，你便乖乖从了我！” 书生一摆手：“出招吧。” “你写个回字出来。”“回字有四种写法，大王，你要的是哪一种？” 美娇娘一愣：“算了算了，你还是画个龙给我看看。” 书生得意一笑：“龙有虺虬螭蛟多个品种，大王，你要看哪样？” 美娇娘抓耳挠腮，涨红了脸，原地踱了两圈，突然一拍桌子，拽着书生把他推倒在卧室的床上。 “说了多少次，叫我女王大人！”]]></content>
+    <title><![CDATA[睡前小故事——Day 4]]></title>
+    <url>%2F2019%2F01%2F23%2Fshort-stories-before-bed4%2F</url>
+    <content type="text"><![CDATA[来自知乎的暖心故事 知乎用户-行歌原文链接 一、 嘎嘣豆是宠物店里最调皮的仓鼠。 它每天晚上都能悄悄的打开自己的笼子逃出来，跑到嘎嘣脆的笼子里一头拱进食盒里大吃特吃。 嘎嘣脆是宠物店里最不爱动弹的猫。 它每天只干三件事，吃饭，睡觉，看嘎嘣豆吃它的猫粮。 二、 “我很想知道，老板是不给你饭吃吗？”某天晚上嘎嘣脆看着挣扎在猫粮里的嘎嘣豆，一脸同情。 “当然不是！”嘎嘣豆挥舞着小短腿费了半天的功夫才从食盒里坐起来，“我只是很喜欢猫粮的味道好的吧。” “所以你吃成了一个球。”嘎嘣脆一脸嫌弃的伸出他高贵的猫爪子，戳了戳他圆滚滚的肚子。 三、 嘎嘣脆是宠物店里最挑食的猫，他不喜欢吃一粒一粒硬邦邦的猫粮。 “廉价的混合物配不上我高贵的胃。” 这是他的原话，虽然他说完之后遭到了隔壁英短无情的嘲笑。但是，王要有王的尊严，也要有王的气度。 所以嘎嘣脆也不屑于计较，但是因为挑食他一天到晚都懒洋洋的，毛也没有光泽。 来店里买猫的顾客走了一拨又一拨，身为高贵的布偶猫他却迟迟没能被挑中。 “这只猫不会得了什么病吧？”顾客跟店员窃窃私语。 四、 嘎嘣豆是宠物店最调皮的仓鼠。 自从他学会了越狱，每天晚上就孜孜不倦的去拜访隔壁，美其名曰增进感情。 他去吃嘎嘣脆的猫粮是有代价的，他把一条条的小鱼干鱿鱼干拖进嘎嘣脆的笼子里，好进行平等的交流互换。 嘎嘣脆在天天夜宵的滋补下精神见好，毛也逐渐变得光滑。 五、 嘎嘣豆是宠物店里最胖的仓鼠。 嘎嘣脆是宠物店里最漂亮的猫。 “都说了给它少喂一点！怎么还是这么胖！” 嘎嘣豆依然天天晚上过来吃猫粮，只是吃完之后要回去多跑几遍跑轮。 嘎嘣脆咬着小鱼干忍不住问他：“跑跑轮累不累呀？” “嘿呀都累死鼠了。”嘎嘣豆躺在食盒里，四只小爪伸展开瘫成一个大字。 “什么时候他们能给你你换一个口味的猫粮啊，我吃的都要吐了呢。”嘎嘣豆捂着自己鼓鼓的腮帮子，叹了口气。 六、 嘎嘣豆从那一天开始再也不过去吃猫粮了。 因为嘎嘣脆伸出他的桌子拍了拍嘎嘣豆的头。 “那个，老鼠，你说实话，你是不是根本不喜欢吃猫粮。” “不要叫我老鼠！我是仓鼠！仓鼠！仓鼠！而且我有名字！嘎嘣豆！” “额……好吧……嘎嘣豆。。” 暴跳如雷的小仓鼠叉着腰瞪着他：“这还差不多……猫粮……猫粮还好吧。。” 嘎嘣脆若有所思：“他们是不是说我不吃饭肯定是得病了要关起来？” 小仓鼠不说话，瞪着黑色的小眼珠看着他拼命的眨。 七、 嘎嘣豆一直是一只乖巧的小仓鼠，他懂事以来的日常就是越狱和欺负不爱吃饭的病猫嘎嘣脆，有一次他好奇尝了一口猫粮，咸滋滋，好难吃。 直到有一天他越狱跑到休息室，听到老板说，那只病歪歪的猫再不见好就先关到后院吧。 噫，后院都是攻击性强没人肯要的宠物，嘎嘣豆打了个哆嗦。 那一天开始嘎嘣豆开始费尽心思的去偷储藏室里的小鱼干给嘎嘣脆吃，顺便要消灭他挑食的证据，一大碗猫粮也要毁尸灭迹。 怎么办呢，只能吃掉。 八、 嘎嘣脆终于改掉了挑食的坏毛病，他越来越健康，长的也更加漂亮，店主开心的要拿小鱼干奖励它，打开柜子却发现里面空荡荡。 真傻。 嘎嘣豆隔着笼子，对他挤眉弄眼的笑。 特别喜欢这个系列的仓鼠嘤嘤嘤 知乎用户-挽挽酱原文链接 一个女孩让我帮她寄快递， 给了我一个空纸箱让我打包。 我好奇的问她: “这是寄给谁的?” 她说:”喜欢很久的男生。”我懵了一下: “可是里面没有东西啊。” 她说:”有些东西，只有我自己能看见。” 我一听更懵逼了， 神秘地问她到底是什么。 她说:”一箱情愿。” 后来， 男生把一个箱子还给了她。 两箱情愿，一箱欢喜。 Best wishes！( ´罒`*)✧”]]></content>
       <categories>
         <category>Life</category>
       </categories>
@@ -114,9 +122,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[睡前小故事——Day 4]]></title>
-    <url>%2F2019%2F01%2F23%2Fshort-stories-before-bed4%2F</url>
-    <content type="text"><![CDATA[来自知乎的暖心故事 知乎用户-行歌原文链接 一、 嘎嘣豆是宠物店里最调皮的仓鼠。 它每天晚上都能悄悄的打开自己的笼子逃出来，跑到嘎嘣脆的笼子里一头拱进食盒里大吃特吃。 嘎嘣脆是宠物店里最不爱动弹的猫。 它每天只干三件事，吃饭，睡觉，看嘎嘣豆吃它的猫粮。 二、 “我很想知道，老板是不给你饭吃吗？”某天晚上嘎嘣脆看着挣扎在猫粮里的嘎嘣豆，一脸同情。 “当然不是！”嘎嘣豆挥舞着小短腿费了半天的功夫才从食盒里坐起来，“我只是很喜欢猫粮的味道好的吧。” “所以你吃成了一个球。”嘎嘣脆一脸嫌弃的伸出他高贵的猫爪子，戳了戳他圆滚滚的肚子。 三、 嘎嘣脆是宠物店里最挑食的猫，他不喜欢吃一粒一粒硬邦邦的猫粮。 “廉价的混合物配不上我高贵的胃。” 这是他的原话，虽然他说完之后遭到了隔壁英短无情的嘲笑。但是，王要有王的尊严，也要有王的气度。 所以嘎嘣脆也不屑于计较，但是因为挑食他一天到晚都懒洋洋的，毛也没有光泽。 来店里买猫的顾客走了一拨又一拨，身为高贵的布偶猫他却迟迟没能被挑中。 “这只猫不会得了什么病吧？”顾客跟店员窃窃私语。 四、 嘎嘣豆是宠物店最调皮的仓鼠。 自从他学会了越狱，每天晚上就孜孜不倦的去拜访隔壁，美其名曰增进感情。 他去吃嘎嘣脆的猫粮是有代价的，他把一条条的小鱼干鱿鱼干拖进嘎嘣脆的笼子里，好进行平等的交流互换。 嘎嘣脆在天天夜宵的滋补下精神见好，毛也逐渐变得光滑。 五、 嘎嘣豆是宠物店里最胖的仓鼠。 嘎嘣脆是宠物店里最漂亮的猫。 “都说了给它少喂一点！怎么还是这么胖！” 嘎嘣豆依然天天晚上过来吃猫粮，只是吃完之后要回去多跑几遍跑轮。 嘎嘣脆咬着小鱼干忍不住问他：“跑跑轮累不累呀？” “嘿呀都累死鼠了。”嘎嘣豆躺在食盒里，四只小爪伸展开瘫成一个大字。 “什么时候他们能给你你换一个口味的猫粮啊，我吃的都要吐了呢。”嘎嘣豆捂着自己鼓鼓的腮帮子，叹了口气。 六、 嘎嘣豆从那一天开始再也不过去吃猫粮了。 因为嘎嘣脆伸出他的桌子拍了拍嘎嘣豆的头。 “那个，老鼠，你说实话，你是不是根本不喜欢吃猫粮。” “不要叫我老鼠！我是仓鼠！仓鼠！仓鼠！而且我有名字！嘎嘣豆！” “额……好吧……嘎嘣豆。。” 暴跳如雷的小仓鼠叉着腰瞪着他：“这还差不多……猫粮……猫粮还好吧。。” 嘎嘣脆若有所思：“他们是不是说我不吃饭肯定是得病了要关起来？” 小仓鼠不说话，瞪着黑色的小眼珠看着他拼命的眨。 七、 嘎嘣豆一直是一只乖巧的小仓鼠，他懂事以来的日常就是越狱和欺负不爱吃饭的病猫嘎嘣脆，有一次他好奇尝了一口猫粮，咸滋滋，好难吃。 直到有一天他越狱跑到休息室，听到老板说，那只病歪歪的猫再不见好就先关到后院吧。 噫，后院都是攻击性强没人肯要的宠物，嘎嘣豆打了个哆嗦。 那一天开始嘎嘣豆开始费尽心思的去偷储藏室里的小鱼干给嘎嘣脆吃，顺便要消灭他挑食的证据，一大碗猫粮也要毁尸灭迹。 怎么办呢，只能吃掉。 八、 嘎嘣脆终于改掉了挑食的坏毛病，他越来越健康，长的也更加漂亮，店主开心的要拿小鱼干奖励它，打开柜子却发现里面空荡荡。 真傻。 嘎嘣豆隔着笼子，对他挤眉弄眼的笑。 特别喜欢这个系列的仓鼠嘤嘤嘤 知乎用户-挽挽酱原文链接 一个女孩让我帮她寄快递， 给了我一个空纸箱让我打包。 我好奇的问她: “这是寄给谁的?” 她说:”喜欢很久的男生。”我懵了一下: “可是里面没有东西啊。” 她说:”有些东西，只有我自己能看见。” 我一听更懵逼了， 神秘地问她到底是什么。 她说:”一箱情愿。” 后来， 男生把一个箱子还给了她。 两箱情愿，一箱欢喜。 Best wishes！( ´罒`*)✧”]]></content>
+    <title><![CDATA[睡前小故事——Day 5]]></title>
+    <url>%2F2019%2F01%2F23%2Fshort-stories-before-bed5%2F</url>
+    <content type="text"><![CDATA[来自知乎的暖心故事 知乎用户-川戈原文链接 1、 书生觉得自己倒霉透了。 进京赶考的路上，书生看到了一群山贼正在打劫车队。饱读诗书的他立刻上前仗义执言，训得匪徒哑口无言。 “现在收手还来得及，否则我立刻就去报官！你们可以保持沉默，但你们说的每一句话，都将成为呈堂证供！”书生指点江山，意气风发。 “你说得对！”为首的蒙面人诚恳地说，“我的确没考虑到这一点。” 书生昂首挺胸，心想最近自己果然口才大有进步，却突然听到了蒙面人的一句话。 “小的们，把这个书生一块儿绑回去，灭口！” 2、 书生昂首挺胸，心想最近自己果然口才大有进步，却突然听到了蒙面人的一句话。 “小的们，把这个书生一块儿绑回去，灭口！” “喂，那个书生，我看你下午那番话，有几分歪才，留寨子里当个军师如何？” 书生挺直了腰，面无惧色：“劫生辰纲的事不怪你们，但想让我同流合污，没门！” 美娇娘嫣然一笑：“那就柴房里关着，关到同意为止呗！” 书生这下急了，进京赶考可耽误不得啊！他连忙服软：“这位大王……” 谁知美娇娘突然翻了脸，狠狠弹了书生一个脑瓜崩，疼得他流出眼泪来。 “不要叫我大王，要叫我女王大人！” 3、 小喽啰们发现，寨主最近特别爱往柴房跑。 本来只想劝书生在山寨入伙，但聊着聊着，美娇娘却发现，和书生聊天太他娘的有意思啦！ “你这样不好，”书生皱起了眉头，“【他娘的】，这是脏话，女孩子家，要温柔才像样！” “温柔？那是弱女子才干的事儿！我可是要当巾帼英雄的人！”美娇娘柳眉一竖，就要发火。 “谁说女英雄就要讲脏话！你知道花木兰吗？你知道穆桂英吗？梁红玉、樊梨花、聂隐娘……” 美娇娘的眼睛里逐渐冒出了小星星：“你懂的好多，快给我讲讲！” 书生得意一笑：“行，那我就给大王你讲讲……” “啪”一个脑瓜崩弹在了书生脑门上。 “说了多少次，不要叫我大王，要叫我女王大人！” 4、 美娇娘逐渐成了书生的迷妹，他的住处啊，从柴房变成了厢房。 这天，美娇娘推开了书生的房门：“我仔细想过了，你的确不适合当我的军师。” 书生喜出望外：“这么说，我可以下山了？” 美娇娘摇了摇头：“我觉得，你还是当我的压寨夫君更好一点。” 书生两眼一黑，差点晕了过去。虽然美娇娘长得好看，心眼不坏，劫富济贫也算个侠盗，对自己也很好——可她是个山贼啊，我家书香门第，怎么能嫁给山贼呢？ 啊呸，我怎么能用“嫁”这个字，应该是“娶”才对。 书生摇了摇头：“对不起，我心仪的姑娘，必须知书达理，才华胜过我才行。” 美娇娘丹凤眼一瞪：“武功胜过你行不行？” 书生一咬牙，闭上了眼睛：“宁为玉碎不为瓦全！” 5、 “不就是才华吗？我现在就去读书！”美娇娘一言不发出了院子，连夜绑来了城里的老秀才，悬梁刺股苦读了三天三夜，“我就不信我学不来！” 第四天，她叹着气踹开了书生的房门：“算了，读书太难了，你还是下山吧。” 书生临走时，突然觉得有些难过。他犹豫了片刻，还是回过头说了一句：“青山不改，绿水长流。大王，后会有期！” “说了不要叫我大王……”美娇娘拳头刚举起来，又突然停住，背过了身子悄悄擦泪，“算了，随你怎么叫吧。” 6、 书生一进城，就被官兵抓了起来。 原来，有人举报他是山贼的同伙，一起劫了生辰纲。书生无处伸冤，直接关进了大牢，赶考的事儿也泡了汤。 问斩前一天晚上，火光大作，嘈杂万分。牢房大门被一刀劈开，一道人影进来，背着书生就走，一路杀出重围，回了山寨。 书生这才注意到，原来救自己的，是美娇娘。 看着她一身是伤，却依然笑颜如花，书生叹了口气：“没办法，这下只能当你的狗头军师了。” “只是军师而已吗？”美娇娘有些失望，“难道一定要才华胜过你，才肯当我压寨夫君？” “唉，真拿你没办法，”书生无奈地叹了口气，“明天开始，我教你读书。” 7、 书生半夜出来赏月，无意中听到美娇娘在和老秀才商量什么。 “读书太难了，有没有快一点的办法？” …… “我明白了，这就证明，他的才华远不如我，他就只能乖乖从了我！” 听着美娇娘豪迈大笑，书生冷哼一声。 我凭本事单的身，想作弊？不可能！ 8、 第二天，美娇娘坏笑着推开书生的门：“喂，我来考考你，若是答错了，你便乖乖从了我！” 书生一摆手：“出招吧。” “你写个回字出来。”“回字有四种写法，大王，你要的是哪一种？” 美娇娘一愣：“算了算了，你还是画个龙给我看看。” 书生得意一笑：“龙有虺虬螭蛟多个品种，大王，你要看哪样？” 美娇娘抓耳挠腮，涨红了脸，原地踱了两圈，突然一拍桌子，拽着书生把他推倒在卧室的床上。 “说了多少次，叫我女王大人！”]]></content>
       <categories>
         <category>Life</category>
       </categories>
@@ -192,18 +200,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Scala 函数]]></title>
-    <url>%2F2018%2F03%2F18%2Fscala-function%2F</url>
-    <content type="text"><![CDATA[The sadness of my soul is her bride’s veil. It waits to be lifted in the night.我灵魂里的忧郁就是她新婚的面纱。这面纱等候着在夜间卸去。 泰戈尔飞鸟集 这里所写的重点是在 Scala 中出现的但在 Python 和其他正经语言中没有出现的语法。 纯函数 有一个或多个输入参数 只使用输入参数完成运算 返回一个值 对于相同的输入总返回相同的值 不使用或影响函数之外的任何数据 不受函数之外的任何数据的影响 无参函数最基本的 Scala 函数是表达式的一个命名包装器，如果需要一个函数来格式化当前数据，检查一个远程服务是否提供了新数据，或者只是要返回一个固定的值，就可以采用这个格式。 注意：括号可以加也可以不加，调用时亦然。但是如果定义函数时没加括号，调用时也不能加括号。 123def fun1 = "Hello World!"def fun2 : String = "Hello World!"def fun2() : String = "Hello World!" 定义函数的几种方法Scala 的函数会把函数体的最后一个表达式的值作为函数的返回值返回，而有些情况可能在函数结束前返回一个值，用 return 关键字即可 1234567def add(x:Int, y:Int) : Int = &#123; x + y&#125;def Fibo(n:Int) : Long = &#123; if (n==1 | n==2) return 1 Fibo(n-1) + Fibo(n-2)&#125; 表达式块调用函数表达式块调用函数就是利用一个表达式块的返回值调用函数 1Fibo&#123;val n=2;2*3&#125; 尾递归@annotation.tailrec节省栈空间 嵌套函数12345678910111213141516def max(a:Int, b:Int, c:Int) = &#123; def max(x:Int, y:Int) = &#123; if (x &gt; y) x else y &#125; max (a, maax(b, c))&#125;// -------------------------------def info (name:String, age:Int) = &#123; println(s"name:$name, age:$age")&#125;info("tom, 1")// 或def info (name:String="tom", age:Int) = &#123; println(s"name:$name, age:$age")&#125;info(name="tom", age=1)]]></content>
-      <categories>
-        <category>Scala</category>
-      </categories>
-      <tags>
-        <tag>Spark</tag>
-        <tag>Scala</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[计算机网络]]></title>
     <url>%2F2018%2F03%2F18%2Fnetwork%2F</url>
     <content type="text"><![CDATA[The sadness of my soul is her bride’s veil. It waits to be lifted in the night.我灵魂里的忧郁就是她新婚的面纱。这面纱等候着在夜间卸去。 泰戈尔飞鸟集 TCP/IPTCP连接建立的三次握手过程：TCP SYN、TCP SYNACK、TCP ACK。 第一次握手：客户端发送 syn 包（syn=j）到服务器，并进入 SYN_SEND 状态，等待服务器确认（SYN：Synchronize Sequence Numbers，同步序列编号）； 第二次握手：服务器收到 syn 包，必须确认客户端的 SYN（ack=j+1），同时自己也发送一个 SYN 包（syn=k），即 SYN+ACK 包，此时服务器进入 SYN_RECV 状态； 第三次握手：客户端收到服务器的 SYN+ACK 包，向服务器发送确认包 ACK（ack=k+1），此包发送完毕，服务端和客户端进入 ESTABLISHED 状态，完成三次握手 IP 协议利用生存时间，控制数据传输的时延 TCP 负责在数据传送之前将它们分割成 IP 包，然后在他们到达的时候将他们重组 网络逻辑上讲，一个计算机网络是由通信子网和资源子网构成的。 域名的组成：主机名.结构名.网络名 （例如：www.tsinghua.deu.cn中，www是主机名） 我国要求局用程控交换机的系统中断时间平均每年不超过3分钟 套接字使用套接字时，网络上唯一的 IP 地址和端口号结合在一起，才能构成唯一的标识符 OSI体系传输层的主要功能是：建立端到端连接]]></content>
@@ -212,6 +208,18 @@
       </categories>
       <tags>
         <tag>计算机网络</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Scala 函数]]></title>
+    <url>%2F2018%2F03%2F18%2Fscala-function%2F</url>
+    <content type="text"><![CDATA[The sadness of my soul is her bride’s veil. It waits to be lifted in the night.我灵魂里的忧郁就是她新婚的面纱。这面纱等候着在夜间卸去。 泰戈尔飞鸟集 这里所写的重点是在 Scala 中出现的但在 Python 和其他正经语言中没有出现的语法。 纯函数 有一个或多个输入参数 只使用输入参数完成运算 返回一个值 对于相同的输入总返回相同的值 不使用或影响函数之外的任何数据 不受函数之外的任何数据的影响 无参函数最基本的 Scala 函数是表达式的一个命名包装器，如果需要一个函数来格式化当前数据，检查一个远程服务是否提供了新数据，或者只是要返回一个固定的值，就可以采用这个格式。 注意：括号可以加也可以不加，调用时亦然。但是如果定义函数时没加括号，调用时也不能加括号。 123def fun1 = "Hello World!"def fun2 : String = "Hello World!"def fun2() : String = "Hello World!" 定义函数的几种方法Scala 的函数会把函数体的最后一个表达式的值作为函数的返回值返回，而有些情况可能在函数结束前返回一个值，用 return 关键字即可 1234567def add(x:Int, y:Int) : Int = &#123; x + y&#125;def Fibo(n:Int) : Long = &#123; if (n==1 | n==2) return 1 Fibo(n-1) + Fibo(n-2)&#125; 表达式块调用函数表达式块调用函数就是利用一个表达式块的返回值调用函数 1Fibo&#123;val n=2;2*3&#125; 尾递归@annotation.tailrec节省栈空间 嵌套函数12345678910111213141516def max(a:Int, b:Int, c:Int) = &#123; def max(x:Int, y:Int) = &#123; if (x &gt; y) x else y &#125; max (a, maax(b, c))&#125;// -------------------------------def info (name:String, age:Int) = &#123; println(s"name:$name, age:$age")&#125;info("tom, 1")// 或def info (name:String="tom", age:Int) = &#123; println(s"name:$name, age:$age")&#125;info(name="tom", age=1)]]></content>
+      <categories>
+        <category>Scala</category>
+      </categories>
+      <tags>
+        <tag>Scala</tag>
+        <tag>Spark</tag>
       </tags>
   </entry>
   <entry>
@@ -260,33 +268,8 @@
         <category>Hive</category>
       </categories>
       <tags>
+        <tag>Hive</tag>
         <tag>大数据</tag>
-        <tag>Hive</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Hive 文本格式]]></title>
-    <url>%2F2018%2F02%2F06%2Fhive-text-encoding%2F</url>
-    <content type="text"><![CDATA[文本格式给定数据格式： 建表： 123456789101112CREATE TABLE employees(ename STRING,salary FLOAT,subordinates ARRAY&lt;STRING&gt;,deductions MAP&lt;STRING, FLOAT&gt;,address STRUCT&lt;street:STRING, city:STRING, state:STRING, zip:INT&gt;)ROW FORMAT DELIMITED FIELDS TERMINATED BY '\001'COLLECTION ITEMS TERMINATED BY '\002'MAP KEYS TERMINATED BY '\003'LINES TERMINATED BY '\n' STORED AS TEXTFILE; 导入数据：LOAD DATA LOCAL INPATH &#39;/home/user/test_data/employees.txt&#39; INTO TABLE employees; HQL 日期日期对于大多数据库来说都是一个坎， 在 Hive 里建立一个叫 “Dual {DUMMY} value:X” 的表，能做到存进去什么值，取出来什么值 12CREATE TABLE dual (dummy STRING);LOAD DATA LOCAL INPATH &apos;/home/user/dual.txt&apos; # dual.txt的内容:X 获得时间戳：select unix_timestamp() from dual;查询时间：select from_unixtime(1517882632, &#39;yyyyMMdd&#39;) from dual; 表操作表名的更改 ALTER ALTER TABLE re_useri RENAME TO u_re_useri; 前后对比元数据，DFS文件夹，show tables表名均发生改变。 元数据 直接更改元数据TBLS，show tables表名发生改变，DFS文件夹没有改变。更改DBS表后，DFS文件夹没有改变，查询更新后的表，没有数据。更改DFS文件夹名后，查询更新后表名成功。 3.导数据 复制表，改名，导数据 列名更改 元数据 ALTER 123ALTER TABLE u_useri CHANGE COLUMN reid id INTCOMMENT 'rename in 20180206'; # 注释 增加列1234ALTER TABLE u_useriADD COLUMN(addcol3 STRING COMMENT 'add in 20180206'addcol4 INT);]]></content>
-      <categories>
-        <category>大数据</category>
-        <category>Hive</category>
-      </categories>
-      <tags>
-        <tag>Hive</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Hive 数据类型]]></title>
-    <url>%2F2018%2F02%2F06%2Fhive-type-of-data%2F</url>
-    <content type="text"><![CDATA[I cannot tell why this heart languishes in silence. It is for small needs it never asks, or knows or remembers.我说不出这心为什么那样颓丧着，是为了它那不曾要求，不曾知道，不曾记得的小小的需要。 泰戈尔飞鸟集 基本数据类型未完待续…… 复杂数据类型关系型数据库强烈不建议重复存储我们接触过的大数据数据库比如 Hbase、Hive 不怕重复，但要求的是存储数据的文件不要太小。 类型 | 说明 | 举例Array （数组） | 一组数据类型相同的值 | [1,2,3]Map（集合）| 一组 &lt;K, V&gt;，要求所有键类型相同，所有值类型相同 | {&lt;K, V&gt;, &lt;K, V&gt;}Struct（结构） | 一组不同字段，且每个字段的类型可以不同 | (“str”, 1, 0) 数组假如我们有以下数据： 在 Hive 里创建一个表： 1234567CREATE TABLE loginArray(ip STRING,userid ARRAY&lt;BIGINT&gt;)ROW FORMAT DELIMITED FIELDS TERMINATED BY ','COLLECTION ITEMS TERMINATED BY '|'; 然后导入数据：` LOAD DATA LOCAL INPATH ‘/home/user/test_data/login_array.txt’ INTO TABLE loginArray12345678910111213141516171819202122232425262728293031323334353637查询数据：`SELECT id,userid FROM loginArray`![](https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2018-02-06-array-id-userid.jpg)指定数组元素查询：`SELECT id,userid[0] FROM loginArray` ![](https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2018-02-06-array-ip-userid%5B1%5D.jpg.jpg)查询数组长度（-1为空）：`SELECT size(userid) FROM loginArray`![](https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2018-02-06-array-length.jpg)### 集合#### 标准数据表处理给定测试数据：![](https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2018-02-06-map-1.jpg)数据表示某用户(id)，在某 IP 的主机上玩了哪些游戏以及游戏次数开始建表：``` sqlCREATE TBALE loginmap(IP STRING,userid BIGINT,gameinfo MAP&lt;STRING, INT&gt;)ROW FORMAT DELIMITED FIELDS TERMINATED BY &apos;,&apos;COLLECTION ITEMS TERMINATED BY &apos;|&apos;MAP KEYS TERMINATED BY &apos;:&apos;; 导入数据：DATA LOCAL INPATH '/home/user/test_data/loginmap1.txt' INTO TABLE loginmap;```12345678910111213141516171819202122232425262728293031323334插入数据后表结构如图：![](https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2018-02-06-map-1-all.jpg)#### 含脏数据的表处理测试数据：![](https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2018-02-06-map-2.jpg)导入数据时可以直接覆盖上一张表：![](https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2018-02-06-map-2-all.jpg)在查询某一个键时，因为数据的不统一（如“ wow” 和 “wow”，前者含空格）导致结果不同![](https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2018-02-06-map-different-info.jpg)### 结构数据：![](https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2018-02-06-struct.jpg)建表：``` sqlCREATE TABLE loginstruct(IP STRING,USRINFO STRUCT&lt;userid:BIGINT, uname:STRING&gt;ROW FORMAT DELIMITED FIELDS TERMINATED BY &apos;,&apos;COLLECTION ITEMS TERMINATED BY &apos;|&apos;; 导入数据：LOAD DATA LOCAL INPATH &#39;/home/user/test_data/login_array/loginstruct.txt&#39; INTO TABLE loginstruct 插入后表信息：]]></content>
-      <categories>
-        <category>大数据</category>
-        <category>Hive</category>
-      </categories>
-      <tags>
-        <tag>大数据</tag>
-        <tag>Hive</tag>
       </tags>
   </entry>
   <entry>
@@ -298,7 +281,32 @@
         <category>Hive</category>
       </categories>
       <tags>
+        <tag>Hive</tag>
         <tag>大数据</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hive 数据类型]]></title>
+    <url>%2F2018%2F02%2F06%2Fhive-type-of-data%2F</url>
+    <content type="text"><![CDATA[I cannot tell why this heart languishes in silence. It is for small needs it never asks, or knows or remembers.我说不出这心为什么那样颓丧着，是为了它那不曾要求，不曾知道，不曾记得的小小的需要。 泰戈尔飞鸟集 基本数据类型未完待续…… 复杂数据类型关系型数据库强烈不建议重复存储我们接触过的大数据数据库比如 Hbase、Hive 不怕重复，但要求的是存储数据的文件不要太小。 类型 | 说明 | 举例Array （数组） | 一组数据类型相同的值 | [1,2,3]Map（集合）| 一组 &lt;K, V&gt;，要求所有键类型相同，所有值类型相同 | {&lt;K, V&gt;, &lt;K, V&gt;}Struct（结构） | 一组不同字段，且每个字段的类型可以不同 | (“str”, 1, 0) 数组假如我们有以下数据： 在 Hive 里创建一个表： 1234567CREATE TABLE loginArray(ip STRING,userid ARRAY&lt;BIGINT&gt;)ROW FORMAT DELIMITED FIELDS TERMINATED BY ','COLLECTION ITEMS TERMINATED BY '|'; 然后导入数据：` LOAD DATA LOCAL INPATH ‘/home/user/test_data/login_array.txt’ INTO TABLE loginArray12345678910111213141516171819202122232425262728293031323334353637查询数据：`SELECT id,userid FROM loginArray`![](https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2018-02-06-array-id-userid.jpg)指定数组元素查询：`SELECT id,userid[0] FROM loginArray` ![](https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2018-02-06-array-ip-userid%5B1%5D.jpg.jpg)查询数组长度（-1为空）：`SELECT size(userid) FROM loginArray`![](https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2018-02-06-array-length.jpg)### 集合#### 标准数据表处理给定测试数据：![](https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2018-02-06-map-1.jpg)数据表示某用户(id)，在某 IP 的主机上玩了哪些游戏以及游戏次数开始建表：``` sqlCREATE TBALE loginmap(IP STRING,userid BIGINT,gameinfo MAP&lt;STRING, INT&gt;)ROW FORMAT DELIMITED FIELDS TERMINATED BY &apos;,&apos;COLLECTION ITEMS TERMINATED BY &apos;|&apos;MAP KEYS TERMINATED BY &apos;:&apos;; 导入数据：DATA LOCAL INPATH '/home/user/test_data/loginmap1.txt' INTO TABLE loginmap;```12345678910111213141516171819202122232425262728293031323334插入数据后表结构如图：![](https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2018-02-06-map-1-all.jpg)#### 含脏数据的表处理测试数据：![](https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2018-02-06-map-2.jpg)导入数据时可以直接覆盖上一张表：![](https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2018-02-06-map-2-all.jpg)在查询某一个键时，因为数据的不统一（如“ wow” 和 “wow”，前者含空格）导致结果不同![](https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2018-02-06-map-different-info.jpg)### 结构数据：![](https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2018-02-06-struct.jpg)建表：``` sqlCREATE TABLE loginstruct(IP STRING,USRINFO STRUCT&lt;userid:BIGINT, uname:STRING&gt;ROW FORMAT DELIMITED FIELDS TERMINATED BY &apos;,&apos;COLLECTION ITEMS TERMINATED BY &apos;|&apos;; 导入数据：LOAD DATA LOCAL INPATH &#39;/home/user/test_data/login_array/loginstruct.txt&#39; INTO TABLE loginstruct 插入后表信息：]]></content>
+      <categories>
+        <category>大数据</category>
+        <category>Hive</category>
+      </categories>
+      <tags>
+        <tag>Hive</tag>
+        <tag>大数据</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hive 文本格式]]></title>
+    <url>%2F2018%2F02%2F06%2Fhive-text-encoding%2F</url>
+    <content type="text"><![CDATA[文本格式给定数据格式： 建表： 123456789101112CREATE TABLE employees(ename STRING,salary FLOAT,subordinates ARRAY&lt;STRING&gt;,deductions MAP&lt;STRING, FLOAT&gt;,address STRUCT&lt;street:STRING, city:STRING, state:STRING, zip:INT&gt;)ROW FORMAT DELIMITED FIELDS TERMINATED BY '\001'COLLECTION ITEMS TERMINATED BY '\002'MAP KEYS TERMINATED BY '\003'LINES TERMINATED BY '\n' STORED AS TEXTFILE; 导入数据：LOAD DATA LOCAL INPATH &#39;/home/user/test_data/employees.txt&#39; INTO TABLE employees; HQL 日期日期对于大多数据库来说都是一个坎， 在 Hive 里建立一个叫 “Dual {DUMMY} value:X” 的表，能做到存进去什么值，取出来什么值 12CREATE TABLE dual (dummy STRING);LOAD DATA LOCAL INPATH &apos;/home/user/dual.txt&apos; # dual.txt的内容:X 获得时间戳：select unix_timestamp() from dual;查询时间：select from_unixtime(1517882632, &#39;yyyyMMdd&#39;) from dual; 表操作表名的更改 ALTER ALTER TABLE re_useri RENAME TO u_re_useri; 前后对比元数据，DFS文件夹，show tables表名均发生改变。 元数据 直接更改元数据TBLS，show tables表名发生改变，DFS文件夹没有改变。更改DBS表后，DFS文件夹没有改变，查询更新后的表，没有数据。更改DFS文件夹名后，查询更新后表名成功。 3.导数据 复制表，改名，导数据 列名更改 元数据 ALTER 123ALTER TABLE u_useri CHANGE COLUMN reid id INTCOMMENT 'rename in 20180206'; # 注释 增加列1234ALTER TABLE u_useriADD COLUMN(addcol3 STRING COMMENT 'add in 20180206'addcol4 INT);]]></content>
+      <categories>
+        <category>大数据</category>
+        <category>Hive</category>
+      </categories>
+      <tags>
         <tag>Hive</tag>
       </tags>
   </entry>
