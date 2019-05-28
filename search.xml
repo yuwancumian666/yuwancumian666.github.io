@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[深度学习笔记——1]]></title>
+    <url>%2F2019%2F05%2F29%2Fdeep-learning-notes-1%2F</url>
+    <content type="text"><![CDATA[Lorem ipsum dolor sit amet, consectetur adipiscing elit. 调整参数 准确率或损失率一直不变的话，可以尝试调整学习率，效果很不错我常用的学习率有：0.001、0.0005、0.0001sgd = SGD(lr=0.0001, decay=1e-6, momentum=0.01, nesterov=True)]]></content>
+      <categories>
+        <category>深度学习</category>
+      </categories>
+      <tags>
+        <tag>TensorFlow</tag>
+        <tag>Keras</tag>
+        <tag>深度学习</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Latex自定义设置]]></title>
     <url>%2F2019%2F05%2F14%2Flatex-notes%2F</url>
     <content type="text"><![CDATA[$\LaTex$论文写作Tip全记录 Latex格式页面尺寸12\usepackage&#123;geometry&#125;\geometry&#123;a4paper, left=2.4cm, top=2.4cm, right=2.4cm, bottom=2.4cm&#125; % 页边距 页眉页脚L、C、R分别表示左、中、右；E、O表示奇偶页，页眉页脚的设置中可以使用它们的组合，多选项的情况用中括号分开。现在有几个问题： 页眉需要的样式是：奇数页居中显示章节号，偶数页显示“东北林业大学本科毕业论文”，但是通过[CE]、[CO]设置就不行，而且只设置\fancyhead[CE]{\song\xiaowu{东北林业大学本科毕业论文}}也会失败，什么都不显示。 双线页眉的长度一开始是\headwidth，右侧没有达到文档宽度的位置。改为\columnwidth或\textwidth之后，长度虽然改变了，但是文字的位置没有随之向右移动（没有居中） 问题1中的章节号不知道怎么获取……123456789101112131415161718\usepackage&#123;fancyhdr&#125;%------- 页眉页脚样式 -------%\pagestyle&#123;fancy&#125;\fancyhf&#123;&#125; % 清空设置\fancyhead[C]&#123;\song\xiaowu&#123;东北林业大学本科毕业论文&#125;&#125;% \fancyhead[CO]&#123;\thechapter&#125;\fancyfoot[C]&#123;\xiaowu&#123;-\thepage-&#125;&#125;\renewcommand&#123;\headrulewidth&#125;&#123;0.4pt&#125;%------- 双线页眉的设置 -------%\makeatletter %双线页眉\def\headrule&#123;&#123;\if@fancyplain\let\headrulewidth\plainheadrulewidth\fi%\hrule\@height 1.0pt \@width\columnwidth\vskip1pt%上面线为1pt粗\hrule\@height 0.5pt\@width\columnwidth %下面0.5pt粗\vskip-2\headrulewidth\vskip-1pt&#125; %两条线的距离1pt \vspace&#123;6mm&#125;&#125; %双线与下面正文之间的垂直间距\makeatother 并排图片1234567891011121314\begin&#123;figure&#125;[htbp] \centering %图片全局居中 \subfigure[原图]&#123; \includegraphics[width=0.2\textwidth]&#123;resource/2-原图.jpg&#125; &#125; \subfigure[互相关]&#123; \includegraphics[width=0.2\textwidth]&#123;resource/2-互相关.jpg&#125; &#125; \subfigure[卷积]&#123; \includegraphics[width=0.2\textwidth]&#123;resource/2-卷积.jpg&#125; &#125; \caption&#123;卷积核的翻转对特征提取的影响&#125; \label&#123;Figure.Second.1&#125; \end&#123;figure&#125; Latex样式图片标题的样式把图片标题默认的“图1:示例”更改为“图2-1 示例”。其中： thesection{} 表示章节号 两个命令分别设置表格和插图的格式 命令中的“-”可以用“.”等符号代替，以适应不同的要求123\renewcommand &#123;\thetable&#125; &#123;\thesection&#123;&#125;-\arabic&#123;table&#125;&#125; \renewcommand &#123;\thefigure&#125; &#123;\thesection&#123;&#125;-\arabic&#123;figure&#125;&#125;\captionsetup&#123;labelformat=default,labelsep=space&#125; %去除冒号 公式引用输出样式123456\renewcommand\theequation&#123;\arabic&#123;section&#125;-\arabic&#123;equation&#125;&#125; % 公式引用输出样式\begin&#123;equation&#125; (\ref&#123;Formula.Second.1&#125;) \Leftrightarrow S(i,j)=(K*I)(i,j)=\sum_m \sum_n I(i-m,j-n)K(m,n)\label&#123;Formula.Second.3&#125;\end&#123;equation&#125;(\ref&#123;Formula.Second.3&#125;)式也被称为I和K的互相关]]></content>
@@ -79,8 +92,8 @@
       <tags>
         <tag>Python</tag>
         <tag>Loline</tag>
-        <tag>Flask</tag>
         <tag>json</tag>
+        <tag>Flask</tag>
         <tag>英雄联盟</tag>
       </tags>
   </entry>
@@ -128,9 +141,9 @@
         <category>Software</category>
       </categories>
       <tags>
-        <tag>LaTex</tag>
         <tag>C/C++</tag>
         <tag>CUDA</tag>
+        <tag>LaTex</tag>
         <tag>GitHub Pages</tag>
         <tag>软件</tag>
       </tags>
@@ -225,17 +238,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[计算机网络]]></title>
-    <url>%2F2018%2F03%2F18%2Fnetwork%2F</url>
-    <content type="text"><![CDATA[The sadness of my soul is her bride’s veil. It waits to be lifted in the night.我灵魂里的忧郁就是她新婚的面纱。这面纱等候着在夜间卸去。 泰戈尔飞鸟集 TCP/IPTCP连接建立的三次握手过程：TCP SYN、TCP SYNACK、TCP ACK。 第一次握手：客户端发送 syn 包（syn=j）到服务器，并进入 SYN_SEND 状态，等待服务器确认（SYN：Synchronize Sequence Numbers，同步序列编号）； 第二次握手：服务器收到 syn 包，必须确认客户端的 SYN（ack=j+1），同时自己也发送一个 SYN 包（syn=k），即 SYN+ACK 包，此时服务器进入 SYN_RECV 状态； 第三次握手：客户端收到服务器的 SYN+ACK 包，向服务器发送确认包 ACK（ack=k+1），此包发送完毕，服务端和客户端进入 ESTABLISHED 状态，完成三次握手 IP 协议利用生存时间，控制数据传输的时延 TCP 负责在数据传送之前将它们分割成 IP 包，然后在他们到达的时候将他们重组 网络逻辑上讲，一个计算机网络是由通信子网和资源子网构成的。 域名的组成：主机名.结构名.网络名 （例如：www.tsinghua.deu.cn中，www是主机名） 我国要求局用程控交换机的系统中断时间平均每年不超过3分钟 套接字使用套接字时，网络上唯一的 IP 地址和端口号结合在一起，才能构成唯一的标识符 OSI体系传输层的主要功能是：建立端到端连接]]></content>
-      <categories>
-        <category>计算机网络</category>
-      </categories>
-      <tags>
-        <tag>计算机网络</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[Scala 函数]]></title>
     <url>%2F2018%2F03%2F18%2Fscala-function%2F</url>
     <content type="text"><![CDATA[The sadness of my soul is her bride’s veil. It waits to be lifted in the night.我灵魂里的忧郁就是她新婚的面纱。这面纱等候着在夜间卸去。 泰戈尔飞鸟集 这里所写的重点是在 Scala 中出现的但在 Python 和其他正经语言中没有出现的语法。 纯函数 有一个或多个输入参数 只使用输入参数完成运算 返回一个值 对于相同的输入总返回相同的值 不使用或影响函数之外的任何数据 不受函数之外的任何数据的影响 无参函数最基本的 Scala 函数是表达式的一个命名包装器，如果需要一个函数来格式化当前数据，检查一个远程服务是否提供了新数据，或者只是要返回一个固定的值，就可以采用这个格式。 注意：括号可以加也可以不加，调用时亦然。但是如果定义函数时没加括号，调用时也不能加括号。 123def fun1 = "Hello World!"def fun2 : String = "Hello World!"def fun2() : String = "Hello World!" 定义函数的几种方法Scala 的函数会把函数体的最后一个表达式的值作为函数的返回值返回，而有些情况可能在函数结束前返回一个值，用 return 关键字即可 1234567def add(x:Int, y:Int) : Int = &#123; x + y&#125;def Fibo(n:Int) : Long = &#123; if (n==1 | n==2) return 1 Fibo(n-1) + Fibo(n-2)&#125; 表达式块调用函数表达式块调用函数就是利用一个表达式块的返回值调用函数 1Fibo&#123;val n=2;2*3&#125; 尾递归@annotation.tailrec节省栈空间 嵌套函数12345678910111213141516def max(a:Int, b:Int, c:Int) = &#123; def max(x:Int, y:Int) = &#123; if (x &gt; y) x else y &#125; max (a, maax(b, c))&#125;// -------------------------------def info (name:String, age:Int) = &#123; println(s"name:$name, age:$age")&#125;info("tom, 1")// 或def info (name:String="tom", age:Int) = &#123; println(s"name:$name, age:$age")&#125;info(name="tom", age=1)]]></content>
@@ -245,6 +247,17 @@
       <tags>
         <tag>Scala</tag>
         <tag>Spark</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[计算机网络]]></title>
+    <url>%2F2018%2F03%2F18%2Fnetwork%2F</url>
+    <content type="text"><![CDATA[The sadness of my soul is her bride’s veil. It waits to be lifted in the night.我灵魂里的忧郁就是她新婚的面纱。这面纱等候着在夜间卸去。 泰戈尔飞鸟集 TCP/IPTCP连接建立的三次握手过程：TCP SYN、TCP SYNACK、TCP ACK。 第一次握手：客户端发送 syn 包（syn=j）到服务器，并进入 SYN_SEND 状态，等待服务器确认（SYN：Synchronize Sequence Numbers，同步序列编号）； 第二次握手：服务器收到 syn 包，必须确认客户端的 SYN（ack=j+1），同时自己也发送一个 SYN 包（syn=k），即 SYN+ACK 包，此时服务器进入 SYN_RECV 状态； 第三次握手：客户端收到服务器的 SYN+ACK 包，向服务器发送确认包 ACK（ack=k+1），此包发送完毕，服务端和客户端进入 ESTABLISHED 状态，完成三次握手 IP 协议利用生存时间，控制数据传输的时延 TCP 负责在数据传送之前将它们分割成 IP 包，然后在他们到达的时候将他们重组 网络逻辑上讲，一个计算机网络是由通信子网和资源子网构成的。 域名的组成：主机名.结构名.网络名 （例如：www.tsinghua.deu.cn中，www是主机名） 我国要求局用程控交换机的系统中断时间平均每年不超过3分钟 套接字使用套接字时，网络上唯一的 IP 地址和端口号结合在一起，才能构成唯一的标识符 OSI体系传输层的主要功能是：建立端到端连接]]></content>
+      <categories>
+        <category>计算机网络</category>
+      </categories>
+      <tags>
+        <tag>计算机网络</tag>
       </tags>
   </entry>
   <entry>
