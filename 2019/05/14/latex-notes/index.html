@@ -141,21 +141,26 @@
 
 
 
-  <meta name="description" content="$\LaTex$论文写作Tip全记录">
-<meta name="keywords" content="Latex">
+  <meta name="description" content="$\LaTex$论文写作笔记">
+<meta name="keywords" content="笔记,Latex">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Latex自定义设置">
 <meta property="og:url" content="https://yuwancumian666.github.io/2019/05/14/latex-notes/index.html">
 <meta property="og:site_name" content="Hummer&#39;s Blog">
-<meta property="og:description" content="$\LaTex$论文写作Tip全记录">
+<meta property="og:description" content="$\LaTex$论文写作笔记">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2019/2019-05-14-%E5%A4%9A%E5%9B%BE.jpg">
 <meta property="og:image" content="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2019/2019-05-14-%E5%85%AC%E5%BC%8F%E7%BC%96%E5%8F%B7.jpg">
-<meta property="og:updated_time" content="2019-05-14T04:42:35.525Z">
+<meta property="og:image" content="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2019/2019-05-14-%E5%A4%9A%E5%9B%BE.jpg">
+<meta property="og:image" content="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2019/2019-06-05-latex-image-group.jpg">
+<meta property="og:image" content="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2019/2019-06-05-latex-code.jpg">
+<meta property="og:image" content="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2019/2019-06-05-reference.jpg">
+<meta property="og:image" content="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2019/2019-06-05-zero-space1.jpg">
+<meta property="og:image" content="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2019/2019-06-05-zero-space2.jpg">
+<meta property="og:updated_time" content="2019-06-05T11:11:27.682Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Latex自定义设置">
-<meta name="twitter:description" content="$\LaTex$论文写作Tip全记录">
-<meta name="twitter:image" content="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2019/2019-05-14-%E5%A4%9A%E5%9B%BE.jpg">
+<meta name="twitter:description" content="$\LaTex$论文写作笔记">
+<meta name="twitter:image" content="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2019/2019-05-14-%E5%85%AC%E5%BC%8F%E7%BC%96%E5%8F%B7.jpg">
 
 
 
@@ -553,10 +558,10 @@
       
 
       
-        <p>$\LaTex$论文写作Tip全记录</p>
+        <p>$\LaTex$论文写作笔记</p>
 <a id="more"></a>
 
-<h1 id="Latex格式"><a href="#Latex格式" class="headerlink" title="Latex格式"></a>Latex格式</h1><h2 id="页面尺寸"><a href="#页面尺寸" class="headerlink" title="页面尺寸"></a>页面尺寸</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">\usepackage&#123;geometry&#125;</span><br><span class="line">\geometry&#123;a4paper, left=2.4cm, top=2.4cm, right=2.4cm, bottom=2.4cm&#125;  % 页边距</span><br></pre></td></tr></table></figure>
+<h1 id="Latex样式"><a href="#Latex样式" class="headerlink" title="Latex样式"></a>Latex样式</h1><h2 id="页面尺寸"><a href="#页面尺寸" class="headerlink" title="页面尺寸"></a>页面尺寸</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">\usepackage&#123;geometry&#125;</span><br><span class="line">\geometry&#123;a4paper, left=2.4cm, top=2.4cm, right=2.4cm, bottom=2.4cm&#125;  % 页边距</span><br></pre></td></tr></table></figure>
 
 <h2 id="页眉页脚"><a href="#页眉页脚" class="headerlink" title="页眉页脚"></a>页眉页脚</h2><p>L、C、R分别表示左、中、右；E、O表示奇偶页，页眉页脚的设置中可以使用它们的组合，多选项的情况用中括号分开。<br>现在有几个问题：</p>
 <ol>
@@ -566,11 +571,7 @@
 
 </li>
 </ol>
-<h2 id="并排图片"><a href="#并排图片" class="headerlink" title="并排图片"></a>并排图片</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">\begin&#123;figure&#125;[htbp]</span><br><span class="line">    \centering %图片全局居中</span><br><span class="line">    \subfigure[原图]&#123;</span><br><span class="line">      \includegraphics[width=0.2\textwidth]&#123;resource/2-原图.jpg&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    \subfigure[互相关]&#123;</span><br><span class="line">      \includegraphics[width=0.2\textwidth]&#123;resource/2-互相关.jpg&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    \subfigure[卷积]&#123;</span><br><span class="line">      \includegraphics[width=0.2\textwidth]&#123;resource/2-卷积.jpg&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    \caption&#123;卷积核的翻转对特征提取的影响&#125;</span><br><span class="line">    \label&#123;Figure.Second.1&#125;</span><br><span class="line">  \end&#123;figure&#125;</span><br></pre></td></tr></table></figure>
-
-<img src="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2019/2019-05-14-%E5%A4%9A%E5%9B%BE.jpg" title="图片并排显示">
-
-<h1 id="Latex样式"><a href="#Latex样式" class="headerlink" title="Latex样式"></a>Latex样式</h1><h2 id="图片标题的样式"><a href="#图片标题的样式" class="headerlink" title="图片标题的样式"></a>图片标题的样式</h2><p>把图片标题默认的“图1:示例”更改为“图2-1 示例”。<br>其中：</p>
+<h1 id="Latex功能"><a href="#Latex功能" class="headerlink" title="Latex功能"></a>Latex功能</h1><h2 id="图片标题的样式"><a href="#图片标题的样式" class="headerlink" title="图片标题的样式"></a>图片标题的样式</h2><p>把图片标题默认的“图1:示例”更改为“图2-1 示例”。<br>其中：</p>
 <ul>
 <li>thesection{} 表示章节号</li>
 <li>两个命令分别设置表格和插图的格式</li>
@@ -578,9 +579,67 @@
 
 </li>
 </ul>
-<h2 id="公式引用输出样式"><a href="#公式引用输出样式" class="headerlink" title="公式引用输出样式"></a>公式引用输出样式</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">\renewcommand\theequation&#123;\arabic&#123;section&#125;-\arabic&#123;equation&#125;&#125; % 公式引用输出样式</span><br><span class="line"></span><br><span class="line">\begin&#123;equation&#125;</span><br><span class="line">    (\ref&#123;Formula.Second.1&#125;) \Leftrightarrow S(i,j)=(K*I)(i,j)=\sum_m \sum_n I(i-m,j-n)K(m,n)\label&#123;Formula.Second.3&#125;</span><br><span class="line">\end&#123;equation&#125;</span><br><span class="line">(\ref&#123;Formula.Second.3&#125;)式也被称为I和K的互相关</span><br></pre></td></tr></table></figure>
+<h2 id="公式编号样式"><a href="#公式编号样式" class="headerlink" title="公式编号样式"></a>公式编号样式</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">\renewcommand\theequation&#123;\arabic&#123;section&#125;-\arabic&#123;equation&#125;&#125; % 公式引用输出样式</span><br><span class="line"></span><br><span class="line">\begin&#123;equation&#125;</span><br><span class="line">    (\ref&#123;Formula.Second.1&#125;) \Leftrightarrow S(i,j)=(K*I)(i,j)=\sum_m \sum_n I(i-m,j-n)K(m,n)\label&#123;Formula.Second.3&#125;</span><br><span class="line">\end&#123;equation&#125;</span><br><span class="line">(\ref&#123;Formula.Second.3&#125;)式也被称为I和K的互相关</span><br></pre></td></tr></table></figure>
 
 <img src="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2019/2019-05-14-%E5%85%AC%E5%BC%8F%E7%BC%96%E5%8F%B7.jpg" title="公式的编号与引用">
+
+<h2 id="并排图片"><a href="#并排图片" class="headerlink" title="并排图片"></a>并排图片</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">\begin&#123;figure&#125;[htbp]</span><br><span class="line">    \centering %图片全局居中</span><br><span class="line">    \subfigure[原图]&#123;</span><br><span class="line">      \includegraphics[width=0.2\textwidth]&#123;resource/2-原图.jpg&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    \subfigure[互相关]&#123;</span><br><span class="line">      \includegraphics[width=0.2\textwidth]&#123;resource/2-互相关.jpg&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    \subfigure[卷积]&#123;</span><br><span class="line">      \includegraphics[width=0.2\textwidth]&#123;resource/2-卷积.jpg&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    \caption&#123;卷积核的翻转对特征提取的影响&#125;</span><br><span class="line">    \label&#123;Figure.Second.1&#125;</span><br><span class="line">  \end&#123;figure&#125;</span><br></pre></td></tr></table></figure>
+
+<img src="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2019/2019-05-14-%E5%A4%9A%E5%9B%BE.jpg" title="图片并排显示">
+
+<h2 id="并排图片组"><a href="#并排图片组" class="headerlink" title="并排图片组"></a>并排图片组</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">\begin&#123;figure&#125;[H]</span><br><span class="line">      \centering %图片全局居中</span><br><span class="line">      \subfigure[叶枯病]&#123;</span><br><span class="line">        \begin&#123;minipage&#125;[t]&#123;.2\textwidth&#125;</span><br><span class="line">          \includegraphics[width=\textwidth]&#123;resource/third/blight(1).jpg&#125; \</span><br><span class="line">          \includegraphics[width=\textwidth]&#123;resource/third/blight(2).jpg&#125; \</span><br><span class="line">          \includegraphics[width=\textwidth]&#123;resource/third/blight(3).jpg&#125; </span><br><span class="line">        \end&#123;minipage&#125;</span><br><span class="line">      &#125;</span><br><span class="line">      \subfigure[白粉病]&#123;</span><br><span class="line">        \begin&#123;minipage&#125;[t]&#123;.2\textwidth&#125;</span><br><span class="line">          \includegraphics[width=\textwidth]&#123;resource/third/powdery(1).jpg&#125; \</span><br><span class="line">          \includegraphics[width=\textwidth]&#123;resource/third/powdery(2).jpg&#125; \</span><br><span class="line">          \includegraphics[width=\textwidth]&#123;resource/third/powdery(3).jpg&#125; </span><br><span class="line">        \end&#123;minipage&#125;</span><br><span class="line">      &#125;</span><br><span class="line">      \subfigure[锈病]&#123;</span><br><span class="line">        \begin&#123;minipage&#125;[t]&#123;.2\textwidth&#125;</span><br><span class="line">          \includegraphics[width=\textwidth]&#123;resource/third/rust(1).jpg&#125; \</span><br><span class="line">          \includegraphics[width=\textwidth]&#123;resource/third/rust(2).jpg&#125; \</span><br><span class="line">          \includegraphics[width=\textwidth]&#123;resource/third/rust(3).jpg&#125; </span><br><span class="line">        \end&#123;minipage&#125;</span><br><span class="line">      &#125;</span><br><span class="line">      \caption&#123;数据样本&#125;</span><br><span class="line">      \label&#123;Figure.Third.6&#125;</span><br><span class="line">    \end&#123;figure&#125;</span><br></pre></td></tr></table></figure>
+
+<img src="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2019/2019-06-05-latex-image-group.jpg">
+
+<h2 id="插入代码块"><a href="#插入代码块" class="headerlink" title="插入代码块"></a>插入代码块</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">\usepackage&#123;listings&#125;  % 代码块</span><br><span class="line"></span><br><span class="line">\lstset&#123;  % 代码块设置</span><br><span class="line">  basicstyle=\xiaowu\fontspec&#123;Consolas&#125;, </span><br><span class="line">  columns=fixed,       </span><br><span class="line">  % numbers=left,                                        % 在左侧显示行号</span><br><span class="line">  % numberstyle=\tiny\color&#123;gray&#125;,                       % 设定行号格式</span><br><span class="line">  frame=none,                                          % 不显示背景边框</span><br><span class="line">  backgroundcolor=\color[RGB]&#123;245,245,244&#125;,            % 设定背景颜色</span><br><span class="line">  keywordstyle=&#123;                                       % 设定关键字颜色</span><br><span class="line">    \color[RGB]&#123;40,40,255&#125;</span><br><span class="line">    \fontspec&#123;Consolas&#125;</span><br><span class="line">  &#125;,               </span><br><span class="line">  numberstyle=\footnotesize\color&#123;darkgray&#125;,           </span><br><span class="line">  commentstyle=\it\color[RGB]&#123;0,96,96&#125;,                % 设置代码注释的格式</span><br><span class="line">  stringstyle=\rmfamily\slshape\color[RGB]&#123;128,0,0&#125;,   % 设置字符串格式</span><br><span class="line">  showstringspaces=false,                              % 不显示字符串中的空格</span><br><span class="line">  language=python,                                     % 设置语言</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<img src="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2019/2019-06-05-latex-code.jpg">
+
+<h2 id="参考文献（bibtex）"><a href="#参考文献（bibtex）" class="headerlink" title="参考文献（bibtex）"></a>参考文献（bibtex）</h2><p>将bibtex格式的文本保存在论文同目录的<strong>references.bib</strong>文件中，并在论文合适的地方插入该语句：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">\bibliographystyle&#123;unsrt&#125; % 文献标准选项</span><br><span class="line">\bibliography&#123;references&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><figcaption><span>references.bib</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">@article&#123;hubel1962receptive,</span><br><span class="line">  title=&#123;Receptive fields, binocular interaction and functional architecture in the cat&apos;s visual cortex&#125;,</span><br><span class="line">  author=&#123;Hubel, David H and Wiesel, Torsten N&#125;,</span><br><span class="line">  journal=&#123;The Journal of physiology&#125;,</span><br><span class="line">  volume=&#123;160&#125;,</span><br><span class="line">  number=&#123;1&#125;,</span><br><span class="line">  pages=&#123;106--154&#125;,</span><br><span class="line">  year=&#123;1962&#125;,</span><br><span class="line">  publisher=&#123;Wiley Online Library&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在论文中插入<code>\cite{hubel1962receptive}</code>以引用参考文献</p>
+<img src="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2019/2019-06-05-reference.jpg">
+
+<p>LaTeX 参考文献标准选项及其样式共有以下8种：</p>
+<ol>
+<li>plain，按字母的顺序排列，比较次序为作者、年度和标题</li>
+<li>unsrt，样式同plain，只是按照引用的先后排序</li>
+<li>alpha，用作者名首字母+年份后两位作标号，以字母顺序排序</li>
+<li>abbrv，类似plain，将月份全拼改为缩写，更显紧凑</li>
+<li>ieeetr，国际电气电子工程师协会期刊样式</li>
+<li>acm，美国计算机学会期刊样式</li>
+<li>siam，美国工业和应用数学学会期刊样式</li>
+<li>apalike，美国心理学学会期刊样式</li>
+</ol>
+<h2 id="参考文献编号上标"><a href="#参考文献编号上标" class="headerlink" title="参考文献编号上标"></a>参考文献编号上标</h2><p>将<code>\cite</code>命令替换为<code>\upcite</code>命令。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\newcommand&#123;\upcite&#125;[1]&#123;\textsuperscript&#123;\textsuperscript&#123;\cite&#123;#1&#125;&#125;&#125;&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="插入pdf"><a href="#插入pdf" class="headerlink" title="插入pdf"></a>插入pdf</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">\usepackage&#123;pdfpages&#125;</span><br><span class="line">\begin&#123;document&#125;</span><br><span class="line">\includepdf[⟨key=val⟩]&#123;⟨filename⟩&#125;</span><br><span class="line">\end&#123;document&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><em>\includepdf{file.pdf}</em> 默认插入第一页</li>
+<li><em>\includepdf[pages={1,2}]{file.pdf}</em> 插入第1、2页</li>
+<li><em>\includepdf[pages={3-5}]{file.pdf}</em> 插入第3、4、5页</li>
+<li><em>\includepdf[pages={3,{},8-11,15}]{file.pdf}</em> 依次插入第3页、空白页、第8、9、10、11、15页</li>
+<li><em>\includepdf[pages=-]{file.pdf}</em> 全部插入</li>
+<li>更多参数详见pdfpages文档：<code>texdoc pdfpages</code></li>
+</ul>
+<h2 id="插入自定义宽度字符"><a href="#插入自定义宽度字符" class="headerlink" title="插入自定义宽度字符"></a>插入自定义宽度字符</h2><p>为了应付查重而想出的奇技淫巧，经测试没什么B用</p>
+<ul>
+<li><strong>\newcommand{\zs}{\hspace{0pt}}</strong> 零宽空格</li>
+<li><strong>\newcommand{\zs}{\hspace{-1pt}{\color{white}.}\hspace{-1.8pt}}</strong> 插入白色的“.”，并减小其宽度使其看起来并没有插入任何字符<br>下图对比可看出“.”的存在<div class="group-picture"><div class="group-picture-container"><div class="group-picture-row"><div class="group-picture-column" style="width: 50%;"><img src="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2019/2019-06-05-zero-space1.jpg"></div><div class="group-picture-column" style="width: 50%;"><img src="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2019/2019-06-05-zero-space2.jpg"></div></div></div></div>
+
+</li>
+</ul>
+<h1 id="Latex问题"><a href="#Latex问题" class="headerlink" title="Latex问题"></a>Latex问题</h1><h2 id="引入图片时报图片文件找不到的错误"><a href="#引入图片时报图片文件找不到的错误" class="headerlink" title="引入图片时报图片文件找不到的错误"></a>引入图片时报图片文件找不到的错误</h2><p>这个问题在写作前期没有出现，后来不知道做了什么改动才报这个错误的。<br>把图片的文件名改成英文解决了。</p>
+<h2 id="图表编号清零"><a href="#图表编号清零" class="headerlink" title="图表编号清零"></a>图表编号清零</h2><p>没有专门设置的情况下，新的一章中插图的编号不会清零，在开头插入以下代码即可：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">\setcounter&#123;table&#125;&#123;0&#125;</span><br><span class="line">\setcounter&#123;figure&#125;&#123;0&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="中文加粗失败"><a href="#中文加粗失败" class="headerlink" title="中文加粗失败"></a>中文加粗失败</h2><p>你可能需要这个：<strong>AutoFakeBold</strong>，在<code>\documentclass[12pt, UTF8, AutoFakeBold]{ctexart}</code>中加入。<br>解决方案来自这里：<a href="https://www.zhihu.com/question/58456658/answer/157120688" target="_blank" rel="noopener">xelatex编译加粗楷体为什么会失败？</a></p>
+<h2 id="插入图片位置"><a href="#插入图片位置" class="headerlink" title="插入图片位置"></a>插入图片位置</h2><p>latex为了排版的美观，可能图片的位置和源码中的位置不相对应，如果要强制插图在某一位置，需要<code>\usepackage{float}</code>，
+在图片中加入<code>[H]</code>选项替代<code>[htbp]</code>以强制图片在该位置。</p>
 
       
     </div>
@@ -604,6 +663,8 @@
       
         <div class="post-tags">
           
+            <a href="/tags/笔记/" rel="tag"># 笔记</a>
+          
             <a href="/tags/Latex/" rel="tag"># Latex</a>
           
         </div>
@@ -617,8 +678,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/08/electron-note-2/" rel="next" title="Electron-Vue开发笔记——1">
-                <i class="fa fa-chevron-left"></i> Electron-Vue开发笔记——1
+              <a href="/2019/04/08/electron-note-2/" rel="next" title="Electron-Vue开发笔记——2">
+                <i class="fa fa-chevron-left"></i> Electron-Vue开发笔记——2
               </a>
             
           </div>
@@ -797,7 +858,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">21</span>
+                      
+                    
+                    <span class="site-state-item-count">22</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -906,7 +969,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">46</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">48</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1052,7 +1119,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Latex格式"><span class="nav-number">1.</span> <span class="nav-text">Latex格式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#页面尺寸"><span class="nav-number">1.1.</span> <span class="nav-text">页面尺寸</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#页眉页脚"><span class="nav-number">1.2.</span> <span class="nav-text">页眉页脚</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#并排图片"><span class="nav-number">1.3.</span> <span class="nav-text">并排图片</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Latex样式"><span class="nav-number">2.</span> <span class="nav-text">Latex样式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#图片标题的样式"><span class="nav-number">2.1.</span> <span class="nav-text">图片标题的样式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#公式引用输出样式"><span class="nav-number">2.2.</span> <span class="nav-text">公式引用输出样式</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Latex样式"><span class="nav-number">1.</span> <span class="nav-text">Latex样式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#页面尺寸"><span class="nav-number">1.1.</span> <span class="nav-text">页面尺寸</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#页眉页脚"><span class="nav-number">1.2.</span> <span class="nav-text">页眉页脚</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Latex功能"><span class="nav-number">2.</span> <span class="nav-text">Latex功能</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#图片标题的样式"><span class="nav-number">2.1.</span> <span class="nav-text">图片标题的样式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#公式编号样式"><span class="nav-number">2.2.</span> <span class="nav-text">公式编号样式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#并排图片"><span class="nav-number">2.3.</span> <span class="nav-text">并排图片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#并排图片组"><span class="nav-number">2.4.</span> <span class="nav-text">并排图片组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插入代码块"><span class="nav-number">2.5.</span> <span class="nav-text">插入代码块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考文献（bibtex）"><span class="nav-number">2.6.</span> <span class="nav-text">参考文献（bibtex）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考文献编号上标"><span class="nav-number">2.7.</span> <span class="nav-text">参考文献编号上标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插入pdf"><span class="nav-number">2.8.</span> <span class="nav-text">插入pdf</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插入自定义宽度字符"><span class="nav-number">2.9.</span> <span class="nav-text">插入自定义宽度字符</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Latex问题"><span class="nav-number">3.</span> <span class="nav-text">Latex问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#引入图片时报图片文件找不到的错误"><span class="nav-number">3.1.</span> <span class="nav-text">引入图片时报图片文件找不到的错误</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图表编号清零"><span class="nav-number">3.2.</span> <span class="nav-text">图表编号清零</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#中文加粗失败"><span class="nav-number">3.3.</span> <span class="nav-text">中文加粗失败</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插入图片位置"><span class="nav-number">3.4.</span> <span class="nav-text">插入图片位置</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1092,7 +1159,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">88k</span>
+    <span title="站点总字数">94k</span>
   
 
   
@@ -1101,7 +1168,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">1:20</span>
+    <span title="站点阅读时长">1:26</span>
   
 </div>
 
