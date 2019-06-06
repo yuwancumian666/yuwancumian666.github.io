@@ -523,7 +523,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">0</span>
+                <span title="本文字数">888</span>
               
 
               
@@ -627,7 +627,25 @@
 <blockquote>
 <p>喜欢吗?。。<br>喜欢。。。</p>
 </blockquote>
-
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
       
     </div>
 
@@ -673,8 +691,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/01/23/short-stories-before-bed4/" rel="prev" title="睡前小故事——Day 4">
-                睡前小故事——Day 4 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/01/23/short-stories-before-bed5/" rel="prev" title="睡前小故事——Day 5">
+                睡前小故事——Day 5 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -956,9 +974,7 @@
                     
                       
                     
-                      
-                    
-                    <span class="site-state-item-count">48</span>
+                    <span class="site-state-item-count">47</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1144,7 +1160,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">94k</span>
+    <span title="站点总字数">72k</span>
   
 
   
@@ -1153,7 +1169,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">1:26</span>
+    <span title="站点阅读时长">1:06</span>
   
 </div>
 

@@ -523,7 +523,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">0</span>
+                <span title="本文字数">545</span>
               
 
               
@@ -563,7 +563,7 @@
 <p>建表：</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> employees(</span><br><span class="line">ename <span class="keyword">STRING</span>,</span><br><span class="line">salary <span class="built_in">FLOAT</span>,</span><br><span class="line">subordinates <span class="built_in">ARRAY</span>&lt;<span class="keyword">STRING</span>&gt;,</span><br><span class="line">deductions <span class="keyword">MAP</span>&lt;<span class="keyword">STRING</span>, <span class="built_in">FLOAT</span>&gt;,</span><br><span class="line">address <span class="keyword">STRUCT</span>&lt;street:<span class="keyword">STRING</span>, city:<span class="keyword">STRING</span>, state:<span class="keyword">STRING</span>, zip:<span class="built_in">INT</span>&gt;)</span><br><span class="line"><span class="keyword">ROW</span> <span class="keyword">FORMAT</span> <span class="keyword">DELIMITED</span> <span class="keyword">FIELDS</span> <span class="keyword">TERMINATED</span> <span class="keyword">BY</span> <span class="string">'\001'</span></span><br><span class="line">COLLECTION ITEMS <span class="keyword">TERMINATED</span>   <span class="keyword">BY</span> <span class="string">'\002'</span></span><br><span class="line"><span class="keyword">MAP</span> <span class="keyword">KEYS</span> <span class="keyword">TERMINATED</span> <span class="keyword">BY</span> <span class="string">'\003'</span></span><br><span class="line"><span class="keyword">LINES</span> <span class="keyword">TERMINATED</span> <span class="keyword">BY</span> <span class="string">'\n'</span> </span><br><span class="line"><span class="keyword">STORED</span> <span class="keyword">AS</span> TEXTFILE</span><br><span class="line">;</span><br></pre></td></tr></table></figure>
 
-<p>导入数据：<code>LOAD DATA LOCAL INPATH &#39;/home/user/test_data/employees.txt&#39; INTO TABLE employees;</code></p>
+<p>导入数据：<code>LOAD DATA LOCAL INPATH '/home/user/test_data/employees.txt' INTO TABLE employees;</code></p>
 <hr>
 <h3 id="HQL-日期"><a href="#HQL-日期" class="headerlink" title="HQL 日期"></a>HQL 日期</h3><p>日期对于大多数据库来说都是一个坎，</p>
 <ol>
@@ -571,7 +571,7 @@
 </ol>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE dual (dummy STRING);</span><br><span class="line">LOAD DATA LOCAL INPATH &apos;/home/user/dual.txt&apos; # dual.txt的内容:X</span><br></pre></td></tr></table></figure>
 
-<p>获得时间戳：<code>select unix_timestamp() from dual;</code><br>查询时间：<code>select from_unixtime(1517882632, &#39;yyyyMMdd&#39;) from dual;</code></p>
+<p>获得时间戳：<code>select unix_timestamp() from dual;</code><br>查询时间：<code>select from_unixtime(1517882632, 'yyyyMMdd') from dual;</code></p>
 <h3 id="表操作"><a href="#表操作" class="headerlink" title="表操作"></a>表操作</h3><h4 id="表名的更改"><a href="#表名的更改" class="headerlink" title="表名的更改"></a>表名的更改</h4><ol>
 <li><p>ALTER <br><br><code>ALTER TABLE re_useri RENAME TO u_re_useri;</code> 前后对比元数据，DFS文件夹，show tables表名均发生改变。</p>
 </li>
@@ -589,7 +589,25 @@
 
 <h4 id="增加列"><a href="#增加列" class="headerlink" title="增加列"></a>增加列</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> u_useri</span><br><span class="line"><span class="keyword">ADD</span> <span class="keyword">COLUMN</span>(</span><br><span class="line">addcol3 <span class="keyword">STRING</span> <span class="keyword">COMMENT</span> <span class="string">'add in 20180206'</span></span><br><span class="line">addcol4 <span class="built_in">INT</span>);</span><br></pre></td></tr></table></figure>
 
-
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
       
     </div>
 
@@ -625,8 +643,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/02/06/hive-bucket/" rel="next" title="Hive 分桶">
-                <i class="fa fa-chevron-left"></i> Hive 分桶
+              <a href="/2018/02/02/python-word-cloud/" rel="next" title="Python 制作词云">
+                <i class="fa fa-chevron-left"></i> Python 制作词云
               </a>
             
           </div>
@@ -918,9 +936,7 @@
                     
                       
                     
-                      
-                    
-                    <span class="site-state-item-count">48</span>
+                    <span class="site-state-item-count">47</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1106,7 +1122,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">94k</span>
+    <span title="站点总字数">72k</span>
   
 
   
@@ -1115,7 +1131,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">1:26</span>
+    <span title="站点阅读时长">1:06</span>
   
 </div>
 

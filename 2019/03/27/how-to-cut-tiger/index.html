@@ -506,7 +506,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">0</span>
+                <span title="本文字数">867</span>
               
 
               
@@ -548,14 +548,14 @@
 <img src="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2019/2019-03-26-cut-tiger-1.png" title="新建cut文件夹">
 <img src="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2019/2019-03-26-cut-tiger-2.png" title="选中相似的图片"></li>
 <li><p>在脚本的最上方填入“待处理图片的路径”和“输出图片的路径”，如：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># csv保存路径</span></span><br><span class="line">csv_path = <span class="string">r'D:\Users\Teemo Nicolas\Downloads\002\\'</span></span><br><span class="line"><span class="comment"># 待处理图片路径</span></span><br><span class="line">img_path = <span class="string">r'D:\Users\Teemo Nicolas\Downloads\002\right\cut\\'</span></span><br><span class="line"><span class="comment"># 新文件写入路径</span></span><br><span class="line">new_img_path = <span class="string">r'D:\Users\Teemo Nicolas\Downloads\02\right\\'</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># csv保存路径</span></span><br><span class="line">csv_path = <span class="string">r'D:\Users\Teemo Nicolas\Downloads\002\\'</span></span><br><span class="line"><span class="comment"># 待处理图片路径</span></span><br><span class="line">img_path = <span class="string">r'D:\Users\Teemo Nicolas\Downloads\002\right\cut\\'</span></span><br><span class="line"><span class="comment"># 新文件写入路径</span></span><br><span class="line">new_img_path = <span class="string">r'D:\Users\Teemo Nicolas\Downloads\02\right\\'</span></span><br></pre></td></tr></tbody></table></figure>
 <p>其中，csv是图片处理记录的数据，没什么重要性，选填，但是执行脚本的时候需要输入“n”或直接把这段功能的代码注释掉掉。</p>
 </li>
 <li><p>在PS里获取信息。</p>
 </li>
 </ol>
 <p>打开图片后，用矩形选框工具选好位置，其长宽比可固定为3:2；右键单击选框，选择“变换选区”，然后在“信息面板”查看该矩形选框的信息（左上角坐标：X、Y；选框长宽：W、H），将这四个数填入脚本下方对应位置。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 起始点坐标，PhotoShop获得</span></span><br><span class="line">start_x = <span class="number">459</span></span><br><span class="line">start_y = <span class="number">231</span></span><br><span class="line"><span class="comment"># 切割尺寸，PhotoShop获得</span></span><br><span class="line">crop_length = <span class="number">2649</span></span><br><span class="line">crop_height = <span class="number">1766</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 起始点坐标，PhotoShop获得</span></span><br><span class="line">start_x = <span class="number">459</span></span><br><span class="line">start_y = <span class="number">231</span></span><br><span class="line"><span class="comment"># 切割尺寸，PhotoShop获得</span></span><br><span class="line">crop_length = <span class="number">2649</span></span><br><span class="line">crop_height = <span class="number">1766</span></span><br></pre></td></tr></tbody></table></figure>
 <img src="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2019/2019-03-26-cut-tiger-3.jpg" title="变换选区">
 <img src="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2019/2019-03-26-cut-tiger-4.png" title="查看选框信息">
 <img src="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2019/2019-03-26-5.jpg" title="信息面板">
@@ -566,7 +566,25 @@
 <p>确认无误后，回车继续，新文件将会保存到<code>new_img_path</code>指定位置（该文件夹必须存在）。</p>
 <img src="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2019/2019-03-26-cut-tiger-6.png" title="输出测试图">
 <img src="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2019/2019-03-26-cut-tiger-7.png" title="结果示例">
-
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
       
     </div>
 
@@ -886,9 +904,7 @@
                     
                       
                     
-                      
-                    
-                    <span class="site-state-item-count">48</span>
+                    <span class="site-state-item-count">47</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1057,7 +1073,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">94k</span>
+    <span title="站点总字数">72k</span>
   
 
   
@@ -1066,7 +1082,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">1:26</span>
+    <span title="站点阅读时长">1:06</span>
   
 </div>
 

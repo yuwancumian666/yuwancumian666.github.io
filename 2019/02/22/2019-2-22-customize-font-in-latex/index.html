@@ -516,7 +516,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">0</span>
+                <span title="本文字数">130</span>
               
 
               
@@ -559,7 +559,25 @@
 <h2 id="定义代码段字体"><a href="#定义代码段字体" class="headerlink" title="定义代码段字体"></a>定义代码段字体</h2><p>下边是一种自定义字体的方法，来自<a href="https://blog.csdn.net/ProgramChangesWorld/article/details/51502730" target="_blank" rel="noopener">LaTeX技巧006：使用不同的英文字体</a></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line">\documentclass[UTF8]&#123;article&#125;</span><br><span class="line">\usepackage&#123;fontspec&#125;</span><br><span class="line">\setmainfont&#123;Times New Roman&#125;%fontspec下这个命令设置全局默认字体</span><br><span class="line">\begin&#123;document&#125;</span><br><span class="line">Hello World!\\</span><br><span class="line">%这也是一种调用方式，无须fontspec宏包</span><br><span class="line">\font\rm=&quot;Calibri&quot; at 14pt \rm This is Calibri\\</span><br><span class="line">\font\rm=&quot;Candara&quot; at 14pt \rm This is Candara\\</span><br><span class="line">\font\rm=&quot;Mistral&quot; at 14pt \rm This is Mistral\\</span><br><span class="line">\font\rm=&quot;Bahnschrift&quot; at 14pt \rm This is Bahnschrift\\</span><br><span class="line">\font\rm=&quot;Pristina&quot; at 14pt \rm This is Pristina\\</span><br><span class="line">\font\rm=&quot;Microsoft Uighur&quot; at 14pt \rm This is Microsoft Uighur\\</span><br><span class="line">\font\rm=&quot;Bradley Hand ITC&quot; at 14pt \rm This is Bradley Hand ITC\\</span><br><span class="line">\font\rm=&quot;Nirmala UI&quot; at 14pt \rm This is Nirmala UI\\</span><br><span class="line">\font\rm=&quot;CCBackBeat&quot; at 14pt \rm This is CCBackBeat\\</span><br><span class="line">\font\rm=&quot;Supercell-Magic&quot; \rm This is Supercell-Magic\\</span><br><span class="line">\font\rm=&quot;Supercell-Magic&quot; at 14pt \rm This is Supercell-Magic\\</span><br><span class="line">\font\rm=&quot;Supercell-Magic&quot; at 18pt \rm This is Supercell-Magic\\</span><br><span class="line">\end&#123;document&#125;</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">显示结果</span><br><span class="line"></span><br><span class="line">![](https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2019/2019-02-22%20-fonts.jpg) </span><br><span class="line"></span><br><span class="line">## 设置全局（自定义）字体</span><br><span class="line"></span><br><span class="line">第二天在测试中发现，用如下代码也能实现同样的效果，现在猜测是刚安装的字体VSCode或XeLaTex识别不了的问题。</span><br><span class="line"></span><br><span class="line">``` latex</span><br><span class="line">\documentclass[UTF8]&#123;article&#125;</span><br><span class="line">\usepackage&#123;ctex&#125;</span><br><span class="line">\usepackage&#123;fontspec&#125;</span><br><span class="line">\usepackage&#123;metalogo&#125;</span><br><span class="line">\usepackage&#123;amsmath&#125;</span><br><span class="line">\usepackage&#123;newtxtt, newtxmath&#125;</span><br><span class="line"></span><br><span class="line">\setmainfont&#123;CCBackBeat&#125; %英文字体</span><br><span class="line">\setCJKmainfont&#123;DengXian&#125; % 中文字体</span><br><span class="line"></span><br><span class="line">\title&#123;论文测试&#125;</span><br><span class="line">\author&#123;Teemo&#125;</span><br><span class="line">\date&#123;2019年2月22日&#125;</span><br><span class="line">\begin&#123;document&#125;</span><br><span class="line">\maketitle</span><br><span class="line">\tableofcontents</span><br><span class="line">\section&#123;输出测试&#125;</span><br><span class="line"> Hello \XeLaTeX.</span><br><span class="line"> Body of the article.</span><br><span class="line"> second not sure \\</span><br><span class="line"> fuck LaTex \\</span><br><span class="line"> 换行试试？\LaTeX，WithTab Icon,How to add a command \\</span><br><span class="line"></span><br><span class="line"> 换行</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">![](https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2019/2019-02-23-font-test-143421.jpg)</span><br><span class="line"></span><br><span class="line">## 自定义字体</span><br><span class="line"></span><br><span class="line">``` latex</span><br><span class="line">% 定义字体</span><br><span class="line">\newcommand&#123;\song&#125;&#123;\CJKfamily&#123;song&#125;&#125;    % 宋体</span><br><span class="line">\newcommand&#123;\fs&#125;&#123;\CJKfamily&#123;fs&#125;&#125;        % 仿宋体</span><br><span class="line">\newcommand&#123;\kai&#125;&#123;\CJKfamily&#123;kai&#125;&#125;      % 楷体</span><br><span class="line">\newcommand&#123;\hei&#125;&#123;\CJKfamily&#123;hei&#125;&#125;      % 黑体</span><br><span class="line">\newcommand&#123;\li&#125;&#123;\CJKfamily&#123;li&#125;&#125;        % 隶书</span><br><span class="line">% 定义字号</span><br><span class="line">\newcommand&#123;\yihao&#125;&#123;\fontsize&#123;26pt&#125;&#123;36pt&#125;\selectfont&#125;         % 一号, 1.4 倍行距</span><br><span class="line">\newcommand&#123;\erhao&#125;&#123;\fontsize&#123;22pt&#125;&#123;28pt&#125;\selectfont&#125;         % 二号, 1.25倍行距</span><br><span class="line">\newcommand&#123;\xiaoer&#125;&#123;\fontsize&#123;18pt&#125;&#123;18pt&#125;\selectfont&#125;        % 小二, 单倍行距</span><br><span class="line">\newcommand&#123;\sanhao&#125;&#123;\fontsize&#123;16pt&#125;&#123;24pt&#125;\selectfont&#125;        % 三号, 1.5倍行距</span><br><span class="line">\newcommand&#123;\xiaosan&#125;&#123;\fontsize&#123;15pt&#125;&#123;22pt&#125;\selectfont&#125;       % 小三, 1.5倍行距</span><br><span class="line">\newcommand&#123;\sihao&#125;&#123;\fontsize&#123;14pt&#125;&#123;21pt&#125;\selectfont&#125;         % 四号, 1.5 倍行距</span><br><span class="line">\newcommand&#123;\banxiaosi&#125;&#123;\fontsize&#123;13pt&#125;&#123;19.5pt&#125;\selectfont&#125;   % 半小四, 1.5倍行距</span><br><span class="line">\newcommand&#123;\xiaosi&#125;&#123;\fontsize&#123;12pt&#125;&#123;18pt&#125;\selectfont&#125;        % 小四, 1.5倍行距</span><br><span class="line">\newcommand&#123;\dawu&#125;&#123;\fontsize&#123;11pt&#125;&#123;11pt&#125;\selectfont&#125;       % 大五号, 单倍行距</span><br><span class="line">\newcommand&#123;\wuhao&#125;&#123;\fontsize&#123;10.5pt&#125;&#123;15.75pt&#125;\selectfont&#125;    % 五号, 单倍行距</span><br><span class="line">\newcommand&#123;\xiaowu&#125;&#123;\fontsize&#123;9pt&#125;&#123;9pt&#125;\selectfont&#125;    % 小五, 单倍行距</span><br><span class="line"></span><br><span class="line">\hei\xiaosan\textbf&#123;实验代码&#125; % 黑体小三加粗</span><br></pre></td></tr></table></figure>
 
-
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
       
     </div>
 
@@ -892,9 +910,7 @@
                     
                       
                     
-                      
-                    
-                    <span class="site-state-item-count">48</span>
+                    <span class="site-state-item-count">47</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1080,7 +1096,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">94k</span>
+    <span title="站点总字数">72k</span>
   
 
   
@@ -1089,7 +1105,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">1:26</span>
+    <span title="站点阅读时长">1:06</span>
   
 </div>
 

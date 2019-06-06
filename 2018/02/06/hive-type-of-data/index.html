@@ -526,7 +526,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">0</span>
+                <span title="本文字数">662</span>
               
 
               
@@ -567,7 +567,7 @@
 
 <h2 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h2><p>未完待续……</p>
 <h2 id="复杂数据类型"><a href="#复杂数据类型" class="headerlink" title="复杂数据类型"></a>复杂数据类型</h2><p>关系型数据库强烈不建议重复存储<br>我们接触过的大数据数据库比如 Hbase、Hive 不怕重复，但要求的是存储数据的文件不要太小。</p>
-<p>类型 | 说明 | 举例<br>Array （数组） | 一组数据类型相同的值 | [1,2,3]<br>Map（集合）| 一组 &lt;K, V&gt;，要求所有键类型相同，所有值类型相同 | {&lt;K, V&gt;, &lt;K, V&gt;}<br>Struct（结构） | 一组不同字段，且每个字段的类型可以不同 | (“str”, 1, 0)</p>
+<p>类型 | 说明 | 举例<br>Array （数组） | 一组数据类型相同的值 | [1,2,3]<br>Map（集合）| 一组 <k, v>，要求所有键类型相同，所有值类型相同 | {<k, v>, <k, v>}<br>Struct（结构） | 一组不同字段，且每个字段的类型可以不同 | (“str”, 1, 0)</k,></k,></k,></p>
 <h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><p>假如我们有以下数据：</p>
 <p><img src="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2018-02-06-array.jpg" alt></p>
 <p>在 Hive 里创建一个表：</p>
@@ -575,10 +575,28 @@
 
 <p>然后导入数据：` LOAD DATA LOCAL INPATH ‘/home/user/test_data/login_array.txt’ INTO TABLE loginArray<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">查询数据：`SELECT id,userid FROM loginArray`</span><br><span class="line"></span><br><span class="line">![](https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2018-02-06-array-id-userid.jpg)</span><br><span class="line"></span><br><span class="line">指定数组元素查询：</span><br><span class="line"></span><br><span class="line">`SELECT id,userid[0] FROM loginArray` </span><br><span class="line"></span><br><span class="line">![](https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2018-02-06-array-ip-userid%5B1%5D.jpg.jpg)</span><br><span class="line"></span><br><span class="line">查询数组长度（-1为空）：`SELECT size(userid) FROM loginArray`</span><br><span class="line"></span><br><span class="line">![](https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2018-02-06-array-length.jpg)</span><br><span class="line"></span><br><span class="line">### 集合</span><br><span class="line"></span><br><span class="line">#### 标准数据表处理</span><br><span class="line"></span><br><span class="line">给定测试数据：</span><br><span class="line"></span><br><span class="line">![](https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2018-02-06-map-1.jpg)</span><br><span class="line"></span><br><span class="line">数据表示某用户(id)，在某 IP 的主机上玩了哪些游戏以及游戏次数</span><br><span class="line"></span><br><span class="line">开始建表：</span><br><span class="line"></span><br><span class="line">``` sql</span><br><span class="line">CREATE TBALE loginmap(</span><br><span class="line">IP STRING,</span><br><span class="line">userid BIGINT,</span><br><span class="line">gameinfo MAP&lt;STRING, INT&gt;</span><br><span class="line">)</span><br><span class="line">ROW FORMAT DELIMITED FIELDS TERMINATED BY &apos;,&apos;</span><br><span class="line">COLLECTION ITEMS TERMINATED BY &apos;|&apos;</span><br><span class="line">MAP KEYS TERMINATED BY &apos;:&apos;</span><br><span class="line">;</span><br></pre></td></tr></table></figure></p>
 <p>导入数据：<figure class="highlight plain"><figcaption><span>DATA LOCAL INPATH '/home/user/test_data/loginmap1.txt' INTO TABLE loginmap;```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">插入数据后表结构如图：</span><br><span class="line"></span><br><span class="line">![](https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2018-02-06-map-1-all.jpg)</span><br><span class="line"></span><br><span class="line">#### 含脏数据的表处理</span><br><span class="line"></span><br><span class="line">测试数据：</span><br><span class="line"></span><br><span class="line">![](https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2018-02-06-map-2.jpg)</span><br><span class="line"></span><br><span class="line">导入数据时可以直接覆盖上一张表：</span><br><span class="line"></span><br><span class="line">![](https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2018-02-06-map-2-all.jpg)</span><br><span class="line"></span><br><span class="line">在查询某一个键时，因为数据的不统一（如“ wow” 和 “wow”，前者含空格）导致结果不同</span><br><span class="line"></span><br><span class="line">![](https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2018-02-06-map-different-info.jpg)</span><br><span class="line"></span><br><span class="line">### 结构</span><br><span class="line"></span><br><span class="line">数据：</span><br><span class="line"></span><br><span class="line">![](https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2018-02-06-struct.jpg)</span><br><span class="line"></span><br><span class="line">建表：</span><br><span class="line"></span><br><span class="line">``` sql</span><br><span class="line">CREATE TABLE loginstruct(</span><br><span class="line">IP STRING,</span><br><span class="line">USRINFO STRUCT&lt;userid:BIGINT, uname:STRING&gt;</span><br><span class="line">ROW FORMAT DELIMITED FIELDS TERMINATED BY &apos;,&apos;</span><br><span class="line">COLLECTION ITEMS TERMINATED BY &apos;|&apos;</span><br><span class="line">;</span><br></pre></td></tr></table></figure></p>
-<p>导入数据：<code>LOAD DATA LOCAL INPATH &#39;/home/user/test_data/login_array/loginstruct.txt&#39; INTO TABLE loginstruct</code></p>
+<p>导入数据：<code>LOAD DATA LOCAL INPATH '/home/user/test_data/login_array/loginstruct.txt' INTO TABLE loginstruct</code></p>
 <p>插入后表信息：</p>
 <p><img src="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2018-02-06-struct-all.jpg" alt></p>
-
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
       
     </div>
 
@@ -626,8 +644,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/02/07/hive-hql/" rel="prev" title="HiveQL">
-                HiveQL <i class="fa fa-chevron-right"></i>
+              <a href="/2018/02/06/hive-bucket/" rel="prev" title="Hive 分桶">
+                Hive 分桶 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -909,9 +927,7 @@
                     
                       
                     
-                      
-                    
-                    <span class="site-state-item-count">48</span>
+                    <span class="site-state-item-count">47</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1097,7 +1113,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">94k</span>
+    <span title="站点总字数">72k</span>
   
 
   
@@ -1106,7 +1122,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">1:26</span>
+    <span title="站点阅读时长">1:06</span>
   
 </div>
 

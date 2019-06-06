@@ -516,7 +516,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">0</span>
+                <span title="本文字数">1.1k</span>
               
 
               
@@ -560,7 +560,7 @@
 <li>方式：解压缩，（可数的）文件直接拖入目录</li>
 <li>目录：<code>C:\Program\texlive\2018\texmf-dist\scripts\latexindent</code></li>
 <li>文件：latexindent.exe</li>
-<li>使用方式：选中代码-&gt;右键<code>格式化选定内容</code></li>
+<li>使用方式：选中代码->右键<code>格式化选定内容</code></li>
 </ul>
 <p>注：更改了该目录下的<code>defaultSettings.yaml</code>的某些设置</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># line222~line246</span></span><br><span class="line"><span class="attr">indentAfterHeadings:</span></span><br><span class="line"><span class="attr">    part:</span></span><br><span class="line"><span class="attr">       indentAfterThisHeading:</span> <span class="number">1</span></span><br><span class="line"><span class="attr">       level:</span> <span class="number">1</span></span><br><span class="line"><span class="attr">    chapter:</span> </span><br><span class="line"><span class="attr">       indentAfterThisHeading:</span> <span class="number">1</span></span><br><span class="line"><span class="attr">       level:</span> <span class="number">2</span></span><br><span class="line"><span class="attr">    section:</span></span><br><span class="line"><span class="attr">       indentAfterThisHeading:</span> <span class="number">1</span></span><br><span class="line"><span class="attr">       level:</span> <span class="number">3</span></span><br><span class="line"><span class="attr">    subsection:</span></span><br><span class="line"><span class="attr">       indentAfterThisHeading:</span> <span class="number">1</span></span><br><span class="line"><span class="attr">       level:</span> <span class="number">4</span></span><br><span class="line">    <span class="string">subsection*:</span></span><br><span class="line"><span class="attr">       indentAfterThisHeading:</span> <span class="number">1</span></span><br><span class="line"><span class="attr">       level:</span> <span class="number">4</span></span><br><span class="line"><span class="attr">    subsubsection:</span></span><br><span class="line"><span class="attr">       indentAfterThisHeading:</span> <span class="number">1</span></span><br><span class="line"><span class="attr">       level:</span> <span class="number">5</span></span><br><span class="line"><span class="attr">    paragraph:</span></span><br><span class="line"><span class="attr">       indentAfterThisHeading:</span> <span class="number">1</span></span><br><span class="line"><span class="attr">       level:</span> <span class="number">6</span></span><br><span class="line"><span class="attr">    subparagraph:</span></span><br><span class="line"><span class="attr">       indentAfterThisHeading:</span> <span class="number">1</span></span><br><span class="line"><span class="attr">       level:</span> <span class="number">7</span></span><br></pre></td></tr></table></figure>
@@ -575,8 +575,8 @@
 </li>
 </ol>
 <h3 id="关于ryby及Jekyll的某些错误"><a href="#关于ryby及Jekyll的某些错误" class="headerlink" title="关于ryby及Jekyll的某些错误"></a>关于ryby及Jekyll的某些错误</h3><ol>
-<li><code>jekyll 3.7.4 | Error:  incompatible character encodings: UTF-8 and GBK</code><br>不知道如何解决，尝试设置命令行字符编码<code>chcp 65001</code>（不行）<br>已知的可能解决方法：设置 -&gt; 时间和语言 -&gt; 区域 -&gt; 更改日期、时间或数字格式 -&gt; 管理 -&gt; 更改系统区域设置：选中“使用Unicode UTF-8 提供全球语言支持”，然后重启电脑，应该就解决了。</li>
-<li>执行<code>bundle</code>命令时出现<code>C:/Program/Ruby25-x64/lib/ruby/2.5.0/rubygems.rb:289:in &#39;find_spec_for_exe&#39;: can&#39;t find gem bundler (&gt;= 0.a) with executable bundle (Gem::GemNotFoundException)</code>，在<a href="https://stackoverflow.com/questions/47026174/find-spec-for-exe-cant-find-gem-bundler-0-a-gemgemnotfoundexception" target="_blank" rel="noopener">StackOverflow</a>上找到答案：<code>Gemfile.lock</code>文件最后的<code>BUNDLED WITH</code>版本改为已安装的bundler版本。或者删除Gemfile.lock文件，重新<code>bundle exec jekyll serve</code></li>
+<li><code>jekyll 3.7.4 | Error:  incompatible character encodings: UTF-8 and GBK</code><br>不知道如何解决，尝试设置命令行字符编码<code>chcp 65001</code>（不行）<br>已知的可能解决方法：设置 -> 时间和语言 -> 区域 -> 更改日期、时间或数字格式 -> 管理 -> 更改系统区域设置：选中“使用Unicode UTF-8 提供全球语言支持”，然后重启电脑，应该就解决了。</li>
+<li>执行<code>bundle</code>命令时出现<code>C:/Program/Ruby25-x64/lib/ruby/2.5.0/rubygems.rb:289:in 'find_spec_for_exe': can't find gem bundler (>= 0.a) with executable bundle (Gem::GemNotFoundException)</code>，在<a href="https://stackoverflow.com/questions/47026174/find-spec-for-exe-cant-find-gem-bundler-0-a-gemgemnotfoundexception" target="_blank" rel="noopener">StackOverflow</a>上找到答案：<code>Gemfile.lock</code>文件最后的<code>BUNDLED WITH</code>版本改为已安装的bundler版本。或者删除Gemfile.lock文件，重新<code>bundle exec jekyll serve</code></li>
 </ol>
 <h2 id="VSCode中C-C-找不到头文件"><a href="#VSCode中C-C-找不到头文件" class="headerlink" title="VSCode中C/C++找不到头文件"></a>VSCode中C/C++找不到头文件</h2><p>可能需要设置这些环境变量：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">LIBRARY_PATH</span><br><span class="line">C:\Program\mingw64\lib\gcc\x86_64-w64-mingw32\7.3.0</span><br><span class="line"></span><br><span class="line">C_INCLUDE_PATH</span><br><span class="line">C:\Program\mingw64\include;</span><br><span class="line">C:\Program\mingw64\lib\gcc\x86_64-w64-mingw32\7.3.0\include;</span><br><span class="line"></span><br><span class="line">CPLUS_INCLUDE_PATH</span><br><span class="line">C:\Program\mingw64\include;</span><br><span class="line">C:\Program\mingw64\lib\gcc\x86_64-w64-mingw32\7.3.0\include\c++;</span><br><span class="line">C:\Program\mingw64\lib\gcc\x86_64-w64-mingw32\7.3.0\include\c++\backward;</span><br><span class="line">C:\Program\mingw64\lib\gcc\x86_64-w64-mingw32\7.3.0\include\c++\x86_64-w64-mingw32;</span><br></pre></td></tr></table></figure>
@@ -584,7 +584,25 @@
 <h2 id="CUDA-cuDNN"><a href="#CUDA-cuDNN" class="headerlink" title="CUDA cuDNN"></a>CUDA cuDNN</h2><p>复制cuDNN到CUDA目录</p>
 <figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">C:\<span class="title">Program</span> <span class="title">Files</span>\<span class="title">NVIDIA</span> <span class="title">GPU</span> <span class="title">Computing</span> <span class="title">Toolkit</span>\<span class="title">CUDA</span>\<span class="title">v9</span>.0\<span class="title">bin</span>\<span class="title">cudnn64_7.dll</span></span></span><br><span class="line"><span class="function"><span class="title">C</span>:\<span class="title">Program</span> <span class="title">Files</span>\<span class="title">NVIDIA</span> <span class="title">GPU</span> <span class="title">Computing</span> <span class="title">Toolkit</span>\<span class="title">CUDA</span>\<span class="title">v9</span>.0\<span class="title">include</span>\<span class="title">cudnn.h</span></span></span><br><span class="line"><span class="function"><span class="title">C</span>:\<span class="title">Program</span> <span class="title">Files</span>\<span class="title">NVIDIA</span> <span class="title">GPU</span> <span class="title">Computing</span> <span class="title">Toolkit</span>\<span class="title">CUDA</span>\<span class="title">v9</span>.0\<span class="title">lib</span>\<span class="title">x64</span>\<span class="title">cudnn.lib</span></span></span><br></pre></td></tr></table></figure>
 
-
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
       
     </div>
 
@@ -630,8 +648,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/01/23/short-stories-before-bed5/" rel="next" title="睡前小故事——Day 5">
-                <i class="fa fa-chevron-left"></i> 睡前小故事——Day 5
+              <a href="/2019/01/23/short-stories-before-bed4/" rel="next" title="睡前小故事——Day 4">
+                <i class="fa fa-chevron-left"></i> 睡前小故事——Day 4
               </a>
             
           </div>
@@ -923,9 +941,7 @@
                     
                       
                     
-                      
-                    
-                    <span class="site-state-item-count">48</span>
+                    <span class="site-state-item-count">47</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1111,7 +1127,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">94k</span>
+    <span title="站点总字数">72k</span>
   
 
   
@@ -1120,7 +1136,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">1:26</span>
+    <span title="站点阅读时长">1:06</span>
   
 </div>
 

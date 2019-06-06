@@ -534,7 +534,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">0</span>
+                <span title="本文字数">1.1k</span>
               
 
               
@@ -601,7 +601,25 @@
 <p>链接: <a href="https://pan.baidu.com/s/1ht1bpNe" target="_blank" rel="noopener">https://pan.baidu.com/s/1ht1bpNe</a> 密码: 35m2</p>
 <h3 id="死侍"><a href="#死侍" class="headerlink" title="死侍"></a>死侍</h3><p><img src="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2018-02-23-deadpool.jpg" alt></p>
 <p>链接: <a href="https://pan.baidu.com/s/1bqh8E0v" target="_blank" rel="noopener">https://pan.baidu.com/s/1bqh8E0v</a> 密码: g24v</p>
-
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
       
     </div>
 
@@ -934,9 +952,7 @@
                     
                       
                     
-                      
-                    
-                    <span class="site-state-item-count">48</span>
+                    <span class="site-state-item-count">47</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1122,7 +1138,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">94k</span>
+    <span title="站点总字数">72k</span>
   
 
   
@@ -1131,7 +1147,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">1:26</span>
+    <span title="站点阅读时长">1:06</span>
   
 </div>
 

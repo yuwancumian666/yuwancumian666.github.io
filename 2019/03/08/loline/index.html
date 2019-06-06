@@ -154,7 +154,7 @@
 <meta property="og:image" content="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2019/2019-03-08-developer-lol.jpg">
 <meta property="og:image" content="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2019/2019-03-08-lol-gamepedia.jpg">
 <meta property="og:image" content="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2019/2019-03-08-lol-gamepedia-teemo.jpg">
-<meta property="og:updated_time" content="2019-03-10T09:14:32.458Z">
+<meta property="og:updated_time" content="2019-06-05T12:43:46.690Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Loline——基于flask的RESTful API">
 <meta name="twitter:description" content="Loline受于一言的启发，利用今天一下午的时间利用flask建立了一个轻量级的RESTful API——Loline。其内容大抵是英雄联盟143位英雄的中英文绰号、名字和pick台词。">
@@ -529,7 +529,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">0</span>
+                <span title="本文字数">2.4k</span>
               
 
               
@@ -543,7 +543,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">1 分钟</span>
+                <span title="阅读时长">2 分钟</span>
               
             </div>
           
@@ -588,11 +588,29 @@
           </div>
 
 <p>使用方法是同<a href="/2019/03/05/start-hexo/#一言">一言</a>一样 ，你同样可以参照<a href="https://ouuan.github.io/hexo博客搭建指北/#一言（ヒトコト）" target="_blank" rel="noopener">原文作者</a>的方式，但只需要根据下方代码把<code>themes/next/layout/_macro/sidebar.swig</code>中的id和Hitokoto的小标题改一下即可。</p>
-<figure class="highlight html"><figcaption><span>themes/next/layout/_scripts/commons.swig</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">	$.<span class="keyword">get</span>('http://149.129.113.178:5000/', function (data) &#123;</span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(<span class="string">'----------------------------------------'</span>)</span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(data)</span></span><br><span class="line"><span class="javascript">		$(<span class="string">'#loline-content'</span>).css(<span class="string">'display'</span>, <span class="string">''</span>).text(data.words);</span></span><br><span class="line"><span class="javascript">		$(<span class="string">'#loline-from'</span>).css(<span class="string">'display'</span>, <span class="string">''</span>).text(<span class="string">'——'</span> + data.title_zh+<span class="string">' '</span>+data.name_zh);</span></span><br><span class="line"><span class="undefined">	&#125;);</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><figcaption><span>themes/next/layout/_scripts/commons.swig</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag"><<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>></span><span class="undefined"></span></span><br><span class="line"><span class="javascript">	$.<span class="keyword">get</span>('http://149.129.113.178:5000/', function (data) {</span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(<span class="string">'----------------------------------------'</span>)</span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(data)</span></span><br><span class="line"><span class="javascript">		$(<span class="string">'#loline-content'</span>).css(<span class="string">'display'</span>, <span class="string">''</span>).text(data.words);</span></span><br><span class="line"><span class="javascript">		$(<span class="string">'#loline-from'</span>).css(<span class="string">'display'</span>, <span class="string">''</span>).text(<span class="string">'——'</span> + data.title_zh+<span class="string">' '</span>+data.name_zh);</span></span><br><span class="line"><span class="undefined">	});</span></span><br></pre></td></tr></tbody></table></figure>
 
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>收集数据的时候也写了不少的代码，但保存下来数据之后其中大多数已经没有用了，所以这里只贴出来了Flask的代码。需要请邮件联系获取:smile:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#! py -3</span></span><br><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">from</span> util <span class="keyword">import</span> load_champions</span><br><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask, jsonify, abort, make_response, request</span><br><span class="line"></span><br><span class="line"><span class="comment"># http://www.pythondoc.com/flask-restful/first.html</span></span><br><span class="line">app = Flask(__name__)</span><br><span class="line">app.config[<span class="string">'JSON_AS_ASCII'</span>] = <span class="literal">False</span></span><br><span class="line">champions = load_champions(<span class="string">"data/champions.json"</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route('/', methods=['GET'])</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">index</span><span class="params">()</span>:</span></span><br><span class="line">    id_ = random.randint(<span class="number">1</span>, len(champions))</span><br><span class="line">    print(id_)</span><br><span class="line">    champion = list(filter(<span class="keyword">lambda</span> t: t[<span class="string">'id'</span>] == id_, champions))</span><br><span class="line">    <span class="keyword">return</span> jsonify(champion[<span class="number">0</span>])</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">after_requests</span><span class="params">(response)</span>:</span></span><br><span class="line">    response.headers[<span class="string">'Access-Control-Allow-Origin'</span>] = <span class="string">'*'</span></span><br><span class="line">    response.headers[<span class="string">'Access-Control-Allow-Methods'</span>] = <span class="string">'GET'</span></span><br><span class="line">    response.headers[<span class="string">'Access-Control-Allow-Headers'</span>] = <span class="string">'Content-Type,Authorization'</span></span><br><span class="line">    <span class="keyword">return</span> response</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.errorhandler(404)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">not_found</span><span class="params">(error)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> make_response(jsonify(&#123;<span class="string">'error'</span>: <span class="string">'Not Found'</span>&#125;), <span class="number">404</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    app.after_request(after_requests)</span><br><span class="line">    app.run(debug=<span class="literal">True</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>收集数据的时候也写了不少的代码，但保存下来数据之后其中大多数已经没有用了，所以这里只贴出来了Flask的代码。需要请邮件联系获取 <span class="github-emoji" style="color: transparent;background:no-repeat url(https://assets-cdn.github.com/images/icons/emoji/unicode/1f604.png?v8) center/contain" data-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f604.png?v8">😄</span></p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#! py -3</span></span><br><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">from</span> util <span class="keyword">import</span> load_champions</span><br><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask, jsonify, abort, make_response, request</span><br><span class="line"></span><br><span class="line"><span class="comment"># http://www.pythondoc.com/flask-restful/first.html</span></span><br><span class="line">app = Flask(__name__)</span><br><span class="line">app.config[<span class="string">'JSON_AS_ASCII'</span>] = <span class="literal">False</span></span><br><span class="line">champions = load_champions(<span class="string">"data/champions.json"</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route('/', methods=['GET'])</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">index</span><span class="params">()</span>:</span></span><br><span class="line">    id_ = random.randint(<span class="number">1</span>, len(champions))</span><br><span class="line">    print(id_)</span><br><span class="line">    champion = list(filter(<span class="keyword">lambda</span> t: t[<span class="string">'id'</span>] == id_, champions))</span><br><span class="line">    <span class="keyword">return</span> jsonify(champion[<span class="number">0</span>])</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">after_requests</span><span class="params">(response)</span>:</span></span><br><span class="line">    response.headers[<span class="string">'Access-Control-Allow-Origin'</span>] = <span class="string">'*'</span></span><br><span class="line">    response.headers[<span class="string">'Access-Control-Allow-Methods'</span>] = <span class="string">'GET'</span></span><br><span class="line">    response.headers[<span class="string">'Access-Control-Allow-Headers'</span>] = <span class="string">'Content-Type,Authorization'</span></span><br><span class="line">    <span class="keyword">return</span> response</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.errorhandler(404)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">not_found</span><span class="params">(error)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> make_response(jsonify({<span class="string">'error'</span>: <span class="string">'Not Found'</span>}), <span class="number">404</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    app.after_request(after_requests)</span><br><span class="line">    app.run(debug=<span class="literal">True</span>)</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
       
     </div>
 
@@ -636,8 +654,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/05/start-hexo/" rel="next" title="Hexo——GitHub Pages搭建">
-                <i class="fa fa-chevron-left"></i> Hexo——GitHub Pages搭建
+              <a href="/2019/03/05/start-hexo/" rel="next" title="GitHub Pages——Hexo配置笔记">
+                <i class="fa fa-chevron-left"></i> GitHub Pages——Hexo配置笔记
               </a>
             
           </div>
@@ -929,9 +947,7 @@
                     
                       
                     
-                      
-                    
-                    <span class="site-state-item-count">48</span>
+                    <span class="site-state-item-count">47</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1117,7 +1133,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">94k</span>
+    <span title="站点总字数">72k</span>
   
 
   
@@ -1126,7 +1142,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">1:26</span>
+    <span title="站点阅读时长">1:06</span>
   
 </div>
 

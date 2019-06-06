@@ -516,7 +516,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">0</span>
+                <span title="本文字数">1.9k</span>
               
 
               
@@ -530,7 +530,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">1 分钟</span>
+                <span title="阅读时长">2 分钟</span>
               
             </div>
           
@@ -589,7 +589,7 @@
 <li>虚拟机和本地机要能 ping 通</li>
 </ul>
 <p><strong>注意：</strong>虚拟机开机是不启动网卡的，需要手动调成自动开机启动。</p>
-<h3 id="修改-Nat-连接方式"><a href="#修改-Nat-连接方式" class="headerlink" title="修改 Nat 连接方式"></a>修改 Nat 连接方式</h3><p>Nat 方式是给虚拟机一个独立的网卡，特点是稳定、IP不变。<br><br>虚拟机右键 -&gt; 设置 -&gt; 网络适配器 -&gt; 右侧选自定义-vmnet8 -&gt; 保存 <br><br>虚拟机 -&gt; 编辑 -&gt; 虚拟网络适配器 -&gt; 更改设置 -&gt; 将 net8 改为 NAT 模式 -&gt; 保存</p>
+<h3 id="修改-Nat-连接方式"><a href="#修改-Nat-连接方式" class="headerlink" title="修改 Nat 连接方式"></a>修改 Nat 连接方式</h3><p>Nat 方式是给虚拟机一个独立的网卡，特点是稳定、IP不变。<br><br>虚拟机右键 -> 设置 -> 网络适配器 -> 右侧选自定义-vmnet8 -> 保存 <br><br>虚拟机 -> 编辑 -> 虚拟网络适配器 -> 更改设置 -> 将 net8 改为 NAT 模式 -> 保存</p>
 <hr>
 <h3 id="Linux-命令"><a href="#Linux-命令" class="headerlink" title="Linux 命令"></a>Linux 命令</h3><p><strong>Tip：</strong> <br><br>命令查询<a href="http://man.linuxde.net/" target="_blank" rel="noopener">网址</a> ，此网站仅供参考<br><br>Tab 键是命令提示</p>
 <p><strong>基本语法：</strong> <em>命令名 -选项 参数</em></p>
@@ -609,7 +609,25 @@
 
 <h4 id="tar-归档压缩"><a href="#tar-归档压缩" class="headerlink" title="tar 归档压缩"></a><a href="http://man.linuxde.net/tar" target="_blank" rel="noopener">tar</a> 归档压缩</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">两个功能 一个压缩 一个是解压缩 </span><br><span class="line">选项  -c 压缩   </span><br><span class="line">      -x 解压缩</span><br><span class="line">      -f 文件 </span><br><span class="line">      -v 显示 </span><br><span class="line">压缩  tar -czvf 压缩后文件名 目标</span><br><span class="line">解压缩    tar -xzvf 目标名 </span><br><span class="line">            -xzvf 目标名 -C 目标目录</span><br></pre></td></tr></table></figure>
 
-
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
       
     </div>
 
@@ -938,9 +956,7 @@
                     
                       
                     
-                      
-                    
-                    <span class="site-state-item-count">48</span>
+                    <span class="site-state-item-count">47</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1126,7 +1142,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">94k</span>
+    <span title="站点总字数">72k</span>
   
 
   
@@ -1135,7 +1151,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">1:26</span>
+    <span title="站点阅读时长">1:06</span>
   
 </div>
 

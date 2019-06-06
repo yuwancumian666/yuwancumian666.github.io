@@ -516,7 +516,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">0</span>
+                <span title="本文字数">118</span>
               
 
               
@@ -565,7 +565,25 @@
 
 <h1 id="定时任务-crontab"><a href="#定时任务-crontab" class="headerlink" title="定时任务 crontab"></a>定时任务 crontab</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">crontab -e</span><br><span class="line"><span class="comment">#30 22 * * * python ~/email/pymail.py &gt;&gt; ~/email/pymail.log</span></span><br><span class="line"><span class="comment"># 修改默认编辑器</span></span><br><span class="line">select-editor</span><br></pre></td></tr></table></figure>
 
-
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
       
     </div>
 
@@ -613,8 +631,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/03/05/start-hexo/" rel="prev" title="Hexo——GitHub Pages搭建">
-                Hexo——GitHub Pages搭建 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/03/05/start-hexo/" rel="prev" title="GitHub Pages——Hexo配置笔记">
+                GitHub Pages——Hexo配置笔记 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -896,9 +914,7 @@
                     
                       
                     
-                      
-                    
-                    <span class="site-state-item-count">48</span>
+                    <span class="site-state-item-count">47</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1084,7 +1100,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">94k</span>
+    <span title="站点总字数">72k</span>
   
 
   
@@ -1093,7 +1109,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">1:26</span>
+    <span title="站点阅读时长">1:06</span>
   
 </div>
 

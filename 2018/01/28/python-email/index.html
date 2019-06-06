@@ -520,7 +520,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">0</span>
+                <span title="本文字数">4k</span>
               
 
               
@@ -534,7 +534,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">1 分钟</span>
+                <span title="阅读时长">4 分钟</span>
               
             </div>
           
@@ -690,7 +690,25 @@ mail.attach(HTML)
 </code></pre>
 <p>结果（你猜猜内容是啥😄）：<img src="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2018-01-28-example3.png" alt="exp3"></p>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>因为发送邮件的方式（不加密、SSL、TLS、）和类型（附件类型、附件头，附件内容）多种多样，邮件服务器总结起来也非常他喵的麻烦。我之前是做了不少的测试脚本，最后挑了一个经常用的。我对于这个 python 邮件的想法是：能用就成~O(∩_∩)O</p>
-
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
       
     </div>
 
@@ -1021,9 +1039,7 @@ mail.attach(HTML)
                     
                       
                     
-                      
-                    
-                    <span class="site-state-item-count">48</span>
+                    <span class="site-state-item-count">47</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1209,7 +1225,7 @@ mail.attach(HTML)
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">94k</span>
+    <span title="站点总字数">72k</span>
   
 
   
@@ -1218,7 +1234,7 @@ mail.attach(HTML)
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">1:26</span>
+    <span title="站点阅读时长">1:06</span>
   
 </div>
 

@@ -523,7 +523,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">0</span>
+                <span title="本文字数">729</span>
               
 
               
@@ -577,11 +577,29 @@
 <li>通过看出来的业务反推，如果你设计表设计成什么样才是符合业务需求的</li>
 <li>掌握基本 HQL 语句的用法</li>
 </ol>
-<p><strong>注意：</strong>类型转换问题，是否符合语法规律。<br>在写程序时要格外注意 NULL 值：是没有值还是出错。<br>数值溢出问题：-65534&gt;65535 正确<br>             (-35534-65535)&gt;0 出现错误<br>计数器设计的很贴心，运行时会把优化的一些数据 </p>
+<p><strong>注意：</strong>类型转换问题，是否符合语法规律。<br>在写程序时要格外注意 NULL 值：是没有值还是出错。<br>数值溢出问题：-65534>65535 正确<br>             (-35534-65535)>0 出现错误<br>计数器设计的很贴心，运行时会把优化的一些数据 </p>
 <ol start="4">
-<li>聚合函数 &lt;===&gt; MapReduce<br><code>hive(dbself)&gt; set hive.map.aggr=true</code><br><code>hive(dbself)&gt; seltct count(\*) from employee;</code><br>set hive.map.aggr 为 True 时：<br>优点：提高 HiveQL 聚合的执行性能，即将顶层的聚合操作放在 Map 阶段执行，减轻清洗阶段数据传输和 Reduce 阶段的执行时间，提升总体性能。<br>缺点：该设置会消耗更多的内存<br>顶层聚合操作(top-levelaggregation operation)，是指在 group by 语句之前的聚合操作。</li>
+<li>聚合函数 <===> MapReduce<br><code>hive(dbself)> set hive.map.aggr=true</code><br><code>hive(dbself)> seltct count(\*) from employee;</code><br>set hive.map.aggr 为 True 时：<br>优点：提高 HiveQL 聚合的执行性能，即将顶层的聚合操作放在 Map 阶段执行，减轻清洗阶段数据传输和 Reduce 阶段的执行时间，提升总体性能。<br>缺点：该设置会消耗更多的内存<br>顶层聚合操作(top-levelaggregation operation)，是指在 group by 语句之前的聚合操作。</===></li>
 </ol>
-
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
       
     </div>
 
@@ -619,8 +637,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/02/06/hive-type-of-data/" rel="next" title="Hive 数据类型">
-                <i class="fa fa-chevron-left"></i> Hive 数据类型
+              <a href="/2018/02/06/hive-bucket/" rel="next" title="Hive 分桶">
+                <i class="fa fa-chevron-left"></i> Hive 分桶
               </a>
             
           </div>
@@ -903,9 +921,7 @@
                     
                       
                     
-                      
-                    
-                    <span class="site-state-item-count">48</span>
+                    <span class="site-state-item-count">47</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1074,7 +1090,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">94k</span>
+    <span title="站点总字数">72k</span>
   
 
   
@@ -1083,7 +1099,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">1:26</span>
+    <span title="站点阅读时长">1:06</span>
   
 </div>
 

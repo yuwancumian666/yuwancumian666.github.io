@@ -516,7 +516,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">0</span>
+                <span title="本文字数">1.2k</span>
               
 
               
@@ -566,7 +566,25 @@
 <li>举个栗子说明: exe-file（C:\Users\Sarmon\AppData\Local\GitHubDesktop\GitHubDesktop.exe），version-file（version.txt）</li>
 <li>版权信息文件中，#号起注释作用，如果生成的 version.txt 没有正确换行，在修改的时候需要注意正确区分注释与版权信息</li>
 </ul>
-
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
       
     </div>
 
@@ -614,8 +632,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/03/18/network/" rel="prev" title="计算机网络">
-                计算机网络 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/03/18/scala-function/" rel="prev" title="Scala 函数">
+                Scala 函数 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -897,9 +915,7 @@
                     
                       
                     
-                      
-                    
-                    <span class="site-state-item-count">48</span>
+                    <span class="site-state-item-count">47</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1085,7 +1101,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">94k</span>
+    <span title="站点总字数">72k</span>
   
 
   
@@ -1094,7 +1110,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">1:26</span>
+    <span title="站点阅读时长">1:06</span>
   
 </div>
 

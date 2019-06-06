@@ -522,7 +522,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">0</span>
+                <span title="本文字数">4k</span>
               
 
               
@@ -536,7 +536,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">1 分钟</span>
+                <span title="阅读时长">4 分钟</span>
               
             </div>
           
@@ -596,7 +596,7 @@ plt.show()</code></pre>
 <p>以下是效果图及对比：</p>
 <div class="group-picture"><div class="group-picture-container"><div class="group-picture-row"><div class="group-picture-column" style="width: 33.333333333333336%;"><img src="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2018-02-04-sb.jpg" width="209" height="365" alt="害羞的刘洪宇"></div><div class="group-picture-column" style="width: 33.333333333333336%;"><img src="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2018-02-04-sb1.png" width="209" height="365" alt="随机彩色"></div><div class="group-picture-column" style="width: 33.333333333333336%;"><img src="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2018-02-04-sb2.png" width="209" height="365" alt="原图色"></div></div></div></div>
 
-<h3 id="中文词云"><a href="#中文词云" class="headerlink" title="中文词云"></a>中文词云</h3><p>开始运行行代码的时候，只显式了若干彩色的小矩形框（乱码，Python 的字符编码令人抓狂），中文词语显式不出来，网上搜博客说是 wordcloud 生成词语的字体问题。进入wordcloud.py 的源码，找字体库相关的代码<code>FONT_PATH = os.environ.get(&quot;FONT_PATH&quot;, os.path.join(os.path.dirname(__file__),&quot;DroidSansMono.ttf&quot;))</code>，将之改为支持中文的字体即可解决。</p>
+<h3 id="中文词云"><a href="#中文词云" class="headerlink" title="中文词云"></a>中文词云</h3><p>开始运行行代码的时候，只显式了若干彩色的小矩形框（乱码，Python 的字符编码令人抓狂），中文词语显式不出来，网上搜博客说是 wordcloud 生成词语的字体问题。进入wordcloud.py 的源码，找字体库相关的代码<code>FONT_PATH = os.environ.get("FONT_PATH", os.path.join(os.path.dirname(__file__),"DroidSansMono.ttf"))</code>，将之改为支持中文的字体即可解决。</p>
 <pre><code class="python"><span class="comment">#! python3</span>
 <span class="comment"># encoding=utf-8</span>
 <span class="keyword">import</span> numpy <span class="keyword">as</span> np
@@ -654,8 +654,8 @@ plt.show()</code></pre>
     <span class="keyword">except</span> ulb.URLError <span class="keyword">as</span> e:
         <span class="keyword">print</span> (<span class="string">"Download Error: "</span> + str(e.reason))
         html = <span class="literal">None</span>
-        <span class="keyword">if</span> num_retries &gt; <span class="number">0</span>:
-            <span class="keyword">if</span> hasattr(e, <span class="string">'code'</span>) <span class="keyword">and</span> <span class="number">500</span> &lt;= e.code &lt; <span class="number">600</span>:
+        <span class="keyword">if</span> num_retries > <span class="number">0</span>:
+            <span class="keyword">if</span> hasattr(e, <span class="string">'code'</span>) <span class="keyword">and</span> <span class="number">500</span> <= e.code < <span class="number">600:
                 <span class="keyword">return</span> download(url, num_retries<span class="number">-1</span>)
     <span class="keyword">return</span> html
 
@@ -678,8 +678,26 @@ plt.show()</code></pre>
 
     <span class="keyword">with</span> open(<span class="string">'hotWords.txt'</span>, <span class="string">'w'</span>) <span class="keyword">as</span> f:
         <span class="keyword">for</span> word <span class="keyword">in</span> list:
-            f.write(word+<span class="string">'\n'</span>)</code></pre>
-
+            f.write(word+<span class="string">'\n'</span>)</=></code></pre>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
       
     </div>
 
@@ -727,8 +745,8 @@ plt.show()</code></pre>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/02/06/hive-bucket/" rel="prev" title="Hive 分桶">
-                Hive 分桶 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/02/06/hive-text-encoding/" rel="prev" title="Hive 文本格式">
+                Hive 文本格式 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -1010,9 +1028,7 @@ plt.show()</code></pre>
                     
                       
                     
-                      
-                    
-                    <span class="site-state-item-count">48</span>
+                    <span class="site-state-item-count">47</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1198,7 +1214,7 @@ plt.show()</code></pre>
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">94k</span>
+    <span title="站点总字数">72k</span>
   
 
   
@@ -1207,7 +1223,7 @@ plt.show()</code></pre>
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">1:26</span>
+    <span title="站点阅读时长">1:06</span>
   
 </div>
 

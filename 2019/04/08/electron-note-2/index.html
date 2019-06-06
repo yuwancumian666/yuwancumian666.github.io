@@ -142,7 +142,7 @@
 
 
   <meta name="description" content="在基本功能完成以后，开启debug模式。">
-<meta name="keywords" content="笔记,前端,Electron-Vue,echarts">
+<meta name="keywords" content="前端,Electron-Vue,笔记,echarts">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Electron-Vue开发笔记——2">
 <meta property="og:url" content="https://yuwancumian666.github.io/2019/04/08/electron-note-2/index.html">
@@ -523,7 +523,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">0</span>
+                <span title="本文字数">278</span>
               
 
               
@@ -567,10 +567,28 @@
 <li><p>把主题的json另存为<code>*.js</code>文件，然后</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// theme.js</span></span><br><span class="line"><span class="keyword">const</span> theme = &#123;<span class="comment">/*json*/</span>&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> theme;</span><br><span class="line"></span><br><span class="line"><span class="comment">// *.vue</span></span><br><span class="line"><span class="keyword">import</span> theme <span class="keyword">from</span> <span class="string">'./themes/theme'</span></span><br><span class="line">echarts.registerTheme(<span class="string">'themename'</span>, theme);</span><br><span class="line">echarts.init(<span class="built_in">document</span>.getElementById(<span class="string">'chart'</span>), <span class="string">'themename'</span>);</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>把下载的js（不是json）文件中<code>root.echarts</code>改为<code>echarts</code>，然后在该文件里 <code>import echarts from &#39;echarts&#39;</code>。然后在vue组件中可以直接使用<code>*.js</code>中注册的主题名字。</p>
+<li><p>把下载的js（不是json）文件中<code>root.echarts</code>改为<code>echarts</code>，然后在该文件里 <code>import echarts from 'echarts'</code>。然后在vue组件中可以直接使用<code>*.js</code>中注册的主题名字。</p>
 </li>
 </ol>
-
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
       
     </div>
 
@@ -593,11 +611,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/笔记/" rel="tag"># 笔记</a>
-          
             <a href="/tags/前端/" rel="tag"># 前端</a>
           
             <a href="/tags/Electron-Vue/" rel="tag"># Electron-Vue</a>
+          
+            <a href="/tags/笔记/" rel="tag"># 笔记</a>
           
             <a href="/tags/echarts/" rel="tag"># echarts</a>
           
@@ -905,9 +923,7 @@
                     
                       
                     
-                      
-                    
-                    <span class="site-state-item-count">48</span>
+                    <span class="site-state-item-count">47</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1093,7 +1109,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">94k</span>
+    <span title="站点总字数">72k</span>
   
 
   
@@ -1102,7 +1118,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">1:26</span>
+    <span title="站点阅读时长">1:06</span>
   
 </div>
 

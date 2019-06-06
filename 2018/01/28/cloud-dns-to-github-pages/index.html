@@ -518,7 +518,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">0</span>
+                <span title="本文字数">759</span>
               
 
               
@@ -558,7 +558,7 @@
 <a id="more"></a>
 
 <p>云解析就是绑定域名，这个域名 “yuwancumian666.top” 是在阿里云注册的，两块钱😄<br>在 GitHub Pages 上搭好博客之后可以设置云解析。</p>
-<h3 id="创建-CNAME-文件"><a href="#创建-CNAME-文件" class="headerlink" title="创建 CNAME 文件"></a>创建 CNAME 文件</h3><p>首先在博客的根目录新建一个文件：“CNAME”，内容为要解析的域名：“yuwancumian666.top”，注意不要添加 http://或 www 等前缀。在 Windows 下如果不能建立没有后缀名的文件时，则可以 shift + 右键打开 Power Shell 输入 <code>echo yuwancumian666.top &gt; CNAME</code>以建立该文件。</p>
+<h3 id="创建-CNAME-文件"><a href="#创建-CNAME-文件" class="headerlink" title="创建 CNAME 文件"></a>创建 CNAME 文件</h3><p>首先在博客的根目录新建一个文件：“CNAME”，内容为要解析的域名：“yuwancumian666.top”，注意不要添加 http://或 www 等前缀。在 Windows 下如果不能建立没有后缀名的文件时，则可以 shift + 右键打开 Power Shell 输入 <code>echo yuwancumian666.top > CNAME</code>以建立该文件。</p>
 <h3 id="设置云解析"><a href="#设置云解析" class="headerlink" title="设置云解析"></a>设置云解析</h3><p>在阿里云的控制台找到 “云解析 DNS” 一栏，在域名下添加解析如下：</p>
 <p><img src="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2018-01-28-cloud-dns.png" alt="cloud-dns"></p>
 <ul>
@@ -567,7 +567,25 @@
 <li>设置主机记录@，记录类型为CNAME，记录值是yuwancumian666.github.io.。表示将 <a href="http://yuwancumian666.top" target="_blank" rel="noopener">http://yuwancumian666.top</a> 这个主域名映射到  yuwancumian666.github.io</li>
 </ul>
 <p>添加完解析之后，等待大约十分钟，你的博客就可以访问了。</p>
-
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
       
     </div>
 
@@ -896,9 +914,7 @@
                     
                       
                     
-                      
-                    
-                    <span class="site-state-item-count">48</span>
+                    <span class="site-state-item-count">47</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1084,7 +1100,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">94k</span>
+    <span title="站点总字数">72k</span>
   
 
   
@@ -1093,7 +1109,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">1:26</span>
+    <span title="站点阅读时长">1:06</span>
   
 </div>
 

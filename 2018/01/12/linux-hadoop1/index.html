@@ -523,7 +523,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">0</span>
+                <span title="本文字数">1.6k</span>
               
 
               
@@ -582,9 +582,9 @@
 </li>
 <li><p>修改配置文件，路径 /home/groot/hadoop/etc/hadoop/</p>
 <blockquote>
-<p><code>A: hadoop-env.sh 找到 “# export JAVA_HOME=${JAVA_HOME}” 字样，在下方修改 jdk 的安装路径</code> <br><br><code>B: core-site.xml 配置访问的主机名和端口 (8020)，&lt;name&gt;fs.default.name&lt;/name&gt; &lt;value&gt;hdfs://master:8020&lt;/value&gt;</code> <br><br><code>C: hdfs-site 配置备份数，指定元数据和数据块的存储目录</code> <br><br><code>D: 用户名不一样的地方都需要改</code> <br><br><code>E: 配置主机名：/etc/sysconfig/network 文件中，修改为 master/slave</code> <br><br><code>F: 配置 IP 和主机名的映射：/etc/hosts 文件，master 和 slave 都要改</code> <br><br><code>G: 配置 SSH 免密，假设在 master 节点家目录的 “.ssh” 文件夹</code> <br></p>
+<p><code>A: hadoop-env.sh 找到 “# export JAVA_HOME=${JAVA_HOME}” 字样，在下方修改 jdk 的安装路径</code> <br><br><code>B: core-site.xml 配置访问的主机名和端口 (8020)，<name>fs.default.name</name> <value>hdfs://master:8020</value></code> <br><br><code>C: hdfs-site 配置备份数，指定元数据和数据块的存储目录</code> <br><br><code>D: 用户名不一样的地方都需要改</code> <br><br><code>E: 配置主机名：/etc/sysconfig/network 文件中，修改为 master/slave</code> <br><br><code>F: 配置 IP 和主机名的映射：/etc/hosts 文件，master 和 slave 都要改</code> <br><br><code>G: 配置 SSH 免密，假设在 master 节点家目录的 “.ssh” 文件夹</code> <br></p>
 <blockquote>
-<p><code>a: 生成密钥，ssh-keygen -t rsa -p &#39;&#39;</code> <br><br><code>b: 这是本机免密，cat id_rsa.pub &gt;&gt; authorized_keys</code> <br><br><code>c: 上传公钥到slave，scp id_rsa.pub groot@slave:/home/groot/.ssh/aa.pub</code> <br><br><code>d: 免密登陆另一台机器，cat aa.pub &gt;&gt; authorized_keys</code> <br><br><code>e: slave 节点重复 master 节点的做法</code> <br></p>
+<p><code>a: 生成密钥，ssh-keygen -t rsa -p ''</code> <br><br><code>b: 这是本机免密，cat id_rsa.pub >> authorized_keys</code> <br><br><code>c: 上传公钥到slave，scp id_rsa.pub groot@slave:/home/groot/.ssh/aa.pub</code> <br><br><code>d: 免密登陆另一台机器，cat aa.pub >> authorized_keys</code> <br><br><code>e: slave 节点重复 master 节点的做法</code> <br></p>
 </blockquote>
 </blockquote>
 </li>
@@ -610,7 +610,25 @@
 <li>查看目录：<code>hadoop fs -ls</code></li>
 <li>上传文件：<code>hadoop fs -put</code> 文件名 路径名</li>
 </ol>
-
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
       
     </div>
 
@@ -941,9 +959,7 @@
                     
                       
                     
-                      
-                    
-                    <span class="site-state-item-count">48</span>
+                    <span class="site-state-item-count">47</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1129,7 +1145,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">94k</span>
+    <span title="站点总字数">72k</span>
   
 
   
@@ -1138,7 +1154,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">1:26</span>
+    <span title="站点阅读时长">1:06</span>
   
 </div>
 
