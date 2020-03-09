@@ -149,7 +149,7 @@
 <meta property="og:site_name" content="Hummer&#39;s Blog">
 <meta property="og:description" content="默念二十四字社会主义核心价值观">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-05T07:59:26.340Z">
+<meta property="og:updated_time" content="2020-03-09T12:11:05.571Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="VPS使用指南">
 <meta name="twitter:description" content="默念二十四字社会主义核心价值观">
@@ -573,7 +573,7 @@
 <a id="more"></a>
 
 <h1 id="安装ShadowsocksR"><a href="#安装ShadowsocksR" class="headerlink" title="安装ShadowsocksR"></a>安装ShadowsocksR</h1><p>使用root用户登录，运行以下命令：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 安装ShadowsocksR</span><br><span class="line">wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocksR.sh</span><br><span class="line">chmod +x shadowsocksR.sh</span><br><span class="line">./shadowsocksR.sh 2&gt;&amp;1 | tee shadowsocksR.log</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 卸载ShadowsocksR</span><br><span class="line">./shadowsocksR.sh uninstall</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 安装 BBR</span><br><span class="line">wget --no-check-certificate https://raw.githubusercontent.com/yuwancumian666/how-to-start-a-new-VPS/master/tcp.sh</span><br><span class="line">chmod +x tcp.sh</span><br><span class="line">./tcp.sh</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 安装ShadowsocksR</span><br><span class="line">wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocksR.sh</span><br><span class="line">chmod +x shadowsocksR.sh</span><br><span class="line">./shadowsocksR.sh 2&gt;&amp;1 | tee shadowsocksR.log</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 卸载ShadowsocksR</span><br><span class="line">./shadowsocksR.sh uninstall</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 安装 BBR</span><br><span class="line">wget --no-check-certificate https://raw.githubusercontent.com/moeext/how-to-start-a-new-VPS/master/tcp.sh</span><br><span class="line">chmod +x tcp.sh</span><br><span class="line">./tcp.sh</span><br></pre></td></tr></table></figure>
 
 <h2 id="多用户配置示例"><a href="#多用户配置示例" class="headerlink" title="多用户配置示例"></a>多用户配置示例</h2><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"server"</span>:<span class="string">"0.0.0.0"</span>,</span><br><span class="line">    <span class="attr">"server_ipv6"</span>:<span class="string">"[::]"</span>,</span><br><span class="line">    <span class="attr">"local_address"</span>:<span class="string">"127.0.0.1"</span>,</span><br><span class="line">    <span class="attr">"local_port"</span>:<span class="number">1080</span>,</span><br><span class="line">    <span class="attr">"port_password"</span>:&#123;</span><br><span class="line">        <span class="attr">"10657"</span>:<span class="string">"***"</span>,</span><br><span class="line">        <span class="attr">"10658"</span>:<span class="string">"***"</span>,</span><br><span class="line">        <span class="attr">"10659"</span>:<span class="string">"***"</span>,</span><br><span class="line">        <span class="attr">"10660"</span>:<span class="string">"***"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">"timeout"</span>:<span class="number">120</span>,</span><br><span class="line">    <span class="attr">"method"</span>:<span class="string">"aes-256-cfb"</span>,</span><br><span class="line">    <span class="attr">"protocol"</span>:<span class="string">"origin"</span>,</span><br><span class="line">    <span class="attr">"protocol_param"</span>:<span class="string">""</span>,</span><br><span class="line">    <span class="attr">"obfs"</span>:<span class="string">"plain"</span>,</span><br><span class="line">    <span class="attr">"obfs_param"</span>:<span class="string">""</span>,</span><br><span class="line">    <span class="attr">"redirect"</span>:<span class="string">""</span>,</span><br><span class="line">    <span class="attr">"dns_ipv6"</span>:<span class="literal">false</span>,</span><br><span class="line">    <span class="attr">"fast_open"</span>:<span class="literal">false</span>,</span><br><span class="line">    <span class="attr">"workers"</span>:<span class="number">1</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -638,8 +638,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/02/22/2019-2-22-software-installation-description/" rel="next" title="软件及开发包安装中的那些坑">
-                <i class="fa fa-chevron-left"></i> 软件及开发包安装中的那些坑
+              <a href="/2019/02/22/2019-2-22-customize-font-in-latex/" rel="next" title="在LaTex中使用自定义字体">
+                <i class="fa fa-chevron-left"></i> 在LaTex中使用自定义字体
               </a>
             
           </div>
@@ -721,7 +721,7 @@
           -->
         </div>
         <div style="text-align: right; font-size: 0.8em; color: black;" id="loline-from"></div>
-        <div style="margin-top: 15px; font-size: 0.8em; color: black;"><a href="https://yuwancumian666.github.io/2019/03/08/loline/#more">LOLine</a></div>
+        <div style="margin-top: 15px; font-size: 0.8em; color: black;"><a href="https://moeext.github.io/2019/03/08/loline/#more">LOLine</a></div>
       </div>
       <div style="height: 15px"></div>
       <!-- LOLine end -->
@@ -759,7 +759,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">46</span>
+                    <span class="site-state-item-count">47</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -822,7 +822,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">23</span>
+                      
+                    
+                    <span class="site-state-item-count">24</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -931,7 +933,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">46</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">48</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1117,7 +1123,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">74k</span>
+    <span title="站点总字数">77k</span>
   
 
   
@@ -1126,7 +1132,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">1:07</span>
+    <span title="站点阅读时长">1:10</span>
   
 </div>
 

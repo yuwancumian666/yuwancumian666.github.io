@@ -142,22 +142,17 @@
 
 
   <meta name="description" content="由于个人水平原因遇到的解决不了或已经解决的问题。">
-<meta name="keywords" content="Electron-Vue,笔记">
+<meta name="keywords" content="笔记,Electron-Vue">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Electron-Vue遇到的诸多问题">
 <meta property="og:url" content="https://moeext.github.io/2019/03/26/electron-issues/index.html">
 <meta property="og:site_name" content="Hummer&#39;s Blog">
 <meta property="og:description" content="由于个人水平原因遇到的解决不了或已经解决的问题。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2019/2019-03-23-card-columns-bug.jpg">
-<meta property="og:image" content="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2019/2019-03-24-card-columns-%E9%98%B4%E5%BD%B1%E7%A7%BB%E4%BD%8D.jpg">
-<meta property="og:image" content="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2019/2019-03-27-fucking-char-1.jpg">
-<meta property="og:image" content="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2019/2019-03-27-fucking-char-2.jpg">
-<meta property="og:updated_time" content="2019-06-05T09:17:55.852Z">
+<meta property="og:updated_time" content="2020-03-09T17:04:28.418Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Electron-Vue遇到的诸多问题">
 <meta name="twitter:description" content="由于个人水平原因遇到的解决不了或已经解决的问题。">
-<meta name="twitter:image" content="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2019/2019-03-23-card-columns-bug.jpg">
 
 
 
@@ -545,7 +540,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">3.5k</span>
+                <span title="本文字数">4.8k</span>
               
 
               
@@ -559,7 +554,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">3 分钟</span>
+                <span title="阅读时长">4 分钟</span>
               
             </div>
           
@@ -581,6 +576,13 @@
       
         <p>由于个人水平原因遇到的解决不了或已经解决的问题。</p>
 <a id="more"></a>
+
+<h1 id="环境构建"><a href="#环境构建" class="headerlink" title="环境构建"></a>环境构建</h1><h2 id="Webpack-ReferenceError-process-is-not-defined"><a href="#Webpack-ReferenceError-process-is-not-defined" class="headerlink" title="Webpack ReferenceError: process is not defined"></a>Webpack ReferenceError: process is not defined</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">ERROR in Template execution failed: ReferenceError: process is not defined</span><br><span class="line"></span><br><span class="line">  ERROR in   ReferenceError: process is not defined</span><br><span class="line"></span><br><span class="line">    - index.ejs:11 eval</span><br><span class="line">      [.]/[html-webpack-plugin]/lib/loader.js!./src/index.ejs:11:2</span><br><span class="line"></span><br><span class="line">    - index.ejs:16 module.exports</span><br><span class="line">      [.]/[html-webpack-plugin]/lib/loader.js!./src/index.ejs:16:3</span><br><span class="line"></span><br><span class="line">    - index.js:284</span><br><span class="line">      [Buper]/[html-webpack-plugin]/index.js:284:18</span><br><span class="line"></span><br><span class="line">    - runMicrotasks</span><br><span class="line"></span><br><span class="line">    - task_queues.js:97 processTicksAndRejections</span><br><span class="line">      internal/process/task_queues.js:97:5</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://github.com/SimulatedGREG/electron-vue/issues/871#issuecomment-529809406" target="_blank" rel="noopener">saved</a></p>
+<figure class="highlight js"><figcaption><span>webpack.renderer.config.js</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> HtmlWebpackPlugin({</span><br><span class="line">  filename: <span class="string">'index.html'</span>,</span><br><span class="line">  template: path.resolve(__dirname, <span class="string">'../src/index.ejs'</span>),</span><br><span class="line">  minify: {</span><br><span class="line">    collapseWhitespace: <span class="literal">true</span>,</span><br><span class="line">    removeAttributeQuotes: <span class="literal">true</span>,</span><br><span class="line">    removeComments: <span class="literal">true</span></span><br><span class="line">  },</span><br><span class="line">  <span class="comment">// ↓ 2020-03-10 https://github.com/SimulatedGREG/electron-vue/issues/871#issuecomment-529809406</span></span><br><span class="line">  isBrowser: <span class="literal">false</span>,</span><br><span class="line">  isDevelopment: process.env.NODE_ENV !== <span class="string">'production'</span>,</span><br><span class="line">  <span class="comment">// ↑ 2020-03-10 https://github.com/SimulatedGREG/electron-vue/issues/871#issuecomment-529809406</span></span><br><span class="line">  nodeModules: process.env.NODE_ENV !== <span class="string">'production'</span></span><br><span class="line">    ? path.resolve(__dirname, <span class="string">'../node_modules'</span>)</span><br><span class="line">    : <span class="literal">false</span></span><br><span class="line">}),</span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight js"><figcaption><span>index.ejs</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><!-- <span class="xml"><span class="tag"><<span class="name">%</span> <span class="attr">if</span> (! <span class="attr">require</span>('<span class="attr">process</span>')<span class="attr">.browser</span>) { %></span></span></span><br><span class="line">  <script></span><br><span class="line">    if (process.env.NODE_ENV !== 'development') window.__static = require('path').join(__dirname, '/static').replace(/\\/g, '\\\\')</span><br><span class="line"><span class="xml">  <span class="tag"></<span class="name">script</span>></span></span></span><br><span class="line"><span class="xml"><span class="tag"><<span class="name">%</span> } %></span> --></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml"><span class="tag"><<span class="name">%</span> <span class="attr">if</span> (!<span class="attr">htmlWebpackPlugin.options.isBrowser</span> && !<span class="attr">htmlWebpackPlugin.options.isDevelopment</span>) { %></span></span></span><br><span class="line">    <script></span><br><span class="line">      window.__static = require('path').join(__dirname, '/static').replace(/\\/g, '\\\\')</span><br><span class="line"><span class="xml">    <span class="tag"></<span class="name">script</span>></span></span></span><br><span class="line"><span class="xml"><span class="tag"><<span class="name">%</span> } %></span></span></span><br></pre></td></tr></tbody></table></figure>
 
 <h1 id="Electron-amp-Vue"><a href="#Electron-amp-Vue" class="headerlink" title="Electron & Vue"></a>Electron & Vue</h1><h2 id="ipcRenderer-send-函数不能工作-2019-03-26"><a href="#ipcRenderer-send-函数不能工作-2019-03-26" class="headerlink" title="ipcRenderer.send()函数不能工作-2019/03/26"></a>ipcRenderer.send()函数不能工作-2019/03/26</h2><p>Console里的错误描述：</p>
 <div class="note danger">
@@ -631,7 +633,7 @@
           });
       </script>
       
-    </div>
+    </span></pre></td></tr></tbody></table></figure></div>
 
     
 
@@ -652,9 +654,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Electron-Vue/" rel="tag"># Electron-Vue</a>
-          
             <a href="/tags/笔记/" rel="tag"># 笔记</a>
+          
+            <a href="/tags/Electron-Vue/" rel="tag"># Electron-Vue</a>
           
         </div>
       
@@ -750,7 +752,7 @@
           -->
         </div>
         <div style="text-align: right; font-size: 0.8em; color: black;" id="loline-from"></div>
-        <div style="margin-top: 15px; font-size: 0.8em; color: black;"><a href="https://yuwancumian666.github.io/2019/03/08/loline/#more">LOLine</a></div>
+        <div style="margin-top: 15px; font-size: 0.8em; color: black;"><a href="https://moeext.github.io/2019/03/08/loline/#more">LOLine</a></div>
       </div>
       <div style="height: 15px"></div>
       <!-- LOLine end -->
@@ -788,7 +790,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">46</span>
+                    <span class="site-state-item-count">47</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -851,7 +853,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">23</span>
+                      
+                    
+                    <span class="site-state-item-count">24</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -960,7 +964,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">46</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">48</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1106,7 +1114,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Electron-amp-Vue"><span class="nav-number">1.</span> <span class="nav-text">Electron &amp; Vue</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ipcRenderer-send-函数不能工作-2019-03-26"><span class="nav-number">1.1.</span> <span class="nav-text">ipcRenderer.send()函数不能工作-2019/03/26</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ipcRenderer和ipcMain"><span class="nav-number">1.2.</span> <span class="nav-text">ipcRenderer和ipcMain</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ipcRenderer-on重复执行（dialog）"><span class="nav-number">1.3.</span> <span class="nav-text">ipcRenderer.on重复执行（dialog）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dialog选择文件夹会返回undefined"><span class="nav-number">1.4.</span> <span class="nav-text">dialog选择文件夹会返回undefined</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Vue-amp-Vuex"><span class="nav-number">2.</span> <span class="nav-text">Vue &amp; Vuex</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Vue数据更新，视图不更新-2019-03-24"><span class="nav-number">2.1.</span> <span class="nav-text">Vue数据更新，视图不更新-2019/03/24</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#全局变量、函数-2019-03-26"><span class="nav-number">2.2.</span> <span class="nav-text">全局变量、函数-2019/03/26</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Vuex-state数据返回错误"><span class="nav-number">2.3.</span> <span class="nav-text">Vuex state数据返回错误</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vuex-do-not-mutate-vuex-store-state-outside-mutation-handlers-2019-04-07"><span class="nav-number">2.4.</span> <span class="nav-text">[vuex] do not mutate vuex store state outside mutation handlers. 2019/04/07</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#界面布局"><span class="nav-number">3.</span> <span class="nav-text">界面布局</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#card-columns布局-2019-03-23"><span class="nav-number">3.1.</span> <span class="nav-text">card-columns布局-2019/03/23</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#卡片阴影移位-2019-03-24"><span class="nav-number">3.2.</span> <span class="nav-text">卡片阴影移位-2019/03/24</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Node-js"><span class="nav-number">4.</span> <span class="nav-text">Node.js</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#奇怪的字符202A"><span class="nav-number">4.1.</span> <span class="nav-text">奇怪的字符202A</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#环境构建"><span class="nav-number">1.</span> <span class="nav-text">环境构建</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Webpack-ReferenceError-process-is-not-defined"><span class="nav-number">1.1.</span> <span class="nav-text">Webpack ReferenceError: process is not defined</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1146,7 +1154,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">74k</span>
+    <span title="站点总字数">77k</span>
   
 
   
@@ -1155,7 +1163,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">1:07</span>
+    <span title="站点阅读时长">1:10</span>
   
 </div>
 
