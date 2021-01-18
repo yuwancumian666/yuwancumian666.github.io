@@ -1,172 +1,53 @@
 <!DOCTYPE html>
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<html class="theme-next pisces use-motion" lang="zh-CN">
-<head><meta name="generator" content="Hexo 3.8.0">
+<html lang="zh-CN">
+<head>
   <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
 
 
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
 
-
-  
-  
-    
-    
-  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
-  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link rel="stylesheet" href="/lib/fancybox/source/jquery.fancybox.css">
-
-
-
-
-  
-  
-  
-  
-
-  
-    
-    
-  
-
-  
-
-  
-
-  
-    
-      
-    
-
-    
-  
-
-  
-
-  
-    
-    
-    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Supercell-Magic:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
-  
-
-
-
-
-
-
-  
-
-<link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
-<link rel="stylesheet" href="/css/main.css?v=7.1.1">
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.1">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.1">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.1">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222">
-
-
-
-
-
-
-
-<script id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Pisces',
-    version: '7.1.1',
-    sidebar: {"position":"right","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false,"dimmer":false},
-    back2top: true,
-    back2top_sidebar: true,
-    fancybox: true,
-    fastclick: false,
-    lazyload: false,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-  
-
-
-
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"moeext.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
 
   <meta name="description" content="Nursery是一个简单的进程托管Demo，用于启动console应用程序。">
-<meta name="keywords" content="笔记,C#,WPF">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Nursery 开发笔记">
 <meta property="og:url" content="https://moeext.github.io/2020/09/28/nursery-notes/index.html">
 <meta property="og:site_name" content="Hummer&#39;s Blog">
 <meta property="og:description" content="Nursery是一个简单的进程托管Demo，用于启动console应用程序。">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-09-27T15:06:09.973Z">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-09-27T17:26:11.000Z">
+<meta property="article:modified_time" content="2020-10-04T15:58:43.043Z">
+<meta property="article:author" content="MoeexT">
+<meta property="article:tag" content="笔记">
+<meta property="article:tag" content="C#">
+<meta property="article:tag" content="WPF">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Nursery 开发笔记">
-<meta name="twitter:description" content="Nursery是一个简单的进程托管Demo，用于启动console应用程序。">
+
+<link rel="canonical" href="https://moeext.github.io/2020/09/28/nursery-notes/">
 
 
-
-
-
-  
-  
-  <link rel="canonical" href="https://moeext.github.io/2020/09/28/nursery-notes/">
-
-
-
-<script id="page.configurations">
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
   };
 </script>
 
@@ -178,15 +59,8 @@
 
 
 
-
-
-
-
-
-
   <noscript>
   <style>
-  .use-motion .motion-element,
   .use-motion .brand,
   .use-motion .menu-item,
   .sidebar-inner,
@@ -195,9 +69,8 @@
   .use-motion .comments,
   .use-motion .post-header,
   .use-motion .post-body,
-  .use-motion .collection-title { opacity: initial; }
+  .use-motion .collection-header { opacity: initial; }
 
-  .use-motion .logo,
   .use-motion .site-title,
   .use-motion .site-subtitle {
     opacity: initial;
@@ -209,200 +82,102 @@
   </style>
 </noscript>
 
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-right page-post-detail">
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Hummer's Blog</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
     </div>
-    
-      
-        <p class="site-subtitle">哝，你的鱼丸~</p>
-      
-    
-    
   </div>
 
-  <div class="site-nav-toggle">
-    <button aria-label="切换导航栏">
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Hummer's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
   </div>
 </div>
+
 
 
 
 <nav class="site-nav">
-  
-    <ul id="menu" class="menu">
-      
-        
-        
-        
-          
-          <li class="menu-item menu-item-home">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-tags">
+        <li class="menu-item menu-item-tags">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-categories">
+        <li class="menu-item menu-item-categories">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-archives">
+        <li class="menu-item menu-item-archives">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-about">
+        <li class="menu-item menu-item-about">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-smile">
-
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/smile" rel="section"><i class="menu-item-icon fa fa-fw fa-smile-o"></i> <br>smile</a>
-
-  </li>
-
-      
-      
-        <li class="menu-item menu-item-search">
-          
-            <a href="javascript:;" class="popup-trigger">
-          
-            
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
-        </li>
-      
-    </ul>
-  
-
-  
-
-  
-    <div class="site-search">
-      
-  <div class="popup search-popup local-search-popup">
-  <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
-    <span class="popup-btn-close">
-      <i class="fa fa-times-circle"></i>
-    </span>
-    <div class="local-search-input-wrapper">
-      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
-    </div>
-  </div>
-  <div id="local-search-result"></div>
-</div>
-
-
-
-    </div>
-  
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
 </nav>
 
 
 
-  
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
 
-
+    </div>
+  </div>
 
 </div>
     </header>
@@ -410,153 +185,78 @@
     
 
 
-    <main id="main" class="main">
+    <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
           
+
+          <div class="content post posts-expand">
             
 
-          
-          <div id="content" class="content">
-            
-
-  <div id="posts" class="posts-expand">
     
-
-  
-
   
   
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://moeext.github.io/2020/09/28/nursery-notes/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/anole.jpg">
       <meta itemprop="name" content="MoeexT">
-      <meta itemprop="description" content="她的热切的脸，如夜雨似的，搅扰着我的梦魂。">
-      <meta itemprop="image" content="/images/luna.png">
+      <meta itemprop="description" content="我在做FancyToys">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Hummer's Blog">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">Nursery 开发笔记
-
-              
-            
-          </h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          Nursery 开发笔记
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
+              <span class="post-meta-item-text">发表于</span>
 
               <time title="创建时间：2020-09-27 17:26:11" itemprop="dateCreated datePublished" datetime="2020-09-27T17:26:11Z">2020-09-27</time>
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-10-04 15:58:43" itemprop="dateModified" datetime="2020-10-04T15:58:43Z">2020-10-04</time>
               </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Net/" itemprop="url" rel="index"><span itemprop="name">.Net</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-            <span class="post-meta-divider">|</span>
-            <span class="post-meta-item-icon">
-            <i class="fa fa-eye"></i>
-             阅读次数： 
-            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
-            </span>
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Net/" itemprop="url" rel="index"><span itemprop="name">.Net</span></a>
                 </span>
-                
-                  <span class="post-meta-item-text">本文字数：</span>
-                
-                <span title="本文字数">2.1k</span>
-              
+            </span>
 
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">2 分钟</span>
-              
-            </div>
-          
-
-          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>6.7k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>6 分钟</span>
+            </span>
 
         </div>
       </header>
-    
 
     
     
@@ -564,651 +264,266 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
         <p>Nursery是一个简单的进程托管Demo，用于启动console应用程序。</p>
 <a id="more"></a>
-
-
-<h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><h2 id="CheckBoxList"><a href="#CheckBoxList" class="headerlink" title="CheckBoxList"></a>CheckBoxList</h2><p>这里一开始用的是<a href="https://www.c-sharpcorner.com/uploadfile/syedshakeer/checkboxlist-in-wpf/" target="_blank" rel="noopener">ObservableCollection</a>的方式，后感感觉太过于繁杂，改为直接向<code>ListBox</code>中添加<code>CheckBox</code>：<code>ProcessListBox.Items.Add(checkBox);</code>。</p>
-<h2 id="ListView的动态更新"><a href="#ListView的动态更新" class="headerlink" title="ListView的动态更新"></a>ListView的动态更新</h2><p>或许有用的资料</p>
+<h1 id="问题"><a class="markdownIt-Anchor" href="#问题"></a> 问题</h1>
+<h2 id="checkboxlist"><a class="markdownIt-Anchor" href="#checkboxlist"></a> CheckBoxList</h2>
+<p>这里一开始用的是<a href="https://www.c-sharpcorner.com/uploadfile/syedshakeer/checkboxlist-in-wpf/">ObservableCollection</a>的方式，后感感觉太过于繁杂，改为直接向<code>ListBox</code>中添加<code>CheckBox</code>：<code>ProcessListBox.Items.Add(checkBox);</code>。</p>
+<h2 id="listview的动态更新"><a class="markdownIt-Anchor" href="#listview的动态更新"></a> ListView的动态更新</h2>
+<p>或许有用的资料</p>
 <ol>
-<li><a href="https://www.c-sharpcorner.com/uploadfile/syedshakeer/checkboxlist-in-wpf/" target="_blank" rel="noopener">CheckBoxList(ObservableCollection)in WPF</a></li>
-<li><a href="https://blog.csdn.net/farsee520/article/details/106799065" target="_blank" rel="noopener">WPF ListView实时更新及INotifyPropertyChanged使用演示</a></li>
-<li><a href="https://blog.csdn.net/djshichaoren/article/details/79957523" target="_blank" rel="noopener">WPF Listview绑定数据发生改变后前端没有更新</a></li>
+<li><a href="https://www.c-sharpcorner.com/uploadfile/syedshakeer/checkboxlist-in-wpf/">CheckBoxList(ObservableCollection)in WPF</a></li>
+<li><a href="https://blog.csdn.net/farsee520/article/details/106799065">WPF ListView实时更新及INotifyPropertyChanged使用演示</a></li>
+<li><a href="https://blog.csdn.net/djshichaoren/article/details/79957523">WPF Listview绑定数据发生改变后前端没有更新</a></li>
 </ol>
-<h3 id="尝试"><a href="#尝试" class="headerlink" title="尝试"></a>尝试</h3><p>这里想的是另起一个监控线程，对线程的实时信息进行更新。对<code>infoList</code>更新后，通过<code>ProcessInformationListView.ItemsSource = infoList;</code>使其生效，但是遇到了线程间对对象访问的问题：</p>
+<h3 id="尝试"><a class="markdownIt-Anchor" href="#尝试"></a> 尝试</h3>
+<p>这里想的是另起一个监控线程，对线程的实时信息进行更新。对<code>infoList</code>更新后，通过<code>ProcessInformationListView.ItemsSource = infoList;</code>使其生效，但是遇到了线程间对对象访问的问题：</p>
 <div class="note danger">
             <p><code>System.InvalidOperationException:“调用线程无法访问此对象，因为另一个线程拥有该对象。</code></p>
           </div>
-<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ProcessInformationListView.Dispatcher.BeginInvoke(<span class="keyword">new</span> Action(() =&gt;</span><br><span class="line">&#123;</span><br><span class="line">    ProcessInformationListView.ItemsSource = infoList;</span><br><span class="line">    ArgsButton.Content = <span class="string">"test"</span>;</span><br><span class="line">    logger.Info(<span class="string">"size:"</span> + infoList.Count);</span><br><span class="line">&#125;));</span><br></pre></td></tr></table></figure>
-
-<p>改成这段代码之后，监控线程（monitor）能更改主线程的对象（button的内容发生更改可以证明），但是<code>ListView</code><br>的内容并不会更改。不仅如此，monitor执行后主线程不能向ListView中添加内容了，如果先添加了内容，monitor执行后内容不会改变。</p>
-<h3 id="最终解决方式"><a href="#最终解决方式" class="headerlink" title="最终解决方式"></a>最终解决方式</h3><ol>
-<li><p><code>LIstView</code>的数据源使用<code>ObservableCollection</code>：<code>private ObservableCollection<processinformation> InfoList { get; set; }</processinformation></code></p>
-</li>
-<li><p>实体类<code>ProcessInformation</code>继承<code>INotifyPropertyChanged</code>接口</p>
-<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">ProcessInformation</span> : <span class="title">INotifyPropertyChanged</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">string</span> _Process;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">int</span> _PID;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">string</span> _CPU;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">string</span> _Memory;</span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">event</span> PropertyChangedEventHandler PropertyChanged;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">string</span> Process &#123;</span><br><span class="line">            <span class="keyword">get</span> &#123; <span class="keyword">return</span> _Process; &#125;</span><br><span class="line">            <span class="keyword">set</span> &#123; _Process = <span class="keyword">value</span>;</span><br><span class="line">                PropertyChanged?.Invoke(<span class="keyword">this</span>, <span class="keyword">new</span> PropertyChangedEventArgs(<span class="string">"Process"</span>));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">int</span> PID &#123;</span><br><span class="line">            <span class="keyword">get</span> &#123; <span class="keyword">return</span> _PID; &#125;</span><br><span class="line">            <span class="keyword">set</span> &#123; _PID = <span class="keyword">value</span>;</span><br><span class="line">                PropertyChanged?.Invoke(<span class="keyword">this</span>, <span class="keyword">new</span> PropertyChangedEventArgs(<span class="string">"PID"</span>));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">string</span> CPU &#123;</span><br><span class="line">            <span class="keyword">get</span> &#123; <span class="keyword">return</span> _CPU; &#125;</span><br><span class="line">            <span class="keyword">set</span> &#123; _CPU = <span class="keyword">value</span>;</span><br><span class="line">                PropertyChanged?.Invoke(<span class="keyword">this</span>, <span class="keyword">new</span> PropertyChangedEventArgs(<span class="string">"CPU"</span>));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">string</span> Memory &#123;</span><br><span class="line">            <span class="keyword">get</span> &#123; <span class="keyword">return</span> _Memory; &#125;</span><br><span class="line">            <span class="keyword">set</span> &#123; _Memory = <span class="keyword">value</span>;</span><br><span class="line">                PropertyChanged?.Invoke(<span class="keyword">this</span>, <span class="keyword">new</span> PropertyChangedEventArgs(<span class="string">"Memory"</span>));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>跨线程访问（这个就不用了，因为<code>ObservableCollection</code>实现了<code>INotifyPropertyChanged</code>接口，当<code>InfoList</code>发生改变时会自动更新<code>ListView</code>，不用手动更新<code>ListView.ItemsSource</code>，也就不会发生跨线程访问<code>ListView</code>了。ps: 好像是跨线程更改前台的数据才会出现<a href="#尝试">这个问题</a>）
-不更新、不能添加<code>GridView</code>的原因也应该是没有实现<code>INotifyPropertyChanged</code>接口</p>
-</li>
+<figure class="highlight cs"><table><tbody><tr><td class="code"><pre><span class="line">ProcessInformationListView.Dispatcher.BeginInvoke(<span class="keyword">new</span> Action(() =&gt;</span><br><span class="line">{</span><br><span class="line">    ProcessInformationListView.ItemsSource = infoList;</span><br><span class="line">    ArgsButton.Content = <span class="string">"test"</span>;</span><br><span class="line">    logger.Info(<span class="string">"size:"</span> + infoList.Count);</span><br><span class="line">}));</span><br></pre></td></tr></tbody></table></figure>
+<p>改成这段代码之后，监控线程（monitor）能更改主线程的对象（button的内容发生更改可以证明），但是<code>ListView</code><br>
+的内容并不会更改。不仅如此，monitor执行后主线程不能向ListView中添加内容了，如果先添加了内容，monitor执行后内容不会改变。</p>
+<h3 id="最终解决方式"><a class="markdownIt-Anchor" href="#最终解决方式"></a> 最终解决方式</h3>
+<ol>
+<li><code>LIstView</code>的数据源使用<code>ObservableCollection</code>：<code>private ObservableCollection&lt;ProcessInformation&gt; InfoList { get; set; }</code></li>
+<li>实体类<code>ProcessInformation</code>继承<code>INotifyPropertyChanged</code>接口</li>
 </ol>
-<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ProcessInformationListView.Dispatcher.BeginInvoke(<span class="keyword">new</span> Action(() =&gt;</span><br><span class="line">&#123;</span><br><span class="line">    ProcessInformationListView.ItemsSource = InfoList;</span><br><span class="line">&#125;));</span><br></pre></td></tr></table></figure>
-
-<h2 id="不支持从调度程序线程以外的线程对其-SourceCollection-进行的更改"><a href="#不支持从调度程序线程以外的线程对其-SourceCollection-进行的更改" class="headerlink" title="不支持从调度程序线程以外的线程对其 SourceCollection 进行的更改"></a>不支持从调度程序线程以外的线程对其 SourceCollection 进行的更改</h2><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> ObservableCollection&lt;ProcessInformation&gt; infoList &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">infoList = <span class="keyword">new</span> ObservableCollection&lt;ProcessInformation&gt;();</span><br><span class="line">infoList.Remove(item);</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight cs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">ProcessInformation</span> : <span class="title">INotifyPropertyChanged</span></span><br><span class="line">    {</span><br><span class="line">        <span class="keyword">private</span> <span class="built_in">string</span> _Process;</span><br><span class="line">        <span class="keyword">private</span> <span class="built_in">int</span> _PID;</span><br><span class="line">        <span class="keyword">private</span> <span class="built_in">string</span> _CPU;</span><br><span class="line">        <span class="keyword">private</span> <span class="built_in">string</span> _Memory;</span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">event</span> PropertyChangedEventHandler PropertyChanged;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">public</span> <span class="built_in">string</span> Process {</span><br><span class="line">            <span class="keyword">get</span> { <span class="keyword">return</span> _Process; }</span><br><span class="line">            <span class="keyword">set</span> { _Process = <span class="keyword">value</span>;</span><br><span class="line">                PropertyChanged?.Invoke(<span class="keyword">this</span>, <span class="keyword">new</span> PropertyChangedEventArgs(<span class="string">"Process"</span>));</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">public</span> <span class="built_in">int</span> PID {</span><br><span class="line">            <span class="keyword">get</span> { <span class="keyword">return</span> _PID; }</span><br><span class="line">            <span class="keyword">set</span> { _PID = <span class="keyword">value</span>;</span><br><span class="line">                PropertyChanged?.Invoke(<span class="keyword">this</span>, <span class="keyword">new</span> PropertyChangedEventArgs(<span class="string">"PID"</span>));</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">public</span> <span class="built_in">string</span> CPU {</span><br><span class="line">            <span class="keyword">get</span> { <span class="keyword">return</span> _CPU; }</span><br><span class="line">            <span class="keyword">set</span> { _CPU = <span class="keyword">value</span>;</span><br><span class="line">                PropertyChanged?.Invoke(<span class="keyword">this</span>, <span class="keyword">new</span> PropertyChangedEventArgs(<span class="string">"CPU"</span>));</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">public</span> <span class="built_in">string</span> Memory {</span><br><span class="line">            <span class="keyword">get</span> { <span class="keyword">return</span> _Memory; }</span><br><span class="line">            <span class="keyword">set</span> { _Memory = <span class="keyword">value</span>;</span><br><span class="line">                PropertyChanged?.Invoke(<span class="keyword">this</span>, <span class="keyword">new</span> PropertyChangedEventArgs(<span class="string">"Memory"</span>));</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">    }</span><br></pre></td></tr></tbody></table></figure>
+<ol start="3">
+<li>跨线程访问（这个就不用了，因为<code>ObservableCollection</code>实现了<code>INotifyPropertyChanged</code>接口，当<code>InfoList</code>发生改变时会自动更新<code>ListView</code>，不用手动更新<code>ListView.ItemsSource</code>，也就不会发生跨线程访问<code>ListView</code>了。ps: 好像是跨线程更改前台的数据才会出现<a href="#%E5%B0%9D%E8%AF%95">这个问题</a>）<br>
+不更新、不能添加<code>GridView</code>的原因也应该是没有实现<code>INotifyPropertyChanged</code>接口</li>
+</ol>
+<figure class="highlight cs"><table><tbody><tr><td class="code"><pre><span class="line">ProcessInformationListView.Dispatcher.BeginInvoke(<span class="keyword">new</span> Action(() =&gt;</span><br><span class="line">{</span><br><span class="line">    ProcessInformationListView.ItemsSource = InfoList;</span><br><span class="line">}));</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="不支持从调度程序线程以外的线程对其-sourcecollection-进行的更改"><a class="markdownIt-Anchor" href="#不支持从调度程序线程以外的线程对其-sourcecollection-进行的更改"></a> 不支持从调度程序线程以外的线程对其 SourceCollection 进行的更改</h2>
+<figure class="highlight csharp"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">private</span> ObservableCollection&lt;ProcessInformation&gt; infoList { <span class="keyword">get</span>; <span class="keyword">set</span>; }</span><br><span class="line">infoList = <span class="keyword">new</span> ObservableCollection&lt;ProcessInformation&gt;();</span><br><span class="line">infoList.Remove(item);</span><br></pre></td></tr></tbody></table></figure>
 <div class="note danger">
             <p><code>System.NotSupportedException:“该类型的 CollectionView 不支持从调度程序线程以外的线程对其 SourceCollection 进行的更改。”</code></p>
           </div>
-
 <p><code>ObservableCollection</code>类型的<code>CollectionView</code>不支持从调度程序线程以外的线程对其 SourceCollection 进行的更改。（我也不懂是哪个线程对该对象进行了访问，不是我的监控线程）</p>
-<p><a href="https://www.cnblogs.com/Stay627/p/12082792.html" target="_blank" rel="noopener">解决方式</a>：</p>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">ThreadPool.QueueUserWorkItem(<span class="keyword">delegate</span></span><br><span class="line">&#123;</span><br><span class="line">    SynchronizationContext.SetSynchronizationContext(<span class="keyword">new</span> DispatcherSynchronizationContext(</span><br><span class="line">        System.Windows.Application.Current.Dispatcher));</span><br><span class="line">    SynchronizationContext.Current.Post(pl =&gt;</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; infoList.Count; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">var</span> item = infoList[i];</span><br><span class="line">            <span class="keyword">if</span> (item.Process.Equals(fileName))</span><br><span class="line">            &#123;</span><br><span class="line">                infoList.Remove(item);</span><br><span class="line">                <span class="keyword">return</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;, <span class="literal">null</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<h1 id="功能与插件"><a href="#功能与插件" class="headerlink" title="功能与插件"></a>功能与插件</h1><h2 id="NotifyIcon"><a href="#NotifyIcon" class="headerlink" title="NotifyIcon"></a><a href="https://handyorg.github.io/handycontrol/extend_controls/notifyIcon/" target="_blank" rel="noopener">NotifyIcon</a></h2><p>程序托盘图标用的是<a href="https://handyorg.github.io/handycontrol/" target="_blank" rel="noopener">HandyControl</a>的控件。<br>根据文档编辑图标、绑定事件即可。</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">hc:NotifyIcon</span> <span class="attr">x:Name</span>=<span class="string">"NotifyIcon"</span> <span class="attr">Text</span>=<span class="string">"ProcessNursery"</span> </span></span><br><span class="line"><span class="tag">                <span class="attr">Visibility</span>=<span class="string">"Visible"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">Icon</span>=<span class="string">"/assets/Nursery32x32.ico"</span> <span class="attr">Click</span>=<span class="string">"NotifyIcon_Click"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">hc:NotifyIcon.ContextContent</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">StackPanel</span> <span class="attr">VerticalAlignment</span>=<span class="string">"Center"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">Button</span> <span class="attr">Command</span>=<span class="string">"hc:ControlCommands.PushMainWindow2Top"</span> <span class="attr">MinWidth</span>=<span class="string">"100"</span> <span class="attr">Content</span>=<span class="string">"OpenPanel"</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">Button</span> <span class="attr">Click</span>=<span class="string">"ExitApp"</span> <span class="attr">MinWidth</span>=<span class="string">"100"</span> <span class="attr">Style</span>=<span class="string">"&#123;StaticResource ButtonPrimary&#125;"</span> <span class="attr">Content</span>=<span class="string">"Exit"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">StackPanel</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">hc:NotifyIcon.ContextContent</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">hc:NotifyIcon</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="日志系统"><a href="#日志系统" class="headerlink" title="日志系统"></a>日志系统</h2><p><a href="https://nlog-project.org/" target="_blank" rel="noopener">NLog</a>的日志系统，主要是调试时候找问题的。</p>
+<p><a href="https://www.cnblogs.com/Stay627/p/12082792.html">解决方式</a>：</p>
+<figure class="highlight csharp"><table><tbody><tr><td class="code"><pre><span class="line">ThreadPool.QueueUserWorkItem(<span class="built_in">delegate</span></span><br><span class="line">{</span><br><span class="line">    SynchronizationContext.SetSynchronizationContext(<span class="keyword">new</span> DispatcherSynchronizationContext(</span><br><span class="line">        System.Windows.Application.Current.Dispatcher));</span><br><span class="line">    SynchronizationContext.Current.Post(pl =&gt;</span><br><span class="line">    {</span><br><span class="line">        <span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; infoList.Count; i++)</span><br><span class="line">        {</span><br><span class="line">            <span class="keyword">var</span> item = infoList[i];</span><br><span class="line">            <span class="keyword">if</span> (item.Process.Equals(fileName))</span><br><span class="line">            {</span><br><span class="line">                infoList.Remove(item);</span><br><span class="line">                <span class="keyword">return</span>;</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">    }, <span class="literal">null</span>);</span><br><span class="line">});</span><br></pre></td></tr></tbody></table></figure>
+<h1 id="功能"><a class="markdownIt-Anchor" href="#功能"></a> 功能</h1>
+<h2 id="notifyicon"><a class="markdownIt-Anchor" href="#notifyicon"></a> <a href="https://handyorg.github.io/handycontrol/extend_controls/notifyIcon/">NotifyIcon</a></h2>
+<p>程序托盘图标用的是<a href="https://handyorg.github.io/handycontrol/">HandyControl</a>的控件。<br>
+根据文档编辑图标、绑定事件即可。</p>
+<figure class="highlight xml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">hc:NotifyIcon</span> <span class="attr">x:Name</span>=<span class="string">"NotifyIcon"</span> <span class="attr">Text</span>=<span class="string">"ProcessNursery"</span> </span></span><br><span class="line"><span class="tag">                <span class="attr">Visibility</span>=<span class="string">"Visible"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">Icon</span>=<span class="string">"/assets/Nursery32x32.ico"</span> <span class="attr">Click</span>=<span class="string">"NotifyIcon_Click"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">hc:NotifyIcon.ContextContent</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">StackPanel</span> <span class="attr">VerticalAlignment</span>=<span class="string">"Center"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">Button</span> <span class="attr">Command</span>=<span class="string">"hc:ControlCommands.PushMainWindow2Top"</span> <span class="attr">MinWidth</span>=<span class="string">"100"</span> <span class="attr">Content</span>=<span class="string">"OpenPanel"</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">Button</span> <span class="attr">Click</span>=<span class="string">"ExitApp"</span> <span class="attr">MinWidth</span>=<span class="string">"100"</span> <span class="attr">Style</span>=<span class="string">"{StaticResource ButtonPrimary}"</span> <span class="attr">Content</span>=<span class="string">"Exit"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">StackPanel</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">hc:NotifyIcon.ContextContent</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">hc:NotifyIcon</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="日志系统"><a class="markdownIt-Anchor" href="#日志系统"></a> 日志系统</h2>
+<p><a href="https://nlog-project.org/">NLog</a>的日志系统，主要是调试时候找问题的。</p>
 <p>分为以下几种日志等级：</p>
 <div class="note default">
-            <p>Trace </p>
+            <p>Trace</p>
           </div>
 <div class="note primary">
-            <p>Debug </p>
+            <p>Debug</p>
           </div>
 <div class="note success">
-            <p>Info </p>
+            <p>Info</p>
           </div>
 <div class="note info">
-            <p>Warn </p>
+            <p>Warn</p>
           </div>
 <div class="note warning">
-            <p>Error </p>
+            <p>Error</p>
           </div>
 <div class="note danger">
-            <p>Fatal </p>
+            <p>Fatal</p>
           </div>
-
-<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>NLog使用需要添加配置文件，可以添加到<code>App.config</code>，也可以新建<code>NLog.config</code>然后添加内容。我手动新建配置文件之后使用不了，使用NuGet命令添加成功。（工具->NuGet 包管理器->程序包管理器控制台，输入<code>Install-Package NLog.Config [-Version 4.7.5]</code>）。关于自定义日志，可以看<a href="https://github.com/NLog/NLog/wiki" target="_blank" rel="noopener">这里</a></p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="utf-8" ?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">nlog</span> <span class="attr">xmlns</span>=<span class="string">"http://www.nlog-project.org/schemas/NLog.xsd"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">xsi:schemaLocation</span>=<span class="string">"http://www.nlog-project.org/schemas/NLog.xsd NLog.xsd"</span></span></span><br><span class="line"><span class="tag">	  <span class="attr">autoReload</span>=<span class="string">"true"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">throwExceptions</span>=<span class="string">"false"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">internalLogLevel</span>=<span class="string">"Off"</span> <span class="attr">internalLogFile</span>=<span class="string">"c:\temp\nlog-internal.log"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">targets</span>&gt;</span></span><br><span class="line">	  <span class="tag">&lt;<span class="name">target</span> <span class="attr">name</span>=<span class="string">"console"</span> <span class="attr">xsi:type</span>=<span class="string">"ColoredConsole"</span> <span class="attr">layout</span>=<span class="string">"$&#123;date:format=yyyy/MM/dd HH\:mm\:ss&#125; $&#123;uppercase:$&#123;level&#125;&#125;&gt; $&#123;message&#125;"</span>&gt;</span></span><br><span class="line">		  <span class="tag">&lt;<span class="name">highlight-row</span> <span class="attr">condition</span>=<span class="string">"level == LogLevel.Debug"</span> <span class="attr">foregroundColor</span>=<span class="string">"Green"</span> /&gt;</span></span><br><span class="line">		  <span class="tag">&lt;<span class="name">highlight-row</span> <span class="attr">condition</span>=<span class="string">"level == LogLevel.Info"</span> <span class="attr">foregroundColor</span>=<span class="string">"Cyan"</span> /&gt;</span></span><br><span class="line">		  <span class="tag">&lt;<span class="name">highlight-row</span> <span class="attr">condition</span>=<span class="string">"level == LogLevel.Warn"</span> <span class="attr">foregroundColor</span>=<span class="string">"Yellow"</span> /&gt;</span></span><br><span class="line">		  <span class="tag">&lt;<span class="name">highlight-row</span> <span class="attr">condition</span>=<span class="string">"level == LogLevel.Error"</span> <span class="attr">foregroundColor</span>=<span class="string">"Red"</span> /&gt;</span></span><br><span class="line">		  <span class="tag">&lt;<span class="name">highlight-row</span> <span class="attr">condition</span>=<span class="string">"level == LogLevel.Fatal"</span> <span class="attr">foregroundColor</span>=<span class="string">"Red"</span> <span class="attr">backgroundColor</span>=<span class="string">"White"</span> /&gt;</span></span><br><span class="line">	  <span class="tag">&lt;/<span class="name">target</span>&gt;</span></span><br><span class="line">	  <span class="tag">&lt;<span class="name">target</span> <span class="attr">name</span>=<span class="string">"debugger"</span> <span class="attr">xsi:type</span>=<span class="string">"Debugger"</span></span></span><br><span class="line"><span class="tag">					  <span class="attr">layout</span>=<span class="string">"$&#123;date:format=HH\:mm\:ss&#125; | $&#123;level:padding=-5&#125; | $&#123;message&#125;"</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">targets</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">rules</span>&gt;</span></span><br><span class="line">	  <span class="tag">&lt;<span class="name">logger</span> <span class="attr">name</span>=<span class="string">"*"</span> <span class="attr">writeTo</span>=<span class="string">"console"</span> /&gt;</span></span><br><span class="line">	  <span class="tag">&lt;<span class="name">logger</span> <span class="attr">name</span>=<span class="string">"*"</span> <span class="attr">minlevel</span>=<span class="string">"Debug"</span> <span class="attr">writeTo</span>=<span class="string">"debugger"</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">rules</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">nlog</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> Logger logger = LogManager.GetCurrentClassLogger();</span><br><span class="line">logger.Debug(<span class="string">"Debug"</span>);</span><br><span class="line">logger.Info(<span class="string">"Info"</span>);</span><br><span class="line">logger.Error(<span class="string">"Error"</span>);</span><br></pre></td></tr></table></figure>
-
-<h2 id="进程的CPU与内存"><a href="#进程的CPU与内存" class="headerlink" title="进程的CPU与内存"></a>进程的CPU与内存</h2><p>使用.Net的<code>PerformanceCounter</code>类型对进程的性能进行监控</p>
-<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Process process = pNersury[fileName].process;</span><br><span class="line">PerformanceCounter cpuCounter = <span class="keyword">new</span> PerformanceCounter(<span class="string">"Process"</span>, <span class="string">"% Processor Time"</span>, process.ProcessName);</span><br><span class="line">PerformanceCounter memCounter = <span class="keyword">new</span> PerformanceCounter(<span class="string">"Process"</span>, <span class="string">"Working Set"</span>, process.ProcessName);</span><br><span class="line">infoList[i].CPU = cpuCounter.NextValue().ToString() + CPUnit;</span><br><span class="line">infoList[i].Memory = ((<span class="keyword">long</span>)memCounter.NextValue() &gt;&gt; <span class="number">10</span>).ToString() + MemoryUnit;</span><br></pre></td></tr></table></figure>
-
-<h2 id="实时获取子进程的输出"><a href="#实时获取子进程的输出" class="headerlink" title="实时获取子进程的输出"></a>实时获取子进程的输出</h2><p>参考：</p>
+<h3 id="配置"><a class="markdownIt-Anchor" href="#配置"></a> 配置</h3>
+<p>NLog使用需要添加配置文件，可以添加到<code>App.config</code>，也可以新建<code>NLog.config</code>然后添加内容。我手动新建配置文件之后使用不了，使用NuGet命令添加成功。（工具-&gt;NuGet 包管理器-&gt;程序包管理器控制台，输入<code>Install-Package NLog.Config [-Version 4.7.5]</code>）。关于自定义日志，可以看<a href="https://github.com/NLog/NLog/wiki">这里</a></p>
+<figure class="highlight xml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="utf-8" ?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">nlog</span> <span class="attr">xmlns</span>=<span class="string">"http://www.nlog-project.org/schemas/NLog.xsd"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">xsi:schemaLocation</span>=<span class="string">"http://www.nlog-project.org/schemas/NLog.xsd NLog.xsd"</span></span></span><br><span class="line"><span class="tag">	  <span class="attr">autoReload</span>=<span class="string">"true"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">throwExceptions</span>=<span class="string">"false"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">internalLogLevel</span>=<span class="string">"Off"</span> <span class="attr">internalLogFile</span>=<span class="string">"c:\temp\nlog-internal.log"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">targets</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">target</span> <span class="attr">name</span>=<span class="string">"console"</span> <span class="attr">xsi:type</span>=<span class="string">"ColoredConsole"</span> <span class="attr">layout</span>=<span class="string">"${date:format=yyyy/MM/dd HH\:mm\:ss} ${uppercase:${level}}&gt; ${message}"</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">highlight-row</span> <span class="attr">condition</span>=<span class="string">"level == LogLevel.Debug"</span> <span class="attr">foregroundColor</span>=<span class="string">"Green"</span> /&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">highlight-row</span> <span class="attr">condition</span>=<span class="string">"level == LogLevel.Info"</span> <span class="attr">foregroundColor</span>=<span class="string">"Cyan"</span> /&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">highlight-row</span> <span class="attr">condition</span>=<span class="string">"level == LogLevel.Warn"</span> <span class="attr">foregroundColor</span>=<span class="string">"Yellow"</span> /&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">highlight-row</span> <span class="attr">condition</span>=<span class="string">"level == LogLevel.Error"</span> <span class="attr">foregroundColor</span>=<span class="string">"Red"</span> /&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">highlight-row</span> <span class="attr">condition</span>=<span class="string">"level == LogLevel.Fatal"</span> <span class="attr">foregroundColor</span>=<span class="string">"Red"</span> <span class="attr">backgroundColor</span>=<span class="string">"White"</span> /&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">target</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">target</span> <span class="attr">name</span>=<span class="string">"debugger"</span> <span class="attr">xsi:type</span>=<span class="string">"Debugger"</span></span></span><br><span class="line"><span class="tag">					  <span class="attr">layout</span>=<span class="string">"${date:format=HH\:mm\:ss} | ${level:padding=-5} | ${message}"</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">targets</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">rules</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">logger</span> <span class="attr">name</span>=<span class="string">"*"</span> <span class="attr">writeTo</span>=<span class="string">"console"</span> /&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">logger</span> <span class="attr">name</span>=<span class="string">"*"</span> <span class="attr">minlevel</span>=<span class="string">"Debug"</span> <span class="attr">writeTo</span>=<span class="string">"debugger"</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">rules</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">nlog</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="使用"><a class="markdownIt-Anchor" href="#使用"></a> 使用</h3>
+<figure class="highlight cs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> Logger logger = LogManager.GetCurrentClassLogger();</span><br><span class="line">logger.Debug(<span class="string">"Debug"</span>);</span><br><span class="line">logger.Info(<span class="string">"Info"</span>);</span><br><span class="line">logger.Error(<span class="string">"Error"</span>);</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="进程的cpu与内存"><a class="markdownIt-Anchor" href="#进程的cpu与内存"></a> 进程的CPU与内存</h2>
+<p>使用.Net的<code>PerformanceCounter</code>类型对进程的性能进行监控</p>
+<figure class="highlight cs"><table><tbody><tr><td class="code"><pre><span class="line">Process process = pNersury[fileName].process;</span><br><span class="line">PerformanceCounter cpuCounter = <span class="keyword">new</span> PerformanceCounter(<span class="string">"Process"</span>, <span class="string">"% Processor Time"</span>, process.ProcessName);</span><br><span class="line">PerformanceCounter memCounter = <span class="keyword">new</span> PerformanceCounter(<span class="string">"Process"</span>, <span class="string">"Working Set"</span>, process.ProcessName);</span><br><span class="line">infoList[i].CPU = cpuCounter.NextValue().ToString() + CPUnit;</span><br><span class="line">infoList[i].Memory = ((<span class="built_in">long</span>)memCounter.NextValue() &gt;&gt; <span class="number">10</span>).ToString() + MemoryUnit;</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="实时获取子进程的输出"><a class="markdownIt-Anchor" href="#实时获取子进程的输出"></a> 实时获取子进程的输出</h2>
+<p>参考：</p>
 <ol>
-<li><a href="https://www.cnblogs.com/tcjiaan/p/5957422.html" target="_blank" rel="noopener">启动一个进程并实时获取状态信息</a></li>
-<li><a href="https://www.coder.work/article/246276" target="_blank" rel="noopener">c# - 从Process获取实时输出</a></li>
+<li><a href="https://www.cnblogs.com/tcjiaan/p/5957422.html">启动一个进程并实时获取状态信息</a></li>
+<li><a href="https://www.coder.work/article/246276">c# - 从Process获取实时输出</a></li>
 </ol>
 <div class="note info">
             <p><code>UseShellExecute</code>必须为<code>false</code>，不然无法在代码中读标准。<br><code>RedirectStandardOutput</code>必须为<code>true</code>，这样我们才能在代码中访问标准流。<br><code>EnableRaisingEvents</code>必须为<code>true</code>，这样才会引发<code>OutputDataReceived</code>和<code>Exited</code></p>
           </div>
-
 <p>解决方式是两条内容的结合：</p>
-<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">Process child = <span class="keyword">new</span> Process();</span><br><span class="line">child.StartInfo.RedirectStandardOutput = <span class="literal">true</span>;</span><br><span class="line">child.StartInfo.RedirectStandardError = <span class="literal">true</span>;</span><br><span class="line">child.StartInfo.CreateNoWindow = <span class="literal">true</span>;</span><br><span class="line">child.StartInfo.UseShellExecute = <span class="literal">false</span>;</span><br><span class="line">child.EnableRaisingEvents = <span class="literal">true</span>;  <span class="comment">// 这样才会引发OutputDataReceived</span></span><br><span class="line">child.OutputDataReceived += <span class="keyword">new</span> DataReceivedEventHandler((s, e) =&gt;</span><br><span class="line">&#123;</span><br><span class="line">    Console.WriteLine(e.Data);</span><br><span class="line">&#125;);</span><br><span class="line">child.ErrorDataReceived += <span class="keyword">new</span> DataReceivedEventHandler((s, e) =&gt;</span><br><span class="line">&#123;</span><br><span class="line">    Console.WriteLine(e.Data);</span><br><span class="line">&#125;);</span><br><span class="line">child.Start();</span><br><span class="line">child.BeginOutputReadLine();</span><br><span class="line">child.BeginErrorReadLine();</span><br></pre></td></tr></table></figure>
+<figure class="highlight cs"><table><tbody><tr><td class="code"><pre><span class="line">Process child = <span class="keyword">new</span> Process();</span><br><span class="line">child.StartInfo.RedirectStandardOutput = <span class="literal">true</span>;</span><br><span class="line">child.StartInfo.RedirectStandardError = <span class="literal">true</span>;</span><br><span class="line">child.StartInfo.CreateNoWindow = <span class="literal">true</span>;</span><br><span class="line">child.StartInfo.UseShellExecute = <span class="literal">false</span>;</span><br><span class="line">child.EnableRaisingEvents = <span class="literal">true</span>;  <span class="comment">// 这样才会引发OutputDataReceived</span></span><br><span class="line">child.OutputDataReceived += <span class="keyword">new</span> DataReceivedEventHandler((s, e) =&gt;</span><br><span class="line">{</span><br><span class="line">    Console.WriteLine(e.Data);</span><br><span class="line">});</span><br><span class="line">child.ErrorDataReceived += <span class="keyword">new</span> DataReceivedEventHandler((s, e) =&gt;</span><br><span class="line">{</span><br><span class="line">    Console.WriteLine(e.Data);</span><br><span class="line">});</span><br><span class="line">child.Start();</span><br><span class="line">child.BeginOutputReadLine();</span><br><span class="line">child.BeginErrorReadLine();</span><br></pre></td></tr></tbody></table></figure>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag"># 笔记</a>
+              <a href="/tags/C/" rel="tag"># C#</a>
+              <a href="/tags/WPF/" rel="tag"># WPF</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/09/30/fancy-toys-notes/" rel="prev" title="FancyToys 开发笔记">
+      <i class="fa fa-chevron-left"></i> FancyToys 开发笔记
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/02/28/python-notes/" rel="next" title="Python 技巧">
+      Python 技巧 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
 
 <script>
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return; }
-            const img = document.createElement('img');
-            img.style = 'display:none !important;';
-            img.src = el.dataset.src;
-            img.addEventListener('error', () => {
-              img.remove();
-              el.style.color = 'inherit';
-              el.style.backgroundImage = 'none';
-              el.style.background = 'none';
-            });
-            img.addEventListener('load', () => {
-              img.remove();
-            });
-            document.body.appendChild(img);
-          });
-      </script>
-      
-    </div>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
 
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/笔记/" rel="tag"># 笔记</a>
-          
-            <a href="/tags/C/" rel="tag"># C#</a>
-          
-            <a href="/tags/WPF/" rel="tag"># WPF</a>
-          
         </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2020/02/28/python-notes/" rel="next" title="Python 技巧">
-                <i class="fa fa-chevron-left"></i> Python 技巧
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/09/30/fancy-toys-notes/" rel="prev" title="FancyToys 开发笔记">
-                FancyToys 开发笔记 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
+          
   
-  
-  
-  </article>
-
-
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
   </div>
 
-
-          </div>
-          
-
-  
-    <div class="comments" id="gitalk-container">
-    </div>
-
-  
-
-
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-
-      <!------------------------------------------------------->
-      <!-- 一言 start 
-      <div class="sidebar-inner">
-        <div>
-          <div style="display: table-cell;vertical-align: top; color:#B2B7F2;font-size:24px;font-family:'Times New Roman',serif;font-weight:bold;text-align:left;">“</div>
-          <div style="display: table-cell;text-align: left; vertical-align: middle; text-indent: 2em; padding: 0.8em 0.2em 1em 0.2em"><b><span style="color:burlywood;"><span id="hitokoto-content"></span></span></b></div>
-          <div style="display: table-cell; vertical-align: bottom; color:#B2B7F2;font-size:24px;font-family:'Times New Roman',serif;font-weight:bold;text-align:left;">”</div>
-        </div>
-        <div style="text-align: right; font-size: 0.8em; color: black;" id="hitokoto-from"></div>
-        <div style="margin-top: 15px; font-size: 0.8em; color: black;"><a href="https://hitokoto.cn/">Hitokoto</a></div>
-      </div>
-      <div style="height: 15px"></div>
-      <!-- 一言 end -->
-      <!-- LOLine start -->
-      <div class="sidebar-inner">
-        <div>
-          
-          <div style="display: table-cell;vertical-align: top; color:#B2B7F2;font-size:24px;font-family:'Times New Roman',serif;font-weight:bold;text-align:left;">“</div>
-          <div style="display: table-cell;text-align: left; vertical-align: middle; text-indent: 2em; padding: 0.8em 0.2em 1em 0.2em"><b><span style="color:burlywood;"><span id="loline-content"></span></span></b></div>
-          <div style="display: table-cell; vertical-align: bottom; color:#B2B7F2;font-size:24px;font-family:'Times New Roman',serif;font-weight:bold;text-align:right;">”</div>
-          <!--
-          <blockquote class="blockquote-loline">
-            <b><span style="color:burlywood;"><span id="loline-content"></span></span></b>
-          </blockquote>
-          -->
-        </div>
-        <div style="text-align: right; font-size: 0.8em; color: black;" id="loline-from"></div>
-        <div style="margin-top: 15px; font-size: 0.8em; color: black;"><a href="https://moeext.github.io/2019/03/08/loline/#more">LOLine</a></div>
-      </div>
-      <div style="height: 15px"></div>
-      <!-- LOLine end -->
-      <!------------------------------------------------------->
-
+  <aside class="sidebar">
     <div class="sidebar-inner">
 
-      
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
 
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%97%AE%E9%A2%98"><span class="nav-number">1.</span> <span class="nav-text"> 问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#checkboxlist"><span class="nav-number">1.1.</span> <span class="nav-text"> CheckBoxList</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#listview%E7%9A%84%E5%8A%A8%E6%80%81%E6%9B%B4%E6%96%B0"><span class="nav-number">1.2.</span> <span class="nav-text"> ListView的动态更新</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%9D%E8%AF%95"><span class="nav-number">1.2.1.</span> <span class="nav-text"> 尝试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%80%E7%BB%88%E8%A7%A3%E5%86%B3%E6%96%B9%E5%BC%8F"><span class="nav-number">1.2.2.</span> <span class="nav-text"> 最终解决方式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8D%E6%94%AF%E6%8C%81%E4%BB%8E%E8%B0%83%E5%BA%A6%E7%A8%8B%E5%BA%8F%E7%BA%BF%E7%A8%8B%E4%BB%A5%E5%A4%96%E7%9A%84%E7%BA%BF%E7%A8%8B%E5%AF%B9%E5%85%B6-sourcecollection-%E8%BF%9B%E8%A1%8C%E7%9A%84%E6%9B%B4%E6%94%B9"><span class="nav-number">1.3.</span> <span class="nav-text"> 不支持从调度程序线程以外的线程对其 SourceCollection 进行的更改</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8A%9F%E8%83%BD"><span class="nav-number">2.</span> <span class="nav-text"> 功能</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#notifyicon"><span class="nav-number">2.1.</span> <span class="nav-text"> NotifyIcon</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F"><span class="nav-number">2.2.</span> <span class="nav-text"> 日志系统</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE"><span class="nav-number">2.2.1.</span> <span class="nav-text"> 配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8"><span class="nav-number">2.2.2.</span> <span class="nav-text"> 使用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E7%9A%84cpu%E4%B8%8E%E5%86%85%E5%AD%98"><span class="nav-number">2.3.</span> <span class="nav-text"> 进程的CPU与内存</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E6%97%B6%E8%8E%B7%E5%8F%96%E5%AD%90%E8%BF%9B%E7%A8%8B%E7%9A%84%E8%BE%93%E5%87%BA"><span class="nav-number">2.4.</span> <span class="nav-text"> 实时获取子进程的输出</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
 
       <div class="site-overview-wrap sidebar-panel">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <img class="site-author-image" itemprop="image" src="/images/luna.png" alt="MoeexT">
-            
-              <p class="site-author-name" itemprop="name">MoeexT</p>
-              <div class="site-description motion-element" itemprop="description">她的热切的脸，如夜雨似的，搅扰着我的梦魂。</div>
-          </div>
-
-          
-            <nav class="site-state motion-element">
-              
-                <div class="site-state-item site-state-posts">
-                
-                  <a href="/archives/">
-                
-                    <span class="site-state-item-count">29</span>
-                    <span class="site-state-item-name">日志</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-categories">
-                  
-                    
-                      <a href="/categories/">
-                    
-                  
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">16</span>
-                    <span class="site-state-item-name">分类</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-tags">
-                  
-                    
-                      <a href="/tags/">
-                    
-                  
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">37</span>
-                    <span class="site-state-item-name">标签</span>
-                  </a>
-                </div>
-              
-            </nav>
-          
-
-          
-
-          
-
-          
-            <div class="links-of-author motion-element">
-              
-                <span class="links-of-author-item">
-                  
-                  
-                    
-                  
-                  
-                    
-                  
-                  <a href="https://github.com/moeext" title="GitHub &rarr; https://github.com/moeext" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                    
-                  
-                  
-                    
-                  
-                  <a href="mailto:yuwancumian666@gmail.com" title="E-Mail &rarr; mailto:yuwancumian666@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                    
-                  
-                  
-                    
-                  
-                  <a href="http://weibo.com/starmon" title="微博 &rarr; http://weibo.com/starmon" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>微博</a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                    
-                  
-                  
-                    
-                  
-                  <a href="/images/wechat.jpg" title="微信 &rarr; /images/wechat.jpg"><i class="fa fa-fw fa-weixin"></i>微信</a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                    
-                  
-                  
-                    
-                  
-                  <a href="https://stackoverflow.com/users/9013632/yuwancumian666" title="StackOverflow &rarr; https://stackoverflow.com/users/9013632/yuwancumian666" rel="noopener" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                    
-                  
-                  
-                    
-                  
-                  <a href="http://www.zhihu.com/people/yu-wan-cu-mian-666" title="知乎 &rarr; http://www.zhihu.com/people/yu-wan-cu-mian-666" rel="noopener" target="_blank"><i class="fa fa-fw fa-graduation-cap"></i>知乎</a>
-                </span>
-              
-            </div>
-          
-
-          
-
-          
-          
-            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
-              <div class="links-of-blogroll-title">
-                <i class="fa  fa-fw fa-link"></i>
-                友情链接
-              </div>
-              <ul class="links-of-blogroll-list">
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="https://www.moerats.com/" title="https://www.moerats.com/" rel="noopener" target="_blank">Rat's Blog</a>
-                  </li>
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="https://teddysun.com/" title="https://teddysun.com/" rel="noopener" target="_blank">秋水逸冰</a>
-                  </li>
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="https://www.94ish.me/" title="https://www.94ish.me/" rel="noopener" target="_blank">就是爱生活</a>
-                  </li>
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="http://theme-next.iissnan.com/" title="http://theme-next.iissnan.com/" rel="noopener" target="_blank">Hexo-NexT</a>
-                  </li>
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="https://hexo.io/zh-cn/" title="https://hexo.io/zh-cn/" rel="noopener" target="_blank">Hexo</a>
-                  </li>
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="http://www.fontawesome.com.cn/faicons/" title="http://www.fontawesome.com.cn/faicons/" rel="noopener" target="_blank">FontAwesome</a>
-                  </li>
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="https://www.webpagefx.com/tools/emoji-cheat-sheet/" title="https://www.webpagefx.com/tools/emoji-cheat-sheet/" rel="noopener" target="_blank">Jemoji</a>
-                  </li>
-                
-              </ul>
-            </div>
-          
-
-          
-            
-          
-          
-
-        </div>
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="MoeexT"
+      src="/images/anole.jpg">
+  <p class="site-author-name" itemprop="name">MoeexT</p>
+  <div class="site-description" itemprop="description">我在做FancyToys</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">29</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
       </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">37</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/moeext" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;moeext" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:yuwancumian666@gmail.com" title="E-Mail → mailto:yuwancumian666@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/macoobach" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;macoobach" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+  </div>
 
-      
-      <!--noindex-->
-        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
 
-            
-            
-            
-            
 
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#问题"><span class="nav-number">1.</span> <span class="nav-text">问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#CheckBoxList"><span class="nav-number">1.1.</span> <span class="nav-text">CheckBoxList</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ListView的动态更新"><span class="nav-number">1.2.</span> <span class="nav-text">ListView的动态更新</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#尝试"><span class="nav-number">1.2.1.</span> <span class="nav-text">尝试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最终解决方式"><span class="nav-number">1.2.2.</span> <span class="nav-text">最终解决方式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不支持从调度程序线程以外的线程对其-SourceCollection-进行的更改"><span class="nav-number">1.3.</span> <span class="nav-text">不支持从调度程序线程以外的线程对其 SourceCollection 进行的更改</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#功能与插件"><span class="nav-number">2.</span> <span class="nav-text">功能与插件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#NotifyIcon"><span class="nav-number">2.1.</span> <span class="nav-text">NotifyIcon</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#日志系统"><span class="nav-number">2.2.</span> <span class="nav-text">日志系统</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#配置"><span class="nav-number">2.2.1.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用"><span class="nav-number">2.2.2.</span> <span class="nav-text">使用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进程的CPU与内存"><span class="nav-number">2.3.</span> <span class="nav-text">进程的CPU与内存</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实时获取子进程的输出"><span class="nav-number">2.4.</span> <span class="nav-text">实时获取子进程的输出</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </div>
-      <!--/noindex-->
-      
-
-      
-        <div class="back-to-top">
+      </div>
+        <div class="back-to-top motion-element">
           <i class="fa fa-arrow-up"></i>
-          
-            <span id="scrollpercent"><span>0</span>%</span>
-          
+          <span>0%</span>
         </div>
-      
 
     </div>
   </aside>
-  
+  <div id="sidebar-dimmer"></div>
 
 
-        
       </div>
     </main>
 
-    <footer id="footer" class="footer">
+    <footer class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2017 – <span itemprop="copyrightYear">2020</span>
-  <span class="with-love" id="animate">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2017 – 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">MoeexT</span>
-
-  
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
-      <i class="fa fa-area-chart"></i>
+      <i class="fa fa-chart-area"></i>
     </span>
-    
-    <span title="站点总字数">59k</span>
-  
-
-  
+    <span title="站点总字数">84k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    
-    <span title="站点阅读时长">54 分钟</span>
-  
+    <span title="站点阅读时长">1:17</span>
 </div>
-
-
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
-
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.1.1</div>
-
-
-
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
 
         
-<div class="busuanzi-count">
-  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-  
-    <span class="post-meta-item-icon">
-      <i class="fa fa-user"></i>
-    </span>
-    <span class="site-uv" title="总访客量">
-      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
-    </span>
-  
-
-  
-    <span class="post-meta-divider">|</span>
-  
-
-  
-    <span class="post-meta-item-icon">
-      <i class="fa fa-eye"></i>
-    </span>
-    <span class="site-pv" title="总访问量">
-      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
-    </span>
-  
-</div>
 
 
 
@@ -1217,528 +532,62 @@
 
 
 
-
-        
       </div>
     </footer>
-
-    
-
-    
-
-    
-
-    
   </div>
 
   
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
 
 <script>
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  <script src="/lib/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script src="/lib/fancybox/source/jquery.fancybox.pack.js"></script>
-
-
-  
-
-<!-- 一言
-<script type="text/javascript">
-	$.get('https://v1.hitokoto.cn/?c=c', function (data) {
-		$('#hitokoto-content').css('display', '').text(data.hitokoto);
-		$('#hitokoto-from').css('display', '').text('——' + data.from);
-	});
-</script>-->
-
-<!-- Loline 服务器请求方式
-<script type="text/javascript">
-	$.get('https://149.129.113.178:5000/', function (data) {
-    console.log('----------------------------------------')
-    console.log(data)
-		$('#loline-content').css('display', '').text(data.words);
-		$('#loline-from').css('display', '').text('——' + data.title_zh+' '+data.name_zh);
-	});
-</script>
--->
-<!-- Loline 加载本地json文件方式 -->
-<script type="text/javascript">
-	$.get("/json/champions.json", function (data) {
-    console.log('url: '+'https://moeext.github.io/2020/09/28/nursery-notes/index.html');
-		// champions = JSON.parse(data);
-		var ranint = function(min, max) {
-    	return Math.round(Math.random() * (max - min)) + min;
-		}(1, data.length);
-		champion = data[ranint-1];
-		console.log(ranint);
-		console.log(champion);
-		$('#loline-content').css('display', '').text(champion.words);
-		$('#loline-from').css('display', '').text('——' + champion.title_zh+' '+champion.name_zh);
-	});
-</script>
-
-
-
-  <script src="/js/utils.js?v=7.1.1"></script>
-
-  <script src="/js/motion.js?v=7.1.1"></script>
-
-
-
-  
-  
-
-
-  <script src="/js/affix.js?v=7.1.1"></script>
-
-  <script src="/js/schemes/pisces.js?v=7.1.1"></script>
-
-
-
-  
-  <script src="/js/scrollspy.js?v=7.1.1"></script>
-<script src="/js/post-details.js?v=7.1.1"></script>
-
-
-
-  
-
-
-  <script src="/js/next-boot.js?v=7.1.1"></script>
-
-
-  
-
-  
-
-  
-
-  
-
-
-  
-    
-
-<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
-
-
-
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
-
-
-
-<script src="//cdn.jsdelivr.net/npm/js-md5@0.7.3/src/md5.min.js"></script>
-
-<script>
-  var gitalk = new Gitalk({
-    clientID: 'd47b6b10b895d42792cf',
-    clientSecret: '73523754b433a4b4bb25b26a535300d572144f00',
-    repo: 'moeext.github.io',
-    owner: 'moeext',
-    admin: ['moeext'],
-    id: md5(location.pathname),
-    
-      language: window.navigator.language || window.navigator.userLanguage,
-    
-    distractionFreeMode: 'true'
-  });
-  gitalk.render('gitalk-container');
-</script>
-
-  
-
-
-  
-  <script>
-    // Popup Window;
-    var isfetched = false;
-    var isXml = true;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length === 0) {
-      search_path = "search.xml";
-    } else if (/json$/i.test(search_path)) {
-      isXml = false;
-    }
-    var path = "/" + search_path;
-    // monitor main search box;
-
-    var onPopupClose = function (e) {
-      $('.popup').hide();
-      $('#local-search-input').val('');
-      $('.search-result-list').remove();
-      $('#no-result').remove();
-      $(".local-search-pop-overlay").remove();
-      $('body').css('overflow', '');
-    }
-
-    function proceedsearch() {
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
-        .css('overflow', 'hidden');
-      $('.search-popup-overlay').click(onPopupClose);
-      $('.popup').toggle();
-      var $localSearchInput = $('#local-search-input');
-      $localSearchInput.attr("autocapitalize", "none");
-      $localSearchInput.attr("autocorrect", "off");
-      $localSearchInput.focus();
-    }
-
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-      'use strict';
-
-      // start loading animation
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
-          '<div id="search-loading-icon">' +
-          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
-          '</div>' +
-          '</div>')
-        .css('overflow', 'hidden');
-      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
-
-      
-
-      $.ajax({
-        url: path,
-        dataType: isXml ? "xml" : "json",
-        async: true,
-        success: function(res) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = isXml ? $("entry", res).map(function() {
-            return {
-              title: $("title", this).text(),
-              content: $("content",this).text(),
-              url: $("url" , this).text()
-            };
-          }).get() : res;
-          var input = document.getElementById(search_id);
-          var resultContent = document.getElementById(content_id);
-          var inputEventFunction = function() {
-            var searchText = input.value.trim().toLowerCase();
-            var keywords = searchText.split(/[\s\-]+/);
-            if (keywords.length > 1) {
-              keywords.push(searchText);
-            }
-            var resultItems = [];
-            if (searchText.length > 0) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var hitCount = 0;
-                var searchTextCount = 0;
-                var title = data.title.trim();
-                var titleInLowerCase = title.toLowerCase();
-                var content = data.content.trim().replace(/<[^>]+>/g,"");
-                
-                var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
-                var indexOfTitle = [];
-                var indexOfContent = [];
-                // only match articles with not empty titles
-                if(title != '') {
-                  keywords.forEach(function(keyword) {
-                    function getIndexByWord(word, text, caseSensitive) {
-                      var wordLen = word.length;
-                      if (wordLen === 0) {
-                        return [];
-                      }
-                      var startPosition = 0, position = [], index = [];
-                      if (!caseSensitive) {
-                        text = text.toLowerCase();
-                        word = word.toLowerCase();
-                      }
-                      while ((position = text.indexOf(word, startPosition)) > -1) {
-                        index.push({position: position, word: word});
-                        startPosition = position + wordLen;
-                      }
-                      return index;
-                    }
-
-                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
-                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
-                  });
-                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
-                    isMatch = true;
-                    hitCount = indexOfTitle.length + indexOfContent.length;
-                  }
-                }
-
-                // show search results
-
-                if (isMatch) {
-                  // sort index by position of keyword
-
-                  [indexOfTitle, indexOfContent].forEach(function (index) {
-                    index.sort(function (itemLeft, itemRight) {
-                      if (itemRight.position !== itemLeft.position) {
-                        return itemRight.position - itemLeft.position;
-                      } else {
-                        return itemLeft.word.length - itemRight.word.length;
-                      }
-                    });
-                  });
-
-                  // merge hits into slices
-
-                  function mergeIntoSlice(text, start, end, index) {
-                    var item = index[index.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    var hits = [];
-                    var searchTextCountInSlice = 0;
-                    while (position + word.length <= end && index.length != 0) {
-                      if (word === searchText) {
-                        searchTextCountInSlice++;
-                      }
-                      hits.push({position: position, length: word.length});
-                      var wordEnd = position + word.length;
-
-                      // move to next position of hit
-
-                      index.pop();
-                      while (index.length != 0) {
-                        item = index[index.length - 1];
-                        position = item.position;
-                        word = item.word;
-                        if (wordEnd > position) {
-                          index.pop();
-                        } else {
-                          break;
-                        }
-                      }
-                    }
-                    searchTextCount += searchTextCountInSlice;
-                    return {
-                      hits: hits,
-                      start: start,
-                      end: end,
-                      searchTextCount: searchTextCountInSlice
-                    };
-                  }
-
-                  var slicesOfTitle = [];
-                  if (indexOfTitle.length != 0) {
-                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
-                  }
-
-                  var slicesOfContent = [];
-                  while (indexOfContent.length != 0) {
-                    var item = indexOfContent[indexOfContent.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    // cut out 100 characters
-                    var start = position - 20;
-                    var end = position + 80;
-                    if(start < 0){
-                      start = 0;
-                    }
-                    if (end < position + word.length) {
-                      end = position + word.length;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
-                  }
-
-                  // sort slices in content by search text's count and hits' count
-
-                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
-                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
-                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
-                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
-                      return sliceRight.hits.length - sliceLeft.hits.length;
-                    } else {
-                      return sliceLeft.start - sliceRight.start;
-                    }
-                  });
-
-                  // select top N slices in content
-
-                  var upperBound = parseInt('1');
-                  if (upperBound >= 0) {
-                    slicesOfContent = slicesOfContent.slice(0, upperBound);
-                  }
-
-                  // highlight title and content
-
-                  function highlightKeyword(text, slice) {
-                    var result = '';
-                    var prevEnd = slice.start;
-                    slice.hits.forEach(function (hit) {
-                      result += text.substring(prevEnd, hit.position);
-                      var end = hit.position + hit.length;
-                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
-                      prevEnd = end;
-                    });
-                    result += text.substring(prevEnd, slice.end);
-                    return result;
-                  }
-
-                  var resultItem = '';
-
-                  if (slicesOfTitle.length != 0) {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
-                  } else {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
-                  }
-
-                  slicesOfContent.forEach(function (slice) {
-                    resultItem += "<a href='" + articleUrl + "'>" +
-                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
-                      "...</p>" + "</a>";
-                  });
-
-                  resultItem += "</li>";
-                  resultItems.push({
-                    item: resultItem,
-                    searchTextCount: searchTextCount,
-                    hitCount: hitCount,
-                    id: resultItems.length
-                  });
-                }
-              })
-            };
-            if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
-            } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
-            } else {
-              resultItems.sort(function (resultLeft, resultRight) {
-                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
-                  return resultRight.searchTextCount - resultLeft.searchTextCount;
-                } else if (resultLeft.hitCount !== resultRight.hitCount) {
-                  return resultRight.hitCount - resultLeft.hitCount;
-                } else {
-                  return resultRight.id - resultLeft.id;
-                }
-              });
-              var searchResultList = '<ul class=\"search-result-list\">';
-              resultItems.forEach(function (result) {
-                searchResultList += result.item;
-              })
-              searchResultList += "</ul>";
-              resultContent.innerHTML = searchResultList;
-            }
-          }
-
-          if ('auto' === 'auto') {
-            input.addEventListener('input', inputEventFunction);
-          } else {
-            $('.search-icon').click(inputEventFunction);
-            input.addEventListener('keypress', function (event) {
-              if (event.keyCode === 13) {
-                inputEventFunction();
-              }
-            });
-          }
-
-          // remove loading animation
-          $(".local-search-pop-overlay").remove();
-          $('body').css('overflow', '');
-
-          proceedsearch();
-        }
-      });
-    }
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched === false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'dark',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
     });
+  }, window.mermaid);
+}
+</script>
 
-    $('.popup-btn-close').click(onPopupClose);
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-    $(document).on('keyup', function (event) {
-      var shouldDismissSearchPopup = event.which === 27 &&
-        $('.search-popup').is(':visible');
-      if (shouldDismissSearchPopup) {
-        onPopupClose();
-      }
-    });
-  </script>
-
-
-
-
-
-  
-
-  
-
-  
-  
-
-  
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 
   
 

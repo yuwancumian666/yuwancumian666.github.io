@@ -1,178 +1,61 @@
 <!DOCTYPE html>
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<html class="theme-next pisces use-motion" lang="zh-CN">
-<head><meta name="generator" content="Hexo 3.8.0">
+<html lang="zh-CN">
+<head>
   <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
 
 
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
 
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"moeext.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
 
-  
-  
-    
-    
-  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
-  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link rel="stylesheet" href="/lib/fancybox/source/jquery.fancybox.css">
-
-
-
-
-  
-  
-  
-  
-
-  
-    
-    
-  
-
-  
-
-  
-
-  
-    
-      
-    
-
-    
-  
-
-  
-
-  
-    
-    
-    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Supercell-Magic:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
-  
-
-
-
-
-
-
-  
-
-<link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
-<link rel="stylesheet" href="/css/main.css?v=7.1.1">
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.1">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.1">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.1">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222">
-
-
-
-
-
-
-
-<script id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Pisces',
-    version: '7.1.1',
-    sidebar: {"position":"right","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false,"dimmer":false},
-    back2top: true,
-    back2top_sidebar: true,
-    fancybox: true,
-    fastclick: false,
-    lazyload: false,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-  
-
-
-
-
-  <meta name="description" content="Loline受于一言的启发，利用今天一下午的时间利用flask建立了一个轻量级的RESTful API——Loline。其内容大抵是英雄联盟143位英雄的中英文绰号、名字和pick台词。">
-<meta name="keywords" content="Python,Loline,Flask,json,英雄联盟">
+  <meta name="description" content="Loline 受于一言的启发，利用今天一下午的时间利用flask建立了一个轻量级的RESTful API——Loline。其内容大抵是英雄联盟143位英雄的中英文绰号、名字和pick台词。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Loline——一个flask RESTful API">
 <meta property="og:url" content="https://moeext.github.io/2019/03/08/loline/index.html">
 <meta property="og:site_name" content="Hummer&#39;s Blog">
-<meta property="og:description" content="Loline受于一言的启发，利用今天一下午的时间利用flask建立了一个轻量级的RESTful API——Loline。其内容大抵是英雄联盟143位英雄的中英文绰号、名字和pick台词。">
-<meta property="og:locale" content="zh-CN">
+<meta property="og:description" content="Loline 受于一言的启发，利用今天一下午的时间利用flask建立了一个轻量级的RESTful API——Loline。其内容大抵是英雄联盟143位英雄的中英文绰号、名字和pick台词。">
+<meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2019/2019-03-08-champions-lol-na.jpg">
 <meta property="og:image" content="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2019/2019-03-08-ahri-champions-lol-na.jpg">
 <meta property="og:image" content="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2019/2019-03-08-developer-lol.jpg">
 <meta property="og:image" content="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2019/2019-03-08-lol-gamepedia.jpg">
 <meta property="og:image" content="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2019/2019-03-08-lol-gamepedia-teemo.jpg">
-<meta property="og:updated_time" content="2020-09-27T15:00:29.427Z">
+<meta property="article:published_time" content="2019-03-08T02:01:33.000Z">
+<meta property="article:modified_time" content="2020-09-27T15:00:29.427Z">
+<meta property="article:author" content="MoeexT">
+<meta property="article:tag" content="Python">
+<meta property="article:tag" content="Loline">
+<meta property="article:tag" content="Flask">
+<meta property="article:tag" content="json">
+<meta property="article:tag" content="英雄联盟">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Loline——一个flask RESTful API">
-<meta name="twitter:description" content="Loline受于一言的启发，利用今天一下午的时间利用flask建立了一个轻量级的RESTful API——Loline。其内容大抵是英雄联盟143位英雄的中英文绰号、名字和pick台词。">
 <meta name="twitter:image" content="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2019/2019-03-08-champions-lol-na.jpg">
 
+<link rel="canonical" href="https://moeext.github.io/2019/03/08/loline/">
 
 
-
-
-  
-  
-  <link rel="canonical" href="https://moeext.github.io/2019/03/08/loline/">
-
-
-
-<script id="page.configurations">
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
   };
 </script>
 
@@ -184,15 +67,8 @@
 
 
 
-
-
-
-
-
-
   <noscript>
   <style>
-  .use-motion .motion-element,
   .use-motion .brand,
   .use-motion .menu-item,
   .sidebar-inner,
@@ -201,9 +77,8 @@
   .use-motion .comments,
   .use-motion .post-header,
   .use-motion .post-body,
-  .use-motion .collection-title { opacity: initial; }
+  .use-motion .collection-header { opacity: initial; }
 
-  .use-motion .logo,
   .use-motion .site-title,
   .use-motion .site-subtitle {
     opacity: initial;
@@ -215,200 +90,102 @@
   </style>
 </noscript>
 
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-right page-post-detail">
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Hummer's Blog</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
     </div>
-    
-      
-        <p class="site-subtitle">哝，你的鱼丸~</p>
-      
-    
-    
   </div>
 
-  <div class="site-nav-toggle">
-    <button aria-label="切换导航栏">
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Hummer's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
   </div>
 </div>
+
 
 
 
 <nav class="site-nav">
-  
-    <ul id="menu" class="menu">
-      
-        
-        
-        
-          
-          <li class="menu-item menu-item-home">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-tags">
+        <li class="menu-item menu-item-tags">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-categories">
+        <li class="menu-item menu-item-categories">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-archives">
+        <li class="menu-item menu-item-archives">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-about">
+        <li class="menu-item menu-item-about">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-smile">
-
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/smile" rel="section"><i class="menu-item-icon fa fa-fw fa-smile-o"></i> <br>smile</a>
-
-  </li>
-
-      
-      
-        <li class="menu-item menu-item-search">
-          
-            <a href="javascript:;" class="popup-trigger">
-          
-            
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
-        </li>
-      
-    </ul>
-  
-
-  
-
-  
-    <div class="site-search">
-      
-  <div class="popup search-popup local-search-popup">
-  <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
-    <span class="popup-btn-close">
-      <i class="fa fa-times-circle"></i>
-    </span>
-    <div class="local-search-input-wrapper">
-      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
-    </div>
-  </div>
-  <div id="local-search-result"></div>
-</div>
-
-
-
-    </div>
-  
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
 </nav>
 
 
 
-  
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
 
-
+    </div>
+  </div>
 
 </div>
     </header>
@@ -416,160 +193,82 @@
     
 
 
-    <main id="main" class="main">
+    <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
           
+
+          <div class="content post posts-expand">
             
 
-          
-          <div id="content" class="content">
-            
-
-  <div id="posts" class="posts-expand">
     
-
-  
-
   
   
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://moeext.github.io/2019/03/08/loline/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/anole.jpg">
       <meta itemprop="name" content="MoeexT">
-      <meta itemprop="description" content="她的热切的脸，如夜雨似的，搅扰着我的梦魂。">
-      <meta itemprop="image" content="/images/luna.png">
+      <meta itemprop="description" content="我在做FancyToys">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Hummer's Blog">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">Loline——一个flask RESTful API
-
-              
-            
-          </h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          Loline——一个flask RESTful API
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
+              <span class="post-meta-item-text">发表于</span>
 
               <time title="创建时间：2019-03-08 02:01:33" itemprop="dateCreated datePublished" datetime="2019-03-08T02:01:33Z">2019-03-08</time>
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-09-27 15:00:29" itemprop="dateModified" datetime="2020-09-27T15:00:29Z">2020-09-27</time>
               </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a></span>
-
-                
-                
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a>
+                </span>
                   ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/游戏/" itemprop="url" rel="index"><span itemprop="name">游戏</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-            <span class="post-meta-divider">|</span>
-            <span class="post-meta-item-icon">
-            <i class="fa fa-eye"></i>
-             阅读次数： 
-            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
-            </span>
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%B8%B8%E6%88%8F/" itemprop="url" rel="index"><span itemprop="name">游戏</span></a>
                 </span>
-                
-                  <span class="post-meta-item-text">本文字数：</span>
-                
-                <span title="本文字数">2.4k</span>
-              
+            </span>
 
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">2 分钟</span>
-              
-            </div>
-          
-
-          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2.4k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
 
         </div>
       </header>
-    
 
     
     
@@ -577,600 +276,214 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        <h1 id="Loline"><a href="#Loline" class="headerlink" title="Loline"></a>Loline</h1><p>受于<a href="https://hitokoto.cn" target="_blank" rel="noopener">一言</a>的启发，利用今天一下午的时间利用flask建立了一个轻量级的RESTful API——Loline。其内容大抵是英雄联盟143位英雄的中英文绰号、名字和pick台词。</p>
+        <h1 id="loline"><a class="markdownIt-Anchor" href="#loline"></a> Loline</h1>
+<p>受于<a href="https://hitokoto.cn">一言</a>的启发，利用今天一下午的时间利用flask建立了一个轻量级的RESTful API——Loline。其内容大抵是英雄联盟143位英雄的中英文绰号、名字和pick台词。</p>
 <a id="more"></a>
-
 <div class="note warning">
             <p>下文所列出的部分网站可能需要科学上网才能访问</p>
           </div>
-
 <p>一开始要收集到所有英雄的全部台词的，发现收集这些东西真的很难。</p>
-<h2 id="中文名称及绰号"><a href="#中文名称及绰号" class="headerlink" title="中文名称及绰号"></a>中文名称及绰号</h2><p>这个是在鹅厂联盟官网<a href="https://lol.qq.com/data/info-heros.shtml" target="_blank" rel="noopener">资料库</a>收集的，因为用了不懂的技术，网页源代码里边没有要找的数据，自然也不能用简单的爬虫来做这些事。还是浏览器开发者工具帮了忙：在Elements一栏可以复制想要的数据，然后保存到本地文件，就可以用Beautiful Soup来提取数据了。这里提取到的是中英文名称及中文绰号，然后根据英文名称去下一步爬取英文绰号。</p>
-<h2 id="英文绰号"><a href="#英文绰号" class="headerlink" title="英文绰号"></a>英文绰号</h2><p>一开始去了拳头的<a href="https://developer.riotgames.com/" target="_blank" rel="noopener">开发网站</a>，发现根本没有提供这种接口。后来发现在<a href="https://lol.gamepedia.com/" target="_blank" rel="noopener">GamePedia</a>的英雄详情页有需要的东西，但也仅仅是lol.qq.com的英文版（能用爬虫解决）。写好爬虫脚本，来回更改执行好几次才把英文绰号保存下来。</p>
+<h2 id="中文名称及绰号"><a class="markdownIt-Anchor" href="#中文名称及绰号"></a> 中文名称及绰号</h2>
+<p>这个是在鹅厂联盟官网<a href="https://lol.qq.com/data/info-heros.shtml">资料库</a>收集的，因为用了不懂的技术，网页源代码里边没有要找的数据，自然也不能用简单的爬虫来做这些事。还是浏览器开发者工具帮了忙：在Elements一栏可以复制想要的数据，然后保存到本地文件，就可以用Beautiful Soup来提取数据了。这里提取到的是中英文名称及中文绰号，然后根据英文名称去下一步爬取英文绰号。</p>
+<h2 id="英文绰号"><a class="markdownIt-Anchor" href="#英文绰号"></a> 英文绰号</h2>
+<p>一开始去了拳头的<a href="https://developer.riotgames.com/">开发网站</a>，发现根本没有提供这种接口。后来发现在<a href="https://lol.gamepedia.com/">GamePedia</a>的英雄详情页有需要的东西，但也仅仅是lol.qq.com的英文版（能用爬虫解决）。写好爬虫脚本，来回更改执行好几次才把英文绰号保存下来。</p>
 <div class="note success">
-            <p>在GemaPedia-英雄联盟的主页仔细看了一下，也没找到英雄详细信息的入口，得在搜索栏搜索英雄的名字才能找到，例如：<a href="https://lol.gamepedia.com/Teemo" target="_blank" rel="noopener">Teemo</a>。</p>
+            <p>在GemaPedia-英雄联盟的主页仔细看了一下，也没找到英雄详细信息的入口，得在搜索栏搜索英雄的名字才能找到，例如：<a href="https://lol.gamepedia.com/Teemo">Teemo</a>。</p>
           </div>
 <img src="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2019/2019-03-08-champions-lol-na.jpg" class="Champions" width="500" height="250" title="英雄联盟英文网站">
 <img src="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2019/2019-03-08-ahri-champions-lol-na.jpg" class="阿狸" width="500" height="250" title="示例-阿狸">
 <img src="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2019/2019-03-08-developer-lol.jpg" class="拳头开发者网站" width="500" height="250" title="拳头开发者网站">
 <img src="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2019/2019-03-08-lol-gamepedia.jpg" class="GamePedia-LOL" width="500" height="250" title="lol.gamepedia.com">
 <img src="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2019/2019-03-08-lol-gamepedia-teemo.jpg" class="GamePedia-提莫" width="500" height="250" title="示例-提莫">
-
-<h2 id="Pick台词"><a href="#Pick台词" class="headerlink" title="Pick台词"></a>Pick台词</h2><p>然后又是pick台词的收集工作，这是最令人头疼的地方。在百度云搜素引擎上找到了大多数英雄的Word版英雄台词，但因为建立日期比较早，有很多台词已经更改了，再加上处理量比较大、需求量不高，就暂时搁置了那个Word。但总得有点内容吧，就选定了Pick英雄的台词，大都是百度谷歌搜集而来。因为英雄改版重做等原因，有些已经不适用了，然后自己启动游戏训练模式，选好英雄听语音，然后立马关掉……不知道百度、谷歌、开关游戏多少次，才勉强把143位英雄的台词收集完。因为有的英雄台词不太熟悉，可能有的已经过时而没有更改，这就等到发现再说吧。</p>
-<h2 id="Api的使用"><a href="#Api的使用" class="headerlink" title="Api的使用"></a>Api的使用</h2><div class="note danger">
+<h2 id="pick台词"><a class="markdownIt-Anchor" href="#pick台词"></a> Pick台词</h2>
+<p>然后又是pick台词的收集工作，这是最令人头疼的地方。在百度云搜素引擎上找到了大多数英雄的Word版英雄台词，但因为建立日期比较早，有很多台词已经更改了，再加上处理量比较大、需求量不高，就暂时搁置了那个Word。但总得有点内容吧，就选定了Pick英雄的台词，大都是百度谷歌搜集而来。因为英雄改版重做等原因，有些已经不适用了，然后自己启动游戏训练模式，选好英雄听语音，然后立马关掉……不知道百度、谷歌、开关游戏多少次，才勉强把143位英雄的台词收集完。因为有的英雄台词不太熟悉，可能有的已经过时而没有更改，这就等到发现再说吧。</p>
+<h2 id="api的使用"><a class="markdownIt-Anchor" href="#api的使用"></a> Api的使用</h2>
+<div class="note danger">
             <p>使用方式经多次尝试，已经更新为<a href="/2019/03/10/many-ways-to-loline/" title="新的方式">新的方式</a>。</p>
           </div>
+<p>使用方法是同<a href="/2019/03/05/start-hexo/#%E4%B8%80%E8%A8%80">一言</a>一样 ，你同样可以参照<a href="https://ouuan.github.io/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8C%97/#%E4%B8%80%E8%A8%80%EF%BC%88%E3%83%92%E3%83%88%E3%82%B3%E3%83%88%EF%BC%89">原文作者</a>的方式，但只需要根据下方代码把<code>themes/next/layout/_macro/sidebar.swig</code>中的id和Hitokoto的小标题改一下即可。</p>
+<figure class="highlight html"><figcaption><span>themes/next/layout/_scripts/commons.swig</span></figcaption><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span></span><br><span class="line"><span class="javascript">	$.get(<span class="string">'http://149.129.113.178:5000/'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>{</span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(<span class="string">'----------------------------------------'</span>)</span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(data)</span></span><br><span class="line"><span class="javascript">		$(<span class="string">'#loline-content'</span>).css(<span class="string">'display'</span>, <span class="string">''</span>).text(data.words);</span></span><br><span class="line"><span class="javascript">		$(<span class="string">'#loline-from'</span>).css(<span class="string">'display'</span>, <span class="string">''</span>).text(<span class="string">'——'</span> + data.title_zh+<span class="string">' '</span>+data.name_zh);</span></span><br><span class="line">    });</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="代码"><a class="markdownIt-Anchor" href="#代码"></a> 代码</h2>
+<p>收集数据的时候也写了不少的代码，但保存下来数据之后其中大多数已经没有用了，所以这里只贴出来了Flask的代码。需要请邮件联系获取 😄</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">#! py -3</span></span><br><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">from</span> util <span class="keyword">import</span> load_champions</span><br><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask, jsonify, abort, make_response, request</span><br><span class="line"></span><br><span class="line"><span class="comment"># http://www.pythondoc.com/flask-restful/first.html</span></span><br><span class="line">app = Flask(__name__)</span><br><span class="line">app.config[<span class="string">'JSON_AS_ASCII'</span>] = <span class="literal">False</span></span><br><span class="line">champions = load_champions(<span class="string">"data/champions.json"</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">'/'</span>, methods=[<span class="string">'GET'</span>]</span>)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">index</span>():</span></span><br><span class="line">    id_ = random.randint(<span class="number">1</span>, <span class="built_in">len</span>(champions))</span><br><span class="line">    print(id_)</span><br><span class="line">    champion = <span class="built_in">list</span>(<span class="built_in">filter</span>(<span class="keyword">lambda</span> t: t[<span class="string">'id'</span>] == id_, champions))</span><br><span class="line">    <span class="keyword">return</span> jsonify(champion[<span class="number">0</span>])</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">after_requests</span>(<span class="params">response</span>):</span></span><br><span class="line">    response.headers[<span class="string">'Access-Control-Allow-Origin'</span>] = <span class="string">'*'</span></span><br><span class="line">    response.headers[<span class="string">'Access-Control-Allow-Methods'</span>] = <span class="string">'GET'</span></span><br><span class="line">    response.headers[<span class="string">'Access-Control-Allow-Headers'</span>] = <span class="string">'Content-Type,Authorization'</span></span><br><span class="line">    <span class="keyword">return</span> response</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.errorhandler(<span class="params"><span class="number">404</span></span>)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">not_found</span>(<span class="params">error</span>):</span></span><br><span class="line">    <span class="keyword">return</span> make_response(jsonify({<span class="string">'error'</span>: <span class="string">'Not Found'</span>}), <span class="number">404</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    app.after_request(after_requests)</span><br><span class="line">    app.run(debug=<span class="literal">True</span>)</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
 
-<p>使用方法是同<a href="/2019/03/05/start-hexo/#一言">一言</a>一样 ，你同样可以参照<a href="https://ouuan.github.io/hexo博客搭建指北/#一言（ヒトコト）" target="_blank" rel="noopener">原文作者</a>的方式，但只需要根据下方代码把<code>themes/next/layout/_macro/sidebar.swig</code>中的id和Hitokoto的小标题改一下即可。</p>
-<figure class="highlight html"><figcaption><span>themes/next/layout/_scripts/commons.swig</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag"><<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>></span><span class="undefined"></span></span><br><span class="line"><span class="javascript">	$.<span class="keyword">get</span>('http://149.129.113.178:5000/', function (data) {</span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(<span class="string">'----------------------------------------'</span>)</span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(data)</span></span><br><span class="line"><span class="javascript">		$(<span class="string">'#loline-content'</span>).css(<span class="string">'display'</span>, <span class="string">''</span>).text(data.words);</span></span><br><span class="line"><span class="javascript">		$(<span class="string">'#loline-from'</span>).css(<span class="string">'display'</span>, <span class="string">''</span>).text(<span class="string">'——'</span> + data.title_zh+<span class="string">' '</span>+data.name_zh);</span></span><br><span class="line"><span class="undefined">	});</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>收集数据的时候也写了不少的代码，但保存下来数据之后其中大多数已经没有用了，所以这里只贴出来了Flask的代码。需要请邮件联系获取 <span class="github-emoji" style="color: transparent;background:no-repeat url(https://assets-cdn.github.com/images/icons/emoji/unicode/1f604.png?v8) center/contain" data-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f604.png?v8">😄</span></p>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#! py -3</span></span><br><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">from</span> util <span class="keyword">import</span> load_champions</span><br><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask, jsonify, abort, make_response, request</span><br><span class="line"></span><br><span class="line"><span class="comment"># http://www.pythondoc.com/flask-restful/first.html</span></span><br><span class="line">app = Flask(__name__)</span><br><span class="line">app.config[<span class="string">'JSON_AS_ASCII'</span>] = <span class="literal">False</span></span><br><span class="line">champions = load_champions(<span class="string">"data/champions.json"</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route('/', methods=['GET'])</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">index</span><span class="params">()</span>:</span></span><br><span class="line">    id_ = random.randint(<span class="number">1</span>, len(champions))</span><br><span class="line">    print(id_)</span><br><span class="line">    champion = list(filter(<span class="keyword">lambda</span> t: t[<span class="string">'id'</span>] == id_, champions))</span><br><span class="line">    <span class="keyword">return</span> jsonify(champion[<span class="number">0</span>])</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">after_requests</span><span class="params">(response)</span>:</span></span><br><span class="line">    response.headers[<span class="string">'Access-Control-Allow-Origin'</span>] = <span class="string">'*'</span></span><br><span class="line">    response.headers[<span class="string">'Access-Control-Allow-Methods'</span>] = <span class="string">'GET'</span></span><br><span class="line">    response.headers[<span class="string">'Access-Control-Allow-Headers'</span>] = <span class="string">'Content-Type,Authorization'</span></span><br><span class="line">    <span class="keyword">return</span> response</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.errorhandler(404)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">not_found</span><span class="params">(error)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> make_response(jsonify({<span class="string">'error'</span>: <span class="string">'Not Found'</span>}), <span class="number">404</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    app.after_request(after_requests)</span><br><span class="line">    app.run(debug=<span class="literal">True</span>)</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
-<script>
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return; }
-            const img = document.createElement('img');
-            img.style = 'display:none !important;';
-            img.src = el.dataset.src;
-            img.addEventListener('error', () => {
-              img.remove();
-              el.style.color = 'inherit';
-              el.style.backgroundImage = 'none';
-              el.style.background = 'none';
-            });
-            img.addEventListener('load', () => {
-              img.remove();
-            });
-            document.body.appendChild(img);
-          });
-      </script>
-      
     </div>
 
     
-
-    
-    
-    
-
-    
-
-    
-      
     
     
 
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/Python/" rel="tag"># Python</a>
-          
-            <a href="/tags/Loline/" rel="tag"># Loline</a>
-          
-            <a href="/tags/Flask/" rel="tag"># Flask</a>
-          
-            <a href="/tags/json/" rel="tag"># json</a>
-          
-            <a href="/tags/英雄联盟/" rel="tag"># 英雄联盟</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2019/03/05/start-hexo/" rel="next" title="GitHub Pages——Hexo配置笔记">
-                <i class="fa fa-chevron-left"></i> GitHub Pages——Hexo配置笔记
-              </a>
-            
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Python/" rel="tag"># Python</a>
+              <a href="/tags/Loline/" rel="tag"># Loline</a>
+              <a href="/tags/Flask/" rel="tag"># Flask</a>
+              <a href="/tags/json/" rel="tag"># json</a>
+              <a href="/tags/%E8%8B%B1%E9%9B%84%E8%81%94%E7%9B%9F/" rel="tag"># 英雄联盟</a>
           </div>
 
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/03/10/many-ways-to-loline/" rel="prev" title="Loline —— 加载本地json">
-                Loline —— 加载本地json <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-  </div>
-
-
-          </div>
-          
-
-  
-    <div class="comments" id="gitalk-container">
-    </div>
-
-  
-
-
-
-        </div>
         
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/03/10/many-ways-to-loline/" rel="prev" title="Loline —— 加载本地json">
+      <i class="fa fa-chevron-left"></i> Loline —— 加载本地json
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2019/03/05/start-hexo/" rel="next" title="GitHub Pages——Hexo配置笔记">
+      GitHub Pages——Hexo配置笔记 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
           
   
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
   </div>
 
-  <aside id="sidebar" class="sidebar">
-
-      <!------------------------------------------------------->
-      <!-- 一言 start 
-      <div class="sidebar-inner">
-        <div>
-          <div style="display: table-cell;vertical-align: top; color:#B2B7F2;font-size:24px;font-family:'Times New Roman',serif;font-weight:bold;text-align:left;">“</div>
-          <div style="display: table-cell;text-align: left; vertical-align: middle; text-indent: 2em; padding: 0.8em 0.2em 1em 0.2em"><b><span style="color:burlywood;"><span id="hitokoto-content"></span></span></b></div>
-          <div style="display: table-cell; vertical-align: bottom; color:#B2B7F2;font-size:24px;font-family:'Times New Roman',serif;font-weight:bold;text-align:left;">”</div>
-        </div>
-        <div style="text-align: right; font-size: 0.8em; color: black;" id="hitokoto-from"></div>
-        <div style="margin-top: 15px; font-size: 0.8em; color: black;"><a href="https://hitokoto.cn/">Hitokoto</a></div>
-      </div>
-      <div style="height: 15px"></div>
-      <!-- 一言 end -->
-      <!-- LOLine start -->
-      <div class="sidebar-inner">
-        <div>
-          
-          <div style="display: table-cell;vertical-align: top; color:#B2B7F2;font-size:24px;font-family:'Times New Roman',serif;font-weight:bold;text-align:left;">“</div>
-          <div style="display: table-cell;text-align: left; vertical-align: middle; text-indent: 2em; padding: 0.8em 0.2em 1em 0.2em"><b><span style="color:burlywood;"><span id="loline-content"></span></span></b></div>
-          <div style="display: table-cell; vertical-align: bottom; color:#B2B7F2;font-size:24px;font-family:'Times New Roman',serif;font-weight:bold;text-align:right;">”</div>
-          <!--
-          <blockquote class="blockquote-loline">
-            <b><span style="color:burlywood;"><span id="loline-content"></span></span></b>
-          </blockquote>
-          -->
-        </div>
-        <div style="text-align: right; font-size: 0.8em; color: black;" id="loline-from"></div>
-        <div style="margin-top: 15px; font-size: 0.8em; color: black;"><a href="https://moeext.github.io/2019/03/08/loline/#more">LOLine</a></div>
-      </div>
-      <div style="height: 15px"></div>
-      <!-- LOLine end -->
-      <!------------------------------------------------------->
-
+  <aside class="sidebar">
     <div class="sidebar-inner">
 
-      
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
 
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#loline"><span class="nav-number">1.</span> <span class="nav-text"> Loline</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%AD%E6%96%87%E5%90%8D%E7%A7%B0%E5%8F%8A%E7%BB%B0%E5%8F%B7"><span class="nav-number">1.1.</span> <span class="nav-text"> 中文名称及绰号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%8B%B1%E6%96%87%E7%BB%B0%E5%8F%B7"><span class="nav-number">1.2.</span> <span class="nav-text"> 英文绰号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pick%E5%8F%B0%E8%AF%8D"><span class="nav-number">1.3.</span> <span class="nav-text"> Pick台词</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#api%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="nav-number">1.4.</span> <span class="nav-text"> Api的使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81"><span class="nav-number">1.5.</span> <span class="nav-text"> 代码</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
 
       <div class="site-overview-wrap sidebar-panel">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <img class="site-author-image" itemprop="image" src="/images/luna.png" alt="MoeexT">
-            
-              <p class="site-author-name" itemprop="name">MoeexT</p>
-              <div class="site-description motion-element" itemprop="description">她的热切的脸，如夜雨似的，搅扰着我的梦魂。</div>
-          </div>
-
-          
-            <nav class="site-state motion-element">
-              
-                <div class="site-state-item site-state-posts">
-                
-                  <a href="/archives/">
-                
-                    <span class="site-state-item-count">29</span>
-                    <span class="site-state-item-name">日志</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-categories">
-                  
-                    
-                      <a href="/categories/">
-                    
-                  
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">16</span>
-                    <span class="site-state-item-name">分类</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-tags">
-                  
-                    
-                      <a href="/tags/">
-                    
-                  
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">37</span>
-                    <span class="site-state-item-name">标签</span>
-                  </a>
-                </div>
-              
-            </nav>
-          
-
-          
-
-          
-
-          
-            <div class="links-of-author motion-element">
-              
-                <span class="links-of-author-item">
-                  
-                  
-                    
-                  
-                  
-                    
-                  
-                  <a href="https://github.com/moeext" title="GitHub &rarr; https://github.com/moeext" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                    
-                  
-                  
-                    
-                  
-                  <a href="mailto:yuwancumian666@gmail.com" title="E-Mail &rarr; mailto:yuwancumian666@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                    
-                  
-                  
-                    
-                  
-                  <a href="http://weibo.com/starmon" title="微博 &rarr; http://weibo.com/starmon" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>微博</a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                    
-                  
-                  
-                    
-                  
-                  <a href="/images/wechat.jpg" title="微信 &rarr; /images/wechat.jpg"><i class="fa fa-fw fa-weixin"></i>微信</a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                    
-                  
-                  
-                    
-                  
-                  <a href="https://stackoverflow.com/users/9013632/yuwancumian666" title="StackOverflow &rarr; https://stackoverflow.com/users/9013632/yuwancumian666" rel="noopener" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                    
-                  
-                  
-                    
-                  
-                  <a href="http://www.zhihu.com/people/yu-wan-cu-mian-666" title="知乎 &rarr; http://www.zhihu.com/people/yu-wan-cu-mian-666" rel="noopener" target="_blank"><i class="fa fa-fw fa-graduation-cap"></i>知乎</a>
-                </span>
-              
-            </div>
-          
-
-          
-
-          
-          
-            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
-              <div class="links-of-blogroll-title">
-                <i class="fa  fa-fw fa-link"></i>
-                友情链接
-              </div>
-              <ul class="links-of-blogroll-list">
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="https://www.moerats.com/" title="https://www.moerats.com/" rel="noopener" target="_blank">Rat's Blog</a>
-                  </li>
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="https://teddysun.com/" title="https://teddysun.com/" rel="noopener" target="_blank">秋水逸冰</a>
-                  </li>
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="https://www.94ish.me/" title="https://www.94ish.me/" rel="noopener" target="_blank">就是爱生活</a>
-                  </li>
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="http://theme-next.iissnan.com/" title="http://theme-next.iissnan.com/" rel="noopener" target="_blank">Hexo-NexT</a>
-                  </li>
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="https://hexo.io/zh-cn/" title="https://hexo.io/zh-cn/" rel="noopener" target="_blank">Hexo</a>
-                  </li>
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="http://www.fontawesome.com.cn/faicons/" title="http://www.fontawesome.com.cn/faicons/" rel="noopener" target="_blank">FontAwesome</a>
-                  </li>
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="https://www.webpagefx.com/tools/emoji-cheat-sheet/" title="https://www.webpagefx.com/tools/emoji-cheat-sheet/" rel="noopener" target="_blank">Jemoji</a>
-                  </li>
-                
-              </ul>
-            </div>
-          
-
-          
-            
-          
-          
-
-        </div>
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="MoeexT"
+      src="/images/anole.jpg">
+  <p class="site-author-name" itemprop="name">MoeexT</p>
+  <div class="site-description" itemprop="description">我在做FancyToys</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">29</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
       </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">37</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/moeext" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;moeext" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:yuwancumian666@gmail.com" title="E-Mail → mailto:yuwancumian666@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/macoobach" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;macoobach" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+  </div>
 
-      
-      <!--noindex-->
-        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
 
-            
-            
-            
-            
 
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Loline"><span class="nav-number">1.</span> <span class="nav-text">Loline</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#中文名称及绰号"><span class="nav-number">1.1.</span> <span class="nav-text">中文名称及绰号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#英文绰号"><span class="nav-number">1.2.</span> <span class="nav-text">英文绰号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Pick台词"><span class="nav-number">1.3.</span> <span class="nav-text">Pick台词</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Api的使用"><span class="nav-number">1.4.</span> <span class="nav-text">Api的使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">1.5.</span> <span class="nav-text">代码</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </div>
-      <!--/noindex-->
-      
-
-      
-        <div class="back-to-top">
+      </div>
+        <div class="back-to-top motion-element">
           <i class="fa fa-arrow-up"></i>
-          
-            <span id="scrollpercent"><span>0</span>%</span>
-          
+          <span>0%</span>
         </div>
-      
 
     </div>
   </aside>
-  
+  <div id="sidebar-dimmer"></div>
 
 
-        
       </div>
     </main>
 
-    <footer id="footer" class="footer">
+    <footer class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2017 – <span itemprop="copyrightYear">2020</span>
-  <span class="with-love" id="animate">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2017 – 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">MoeexT</span>
-
-  
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
-      <i class="fa fa-area-chart"></i>
+      <i class="fa fa-chart-area"></i>
     </span>
-    
-    <span title="站点总字数">59k</span>
-  
-
-  
+    <span title="站点总字数">84k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    
-    <span title="站点阅读时长">54 分钟</span>
-  
+    <span title="站点阅读时长">1:17</span>
 </div>
-
-
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
-
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.1.1</div>
-
-
-
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
 
         
-<div class="busuanzi-count">
-  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-  
-    <span class="post-meta-item-icon">
-      <i class="fa fa-user"></i>
-    </span>
-    <span class="site-uv" title="总访客量">
-      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
-    </span>
-  
-
-  
-    <span class="post-meta-divider">|</span>
-  
-
-  
-    <span class="post-meta-item-icon">
-      <i class="fa fa-eye"></i>
-    </span>
-    <span class="site-pv" title="总访问量">
-      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
-    </span>
-  
-</div>
 
 
 
@@ -1179,528 +492,62 @@
 
 
 
-
-        
       </div>
     </footer>
-
-    
-
-    
-
-    
-
-    
   </div>
 
   
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
 
 <script>
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  <script src="/lib/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script src="/lib/fancybox/source/jquery.fancybox.pack.js"></script>
-
-
-  
-
-<!-- 一言
-<script type="text/javascript">
-	$.get('https://v1.hitokoto.cn/?c=c', function (data) {
-		$('#hitokoto-content').css('display', '').text(data.hitokoto);
-		$('#hitokoto-from').css('display', '').text('——' + data.from);
-	});
-</script>-->
-
-<!-- Loline 服务器请求方式
-<script type="text/javascript">
-	$.get('https://149.129.113.178:5000/', function (data) {
-    console.log('----------------------------------------')
-    console.log(data)
-		$('#loline-content').css('display', '').text(data.words);
-		$('#loline-from').css('display', '').text('——' + data.title_zh+' '+data.name_zh);
-	});
-</script>
--->
-<!-- Loline 加载本地json文件方式 -->
-<script type="text/javascript">
-	$.get("/json/champions.json", function (data) {
-    console.log('url: '+'https://moeext.github.io/2019/03/08/loline/index.html');
-		// champions = JSON.parse(data);
-		var ranint = function(min, max) {
-    	return Math.round(Math.random() * (max - min)) + min;
-		}(1, data.length);
-		champion = data[ranint-1];
-		console.log(ranint);
-		console.log(champion);
-		$('#loline-content').css('display', '').text(champion.words);
-		$('#loline-from').css('display', '').text('——' + champion.title_zh+' '+champion.name_zh);
-	});
-</script>
-
-
-
-  <script src="/js/utils.js?v=7.1.1"></script>
-
-  <script src="/js/motion.js?v=7.1.1"></script>
-
-
-
-  
-  
-
-
-  <script src="/js/affix.js?v=7.1.1"></script>
-
-  <script src="/js/schemes/pisces.js?v=7.1.1"></script>
-
-
-
-  
-  <script src="/js/scrollspy.js?v=7.1.1"></script>
-<script src="/js/post-details.js?v=7.1.1"></script>
-
-
-
-  
-
-
-  <script src="/js/next-boot.js?v=7.1.1"></script>
-
-
-  
-
-  
-
-  
-
-  
-
-
-  
-    
-
-<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
-
-
-
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
-
-
-
-<script src="//cdn.jsdelivr.net/npm/js-md5@0.7.3/src/md5.min.js"></script>
-
-<script>
-  var gitalk = new Gitalk({
-    clientID: 'd47b6b10b895d42792cf',
-    clientSecret: '73523754b433a4b4bb25b26a535300d572144f00',
-    repo: 'moeext.github.io',
-    owner: 'moeext',
-    admin: ['moeext'],
-    id: md5(location.pathname),
-    
-      language: window.navigator.language || window.navigator.userLanguage,
-    
-    distractionFreeMode: 'true'
-  });
-  gitalk.render('gitalk-container');
-</script>
-
-  
-
-
-  
-  <script>
-    // Popup Window;
-    var isfetched = false;
-    var isXml = true;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length === 0) {
-      search_path = "search.xml";
-    } else if (/json$/i.test(search_path)) {
-      isXml = false;
-    }
-    var path = "/" + search_path;
-    // monitor main search box;
-
-    var onPopupClose = function (e) {
-      $('.popup').hide();
-      $('#local-search-input').val('');
-      $('.search-result-list').remove();
-      $('#no-result').remove();
-      $(".local-search-pop-overlay").remove();
-      $('body').css('overflow', '');
-    }
-
-    function proceedsearch() {
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
-        .css('overflow', 'hidden');
-      $('.search-popup-overlay').click(onPopupClose);
-      $('.popup').toggle();
-      var $localSearchInput = $('#local-search-input');
-      $localSearchInput.attr("autocapitalize", "none");
-      $localSearchInput.attr("autocorrect", "off");
-      $localSearchInput.focus();
-    }
-
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-      'use strict';
-
-      // start loading animation
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
-          '<div id="search-loading-icon">' +
-          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
-          '</div>' +
-          '</div>')
-        .css('overflow', 'hidden');
-      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
-
-      
-
-      $.ajax({
-        url: path,
-        dataType: isXml ? "xml" : "json",
-        async: true,
-        success: function(res) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = isXml ? $("entry", res).map(function() {
-            return {
-              title: $("title", this).text(),
-              content: $("content",this).text(),
-              url: $("url" , this).text()
-            };
-          }).get() : res;
-          var input = document.getElementById(search_id);
-          var resultContent = document.getElementById(content_id);
-          var inputEventFunction = function() {
-            var searchText = input.value.trim().toLowerCase();
-            var keywords = searchText.split(/[\s\-]+/);
-            if (keywords.length > 1) {
-              keywords.push(searchText);
-            }
-            var resultItems = [];
-            if (searchText.length > 0) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var hitCount = 0;
-                var searchTextCount = 0;
-                var title = data.title.trim();
-                var titleInLowerCase = title.toLowerCase();
-                var content = data.content.trim().replace(/<[^>]+>/g,"");
-                
-                var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
-                var indexOfTitle = [];
-                var indexOfContent = [];
-                // only match articles with not empty titles
-                if(title != '') {
-                  keywords.forEach(function(keyword) {
-                    function getIndexByWord(word, text, caseSensitive) {
-                      var wordLen = word.length;
-                      if (wordLen === 0) {
-                        return [];
-                      }
-                      var startPosition = 0, position = [], index = [];
-                      if (!caseSensitive) {
-                        text = text.toLowerCase();
-                        word = word.toLowerCase();
-                      }
-                      while ((position = text.indexOf(word, startPosition)) > -1) {
-                        index.push({position: position, word: word});
-                        startPosition = position + wordLen;
-                      }
-                      return index;
-                    }
-
-                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
-                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
-                  });
-                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
-                    isMatch = true;
-                    hitCount = indexOfTitle.length + indexOfContent.length;
-                  }
-                }
-
-                // show search results
-
-                if (isMatch) {
-                  // sort index by position of keyword
-
-                  [indexOfTitle, indexOfContent].forEach(function (index) {
-                    index.sort(function (itemLeft, itemRight) {
-                      if (itemRight.position !== itemLeft.position) {
-                        return itemRight.position - itemLeft.position;
-                      } else {
-                        return itemLeft.word.length - itemRight.word.length;
-                      }
-                    });
-                  });
-
-                  // merge hits into slices
-
-                  function mergeIntoSlice(text, start, end, index) {
-                    var item = index[index.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    var hits = [];
-                    var searchTextCountInSlice = 0;
-                    while (position + word.length <= end && index.length != 0) {
-                      if (word === searchText) {
-                        searchTextCountInSlice++;
-                      }
-                      hits.push({position: position, length: word.length});
-                      var wordEnd = position + word.length;
-
-                      // move to next position of hit
-
-                      index.pop();
-                      while (index.length != 0) {
-                        item = index[index.length - 1];
-                        position = item.position;
-                        word = item.word;
-                        if (wordEnd > position) {
-                          index.pop();
-                        } else {
-                          break;
-                        }
-                      }
-                    }
-                    searchTextCount += searchTextCountInSlice;
-                    return {
-                      hits: hits,
-                      start: start,
-                      end: end,
-                      searchTextCount: searchTextCountInSlice
-                    };
-                  }
-
-                  var slicesOfTitle = [];
-                  if (indexOfTitle.length != 0) {
-                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
-                  }
-
-                  var slicesOfContent = [];
-                  while (indexOfContent.length != 0) {
-                    var item = indexOfContent[indexOfContent.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    // cut out 100 characters
-                    var start = position - 20;
-                    var end = position + 80;
-                    if(start < 0){
-                      start = 0;
-                    }
-                    if (end < position + word.length) {
-                      end = position + word.length;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
-                  }
-
-                  // sort slices in content by search text's count and hits' count
-
-                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
-                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
-                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
-                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
-                      return sliceRight.hits.length - sliceLeft.hits.length;
-                    } else {
-                      return sliceLeft.start - sliceRight.start;
-                    }
-                  });
-
-                  // select top N slices in content
-
-                  var upperBound = parseInt('1');
-                  if (upperBound >= 0) {
-                    slicesOfContent = slicesOfContent.slice(0, upperBound);
-                  }
-
-                  // highlight title and content
-
-                  function highlightKeyword(text, slice) {
-                    var result = '';
-                    var prevEnd = slice.start;
-                    slice.hits.forEach(function (hit) {
-                      result += text.substring(prevEnd, hit.position);
-                      var end = hit.position + hit.length;
-                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
-                      prevEnd = end;
-                    });
-                    result += text.substring(prevEnd, slice.end);
-                    return result;
-                  }
-
-                  var resultItem = '';
-
-                  if (slicesOfTitle.length != 0) {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
-                  } else {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
-                  }
-
-                  slicesOfContent.forEach(function (slice) {
-                    resultItem += "<a href='" + articleUrl + "'>" +
-                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
-                      "...</p>" + "</a>";
-                  });
-
-                  resultItem += "</li>";
-                  resultItems.push({
-                    item: resultItem,
-                    searchTextCount: searchTextCount,
-                    hitCount: hitCount,
-                    id: resultItems.length
-                  });
-                }
-              })
-            };
-            if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
-            } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
-            } else {
-              resultItems.sort(function (resultLeft, resultRight) {
-                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
-                  return resultRight.searchTextCount - resultLeft.searchTextCount;
-                } else if (resultLeft.hitCount !== resultRight.hitCount) {
-                  return resultRight.hitCount - resultLeft.hitCount;
-                } else {
-                  return resultRight.id - resultLeft.id;
-                }
-              });
-              var searchResultList = '<ul class=\"search-result-list\">';
-              resultItems.forEach(function (result) {
-                searchResultList += result.item;
-              })
-              searchResultList += "</ul>";
-              resultContent.innerHTML = searchResultList;
-            }
-          }
-
-          if ('auto' === 'auto') {
-            input.addEventListener('input', inputEventFunction);
-          } else {
-            $('.search-icon').click(inputEventFunction);
-            input.addEventListener('keypress', function (event) {
-              if (event.keyCode === 13) {
-                inputEventFunction();
-              }
-            });
-          }
-
-          // remove loading animation
-          $(".local-search-pop-overlay").remove();
-          $('body').css('overflow', '');
-
-          proceedsearch();
-        }
-      });
-    }
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched === false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'dark',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
     });
+  }, window.mermaid);
+}
+</script>
 
-    $('.popup-btn-close').click(onPopupClose);
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-    $(document).on('keyup', function (event) {
-      var shouldDismissSearchPopup = event.which === 27 &&
-        $('.search-popup').is(':visible');
-      if (shouldDismissSearchPopup) {
-        onPopupClose();
-      }
-    });
-  </script>
-
-
-
-
-
-  
-
-  
-
-  
-  
-
-  
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 
   
 

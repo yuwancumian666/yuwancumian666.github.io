@@ -1,175 +1,58 @@
 <!DOCTYPE html>
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<html class="theme-next pisces use-motion" lang="zh-CN">
-<head><meta name="generator" content="Hexo 3.8.0">
+<html lang="zh-CN">
+<head>
   <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
 
 
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
 
-
-  
-  
-    
-    
-  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
-  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link rel="stylesheet" href="/lib/fancybox/source/jquery.fancybox.css">
-
-
-
-
-  
-  
-  
-  
-
-  
-    
-    
-  
-
-  
-
-  
-
-  
-    
-      
-    
-
-    
-  
-
-  
-
-  
-    
-    
-    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Supercell-Magic:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
-  
-
-
-
-
-
-
-  
-
-<link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
-<link rel="stylesheet" href="/css/main.css?v=7.1.1">
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.1">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.1">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.1">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222">
-
-
-
-
-
-
-
-<script id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Pisces',
-    version: '7.1.1',
-    sidebar: {"position":"right","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false,"dimmer":false},
-    back2top: true,
-    back2top_sidebar: true,
-    fancybox: true,
-    fastclick: false,
-    lazyload: false,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-  
-
-
-
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"moeext.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
 
   <meta name="description" content="FancyToys是一个工具集，里边包含了Nursery。">
-<meta name="keywords" content="笔记,C#,UWP">
 <meta property="og:type" content="article">
 <meta property="og:title" content="FancyToys 开发笔记">
 <meta property="og:url" content="https://moeext.github.io/2020/09/30/fancy-toys-notes/index.html">
 <meta property="og:site_name" content="Hummer&#39;s Blog">
 <meta property="og:description" content="FancyToys是一个工具集，里边包含了Nursery。">
-<meta property="og:locale" content="zh-CN">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2020/UWP%E5%8A%A8%E6%80%81%E6%9B%B4%E6%94%B9ListBoxItem%E9%AB%98%E5%BA%A6.gif">
 <meta property="og:image" content="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2020/2020-10-04%20ContentDialog.jpg">
+<meta property="og:image" content="https://moeext.github.io/2020/09/30/fancy-toys-notes/GrayBackColor.jpg">
 <meta property="og:image" content="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2020/2020-10-03%20%E7%88%B6%E8%BF%9B%E7%A8%8B%E9%80%80%E5%87%BA%E4%B8%8D%E9%87%8A%E6%94%BE%E7%AB%AF%E5%8F%A3.jpg">
-<meta property="og:updated_time" content="2020-10-03T16:58:24.588Z">
+<meta property="article:published_time" content="2020-09-30T00:46:31.000Z">
+<meta property="article:modified_time" content="2021-01-18T18:37:22.429Z">
+<meta property="article:author" content="MoeexT">
+<meta property="article:tag" content="笔记">
+<meta property="article:tag" content="C#">
+<meta property="article:tag" content="UWP">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="FancyToys 开发笔记">
-<meta name="twitter:description" content="FancyToys是一个工具集，里边包含了Nursery。">
-<meta name="twitter:image" content="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2020/2020-10-04%20ContentDialog.jpg">
+<meta name="twitter:image" content="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2020/UWP%E5%8A%A8%E6%80%81%E6%9B%B4%E6%94%B9ListBoxItem%E9%AB%98%E5%BA%A6.gif">
+
+<link rel="canonical" href="https://moeext.github.io/2020/09/30/fancy-toys-notes/">
 
 
-
-
-
-  
-  
-  <link rel="canonical" href="https://moeext.github.io/2020/09/30/fancy-toys-notes/">
-
-
-
-<script id="page.configurations">
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
   };
 </script>
 
@@ -181,15 +64,8 @@
 
 
 
-
-
-
-
-
-
   <noscript>
   <style>
-  .use-motion .motion-element,
   .use-motion .brand,
   .use-motion .menu-item,
   .sidebar-inner,
@@ -198,9 +74,8 @@
   .use-motion .comments,
   .use-motion .post-header,
   .use-motion .post-body,
-  .use-motion .collection-title { opacity: initial; }
+  .use-motion .collection-header { opacity: initial; }
 
-  .use-motion .logo,
   .use-motion .site-title,
   .use-motion .site-subtitle {
     opacity: initial;
@@ -212,200 +87,102 @@
   </style>
 </noscript>
 
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-right page-post-detail">
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Hummer's Blog</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
     </div>
-    
-      
-        <p class="site-subtitle">哝，你的鱼丸~</p>
-      
-    
-    
   </div>
 
-  <div class="site-nav-toggle">
-    <button aria-label="切换导航栏">
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Hummer's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
   </div>
 </div>
+
 
 
 
 <nav class="site-nav">
-  
-    <ul id="menu" class="menu">
-      
-        
-        
-        
-          
-          <li class="menu-item menu-item-home">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-tags">
+        <li class="menu-item menu-item-tags">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-categories">
+        <li class="menu-item menu-item-categories">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-archives">
+        <li class="menu-item menu-item-archives">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-about">
+        <li class="menu-item menu-item-about">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-smile">
-
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/smile" rel="section"><i class="menu-item-icon fa fa-fw fa-smile-o"></i> <br>smile</a>
-
-  </li>
-
-      
-      
-        <li class="menu-item menu-item-search">
-          
-            <a href="javascript:;" class="popup-trigger">
-          
-            
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
-        </li>
-      
-    </ul>
-  
-
-  
-
-  
-    <div class="site-search">
-      
-  <div class="popup search-popup local-search-popup">
-  <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
-    <span class="popup-btn-close">
-      <i class="fa fa-times-circle"></i>
-    </span>
-    <div class="local-search-input-wrapper">
-      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
-    </div>
-  </div>
-  <div id="local-search-result"></div>
-</div>
-
-
-
-    </div>
-  
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
 </nav>
 
 
 
-  
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
 
-
+    </div>
+  </div>
 
 </div>
     </header>
@@ -413,153 +190,78 @@
     
 
 
-    <main id="main" class="main">
+    <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
           
+
+          <div class="content post posts-expand">
             
 
-          
-          <div id="content" class="content">
-            
-
-  <div id="posts" class="posts-expand">
     
-
-  
-
   
   
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://moeext.github.io/2020/09/30/fancy-toys-notes/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/anole.jpg">
       <meta itemprop="name" content="MoeexT">
-      <meta itemprop="description" content="她的热切的脸，如夜雨似的，搅扰着我的梦魂。">
-      <meta itemprop="image" content="/images/luna.png">
+      <meta itemprop="description" content="我在做FancyToys">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Hummer's Blog">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">FancyToys 开发笔记
-
-              
-            
-          </h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          FancyToys 开发笔记
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
+              <span class="post-meta-item-text">发表于</span>
 
               <time title="创建时间：2020-09-30 00:46:31" itemprop="dateCreated datePublished" datetime="2020-09-30T00:46:31Z">2020-09-30</time>
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-01-18 18:37:22" itemprop="dateModified" datetime="2021-01-18T18:37:22Z">2021-01-18</time>
               </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Net/" itemprop="url" rel="index"><span itemprop="name">.Net</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-            <span class="post-meta-divider">|</span>
-            <span class="post-meta-item-icon">
-            <i class="fa fa-eye"></i>
-             阅读次数： 
-            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
-            </span>
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Net/" itemprop="url" rel="index"><span itemprop="name">.Net</span></a>
                 </span>
-                
-                  <span class="post-meta-item-text">本文字数：</span>
-                
-                <span title="本文字数">3.5k</span>
-              
+            </span>
 
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">3 分钟</span>
-              
-            </div>
-          
-
-          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>10k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>9 分钟</span>
+            </span>
 
         </div>
       </header>
-    
 
     
     
@@ -567,629 +269,267 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
         <p>FancyToys是一个工具集，里边包含了Nursery。</p>
 <a id="more"></a>
-
-<p><a href="https://www.cnblogs.com/hupo376787/category/1090453.html" target="_blank" rel="noopener">UWP 大佬</a></p>
-<h1 id="FancyToys"><a href="#FancyToys" class="headerlink" title="FancyToys"></a>FancyToys</h1><h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><h3 id="同时创建了多个ContentDialog"><a href="#同时创建了多个ContentDialog" class="headerlink" title="同时创建了多个ContentDialog"></a>同时创建了多个<code>ContentDialog</code></h3><div class="note danger">
-            <p>System.Exception:“某个异步操作没有正常启动。  Only a single ContentDialog can be open at any time.”</p>
+<p><a href="https://www.cnblogs.com/hupo376787/category/1090453.html">UWP 大佬</a></p>
+<h1 id="fancytoys">FancyToys</h1>
+<h2 id="问题">问题</h2>
+<h3 id="同时创建了多个contentdialog">同时创建了多个<code>ContentDialog</code></h3>
+<div class="note danger">
+            <p>System.Exception:“某个异步操作没有正常启动。 Only a single ContentDialog can be open at any time.”</p>
           </div>
-
-<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">async</span> <span class="keyword">void</span> <span class="title">Show</span>(<span class="params"><span class="keyword">string</span> title</span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            ContentDialog dialog = <span class="keyword">new</span> ContentDialog()</span><br><span class="line">            &#123;</span><br><span class="line">                Title = title,</span><br><span class="line">                PrimaryButtonText = <span class="string">"好的"</span>,</span><br><span class="line">                CloseButtonText = <span class="string">"Cancel"</span>,</span><br><span class="line">                DefaultButton = ContentDialogButton.Primary,</span><br><span class="line">            &#125;;</span><br><span class="line">            <span class="keyword">await</span> dialog.ShowAsync();</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight csharp"><figcaption><span>Utils.cs</span><a href="https://stackoverflow.com/questions/33018346/only-a-single-contentdialog-can-be-open-at-any-time-error-while-opening-anoth" target="_blank" rel="noopener">StackOverFlow</a></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">DialogUtil</span></span><br><span class="line">{</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> ContentDialog ActiveDialog;</span><br><span class="line">    <span class="keyword">static</span> TaskCompletionSource<<span class="keyword">bool</span>> DialogAwaiter = <span class="keyword">new</span> TaskCompletionSource<<span class="keyword">bool</span>>();</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">async</span> <span class="keyword">void</span> <span class="title">CreateContentDialog</span>(<span class="params">ContentDialog Dialog, <span class="keyword">bool</span> awaitPreviousDialog</span>)</span> { <span class="keyword">await</span> CreateDialog(Dialog, awaitPreviousDialog); }</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">async</span> Task <span class="title">CreateContentDialogAsync</span>(<span class="params">ContentDialog Dialog, <span class="keyword">bool</span> awaitPreviousDialog</span>)</span> { <span class="keyword">await</span> CreateDialog(Dialog, awaitPreviousDialog); }</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">ActiveDialog_Closed</span>(<span class="params">ContentDialog sender, ContentDialogClosedEventArgs args</span>)</span> { DialogAwaiter.SetResult(<span class="literal">true</span>); }</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">async</span> <span class="keyword">void</span> <span class="title">Info</span>(<span class="params"><span class="keyword">string</span> text</span>)</span></span><br><span class="line"><span class="function"></span>    {</span><br><span class="line">        <span class="keyword">await</span> DialogUtil.CreateContentDialogAsync(<span class="keyword">new</span> ContentDialog</span><br><span class="line">        {</span><br><span class="line">            Title = <span class="string">"Info"</span>,</span><br><span class="line">            Content = <span class="keyword">new</span> TextBlock</span><br><span class="line">            {</span><br><span class="line">                Text = text,</span><br><span class="line">                TextWrapping = TextWrapping.Wrap</span><br><span class="line">            },</span><br><span class="line">            PrimaryButtonText = <span class="string">"好的"</span></span><br><span class="line">        }, awaitPreviousDialog: <span class="literal">true</span>);</span><br><span class="line">    }</span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">async</span> Task <span class="title">CreateDialog</span>(<span class="params">ContentDialog Dialog, <span class="keyword">bool</span> awaitPreviousDialog</span>)</span></span><br><span class="line"><span class="function"></span>    {</span><br><span class="line">        <span class="keyword">if</span> (ActiveDialog != <span class="literal">null</span>)</span><br><span class="line">        {</span><br><span class="line">            <span class="keyword">if</span> (awaitPreviousDialog)</span><br><span class="line">            {</span><br><span class="line">                <span class="keyword">await</span> DialogAwaiter.Task;</span><br><span class="line">                DialogAwaiter = <span class="keyword">new</span> TaskCompletionSource<<span class="keyword">bool</span>>();</span><br><span class="line">            }</span><br><span class="line">            <span class="keyword">else</span> ActiveDialog.Hide();</span><br><span class="line">        }</span><br><span class="line">        ActiveDialog = Dialog;</span><br><span class="line">        ActiveDialog.Closed += ActiveDialog_Closed;</span><br><span class="line">        <span class="keyword">await</span> ActiveDialog.ShowAsync();</span><br><span class="line">        ActiveDialog.Closed -= ActiveDialog_Closed;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="启动进程失败"><a href="#启动进程失败" class="headerlink" title="启动进程失败"></a>启动进程失败</h3><ul>
-<li><a href="https://stackoverflow.com/questions/33925096/how-to-execute-process-commands-or-similar-using-a-universal-windows-platform#" target="_blank" rel="noopener">Stackoverflow1（未成功）</a></li>
-<li><a href="https://stackoverflow.com/questions/49189353/uwp-how-to-start-an-exe-file-that-is-located-in-specific-directory" target="_blank" rel="noopener">Stackoverflow方式2（有思路）</a></li>
+<figure class="highlight cs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">async</span> <span class="keyword">void</span> <span class="title">Show</span>(<span class="params"><span class="built_in">string</span> title</span>)</span></span><br><span class="line"><span class="function"></span>        {</span><br><span class="line">            ContentDialog dialog = <span class="keyword">new</span> ContentDialog()</span><br><span class="line">            {</span><br><span class="line">                Title = title,</span><br><span class="line">                PrimaryButtonText = <span class="string">"好的"</span>,</span><br><span class="line">                CloseButtonText = <span class="string">"Cancel"</span>,</span><br><span class="line">                DefaultButton = ContentDialogButton.Primary,</span><br><span class="line">            };</span><br><span class="line">            <span class="keyword">await</span> dialog.ShowAsync();</span><br><span class="line">        }</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight csharp"><figcaption><span>Utils.cs</span><a href="https://stackoverflow.com/questions/33018346/only-a-single-contentdialog-can-be-open-at-any-time-error-while-opening-anoth">StackOverFlow</a></figcaption><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">DialogUtil</span></span><br><span class="line">{</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> ContentDialog ActiveDialog;</span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="title">TaskCompletionSource</span>&lt;<span class="title">bool</span>&gt; DialogAwaiter</span> = <span class="keyword">new</span> TaskCompletionSource&lt;<span class="built_in">bool</span>&gt;();</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">async</span> <span class="keyword">void</span> <span class="title">CreateContentDialog</span>(<span class="params">ContentDialog Dialog, <span class="built_in">bool</span> awaitPreviousDialog</span>)</span> { <span class="keyword">await</span> CreateDialog(Dialog, awaitPreviousDialog); }</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">async</span> Task <span class="title">CreateContentDialogAsync</span>(<span class="params">ContentDialog Dialog, <span class="built_in">bool</span> awaitPreviousDialog</span>)</span> { <span class="keyword">await</span> CreateDialog(Dialog, awaitPreviousDialog); }</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">ActiveDialog_Closed</span>(<span class="params">ContentDialog sender, ContentDialogClosedEventArgs args</span>)</span> { DialogAwaiter.SetResult(<span class="literal">true</span>); }</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">async</span> <span class="keyword">void</span> <span class="title">Info</span>(<span class="params"><span class="built_in">string</span> text</span>)</span></span><br><span class="line"><span class="function"></span>    {</span><br><span class="line">        <span class="keyword">await</span> DialogUtil.CreateContentDialogAsync(<span class="keyword">new</span> ContentDialog</span><br><span class="line">        {</span><br><span class="line">            Title = <span class="string">"Info"</span>,</span><br><span class="line">            Content = <span class="keyword">new</span> TextBlock</span><br><span class="line">            {</span><br><span class="line">                Text = text,</span><br><span class="line">                TextWrapping = TextWrapping.Wrap</span><br><span class="line">            },</span><br><span class="line">            PrimaryButtonText = <span class="string">"好的"</span></span><br><span class="line">        }, awaitPreviousDialog: <span class="literal">true</span>);</span><br><span class="line">    }</span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">async</span> Task <span class="title">CreateDialog</span>(<span class="params">ContentDialog Dialog, <span class="built_in">bool</span> awaitPreviousDialog</span>)</span></span><br><span class="line"><span class="function"></span>    {</span><br><span class="line">        <span class="keyword">if</span> (ActiveDialog != <span class="literal">null</span>)</span><br><span class="line">        {</span><br><span class="line">            <span class="keyword">if</span> (awaitPreviousDialog)</span><br><span class="line">            {</span><br><span class="line">                <span class="keyword">await</span> DialogAwaiter.Task;</span><br><span class="line">                DialogAwaiter = <span class="keyword">new</span> TaskCompletionSource&lt;<span class="built_in">bool</span>&gt;();</span><br><span class="line">            }</span><br><span class="line">            <span class="keyword">else</span> ActiveDialog.Hide();</span><br><span class="line">        }</span><br><span class="line">        ActiveDialog = Dialog;</span><br><span class="line">        ActiveDialog.Closed += ActiveDialog_Closed;</span><br><span class="line">        <span class="keyword">await</span> ActiveDialog.ShowAsync();</span><br><span class="line">        ActiveDialog.Closed -= ActiveDialog_Closed;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="启动进程失败">启动进程失败</h3>
+<ul>
+<li><a href="https://stackoverflow.com/questions/33925096/how-to-execute-process-commands-or-similar-using-a-universal-windows-platform#">Stackoverflow1（未成功）</a></li>
+<li><a href="https://stackoverflow.com/questions/49189353/uwp-how-to-start-an-exe-file-that-is-located-in-specific-directory">Stackoverflow方式2（有思路）</a></li>
 </ul>
 <div class="note danger">
             <p>System.ComponentModel.Win32Exception:“拒绝访问。”</p>
           </div>
-
 <p>UWP拒绝直接启动进程，只能想办法绕过这个限制；</p>
-<p>解决思路：</p>
-<ol>
-<li>经<a href="https://stackoverflow.com/questions/49189353/uwp-how-to-start-an-exe-file-that-is-located-in-specific-directory" target="_blank" rel="noopener">Stackoverflow方式2（有思路）</a>的开导，现已经可以用这个方式启动特定进程。但该方式是硬编码，必须在<em>FancyToys</em>编译的时候把所需的app的路径加进去，自己用的话还可以接受，但是给别人用的话肯定行不通。此外，启动器打开时有黑框（闪一下），这可不行。</li>
-<li>这里边有了app启动器，可以把小黑框去掉，监听<em>FancyToys</em>发送的请求，根据请求内容启动相应的app。通信内容包含app路径、运行参数等内容。</li>
-<li>UWP-客户端，启动器-服务端。做了一个简单的服务器：<code>NurseryLauncher.exe</code>，可以接收到start/stop的指令，根据指令做相应操作；启动进程后每隔一段时间向客户端发送进程消息。</li>
-</ol>
-<h3 id="DataGrid的更新"><a href="#DataGrid的更新" class="headerlink" title="DataGrid的更新"></a>DataGrid的更新</h3><p>这是最后一个困扰人的问题了</p>
-<h2 id="功能与插件"><a href="#功能与插件" class="headerlink" title="功能与插件"></a>功能与插件</h2><h3 id="可拖拽区域"><a href="#可拖拽区域" class="headerlink" title="可拖拽区域"></a>可拖拽区域</h3><ul>
-<li><a href="https://www.cnblogs.com/hupo376787/p/8664512.html" target="_blank" rel="noopener">UWP拖拽文件</a></li>
-<li><a href="https://www.bilibili.com/video/BV1Ws411y7KW" target="_blank" rel="noopener">bilibili-添加拖拽</a></li>
+<p>解决思路： 1. 经<a href="https://stackoverflow.com/questions/49189353/uwp-how-to-start-an-exe-file-that-is-located-in-specific-directory">Stackoverflow方式2（有思路）</a>的开导，现已经可以用这个方式启动特定进程。但该方式是硬编码，必须在<em>FancyToys</em>编译的时候把所需的app的路径加进去，自己用的话还可以接受，但是给别人用的话肯定行不通。此外，启动器打开时有黑框（闪一下），这可不行。 2. 这里边有了app启动器，可以把小黑框去掉，监听<em>FancyToys</em>发送的请求，根据请求内容启动相应的app。通信内容包含app路径、运行参数等内容。 3. UWP-客户端，启动器-服务端。做了一个简单的服务器：<code>NurseryLauncher.exe</code>，可以接收到start/stop的指令，根据指令做相应操作；启动进程后每隔一段时间向客户端发送进程消息。</p>
+<h3 id="datagrid的更新">DataGrid的更新</h3>
+<p>这是最后一个困扰人的问题了</p>
+<h3 id="托盘图标">托盘图标</h3>
+<p>上面的不是最后一个，这个可能也不是…… </p><div class="note default">
+            <p>和NurseryLauncher类似，起一个WinForm进程，用它的托盘图标，同时运行退出就OK</p>
+          </div><p></p>
+<h2 id="功能与插件">功能与插件</h2>
+<h3 id="可拖拽区域">可拖拽区域</h3>
+<ul>
+<li><a href="https://www.cnblogs.com/hupo376787/p/8664512.html">UWP拖拽文件</a></li>
+<li><a href="https://www.bilibili.com/video/BV1Ws411y7KW">bilibili-添加拖拽</a></li>
 </ul>
-<p>和WPF不太一样。与之相比较，出现了两个小问题：</p>
-<ol>
-<li>一开始没有实现<code>DragOver</code>，误以为不能拖拽，实际上可能已经OK了</li>
-<li><code>Rectangle</code>没有<code>Fill</code>属性的话不能拖拽，但可以设置<code>Opacity</code>解决。添加了颜色之后甚至比之前好看。</li>
-</ol>
-<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">async</span> <span class="keyword">void</span> <span class="title">DropArea_Drop</span>(<span class="params"><span class="keyword">object</span> sender, DragEventArgs e</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">var</span> defer = e.GetDeferral();</span><br><span class="line">    <span class="keyword">try</span></span><br><span class="line">    &#123;</span><br><span class="line">        DataPackageView dpv = e.DataView;</span><br><span class="line">        <span class="keyword">if</span> (dpv.Contains(StandardDataFormats.StorageItems))</span><br><span class="line">        &#123;</span><br><span class="line">            List&lt;StorageFile&gt; fileList = <span class="keyword">new</span> List&lt;StorageFile&gt;();</span><br><span class="line">            <span class="keyword">var</span> files = <span class="keyword">await</span> dpv.GetStorageItemsAsync();</span><br><span class="line">            <span class="keyword">foreach</span> (<span class="keyword">var</span> item <span class="keyword">in</span> files)</span><br><span class="line">            &#123;</span><br><span class="line">                DialogUtil.Info(item.Name);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">finally</span></span><br><span class="line">    &#123;</span><br><span class="line">        defer.Complete();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">DropArea_DragOver</span>(<span class="params"><span class="keyword">object</span> sender, DragEventArgs e</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    e.AcceptedOperation = DataPackageOperation.Copy;</span><br><span class="line">    e.DragUIOverride.Caption = <span class="string">"拖放以添加"</span>;</span><br><span class="line">    e.DragUIOverride.IsCaptionVisible = <span class="literal">true</span>;</span><br><span class="line">    e.DragUIOverride.IsContentVisible = <span class="literal">true</span>;</span><br><span class="line">    e.DragUIOverride.IsGlyphVisible = <span class="literal">true</span>;</span><br><span class="line">    e.Handled = <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="ToggleSwitchList"><a href="#ToggleSwitchList" class="headerlink" title="ToggleSwitchList"></a>ToggleSwitchList</h3><p>当我一开始想做一个ToggleSwitchList的时候，每一个开关都有右键列表，<a href="https://jingyan.baidu.com/article/046a7b3e9abafcf9c27fa9a1.html" target="_blank" rel="noopener">这里</a>给出了一个可行的解决方案，绑定的数据源是<code>ObservableCollection</code>。之后发现开关有一个被覆盖的问题：后台代码已经设定好了属性，绑定好了事件，到了这里被模板的<code>ToggleSwitch</code>覆盖了，全部变成了xaml设置的样式。可行方案变得不可行。</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ListBox</span> <span class="attr">x:Name</span>=<span class="string">"ProcessListBox"</span> <span class="attr">Margin</span>=<span class="string">"0,0,0,10"</span> <span class="attr">Width</span>=<span class="string">"150"</span> <span class="attr">Background</span>=<span class="string">"&#123;ThemeResource BackgroundAcrylicBrush&#125;"</span> </span></span><br><span class="line"><span class="tag">    <span class="attr">ItemsSource</span>=<span class="string">"&#123;Binding SwitchList&#125;"</span> &gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- &lt;ListBox.ItemTemplate&gt;</span></span><br><span class="line"><span class="comment">        &lt;DataTemplate&gt;</span></span><br><span class="line"><span class="comment">            &lt;ToggleSwitch&gt;</span></span><br><span class="line"><span class="comment">                &lt;FlyoutBase.AttachedFlyout&gt;</span></span><br><span class="line"><span class="comment">                    &lt;MenuFlyout&gt;</span></span><br><span class="line"><span class="comment">                        &lt;MenuFlyoutItem/&gt;</span></span><br><span class="line"><span class="comment">                        &lt;MenuFlyoutItem/&gt;</span></span><br><span class="line"><span class="comment">                    &lt;/MenuFlyout&gt;</span></span><br><span class="line"><span class="comment">                &lt;/FlyoutBase.AttachedFlyout&gt;</span></span><br><span class="line"><span class="comment">            &lt;/ToggleSwitch&gt;</span></span><br><span class="line"><span class="comment">        &lt;/DataTemplate&gt;</span></span><br><span class="line"><span class="comment">    &lt;/ListBox.ItemTemplate&gt; --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ListBox</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>后来就回归原始，不绑定数据源，直接调用<code>ProcessListBox.Items.Add</code>方法，删除的时候使用<code>Remove</code>方法，问题解决了一半，然后是绑定右键菜单。在页面添加资源字典，ToggleSwitch绑定<code>RightTapped</code>事件（一开始在设计页面找的是”RightClick”事件），问题迎刃而解。</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Page.Resources</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">muxc:CommandBarFlyout</span> <span class="attr">Placement</span>=<span class="string">"Right"</span> <span class="attr">x:Name</span>=<span class="string">"CommandFlyout"</span> <span class="attr">ShowMode</span>=<span class="string">"Transient"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">AppBarButton</span> <span class="attr">Label</span>=<span class="string">"Args"</span> <span class="attr">Icon</span>=<span class="string">"Attach"</span> <span class="attr">Click</span>=<span class="string">"AppBarArgsButton_Click"</span> <span class="attr">ToolTipService.ToolTip</span>=<span class="string">"添加参数"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">AppBarButton</span> <span class="attr">Label</span>=<span class="string">"Delete"</span> <span class="attr">Icon</span>=<span class="string">"Delete"</span> <span class="attr">Click</span>=<span class="string">"AppBarDeleteButton_Click"</span> <span class="attr">ToolTipService.ToolTip</span>=<span class="string">"删除"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">muxc:CommandBarFlyout</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">Page.Resources</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="ContentDialog输入框"><a href="#ContentDialog输入框" class="headerlink" title="ContentDialog输入框"></a>ContentDialog输入框</h3><p>来自 <a href="https://jingyan.baidu.com/article/219f4bf7b10624de452d3857.html" target="_blank" rel="noopener">这里</a></p>
+<p>和WPF不太一样。与之相比较，出现了两个小问题： 1. 一开始没有实现<code>DragOver</code>，误以为不能拖拽，实际上可能已经OK了 2. <code>Rectangle</code>没有<code>Fill</code>属性的话不能拖拽，但可以设置<code>Opacity</code>解决。添加了颜色之后甚至比之前好看。</p>
+<figure class="highlight cs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">async</span> <span class="keyword">void</span> <span class="title">DropArea_Drop</span>(<span class="params"><span class="built_in">object</span> sender, DragEventArgs e</span>)</span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">var</span> defer = e.GetDeferral();</span><br><span class="line">    <span class="keyword">try</span></span><br><span class="line">    {</span><br><span class="line">        DataPackageView dpv = e.DataView;</span><br><span class="line">        <span class="keyword">if</span> (dpv.Contains(StandardDataFormats.StorageItems))</span><br><span class="line">        {</span><br><span class="line">            List&lt;StorageFile&gt; fileList = <span class="keyword">new</span> List&lt;StorageFile&gt;();</span><br><span class="line">            <span class="keyword">var</span> files = <span class="keyword">await</span> dpv.GetStorageItemsAsync();</span><br><span class="line">            <span class="keyword">foreach</span> (<span class="keyword">var</span> item <span class="keyword">in</span> files)</span><br><span class="line">            {</span><br><span class="line">                DialogUtil.Info(item.Name);</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">finally</span></span><br><span class="line">    {</span><br><span class="line">        defer.Complete();</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">DropArea_DragOver</span>(<span class="params"><span class="built_in">object</span> sender, DragEventArgs e</span>)</span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    e.AcceptedOperation = DataPackageOperation.Copy;</span><br><span class="line">    e.DragUIOverride.Caption = <span class="string">"拖放以添加"</span>;</span><br><span class="line">    e.DragUIOverride.IsCaptionVisible = <span class="literal">true</span>;</span><br><span class="line">    e.DragUIOverride.IsContentVisible = <span class="literal">true</span>;</span><br><span class="line">    e.DragUIOverride.IsGlyphVisible = <span class="literal">true</span>;</span><br><span class="line">    e.Handled = <span class="literal">true</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="toggleswitchlist">ToggleSwitchList</h3>
+<p>当我一开始想做一个ToggleSwitchList的时候，每一个开关都有右键列表，<a href="https://jingyan.baidu.com/article/046a7b3e9abafcf9c27fa9a1.html">这里</a>给出了一个可行的解决方案，绑定的数据源是<code>ObservableCollection</code>。之后发现开关有一个被覆盖的问题：后台代码已经设定好了属性，绑定好了事件，到了这里被模板的<code>ToggleSwitch</code>覆盖了，全部变成了xaml设置的样式。可行方案变得不可行。 </p><figure class="highlight xml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ListBox</span> <span class="attr">x:Name</span>=<span class="string">"ProcessListBox"</span> <span class="attr">Margin</span>=<span class="string">"0,0,0,10"</span> <span class="attr">Width</span>=<span class="string">"150"</span> <span class="attr">Background</span>=<span class="string">"{ThemeResource BackgroundAcrylicBrush}"</span> </span></span><br><span class="line"><span class="tag">    <span class="attr">ItemsSource</span>=<span class="string">"{Binding SwitchList}"</span> &gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- &lt;ListBox.ItemTemplate&gt;</span></span><br><span class="line"><span class="comment">        &lt;DataTemplate&gt;</span></span><br><span class="line"><span class="comment">            &lt;ToggleSwitch&gt;</span></span><br><span class="line"><span class="comment">                &lt;FlyoutBase.AttachedFlyout&gt;</span></span><br><span class="line"><span class="comment">                    &lt;MenuFlyout&gt;</span></span><br><span class="line"><span class="comment">                        &lt;MenuFlyoutItem/&gt;</span></span><br><span class="line"><span class="comment">                        &lt;MenuFlyoutItem/&gt;</span></span><br><span class="line"><span class="comment">                    &lt;/MenuFlyout&gt;</span></span><br><span class="line"><span class="comment">                &lt;/FlyoutBase.AttachedFlyout&gt;</span></span><br><span class="line"><span class="comment">            &lt;/ToggleSwitch&gt;</span></span><br><span class="line"><span class="comment">        &lt;/DataTemplate&gt;</span></span><br><span class="line"><span class="comment">    &lt;/ListBox.ItemTemplate&gt; --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ListBox</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure> 后来就回归原始，不绑定数据源，直接调用<code>ProcessListBox.Items.Add</code>方法，删除的时候使用<code>Remove</code>方法，问题解决了一半，然后是绑定右键菜单。在页面添加资源字典，ToggleSwitch绑定<code>RightTapped</code>事件（一开始在设计页面找的是"RightClick"事件），问题迎刃而解。<p></p>
+<figure class="highlight xml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Page.Resources</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">muxc:CommandBarFlyout</span> <span class="attr">Placement</span>=<span class="string">"Right"</span> <span class="attr">x:Name</span>=<span class="string">"CommandFlyout"</span> <span class="attr">ShowMode</span>=<span class="string">"Transient"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">AppBarButton</span> <span class="attr">Label</span>=<span class="string">"Args"</span> <span class="attr">Icon</span>=<span class="string">"Attach"</span> <span class="attr">Click</span>=<span class="string">"AppBarArgsButton_Click"</span> <span class="attr">ToolTipService.ToolTip</span>=<span class="string">"添加参数"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">AppBarButton</span> <span class="attr">Label</span>=<span class="string">"Delete"</span> <span class="attr">Icon</span>=<span class="string">"Delete"</span> <span class="attr">Click</span>=<span class="string">"AppBarDeleteButton_Click"</span> <span class="attr">ToolTipService.ToolTip</span>=<span class="string">"删除"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">muxc:CommandBarFlyout</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">Page.Resources</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="listboxitem-高度的设置">ListBoxItem 高度的设置</h3>
+<p>一开始在VS属性栏里找不到 ListBoxItem 的设置，后来在 <a href="https://stackoverrun.com/cn/q/10504352">这里</a>和 <a href="https://stackoverflow.com/questions/49637947/how-to-dynamically-change-the-height-of-listboxitem-uwp">这里</a>找到了，方法很简单</p>
+<figure class="highlight xml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ListBox</span> <span class="attr">x:Name</span>=<span class="string">"ProcessListBox"</span> <span class="attr">Background</span>=<span class="string">"{ThemeResource BackgroundAcrylicBrush}"</span> </span></span><br><span class="line"><span class="tag">    <span class="attr">ItemsSource</span>=<span class="string">"{Binding SwitchList}"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ListBox.ItemContainerStyle</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">Style</span> <span class="attr">TargetType</span>=<span class="string">"ListBoxItem"</span>&gt;</span></span><br><span class="line"><span class="xml">            <span class="tag">&lt;<span class="name">Setter</span> <span class="attr">Property</span>=<span class="string">"Height"</span> <span class="attr">Value</span>=<span class="string">"40"</span> /&gt;</span></span></span><br><span class="line"><span class="xml">            <span class="tag">&lt;<span class="name">Setter</span> <span class="attr">Property</span>=<span class="string">"Padding"</span> <span class="attr">Value</span>=<span class="string">"10,0,0,0"</span>/&gt;</span></span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">Style</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ListBox.ItemContainerStyle</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ListBox</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="c后台动态修改listboxitem属性">C#后台动态修改ListBoxItem属性</h3>
+<p>我根据xaml尝试了一会没试出来，感谢这位大神 <a href="%5Bhttps://link%5D(https://blog.csdn.net/lindexi_gd/article/details/104992276)">大牛</a>。</p>
+<figure class="highlight cs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">SetSmallFlyoutItem_Click</span>(<span class="params"><span class="built_in">object</span> sender, RoutedEventArgs e</span>)</span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    ProcessListBox.ItemContainerStyle = GetStyle(HeightProperty, <span class="string">"32"</span>);</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="keyword">private</span> Style <span class="title">GetStyle</span>(<span class="params">DependencyProperty property, <span class="built_in">object</span> <span class="keyword">value</span></span>)</span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    Style style = <span class="keyword">new</span> Style</span><br><span class="line">    {</span><br><span class="line">        TargetType = <span class="keyword">typeof</span>(ListBoxItem)</span><br><span class="line">    };</span><br><span class="line">    style.Setters.Add(<span class="keyword">new</span> Setter(property, <span class="keyword">value</span>));</span><br><span class="line">    style.Setters.Add(<span class="keyword">new</span> Setter(PaddingProperty, <span class="string">"10,0,0,0"</span>));</span><br><span class="line">    ProcessListBox.ItemContainerStyle = style;</span><br><span class="line">    <span class="keyword">return</span> style;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 <div class="note primary">
+            <p>注意！在xaml设置的初始属性会被该方法覆盖，例如<code>ListBoxItem</code>的padding又恢复默认，需要重新给值。</p>
+          </div>
+<img src="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2020/UWP%E5%8A%A8%E6%80%81%E6%9B%B4%E6%94%B9ListBoxItem%E9%AB%98%E5%BA%A6.gif" class="fuckme" title="更改ListBoxItem高度">
+<h3 id="contentdialog输入框">ContentDialog输入框</h3>
+<p>来自 <a href="https://jingyan.baidu.com/article/219f4bf7b10624de452d3857.html">这里</a> </p><div class="note primary">
             <p>解决方案资源管理器可以添加内容对话框（ContentDialog）页面！</p>
+          </div><p></p>
+<p>可能是因为对话框不能直接返回输入值，这里用了公开变量的方法。<code>isSaved</code>用于表明是否保存输入，<code>inputArgs</code>用于保存输入值。关闭或取消对话框之后，就可以根据上述两个变量进行相应的操作。感谢提出这个方法的作者。 </p><figure class="highlight cs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="built_in">bool</span> isSaved = <span class="literal">false</span>;</span><br><span class="line"><span class="keyword">public</span> <span class="built_in">string</span> inputArgs = <span class="string">""</span>;</span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">ContentDialog_PrimaryButtonClick</span>(<span class="params">ContentDialog sender, ContentDialogButtonClickEventArgs args</span>)</span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    inputArgs = DialogInput.Text;</span><br><span class="line">    isSaved = <span class="literal">true</span>;</span><br><span class="line">    Hide();</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">ContentDialog_SecondaryButtonClick</span>(<span class="params">ContentDialog sender, ContentDialogButtonClickEventArgs args</span>)</span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    isSaved = <span class="literal">false</span>;</span><br><span class="line">    Hide();</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure> <img src="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2020/2020-10-04%20ContentDialog.jpg" class="鸡你太美" title="ContentDialog"><p></p>
+<p>这里还有另一个从StackOverflow找到的Dialog生成方法，链接已不可考……</p>
+<figure class="highlight cs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">DialogUtil</span></span><br><span class="line">{</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> ContentDialog ActiveDialog;</span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="title">TaskCompletionSource</span>&lt;<span class="title">bool</span>&gt; DialogAwaiter</span> = <span class="keyword">new</span> TaskCompletionSource&lt;<span class="built_in">bool</span>&gt;();</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">async</span> <span class="keyword">void</span> <span class="title">CreateContentDialog</span>(<span class="params">ContentDialog Dialog, <span class="built_in">bool</span> awaitPreviousDialog</span>)</span> { <span class="keyword">await</span> CreateDialog(Dialog, awaitPreviousDialog); }</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">async</span> Task <span class="title">CreateContentDialogAsync</span>(<span class="params">ContentDialog Dialog, <span class="built_in">bool</span> awaitPreviousDialog</span>)</span> { <span class="keyword">await</span> CreateDialog(Dialog, awaitPreviousDialog); }</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">ActiveDialog_Closed</span>(<span class="params">ContentDialog sender, ContentDialogClosedEventArgs args</span>)</span> { DialogAwaiter.SetResult(<span class="literal">true</span>); }</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">async</span> <span class="keyword">void</span> <span class="title">Info</span>(<span class="params"><span class="built_in">string</span> text</span>)</span></span><br><span class="line"><span class="function"></span>    {</span><br><span class="line">        <span class="keyword">await</span> DialogUtil.CreateContentDialogAsync(<span class="keyword">new</span> ContentDialog</span><br><span class="line">        {</span><br><span class="line">            Title = <span class="string">"Info"</span>,</span><br><span class="line">            Content = <span class="keyword">new</span> TextBlock</span><br><span class="line">            {</span><br><span class="line">                Text = text,</span><br><span class="line">                TextWrapping = TextWrapping.Wrap</span><br><span class="line">            },</span><br><span class="line">            PrimaryButtonText = <span class="string">"好的"</span></span><br><span class="line">        }, awaitPreviousDialog: <span class="literal">true</span>);</span><br><span class="line">    }</span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">async</span> Task <span class="title">CreateDialog</span>(<span class="params">ContentDialog Dialog, <span class="built_in">bool</span> awaitPreviousDialog</span>)</span></span><br><span class="line"><span class="function"></span>    {</span><br><span class="line">        <span class="keyword">if</span> (ActiveDialog != <span class="literal">null</span>)</span><br><span class="line">        {</span><br><span class="line">            <span class="keyword">if</span> (awaitPreviousDialog)</span><br><span class="line">            {</span><br><span class="line">                <span class="keyword">await</span> DialogAwaiter.Task;</span><br><span class="line">                DialogAwaiter = <span class="keyword">new</span> TaskCompletionSource&lt;<span class="built_in">bool</span>&gt;();</span><br><span class="line">            }</span><br><span class="line">            <span class="keyword">else</span> ActiveDialog.Hide();</span><br><span class="line">        }</span><br><span class="line">        ActiveDialog = Dialog;</span><br><span class="line">        ActiveDialog.Closed += ActiveDialog_Closed;</span><br><span class="line">        <span class="keyword">await</span> ActiveDialog.ShowAsync();</span><br><span class="line">        ActiveDialog.Closed -= ActiveDialog_Closed;</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line">``</span><br><span class="line"></span><br><span class="line"><span class="meta">### 文件读写</span></span><br><span class="line"></span><br><span class="line">UWP文件读写功能又被限制，一般是只能读写App本地文件夹，还可以请求诸如图片库、视频库等库文件夹，要是想要访问任意文件的话，就需要更改`Package.appxmanifest`了。因为本App需要序列化文件列表及其参数，恰好要用到本地文件读写。具体操作的话可以查看VS的代码提示或 [文档](https:<span class="comment">//docs.microsoft.com/en-us/windows/uwp/files/quickstart-reading-and-writing-files)。</span></span><br><span class="line">``` cs</span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> StorageFolder localFolder = ApplicationData.Current.LocalFolder;</span><br><span class="line"><span class="comment">//读文件</span></span><br><span class="line">StorageFile file = <span class="keyword">await</span> localFolder.CreateFileAsync(jsonFile, CreationCollisionOption.OpenIfExists);</span><br><span class="line"><span class="built_in">string</span> JSONContent = <span class="keyword">await</span> FileIO.ReadTextAsync(file);</span><br><span class="line"><span class="comment">//写文件</span></span><br><span class="line"><span class="built_in">string</span> configJson = JsonConvert.SerializeObject(dj);</span><br><span class="line">StorageFile file = <span class="keyword">await</span> localFolder.CreateFileAsync(jsonFile, CreationCollisionOption.OpenIfExists);</span><br><span class="line"><span class="keyword">await</span> FileIO.WriteTextAsync(file, configJson);</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="服务进程的启动">服务进程的启动</h3>
+<p>相关内容请<a href="#启动进程失败">参见</a></p>
+<p>看<code>FullTrustProcessLauncher</code>的文档，有两个方法供启动进程，前者是启动<code>&lt;desktop:Extension Category="windows.fullTrustProcess" Executable="Assets\Tools\NurseryLauncher.exe"&gt;</code>的，后者是根据<code>GroupId</code>启动相应进程的，这里只用前者就够了。</p>
+<figure class="highlight cs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// public static IAsyncAction LaunchFullTrustProcessForCurrentAppAsync();</span></span><br><span class="line"><span class="comment">// public static IAsyncAction LaunchFullTrustProcessForCurrentAppAsync(string parameterGroupId);</span></span><br><span class="line">FullTrustProcessLauncher.LaunchFullTrustProcessForCurrentAppAsync();</span><br></pre></td></tr></tbody></table></figure>
+<h1 id="fancyserver">FancyServer</h1>
+<h2 id="主要工作和项目结构">主要工作和项目结构</h2>
+<h2 id="笔记">笔记</h2>
+<h3 id="switch-判断对象-type">switch 判断对象 Type</h3>
+<p>C#自v7.0支持模式匹配，否则需要一连串的<code>if else</code> 用 <code>is</code> 关键字判断传入类型。此外， <code>typeof</code>关键字、<code>object.GetType()</code>也可以对对象进行类型判断，但不如原生语法灵活。 在<a href="https://stackoverflow.com/questions/9802325/switch-case-and-generics-checking">StackOverflow</a> 中介绍了其他的类型判断方式。</p>
+<figure class="highlight csharp"><figcaption><span>switch判断传入对象类型</span><a href="https://docs.microsoft.com/en-us/dotnet/csharp/pattern-matching#conclusions">模式匹配 highlight</a></figcaption><table><tbody><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Send</span>(<span class="params"><span class="built_in">object</span> sdu</span>)</span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    MessageStruct? pdu = <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">switch</span> (sdu) </span><br><span class="line">    {</span><br><span class="line">        <span class="keyword">case</span> ActionStruct ass:</span><br><span class="line">            pdu = PDU(MessageType.action, JsonConvert.SerializeObject(ass));</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> LoggingStruct ls:</span><br><span class="line">            pdu = PDU(MessageType.logging, JsonConvert.SerializeObject(ls));</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> NurseryStruct ns:</span><br><span class="line">            pdu = PDU(MessageType.nursery, JsonConvert.SerializeObject(ns));</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> SettingStruct ss:</span><br><span class="line">            pdu = PDU(MessageType.setting, JsonConvert.SerializeObject(ss));</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="literal">default</span>:</span><br><span class="line">            LoggingManager.Error(<span class="string">"Invalid message SDU type"</span>);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">if</span> (pdu != <span class="literal">null</span>)</span><br><span class="line">    {</span><br><span class="line">        PipeMessenger.Post(JsonConvert.SerializeObject(pdu));</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="修改托盘图标菜单样式">修改托盘图标菜单样式</h3>
+<p><a href="https://stackoverflow.com/questions/15926377/change-the-backcolor-of-the-toolstripseparator-control">Stackoverflow</a></p>
+<figure>
+<img src="/2020/09/30/fancy-toys-notes/GrayBackColor.jpg" alt="注意阴影"><figcaption>注意阴影</figcaption>
+</figure>
+<p>大多软件的托盘图标菜单都是纯白的，ContextMenuStrip的默认样式与之相比有点过时，这里需要修改 MenuItem的BackColor属性，但是ToolMenuStripSeparator的BackColor属性在渲染的时候被忽略（或覆盖）了， 需要在separator的Paint事件上加点料：</p>
+<figure class="highlight cs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">mnuToolStripSeparator_Custom_Paint</span> (<span class="params">Object sender, PaintEventArgs e</span>)</span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    ToolStripSeparator sep = (ToolStripSeparator)sender;</span><br><span class="line"></span><br><span class="line">    e.Graphics.FillRectangle(<span class="keyword">new</span> SolidBrush(CUSTOM_COLOR_BACKGROUND), <span class="number">0</span>, <span class="number">0</span>, sep.Width, sep.Height);</span><br><span class="line"></span><br><span class="line">    e.Graphics.DrawLine(<span class="keyword">new</span> Pen(CUSTOM_COLOR_FOREGROUND), <span class="number">30</span>, sep.Height / <span class="number">2</span>, sep.Width - <span class="number">4</span>, sep.Height / <span class="number">2</span>);</span><br><span class="line"></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="contextmenustrip的部分结构">ContextMenuStrip的部分结构</h3>
+<p>遍历 <code>ToolStripMenuItem.DropDownItems</code> 时要区分 <code>ToolStripSeparator</code> 和 <code>ToolStripDropDownItem</code> 类型</p>
+<pre class="mermaid" style="text-align: center;">            stateDiagram-v2
+            ContextMenuStrip --&gt; ToolStripMenuItem
+ToolStripMenuItem --&gt; DropDownItems(ToolStripItemCollection)
+state DropDownItems(ToolStripItemCollection) {
+    ToolStripItem --&gt; ToolStripSeparator
+    ToolStripItem --&gt; ToolStripDropDownItem
+}
+          </pre>
+<h2 id="obsolete-notes">Obsolete notes</h2>
+<h3 id="父进程退出后子进程不退出端口不释放">父进程退出后（子进程不退出）端口不释放</h3>
+<div class="note info">
+            <p>这个问题出自原来的“NurseryLauncher”，现在提供win32服务的是"FancyServer"。与前者相比， 后者结构更加清晰，功能也更加完善。</p>
+          </div>
+<p><code>NurseryLauncher.exe</code>（绑定626端口）启动 <code>puppet.exe</code>（80端口）后，再手动关闭<code>NurseryLauncher.exe</code>， 从下图可以看出，根据端口查看进程，有pid存在，但是没有该进程。查子进程<code>puppet.exe</code>一切正常。这样导致的问题是：下次<code>NurseryLauncher.exe</code>因为端口占用不能正常启动 <img src="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2020/2020-10-03%20%E7%88%B6%E8%BF%9B%E7%A8%8B%E9%80%80%E5%87%BA%E4%B8%8D%E9%87%8A%E6%94%BE%E7%AB%AF%E5%8F%A3.jpg" class="" title="父进程退出但没有释放端口"></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag"># 笔记</a>
+              <a href="/tags/C/" rel="tag"># C#</a>
+              <a href="/tags/UWP/" rel="tag"># UWP</a>
           </div>
 
-<p>可能是因为对话框不能直接返回输入值，这里用了公开变量的方法。<code>isSaved</code>用于表明是否保存输入，<code>inputArgs</code>用于保存输入值。关闭或取消对话框之后，就可以根据上述两个变量进行相应的操作。感谢提出这个方法的作者。</p>
-<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">bool</span> isSaved = <span class="literal">false</span>;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">string</span> inputArgs = <span class="string">""</span>;</span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">ContentDialog_PrimaryButtonClick</span>(<span class="params">ContentDialog sender, ContentDialogButtonClickEventArgs args</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    inputArgs = DialogInput.Text;</span><br><span class="line">    isSaved = <span class="literal">true</span>;</span><br><span class="line">    Hide();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">ContentDialog_SecondaryButtonClick</span>(<span class="params">ContentDialog sender, ContentDialogButtonClickEventArgs args</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    isSaved = <span class="literal">false</span>;</span><br><span class="line">    Hide();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        
 
-<img src="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2020/2020-10-04%20ContentDialog.jpg" class="鸡你太美" width="1026" height="651" title="ContentDialog">
 
-<p>这里还有另一个从StackOverflow找到的Dialog生成方法，链接已不可考……</p>
-<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">DialogUtil</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> ContentDialog ActiveDialog;</span><br><span class="line">    <span class="keyword">static</span> TaskCompletionSource&lt;<span class="keyword">bool</span>&gt; DialogAwaiter = <span class="keyword">new</span> TaskCompletionSource&lt;<span class="keyword">bool</span>&gt;();</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">async</span> <span class="keyword">void</span> <span class="title">CreateContentDialog</span>(<span class="params">ContentDialog Dialog, <span class="keyword">bool</span> awaitPreviousDialog</span>)</span> &#123; <span class="keyword">await</span> CreateDialog(Dialog, awaitPreviousDialog); &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">async</span> Task <span class="title">CreateContentDialogAsync</span>(<span class="params">ContentDialog Dialog, <span class="keyword">bool</span> awaitPreviousDialog</span>)</span> &#123; <span class="keyword">await</span> CreateDialog(Dialog, awaitPreviousDialog); &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">ActiveDialog_Closed</span>(<span class="params">ContentDialog sender, ContentDialogClosedEventArgs args</span>)</span> &#123; DialogAwaiter.SetResult(<span class="literal">true</span>); &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">async</span> <span class="keyword">void</span> <span class="title">Info</span>(<span class="params"><span class="keyword">string</span> text</span>)</span></span><br><span class="line"><span class="function"></span>    &#123;</span><br><span class="line">        <span class="keyword">await</span> DialogUtil.CreateContentDialogAsync(<span class="keyword">new</span> ContentDialog</span><br><span class="line">        &#123;</span><br><span class="line">            Title = <span class="string">"Info"</span>,</span><br><span class="line">            Content = <span class="keyword">new</span> TextBlock</span><br><span class="line">            &#123;</span><br><span class="line">                Text = text,</span><br><span class="line">                TextWrapping = TextWrapping.Wrap</span><br><span class="line">            &#125;,</span><br><span class="line">            PrimaryButtonText = <span class="string">"好的"</span></span><br><span class="line">        &#125;, awaitPreviousDialog: <span class="literal">true</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">async</span> Task <span class="title">CreateDialog</span>(<span class="params">ContentDialog Dialog, <span class="keyword">bool</span> awaitPreviousDialog</span>)</span></span><br><span class="line"><span class="function"></span>    &#123;</span><br><span class="line">        <span class="keyword">if</span> (ActiveDialog != <span class="literal">null</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (awaitPreviousDialog)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">await</span> DialogAwaiter.Task;</span><br><span class="line">                DialogAwaiter = <span class="keyword">new</span> TaskCompletionSource&lt;<span class="keyword">bool</span>&gt;();</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> ActiveDialog.Hide();</span><br><span class="line">        &#125;</span><br><span class="line">        ActiveDialog = Dialog;</span><br><span class="line">        ActiveDialog.Closed += ActiveDialog_Closed;</span><br><span class="line">        <span class="keyword">await</span> ActiveDialog.ShowAsync();</span><br><span class="line">        ActiveDialog.Closed -= ActiveDialog_Closed;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">``</span><br><span class="line"></span><br><span class="line"><span class="meta">### 文件读写</span></span><br><span class="line"></span><br><span class="line">UWP文件读写功能又被限制，一般是只能读写App本地文件夹，还可以请求诸如图片库、视频库等库文件夹，要是想要访问任意文件的话，就需要更改`Package.appxmanifest`了。因为本App需要序列化文件列表及其参数，恰好要用到本地文件读写。具体操作的话可以查看VS的代码提示或 [文档](https:<span class="comment">//docs.microsoft.com/en-us/windows/uwp/files/quickstart-reading-and-writing-files)。</span></span><br><span class="line">``` cs</span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> StorageFolder localFolder = ApplicationData.Current.LocalFolder;</span><br><span class="line"><span class="comment">//读文件</span></span><br><span class="line">StorageFile file = <span class="keyword">await</span> localFolder.CreateFileAsync(jsonFile, CreationCollisionOption.OpenIfExists);</span><br><span class="line"><span class="keyword">string</span> JSONContent = <span class="keyword">await</span> FileIO.ReadTextAsync(file);</span><br><span class="line"><span class="comment">//写文件</span></span><br><span class="line"><span class="keyword">string</span> configJson = JsonConvert.SerializeObject(dj);</span><br><span class="line">StorageFile file = <span class="keyword">await</span> localFolder.CreateFileAsync(jsonFile, CreationCollisionOption.OpenIfExists);</span><br><span class="line"><span class="keyword">await</span> FileIO.WriteTextAsync(file, configJson);</span><br></pre></td></tr></table></figure>
+        
+    <div class="post-nav">
+      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2020/09/28/nursery-notes/" rel="next" title="Nursery 开发笔记">
+      Nursery 开发笔记 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
 
-<h3 id="服务进程的启动"><a href="#服务进程的启动" class="headerlink" title="服务进程的启动"></a>服务进程的启动</h3><p>相关内容请<a href="#启动进程失败">参见</a></p>
-<p>看<code>FullTrustProcessLauncher</code>的文档，有两个方法供启动进程，前者是启动<code><desktop:extension category="windows.fullTrustProcess" executable="Assets\Tools\NurseryLauncher.exe"></desktop:extension></code>的，后者是根据<code>GroupId</code>启动相应进程的，这里只用前者就够了。</p>
-<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// public static IAsyncAction LaunchFullTrustProcessForCurrentAppAsync();</span></span><br><span class="line"><span class="comment">// public static IAsyncAction LaunchFullTrustProcessForCurrentAppAsync(string parameterGroupId);</span></span><br><span class="line">FullTrustProcessLauncher.LaunchFullTrustProcessForCurrentAppAsync();</span><br></pre></td></tr></table></figure>
 
-<h1 id="NurseryLauncher"><a href="#NurseryLauncher" class="headerlink" title="NurseryLauncher"></a>NurseryLauncher</h1><h2 id="问题-1"><a href="#问题-1" class="headerlink" title="问题"></a>问题</h2><h3 id="父进程退出后（子进程不退出）端口不释放"><a href="#父进程退出后（子进程不退出）端口不释放" class="headerlink" title="父进程退出后（子进程不退出）端口不释放"></a>父进程退出后（子进程不退出）端口不释放</h3><p><code>NurseryLauncher.exe</code>（绑定626端口）启动 <code>puppet.exe</code>（80端口）后，再手动关闭<code>NurseryLauncher.exe</code>，
-从下图可以看出，根据端口查看进程，有pid存在，但是没有该进程。查子进程<code>puppet.exe</code>一切正常。这样导致的问题是：下次<code>NurseryLauncher.exe</code>因为端口占用不能正常启动</p>
-<img src="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2020/2020-10-03%20%E7%88%B6%E8%BF%9B%E7%A8%8B%E9%80%80%E5%87%BA%E4%B8%8D%E9%87%8A%E6%94%BE%E7%AB%AF%E5%8F%A3.jpg" width="1150" height="346" title="父进程退出但没有释放端口">
+
+          </div>
+          
 
 <script>
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return; }
-            const img = document.createElement('img');
-            img.style = 'display:none !important;';
-            img.src = el.dataset.src;
-            img.addEventListener('error', () => {
-              img.remove();
-              el.style.color = 'inherit';
-              el.style.backgroundImage = 'none';
-              el.style.background = 'none';
-            });
-            img.addEventListener('load', () => {
-              img.remove();
-            });
-            document.body.appendChild(img);
-          });
-      </script>
-      
-    </div>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
 
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/笔记/" rel="tag"># 笔记</a>
-          
-            <a href="/tags/C/" rel="tag"># C#</a>
-          
-            <a href="/tags/UWP/" rel="tag"># UWP</a>
-          
         </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2020/09/28/nursery-notes/" rel="next" title="Nursery 开发笔记">
-                <i class="fa fa-chevron-left"></i> Nursery 开发笔记
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
+          
   
-  
-  
-  </article>
-
-
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
   </div>
 
-
-          </div>
-          
-
-  
-    <div class="comments" id="gitalk-container">
-    </div>
-
-  
-
-
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-
-      <!------------------------------------------------------->
-      <!-- 一言 start 
-      <div class="sidebar-inner">
-        <div>
-          <div style="display: table-cell;vertical-align: top; color:#B2B7F2;font-size:24px;font-family:'Times New Roman',serif;font-weight:bold;text-align:left;">“</div>
-          <div style="display: table-cell;text-align: left; vertical-align: middle; text-indent: 2em; padding: 0.8em 0.2em 1em 0.2em"><b><span style="color:burlywood;"><span id="hitokoto-content"></span></span></b></div>
-          <div style="display: table-cell; vertical-align: bottom; color:#B2B7F2;font-size:24px;font-family:'Times New Roman',serif;font-weight:bold;text-align:left;">”</div>
-        </div>
-        <div style="text-align: right; font-size: 0.8em; color: black;" id="hitokoto-from"></div>
-        <div style="margin-top: 15px; font-size: 0.8em; color: black;"><a href="https://hitokoto.cn/">Hitokoto</a></div>
-      </div>
-      <div style="height: 15px"></div>
-      <!-- 一言 end -->
-      <!-- LOLine start -->
-      <div class="sidebar-inner">
-        <div>
-          
-          <div style="display: table-cell;vertical-align: top; color:#B2B7F2;font-size:24px;font-family:'Times New Roman',serif;font-weight:bold;text-align:left;">“</div>
-          <div style="display: table-cell;text-align: left; vertical-align: middle; text-indent: 2em; padding: 0.8em 0.2em 1em 0.2em"><b><span style="color:burlywood;"><span id="loline-content"></span></span></b></div>
-          <div style="display: table-cell; vertical-align: bottom; color:#B2B7F2;font-size:24px;font-family:'Times New Roman',serif;font-weight:bold;text-align:right;">”</div>
-          <!--
-          <blockquote class="blockquote-loline">
-            <b><span style="color:burlywood;"><span id="loline-content"></span></span></b>
-          </blockquote>
-          -->
-        </div>
-        <div style="text-align: right; font-size: 0.8em; color: black;" id="loline-from"></div>
-        <div style="margin-top: 15px; font-size: 0.8em; color: black;"><a href="https://moeext.github.io/2019/03/08/loline/#more">LOLine</a></div>
-      </div>
-      <div style="height: 15px"></div>
-      <!-- LOLine end -->
-      <!------------------------------------------------------->
-
+  <aside class="sidebar">
     <div class="sidebar-inner">
 
-      
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
 
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#fancytoys"><span class="nav-number">1.</span> <span class="nav-text">FancyToys</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98"><span class="nav-number">1.1.</span> <span class="nav-text">问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%8C%E6%97%B6%E5%88%9B%E5%BB%BA%E4%BA%86%E5%A4%9A%E4%B8%AAcontentdialog"><span class="nav-number">1.1.1.</span> <span class="nav-text">同时创建了多个ContentDialog</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%AF%E5%8A%A8%E8%BF%9B%E7%A8%8B%E5%A4%B1%E8%B4%A5"><span class="nav-number">1.1.2.</span> <span class="nav-text">启动进程失败</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#datagrid%E7%9A%84%E6%9B%B4%E6%96%B0"><span class="nav-number">1.1.3.</span> <span class="nav-text">DataGrid的更新</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%98%E7%9B%98%E5%9B%BE%E6%A0%87"><span class="nav-number">1.1.4.</span> <span class="nav-text">托盘图标</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%9F%E8%83%BD%E4%B8%8E%E6%8F%92%E4%BB%B6"><span class="nav-number">1.2.</span> <span class="nav-text">功能与插件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%AF%E6%8B%96%E6%8B%BD%E5%8C%BA%E5%9F%9F"><span class="nav-number">1.2.1.</span> <span class="nav-text">可拖拽区域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#toggleswitchlist"><span class="nav-number">1.2.2.</span> <span class="nav-text">ToggleSwitchList</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#listboxitem-%E9%AB%98%E5%BA%A6%E7%9A%84%E8%AE%BE%E7%BD%AE"><span class="nav-number">1.2.3.</span> <span class="nav-text">ListBoxItem 高度的设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#c%E5%90%8E%E5%8F%B0%E5%8A%A8%E6%80%81%E4%BF%AE%E6%94%B9listboxitem%E5%B1%9E%E6%80%A7"><span class="nav-number">1.2.4.</span> <span class="nav-text">C#后台动态修改ListBoxItem属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#contentdialog%E8%BE%93%E5%85%A5%E6%A1%86"><span class="nav-number">1.2.5.</span> <span class="nav-text">ContentDialog输入框</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%8D%E5%8A%A1%E8%BF%9B%E7%A8%8B%E7%9A%84%E5%90%AF%E5%8A%A8"><span class="nav-number">1.2.6.</span> <span class="nav-text">服务进程的启动</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#fancyserver"><span class="nav-number">2.</span> <span class="nav-text">FancyServer</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BB%E8%A6%81%E5%B7%A5%E4%BD%9C%E5%92%8C%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84"><span class="nav-number">2.1.</span> <span class="nav-text">主要工作和项目结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%94%E8%AE%B0"><span class="nav-number">2.2.</span> <span class="nav-text">笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#switch-%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1-type"><span class="nav-number">2.2.1.</span> <span class="nav-text">switch 判断对象 Type</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E6%89%98%E7%9B%98%E5%9B%BE%E6%A0%87%E8%8F%9C%E5%8D%95%E6%A0%B7%E5%BC%8F"><span class="nav-number">2.2.2.</span> <span class="nav-text">修改托盘图标菜单样式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#contextmenustrip%E7%9A%84%E9%83%A8%E5%88%86%E7%BB%93%E6%9E%84"><span class="nav-number">2.2.3.</span> <span class="nav-text">ContextMenuStrip的部分结构</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#obsolete-notes"><span class="nav-number">2.3.</span> <span class="nav-text">Obsolete notes</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%88%B6%E8%BF%9B%E7%A8%8B%E9%80%80%E5%87%BA%E5%90%8E%E5%AD%90%E8%BF%9B%E7%A8%8B%E4%B8%8D%E9%80%80%E5%87%BA%E7%AB%AF%E5%8F%A3%E4%B8%8D%E9%87%8A%E6%94%BE"><span class="nav-number">2.3.1.</span> <span class="nav-text">父进程退出后（子进程不退出）端口不释放</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
 
       <div class="site-overview-wrap sidebar-panel">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <img class="site-author-image" itemprop="image" src="/images/luna.png" alt="MoeexT">
-            
-              <p class="site-author-name" itemprop="name">MoeexT</p>
-              <div class="site-description motion-element" itemprop="description">她的热切的脸，如夜雨似的，搅扰着我的梦魂。</div>
-          </div>
-
-          
-            <nav class="site-state motion-element">
-              
-                <div class="site-state-item site-state-posts">
-                
-                  <a href="/archives/">
-                
-                    <span class="site-state-item-count">29</span>
-                    <span class="site-state-item-name">日志</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-categories">
-                  
-                    
-                      <a href="/categories/">
-                    
-                  
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">16</span>
-                    <span class="site-state-item-name">分类</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-tags">
-                  
-                    
-                      <a href="/tags/">
-                    
-                  
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">37</span>
-                    <span class="site-state-item-name">标签</span>
-                  </a>
-                </div>
-              
-            </nav>
-          
-
-          
-
-          
-
-          
-            <div class="links-of-author motion-element">
-              
-                <span class="links-of-author-item">
-                  
-                  
-                    
-                  
-                  
-                    
-                  
-                  <a href="https://github.com/moeext" title="GitHub &rarr; https://github.com/moeext" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                    
-                  
-                  
-                    
-                  
-                  <a href="mailto:yuwancumian666@gmail.com" title="E-Mail &rarr; mailto:yuwancumian666@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                    
-                  
-                  
-                    
-                  
-                  <a href="http://weibo.com/starmon" title="微博 &rarr; http://weibo.com/starmon" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>微博</a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                    
-                  
-                  
-                    
-                  
-                  <a href="/images/wechat.jpg" title="微信 &rarr; /images/wechat.jpg"><i class="fa fa-fw fa-weixin"></i>微信</a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                    
-                  
-                  
-                    
-                  
-                  <a href="https://stackoverflow.com/users/9013632/yuwancumian666" title="StackOverflow &rarr; https://stackoverflow.com/users/9013632/yuwancumian666" rel="noopener" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                    
-                  
-                  
-                    
-                  
-                  <a href="http://www.zhihu.com/people/yu-wan-cu-mian-666" title="知乎 &rarr; http://www.zhihu.com/people/yu-wan-cu-mian-666" rel="noopener" target="_blank"><i class="fa fa-fw fa-graduation-cap"></i>知乎</a>
-                </span>
-              
-            </div>
-          
-
-          
-
-          
-          
-            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
-              <div class="links-of-blogroll-title">
-                <i class="fa  fa-fw fa-link"></i>
-                友情链接
-              </div>
-              <ul class="links-of-blogroll-list">
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="https://www.moerats.com/" title="https://www.moerats.com/" rel="noopener" target="_blank">Rat's Blog</a>
-                  </li>
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="https://teddysun.com/" title="https://teddysun.com/" rel="noopener" target="_blank">秋水逸冰</a>
-                  </li>
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="https://www.94ish.me/" title="https://www.94ish.me/" rel="noopener" target="_blank">就是爱生活</a>
-                  </li>
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="http://theme-next.iissnan.com/" title="http://theme-next.iissnan.com/" rel="noopener" target="_blank">Hexo-NexT</a>
-                  </li>
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="https://hexo.io/zh-cn/" title="https://hexo.io/zh-cn/" rel="noopener" target="_blank">Hexo</a>
-                  </li>
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="http://www.fontawesome.com.cn/faicons/" title="http://www.fontawesome.com.cn/faicons/" rel="noopener" target="_blank">FontAwesome</a>
-                  </li>
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="https://www.webpagefx.com/tools/emoji-cheat-sheet/" title="https://www.webpagefx.com/tools/emoji-cheat-sheet/" rel="noopener" target="_blank">Jemoji</a>
-                  </li>
-                
-              </ul>
-            </div>
-          
-
-          
-            
-          
-          
-
-        </div>
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="MoeexT"
+      src="/images/anole.jpg">
+  <p class="site-author-name" itemprop="name">MoeexT</p>
+  <div class="site-description" itemprop="description">我在做FancyToys</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">29</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
       </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">37</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/moeext" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;moeext" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:yuwancumian666@gmail.com" title="E-Mail → mailto:yuwancumian666@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/macoobach" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;macoobach" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+  </div>
 
-      
-      <!--noindex-->
-        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
 
-            
-            
-            
-            
 
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#FancyToys"><span class="nav-number">1.</span> <span class="nav-text">FancyToys</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题"><span class="nav-number">1.1.</span> <span class="nav-text">问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#同时创建了多个ContentDialog"><span class="nav-number">1.1.1.</span> <span class="nav-text">同时创建了多个ContentDialog</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启动进程失败"><span class="nav-number">1.1.2.</span> <span class="nav-text">启动进程失败</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DataGrid的更新"><span class="nav-number">1.1.3.</span> <span class="nav-text">DataGrid的更新</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#功能与插件"><span class="nav-number">1.2.</span> <span class="nav-text">功能与插件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#可拖拽区域"><span class="nav-number">1.2.1.</span> <span class="nav-text">可拖拽区域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ToggleSwitchList"><span class="nav-number">1.2.2.</span> <span class="nav-text">ToggleSwitchList</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ContentDialog输入框"><span class="nav-number">1.2.3.</span> <span class="nav-text">ContentDialog输入框</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#服务进程的启动"><span class="nav-number">1.2.4.</span> <span class="nav-text">服务进程的启动</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#NurseryLauncher"><span class="nav-number">2.</span> <span class="nav-text">NurseryLauncher</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题-1"><span class="nav-number">2.1.</span> <span class="nav-text">问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#父进程退出后（子进程不退出）端口不释放"><span class="nav-number">2.1.1.</span> <span class="nav-text">父进程退出后（子进程不退出）端口不释放</span></a></li></ol></li></ol></li></ol></div>
-            
-
-          </div>
-        </div>
-      <!--/noindex-->
-      
-
-      
-        <div class="back-to-top">
+      </div>
+        <div class="back-to-top motion-element">
           <i class="fa fa-arrow-up"></i>
-          
-            <span id="scrollpercent"><span>0</span>%</span>
-          
+          <span>0%</span>
         </div>
-      
 
     </div>
   </aside>
-  
+  <div id="sidebar-dimmer"></div>
 
 
-        
       </div>
     </main>
 
-    <footer id="footer" class="footer">
+    <footer class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2017 – <span itemprop="copyrightYear">2020</span>
-  <span class="with-love" id="animate">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2017 – 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">MoeexT</span>
-
-  
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
-      <i class="fa fa-area-chart"></i>
+      <i class="fa fa-chart-area"></i>
     </span>
-    
-    <span title="站点总字数">59k</span>
-  
-
-  
+    <span title="站点总字数">84k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    
-    <span title="站点阅读时长">54 分钟</span>
-  
+    <span title="站点阅读时长">1:17</span>
 </div>
-
-
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
-
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.1.1</div>
-
-
-
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
 
         
-<div class="busuanzi-count">
-  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-  
-    <span class="post-meta-item-icon">
-      <i class="fa fa-user"></i>
-    </span>
-    <span class="site-uv" title="总访客量">
-      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
-    </span>
-  
-
-  
-    <span class="post-meta-divider">|</span>
-  
-
-  
-    <span class="post-meta-item-icon">
-      <i class="fa fa-eye"></i>
-    </span>
-    <span class="site-pv" title="总访问量">
-      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
-    </span>
-  
-</div>
 
 
 
@@ -1198,532 +538,119 @@
 
 
 
-
-        
       </div>
     </footer>
-
-    
-
-    
-
-    
-
-    
   </div>
 
   
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
 
 <script>
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'dark',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
   }
 </script>
 
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  <script src="/lib/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script src="/lib/fancybox/source/jquery.fancybox.pack.js"></script>
-
-
-  
-
-<!-- 一言
-<script type="text/javascript">
-	$.get('https://v1.hitokoto.cn/?c=c', function (data) {
-		$('#hitokoto-content').css('display', '').text(data.hitokoto);
-		$('#hitokoto-from').css('display', '').text('——' + data.from);
-	});
-</script>-->
-
-<!-- Loline 服务器请求方式
-<script type="text/javascript">
-	$.get('https://149.129.113.178:5000/', function (data) {
-    console.log('----------------------------------------')
-    console.log(data)
-		$('#loline-content').css('display', '').text(data.words);
-		$('#loline-from').css('display', '').text('——' + data.title_zh+' '+data.name_zh);
-	});
-</script>
--->
-<!-- Loline 加载本地json文件方式 -->
-<script type="text/javascript">
-	$.get("/json/champions.json", function (data) {
-    console.log('url: '+'https://moeext.github.io/2020/09/30/fancy-toys-notes/index.html');
-		// champions = JSON.parse(data);
-		var ranint = function(min, max) {
-    	return Math.round(Math.random() * (max - min)) + min;
-		}(1, data.length);
-		champion = data[ranint-1];
-		console.log(ranint);
-		console.log(champion);
-		$('#loline-content').css('display', '').text(champion.words);
-		$('#loline-from').css('display', '').text('——' + champion.title_zh+' '+champion.name_zh);
-	});
-</script>
-
-
-
-  <script src="/js/utils.js?v=7.1.1"></script>
-
-  <script src="/js/motion.js?v=7.1.1"></script>
-
-
-
-  
-  
-
-
-  <script src="/js/affix.js?v=7.1.1"></script>
-
-  <script src="/js/schemes/pisces.js?v=7.1.1"></script>
-
-
-
-  
-  <script src="/js/scrollspy.js?v=7.1.1"></script>
-<script src="/js/post-details.js?v=7.1.1"></script>
-
-
-
-  
-
-
-  <script src="/js/next-boot.js?v=7.1.1"></script>
-
-
-  
-
-  
-
-  
-
-  
-
-
-  
     
-
-<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
-
-
-
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
-
-
-
-<script src="//cdn.jsdelivr.net/npm/js-md5@0.7.3/src/md5.min.js"></script>
-
-<script>
-  var gitalk = new Gitalk({
-    clientID: 'd47b6b10b895d42792cf',
-    clientSecret: '73523754b433a4b4bb25b26a535300d572144f00',
-    repo: 'moeext.github.io',
-    owner: 'moeext',
-    admin: ['moeext'],
-    id: md5(location.pathname),
-    
-      language: window.navigator.language || window.navigator.userLanguage,
-    
-    distractionFreeMode: 'true'
-  });
-  gitalk.render('gitalk-container');
-</script>
-
-  
-
-
-  
-  <script>
-    // Popup Window;
-    var isfetched = false;
-    var isXml = true;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length === 0) {
-      search_path = "search.xml";
-    } else if (/json$/i.test(search_path)) {
-      isXml = false;
-    }
-    var path = "/" + search_path;
-    // monitor main search box;
-
-    var onPopupClose = function (e) {
-      $('.popup').hide();
-      $('#local-search-input').val('');
-      $('.search-result-list').remove();
-      $('#no-result').remove();
-      $(".local-search-pop-overlay").remove();
-      $('body').css('overflow', '');
-    }
-
-    function proceedsearch() {
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
-        .css('overflow', 'hidden');
-      $('.search-popup-overlay').click(onPopupClose);
-      $('.popup').toggle();
-      var $localSearchInput = $('#local-search-input');
-      $localSearchInput.attr("autocapitalize", "none");
-      $localSearchInput.attr("autocorrect", "off");
-      $localSearchInput.focus();
-    }
-
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-      'use strict';
-
-      // start loading animation
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
-          '<div id="search-loading-icon">' +
-          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
-          '</div>' +
-          '</div>')
-        .css('overflow', 'hidden');
-      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
-
-      
-
-      $.ajax({
-        url: path,
-        dataType: isXml ? "xml" : "json",
-        async: true,
-        success: function(res) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = isXml ? $("entry", res).map(function() {
-            return {
-              title: $("title", this).text(),
-              content: $("content",this).text(),
-              url: $("url" , this).text()
-            };
-          }).get() : res;
-          var input = document.getElementById(search_id);
-          var resultContent = document.getElementById(content_id);
-          var inputEventFunction = function() {
-            var searchText = input.value.trim().toLowerCase();
-            var keywords = searchText.split(/[\s\-]+/);
-            if (keywords.length > 1) {
-              keywords.push(searchText);
-            }
-            var resultItems = [];
-            if (searchText.length > 0) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var hitCount = 0;
-                var searchTextCount = 0;
-                var title = data.title.trim();
-                var titleInLowerCase = title.toLowerCase();
-                var content = data.content.trim().replace(/<[^>]+>/g,"");
-                
-                var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
-                var indexOfTitle = [];
-                var indexOfContent = [];
-                // only match articles with not empty titles
-                if(title != '') {
-                  keywords.forEach(function(keyword) {
-                    function getIndexByWord(word, text, caseSensitive) {
-                      var wordLen = word.length;
-                      if (wordLen === 0) {
-                        return [];
-                      }
-                      var startPosition = 0, position = [], index = [];
-                      if (!caseSensitive) {
-                        text = text.toLowerCase();
-                        word = word.toLowerCase();
-                      }
-                      while ((position = text.indexOf(word, startPosition)) > -1) {
-                        index.push({position: position, word: word});
-                        startPosition = position + wordLen;
-                      }
-                      return index;
-                    }
-
-                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
-                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
-                  });
-                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
-                    isMatch = true;
-                    hitCount = indexOfTitle.length + indexOfContent.length;
-                  }
-                }
-
-                // show search results
-
-                if (isMatch) {
-                  // sort index by position of keyword
-
-                  [indexOfTitle, indexOfContent].forEach(function (index) {
-                    index.sort(function (itemLeft, itemRight) {
-                      if (itemRight.position !== itemLeft.position) {
-                        return itemRight.position - itemLeft.position;
-                      } else {
-                        return itemLeft.word.length - itemRight.word.length;
-                      }
-                    });
-                  });
-
-                  // merge hits into slices
-
-                  function mergeIntoSlice(text, start, end, index) {
-                    var item = index[index.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    var hits = [];
-                    var searchTextCountInSlice = 0;
-                    while (position + word.length <= end && index.length != 0) {
-                      if (word === searchText) {
-                        searchTextCountInSlice++;
-                      }
-                      hits.push({position: position, length: word.length});
-                      var wordEnd = position + word.length;
-
-                      // move to next position of hit
-
-                      index.pop();
-                      while (index.length != 0) {
-                        item = index[index.length - 1];
-                        position = item.position;
-                        word = item.word;
-                        if (wordEnd > position) {
-                          index.pop();
-                        } else {
-                          break;
-                        }
-                      }
-                    }
-                    searchTextCount += searchTextCountInSlice;
-                    return {
-                      hits: hits,
-                      start: start,
-                      end: end,
-                      searchTextCount: searchTextCountInSlice
-                    };
-                  }
-
-                  var slicesOfTitle = [];
-                  if (indexOfTitle.length != 0) {
-                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
-                  }
-
-                  var slicesOfContent = [];
-                  while (indexOfContent.length != 0) {
-                    var item = indexOfContent[indexOfContent.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    // cut out 100 characters
-                    var start = position - 20;
-                    var end = position + 80;
-                    if(start < 0){
-                      start = 0;
-                    }
-                    if (end < position + word.length) {
-                      end = position + word.length;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
-                  }
-
-                  // sort slices in content by search text's count and hits' count
-
-                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
-                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
-                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
-                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
-                      return sliceRight.hits.length - sliceLeft.hits.length;
-                    } else {
-                      return sliceLeft.start - sliceRight.start;
-                    }
-                  });
-
-                  // select top N slices in content
-
-                  var upperBound = parseInt('1');
-                  if (upperBound >= 0) {
-                    slicesOfContent = slicesOfContent.slice(0, upperBound);
-                  }
-
-                  // highlight title and content
-
-                  function highlightKeyword(text, slice) {
-                    var result = '';
-                    var prevEnd = slice.start;
-                    slice.hits.forEach(function (hit) {
-                      result += text.substring(prevEnd, hit.position);
-                      var end = hit.position + hit.length;
-                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
-                      prevEnd = end;
-                    });
-                    result += text.substring(prevEnd, slice.end);
-                    return result;
-                  }
-
-                  var resultItem = '';
-
-                  if (slicesOfTitle.length != 0) {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
-                  } else {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
-                  }
-
-                  slicesOfContent.forEach(function (slice) {
-                    resultItem += "<a href='" + articleUrl + "'>" +
-                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
-                      "...</p>" + "</a>";
-                  });
-
-                  resultItem += "</li>";
-                  resultItems.push({
-                    item: resultItem,
-                    searchTextCount: searchTextCount,
-                    hitCount: hitCount,
-                    id: resultItems.length
-                  });
-                }
-              })
-            };
-            if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
-            } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
-            } else {
-              resultItems.sort(function (resultLeft, resultRight) {
-                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
-                  return resultRight.searchTextCount - resultLeft.searchTextCount;
-                } else if (resultLeft.hitCount !== resultRight.hitCount) {
-                  return resultRight.hitCount - resultLeft.hitCount;
-                } else {
-                  return resultRight.id - resultLeft.id;
-                }
-              });
-              var searchResultList = '<ul class=\"search-result-list\">';
-              resultItems.forEach(function (result) {
-                searchResultList += result.item;
-              })
-              searchResultList += "</ul>";
-              resultContent.innerHTML = searchResultList;
-            }
-          }
-
-          if ('auto' === 'auto') {
-            input.addEventListener('input', inputEventFunction);
-          } else {
-            $('.search-icon').click(inputEventFunction);
-            input.addEventListener('keypress', function (event) {
-              if (event.keyCode === 13) {
-                inputEventFunction();
-              }
-            });
-          }
-
-          // remove loading animation
-          $(".local-search-pop-overlay").remove();
-          $('body').css('overflow', '');
-
-          proceedsearch();
-        }
-      });
-    }
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched === false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(onPopupClose);
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-    $(document).on('keyup', function (event) {
-      var shouldDismissSearchPopup = event.which === 27 &&
-        $('.search-popup').is(':visible');
-      if (shouldDismissSearchPopup) {
-        onPopupClose();
-      }
-    });
-  </script>
-
-
-
-
-
-  
-
-  
-
-  
-  
-
-  
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 
   
 
