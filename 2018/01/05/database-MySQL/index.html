@@ -263,27 +263,25 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <blockquote><p>My day is done, and I am like a boat drawn on the beach, listening to the dance-music of the tide in the evening.<br>
-日间的工作完了，于是我像一只托在海滩上的小船，静静地听着晚潮跳舞的乐声。</p>
+        <blockquote><p>My day is done, and I am like a boat drawn on the beach, listening to the dance-music of the tide in the evening. 日间的工作完了，于是我像一只托在海滩上的小船，静静地听着晚潮跳舞的乐声。</p>
 <footer><strong>泰戈尔</strong><cite>飞鸟集</cite></footer></blockquote>
 <a id="more"></a>
-<h2 id="基础语法"><a class="markdownIt-Anchor" href="#基础语法"></a> 基础语法</h2>
-<h4 id="简介"><a class="markdownIt-Anchor" href="#简介"></a> 简介</h4>
-<p>数据库（Database）是按照数据结构来组织、存储和管理数据的仓库，是一款高效存储数据和提供分析计算功能的软件。它描述的是数据和信息之间的关系。<br><br>
-众所周知，MySQL 为<em>关系型数据库</em>(Relational Database Management System)，这种数据库存储数据的模型称为“关系模型”，这种关系模型将生活中的每种数据抽象成一个表。</p>
+<h2 id="基础语法">基础语法</h2>
+<h4 id="简介">简介</h4>
+<p>数据库（Database）是按照数据结构来组织、存储和管理数据的仓库，是一款高效存储数据和提供分析计算功能的软件。它描述的是数据和信息之间的关系。<br> 众所周知，MySQL 为<em>关系型数据库</em>(Relational Database Management System)，这种数据库存储数据的模型称为“关系模型”，这种关系模型将生活中的每种数据抽象成一个表。</p>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>表</th>
-<th>table  是关系型数据库中基本存储单位</th>
+<th>table 是关系型数据库中基本存储单位</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>表里有行</td>
 <td>row</td>
 </tr>
-<tr>
+<tr class="even">
 <td>表里有列</td>
 <td>column</td>
 </tr>
@@ -292,99 +290,64 @@
 <p>MySQL所使用的 SQL（结构化查询语言）语言是用于访问数据库的最常用标准化语言。主要分为四类：</p>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>分类</th>
 <th>说明</th>
 <th>关键字</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>DDL</td>
 <td>定义语言</td>
 <td>creat</td>
 </tr>
-<tr>
+<tr class="even">
 <td>DML</td>
 <td>操作语言</td>
 <td>insert、delete、update</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>DCL</td>
 <td>控制语言</td>
 <td>grant、remove</td>
 </tr>
-<tr>
+<tr class="even">
 <td>DQL</td>
 <td>查询语言</td>
 <td>select</td>
 </tr>
 </tbody>
 </table>
-<h4 id="登陆数据库"><a class="markdownIt-Anchor" href="#登陆数据库"></a> 登陆数据库</h4>
+<h4 id="登陆数据库">登陆数据库</h4>
 <p>mysql [-D 所选择的数据库名] -h 主机名 -u 用户名 -p，括号中内容可选。</p>
-<h4 id="prompt-提示符的修改"><a class="markdownIt-Anchor" href="#prompt-提示符的修改"></a> PROMPT 提示符的修改</h4>
-<p>\D | 完整的日期<br>
-\d | 当前数据库<br>
-\h | 服务器名称<br>
-\u | 当前用户</p>
-<h4 id="数据库操作"><a class="markdownIt-Anchor" href="#数据库操作"></a> 数据库操作</h4>
-<p>create database name | 创建数据库<br>
-show databases       | 查看所有数据库<br>
-drop database name   | 删除某数据库<br>
-use xxx              | 在下文使用某数据库<br>
-truncate 表明        | 清空表中的记录</p>
-<h4 id="表操作"><a class="markdownIt-Anchor" href="#表操作"></a> 表操作</h4>
-<p>create table 表名 (列名 数据类型 约束, 列名1···, ···约束) | 创建表，表名一般是以tb_ 开头<br>
-drop table  表名  | 删除表<br>
-alter table  表名 | 添加列<br>
-add/drop  column  | 添加/删除行</p>
+<h4 id="prompt-提示符的修改">PROMPT 提示符的修改</h4>
+<p>| 完整的日期  当前数据库  服务器名称  当前用户</p>
+<h4 id="数据库操作">数据库操作</h4>
+<p>create database name | 创建数据库 show databases | 查看所有数据库 drop database name | 删除某数据库 use xxx | 在下文使用某数据库 truncate 表明 | 清空表中的记录</p>
+<h4 id="表操作">表操作</h4>
+<p>create table 表名 (列名 数据类型 约束, 列名1···, ···约束) | 创建表，表名一般是以tb_ 开头 drop table 表名 | 删除表 alter table 表名 | 添加列 add/drop column | 添加/删除行</p>
 <p>####约束</p>
-<p>not null      | 非空约束<br>
-unique        | 唯一约束<br>
-primary key   | 主键约束<br>
-foreigner key | 外键约束<br>
-checked       | 检查约束</p>
-<h4 id="增删查改crud"><a class="markdownIt-Anchor" href="#增删查改crud"></a> 增删查改（CRUD）</h4>
-<p>插入数据 | insert into 表名 (列名1,列名2,…) values (值1,值2,…); <br>insert into 表名 values (值1,值2,…,值N); <br>insert into 表名 xxx values (),(),();<br>
-修改数据 | update 表名 set 列名 = 列值 ,列名1=列值1,…;<br>
-删除数据 | delete from 表名 where;</p>
+<p>not null | 非空约束 unique | 唯一约束 primary key | 主键约束 foreigner key | 外键约束 checked | 检查约束</p>
+<h4 id="增删查改crud">增删查改（CRUD）</h4>
+<p>插入数据 | insert into 表名 (列名1,列名2,...) values (值1,值2,...); <br>insert into 表名 values (值1,值2,...,值N); <br>insert into 表名 xxx values (),(),(); 修改数据 | update 表名 set 列名 = 列值 ,列名1=列值1,...; 删除数据 | delete from 表名 where;</p>
 <figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">-- 基本查询语法</span></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> tableName <span class="comment">--</span></span><br><span class="line"><span class="comment">-- where 子句功能是增加选择条件  </span></span><br><span class="line"><span class="keyword">select</span> 列名<span class="number">1</span>,... <span class="keyword">from</span> tb_name <span class="keyword">where</span> 条件 </span><br><span class="line"><span class="comment">/*where 的条件{</span></span><br><span class="line"><span class="comment">  &gt; &lt; &gt;= &lt;= = != &lt;&gt; </span></span><br><span class="line"><span class="comment">  is null is not null</span></span><br><span class="line"><span class="comment">  between and </span></span><br><span class="line"><span class="comment">  in (1,2,3,4)</span></span><br><span class="line"><span class="comment">  not in (1,2)</span></span><br><span class="line"><span class="comment">  并且 and 或者 or}*/</span></span><br></pre></td></tr></tbody></table></figure>
-<h2 id="高级查询"><a class="markdownIt-Anchor" href="#高级查询"></a> 高级查询</h2>
-<h4 id="模糊查询"><a class="markdownIt-Anchor" href="#模糊查询"></a> 模糊查询</h4>
-<p>select * from tb_name where usr_name like ‘条件’</p>
-<p>%     | 表示任意0个或多个字符。可匹配任意类型和长度的字符 <br> select * from tb_name where usr_name like ‘A%’ 会找出所有名字以‘A’开头的记录，可使用‘and’增加条件<br>
-_     | 表示任意单个字符，常用来限制表达式的字符长度语句 <br> select * from tb_name where usr_name like ‘<em>b’ 会找出所有名字第二位是‘b’的记录<br>
-[]    | 表示括号内所列字符中的一个 <br> select * from tb_name where usr_name like '</em>[a-c]’ 会找出所有名字第二位为‘a、b、c’的记录<br>
-[^]   | 表示不在括号所列之内的单个字符 <br> select * from tb_name where usr_name like ‘_[a-c]’ 会找出所有名字第二位为不是‘a、b、c’的记录</p>
-<h4 id="分组查询"><a class="markdownIt-Anchor" href="#分组查询"></a> 分组查询</h4>
-<p>语法：“<em>group by 要分组的列</em>，”列可以选择多个。一般都和聚合函数搭配使用，而聚合函数可以单独使用。<br><br>
-<em>聚合函数：</em> avg()、sum()、max()、min()、count()、group_concat()、select avg(sal)、depto from 表名 group by 列名 <br><br>
-注意：查询结果里只能出现被分组的列和聚合的列</p>
-<h4 id="排序"><a class="markdownIt-Anchor" href="#排序"></a> 排序</h4>
-<p>在查询语句后加 *order by 要排序的列 desc(或asc)，*其中 desc 为降序，asc 为升序。</p>
-<h4 id="分页"><a class="markdownIt-Anchor" href="#分页"></a> 分页</h4>
-<p>limit m,n  限制，<br>
-m=(页码-1)*n，<br>
-topN 问题：先排序，再分页</p>
-<h4 id="去重查询"><a class="markdownIt-Anchor" href="#去重查询"></a> 去重查询</h4>
-<p>关键字：*distinct，*去掉重复记录，在select后使用即可。</p>
-<h4 id="子查询"><a class="markdownIt-Anchor" href="#子查询"></a> 子查询</h4>
-<p>子查询就是在查询里写查询，一般用于解决一步不能查询求解的问题。其用法非常灵活，几乎可以写在查询的任何位置。<br><br>
-语法：<br></p>
-<ol>
-<li>子查询可以写在select后，作为查询结果</li>
-<li>子查询可以写在 from 后，作为查询源</li>
-<li>子查询可以写在 where 后，作为查询条件</li>
-<li>子查询可以使用主查询的资源，子查询要加括号包裹使用</li>
-<li>当子查询作为数据源在 from 后时，要起别名</li>
-<li>子查询还可以用在 update、insert、delete 里</li>
-<li><strong>having</strong> 限制条件和 where 的功能一样但是having是可以先分组再过滤，但where是先过滤再分组</li>
-</ol>
-<h4 id="表连接"><a class="markdownIt-Anchor" href="#表连接"></a> 表连接</h4>
-<p>表连接的作用是将多个表放在一起查询，解决一个表的数据不满足查询需求的问题。<br><br>
-语法：<em>from a, b</em> <br><br>
-需要注意的是，表连接会产生笛卡尔积，使用的时候一定要使用条件加以限制。</p>
+<h2 id="高级查询">高级查询</h2>
+<h4 id="模糊查询">模糊查询</h4>
+<p>select * from tb_name where usr_name like '条件'</p>
+<p>% | 表示任意0个或多个字符。可匹配任意类型和长度的字符 <br> select * from tb_name where usr_name like 'A%' 会找出所有名字以‘A'开头的记录，可使用‘and’增加条件 _ | 表示任意单个字符，常用来限制表达式的字符长度语句 <br> select * from tb_name where usr_name like '<em>b' 会找出所有名字第二位是‘b’的记录 [] | 表示括号内所列字符中的一个 <br> select * from tb_name where usr_name like '</em>[a-c]' 会找出所有名字第二位为‘a、b、c’的记录 [^] | 表示不在括号所列之内的单个字符 <br> select * from tb_name where usr_name like '_[a-c]' 会找出所有名字第二位为不是‘a、b、c’的记录</p>
+<h4 id="分组查询">分组查询</h4>
+<p>语法：“<em>group by 要分组的列</em>，”列可以选择多个。一般都和聚合函数搭配使用，而聚合函数可以单独使用。<br> <em>聚合函数：</em> avg()、sum()、max()、min()、count()、group_concat()、select avg(sal)、depto from 表名 group by 列名 <br> 注意：查询结果里只能出现被分组的列和聚合的列</p>
+<h4 id="排序">排序</h4>
+<p>在查询语句后加 <em>order by 要排序的列 desc(或asc)，</em>其中 desc 为降序，asc 为升序。</p>
+<h4 id="分页">分页</h4>
+<p>limit m,n 限制， m=(页码-1)*n， topN 问题：先排序，再分页</p>
+<h4 id="去重查询">去重查询</h4>
+<p>关键字：<em>distinct，</em>去掉重复记录，在select后使用即可。</p>
+<h4 id="子查询">子查询</h4>
+<p>子查询就是在查询里写查询，一般用于解决一步不能查询求解的问题。其用法非常灵活，几乎可以写在查询的任何位置。<br> 语法：<br> 1. 子查询可以写在select后，作为查询结果 2. 子查询可以写在 from 后，作为查询源 3. 子查询可以写在 where 后，作为查询条件 4. 子查询可以使用主查询的资源，子查询要加括号包裹使用 5. 当子查询作为数据源在 from 后时，要起别名 6. 子查询还可以用在 update、insert、delete 里 7. <strong>having</strong> 限制条件和 where 的功能一样但是having是可以先分组再过滤，但where是先过滤再分组</p>
+<h4 id="表连接">表连接</h4>
+<p>表连接的作用是将多个表放在一起查询，解决一个表的数据不满足查询需求的问题。<br> 语法：<em>from a, b</em> <br> 需要注意的是，表连接会产生笛卡尔积，使用的时候一定要使用条件加以限制。</p>
 
     </div>
 
@@ -466,7 +429,7 @@ topN 问题：先排序，再分页</p>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95"><span class="nav-number">1.</span> <span class="nav-text"> 基础语法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AE%80%E4%BB%8B"><span class="nav-number">1.0.1.</span> <span class="nav-text"> 简介</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%99%BB%E9%99%86%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">1.0.2.</span> <span class="nav-text"> 登陆数据库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#prompt-%E6%8F%90%E7%A4%BA%E7%AC%A6%E7%9A%84%E4%BF%AE%E6%94%B9"><span class="nav-number">1.0.3.</span> <span class="nav-text"> PROMPT 提示符的修改</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C"><span class="nav-number">1.0.4.</span> <span class="nav-text"> 数据库操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A1%A8%E6%93%8D%E4%BD%9C"><span class="nav-number">1.0.5.</span> <span class="nav-text"> 表操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A2%9E%E5%88%A0%E6%9F%A5%E6%94%B9crud"><span class="nav-number">1.0.6.</span> <span class="nav-text"> 增删查改（CRUD）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%AB%98%E7%BA%A7%E6%9F%A5%E8%AF%A2"><span class="nav-number">2.</span> <span class="nav-text"> 高级查询</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A8%A1%E7%B3%8A%E6%9F%A5%E8%AF%A2"><span class="nav-number">2.0.1.</span> <span class="nav-text"> 模糊查询</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%86%E7%BB%84%E6%9F%A5%E8%AF%A2"><span class="nav-number">2.0.2.</span> <span class="nav-text"> 分组查询</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8E%92%E5%BA%8F"><span class="nav-number">2.0.3.</span> <span class="nav-text"> 排序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%86%E9%A1%B5"><span class="nav-number">2.0.4.</span> <span class="nav-text"> 分页</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8E%BB%E9%87%8D%E6%9F%A5%E8%AF%A2"><span class="nav-number">2.0.5.</span> <span class="nav-text"> 去重查询</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AD%90%E6%9F%A5%E8%AF%A2"><span class="nav-number">2.0.6.</span> <span class="nav-text"> 子查询</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A1%A8%E8%BF%9E%E6%8E%A5"><span class="nav-number">2.0.7.</span> <span class="nav-text"> 表连接</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95"><span class="nav-number">1.</span> <span class="nav-text">基础语法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AE%80%E4%BB%8B"><span class="nav-number">1.0.1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%99%BB%E9%99%86%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">1.0.2.</span> <span class="nav-text">登陆数据库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#prompt-%E6%8F%90%E7%A4%BA%E7%AC%A6%E7%9A%84%E4%BF%AE%E6%94%B9"><span class="nav-number">1.0.3.</span> <span class="nav-text">PROMPT 提示符的修改</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C"><span class="nav-number">1.0.4.</span> <span class="nav-text">数据库操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A1%A8%E6%93%8D%E4%BD%9C"><span class="nav-number">1.0.5.</span> <span class="nav-text">表操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A2%9E%E5%88%A0%E6%9F%A5%E6%94%B9crud"><span class="nav-number">1.0.6.</span> <span class="nav-text">增删查改（CRUD）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%AB%98%E7%BA%A7%E6%9F%A5%E8%AF%A2"><span class="nav-number">2.</span> <span class="nav-text">高级查询</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A8%A1%E7%B3%8A%E6%9F%A5%E8%AF%A2"><span class="nav-number">2.0.1.</span> <span class="nav-text">模糊查询</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%86%E7%BB%84%E6%9F%A5%E8%AF%A2"><span class="nav-number">2.0.2.</span> <span class="nav-text">分组查询</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8E%92%E5%BA%8F"><span class="nav-number">2.0.3.</span> <span class="nav-text">排序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%86%E9%A1%B5"><span class="nav-number">2.0.4.</span> <span class="nav-text">分页</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8E%BB%E9%87%8D%E6%9F%A5%E8%AF%A2"><span class="nav-number">2.0.5.</span> <span class="nav-text">去重查询</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AD%90%E6%9F%A5%E8%AF%A2"><span class="nav-number">2.0.6.</span> <span class="nav-text">子查询</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A1%A8%E8%BF%9E%E6%8E%A5"><span class="nav-number">2.0.7.</span> <span class="nav-text">表连接</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -546,12 +509,12 @@ topN 问题：先排序，再分页</p>
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">84k</span>
+    <span title="站点总字数">91k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:17</span>
+    <span title="站点阅读时长">1:22</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
   </div>

@@ -219,8 +219,8 @@
       <div class="post-body">
           <p>杨超越附体🙏</p>
 <a id="more"></a>
-<h1 id="计算机网络"><a class="markdownIt-Anchor" href="#计算机网络"></a> 计算机网络</h1>
-<h2 id="http和https的区别"><a class="markdownIt-Anchor" href="#http和https的区别"></a> http和https的区别</h2>
+<h1 id="计算机网络">计算机网络</h1>
+<h2 id="http和https的区别">http和https的区别</h2>
 <ul>
 <li>https需要用到CA（certificate）申请证书，一般免费证书较少，申请需要一定费用</li>
 <li>http是面向字符的超文本传输协议，明文传输，https带有ssl加密</li>
@@ -228,104 +228,79 @@
 <li>http连接简单、无状态；https可进行加密传输、有身份认证，比http安全；</li>
 <li>无状态指的是数据包的发送、传输、接收都是相互独立的；无连接指的是通信双方都不长久维持双方任何信息</li>
 </ul>
-<h1 id="linux"><a class="markdownIt-Anchor" href="#linux"></a> Linux</h1>
-<h2 id="系统相关"><a class="markdownIt-Anchor" href="#系统相关"></a> 系统相关</h2>
-<h3 id="查看有几颗物理cpu和cpu核数"><a class="markdownIt-Anchor" href="#查看有几颗物理cpu和cpu核数"></a> 查看有几颗物理CPU和CPU核数</h3>
+<h1 id="linux">Linux</h1>
+<h2 id="系统相关">系统相关</h2>
+<h3 id="查看有几颗物理cpu和cpu核数">查看有几颗物理CPU和CPU核数</h3>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">root ~&gt; cat /proc/cpuinfo | grep -c <span class="string">'physical id'</span></span><br><span class="line">8</span><br><span class="line">root ~&gt; cat /proc/cpuinfo | grep -c <span class="string">'processor'</span></span><br><span class="line">8</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="查看系统负载"><a class="markdownIt-Anchor" href="#查看系统负载"></a> 查看系统负载</h3>
+<h3 id="查看系统负载">查看系统负载</h3>
 <figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">root ~&gt; w</span><br><span class="line"> 16:46:06 up 31 min,  0 users,  load average: 0.52, 0.58, 0.59</span><br><span class="line">USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT</span><br><span class="line">root ~&gt; uptime</span><br><span class="line"> 16:46:26 up 32 min,  0 users,  load average: 0.52, 0.58, 0.59</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="buffer与cache"><a class="markdownIt-Anchor" href="#buffer与cache"></a> buffer与cache</h3>
-<p>buffer与cache都是内存中的一块区域，写磁盘：<code>CPU -&gt; buffer -&gt; disk</code>; 读磁盘：<br>
-<code>disk -&gt; cache -&gt; CPU</code></p>
-<h3 id="ps查看当前系统都有哪些进程"><a class="markdownIt-Anchor" href="#ps查看当前系统都有哪些进程"></a> ps查看当前系统都有哪些进程</h3>
+<h3 id="buffer与cache">buffer与cache</h3>
+<p>buffer与cache都是内存中的一块区域，写磁盘：<code>CPU -&gt; buffer -&gt; disk</code>; 读磁盘： <code>disk -&gt; cache -&gt; CPU</code></p>
+<h3 id="ps查看当前系统都有哪些进程">ps查看当前系统都有哪些进程</h3>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">root ~&gt; ps -aux</span><br><span class="line">USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND</span><br><span class="line">root         1  0.0  0.0   9628  1044 ?        Ssl  16:14   0:00 /init</span><br><span class="line">root        24  0.0  0.0   8912   232 tty1     Ss   16:17   0:00 /init</span><br><span class="line">root        25  0.0  0.0  16920  3624 tty1     S    16:17   0:00 -bash</span><br><span class="line">root      1052  0.0  0.0  17648  2048 tty1     R    17:01   0:00 ps -aux</span><br><span class="line">root ~&gt; ps -elf</span><br><span class="line">F S UID        PID  PPID  C PRI  NI ADDR SZ WCHAN  STIME TTY          TIME CMD</span><br><span class="line">0 S root         1     0  0  80   0 -  2407 ?      16:14 ?        00:00:00 /init</span><br><span class="line">0 S root        24     1  0  80   0 -  2228 -      16:17 tty1     00:00:00 /init</span><br><span class="line">0 S root        25    24  0  80   0 -  4230 -      16:17 tty1     00:00:00 -bash</span><br><span class="line">0 R root      1053    25  0  80   0 -  4345 -      17:01 tty1     00:00:00 ps -elf</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="netstat查看端口和网络连接状况"><a class="markdownIt-Anchor" href="#netstat查看端口和网络连接状况"></a> netstat查看端口和网络连接状况</h3>
+<h3 id="netstat查看端口和网络连接状况">netstat查看端口和网络连接状况</h3>
 <blockquote>
-<p>netstat -lnp 查看系统开启了哪些端口<br>
-netstat -an 查看网络连接状况</p>
+<p>netstat -lnp 查看系统开启了哪些端口 netstat -an 查看网络连接状况</p>
 </blockquote>
-<h3 id="free查询可用内存"><a class="markdownIt-Anchor" href="#free查询可用内存"></a> free查询可用内存</h3>
+<h3 id="free查询可用内存">free查询可用内存</h3>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">root ~&gt; free</span><br><span class="line">              total        used        free      shared  buff/cache   available</span><br><span class="line">Mem:        8175468     5991112     1955004       17720      229352     2050624</span><br><span class="line">Swap:      25165824      415356    24750468</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="更改ip-dns-hostname"><a class="markdownIt-Anchor" href="#更改ip-dns-hostname"></a> 更改ip、dns、hostname</h2>
+<h2 id="更改ipdnshostname">更改ip、dns、hostname</h2>
 <div class="note info">
-            <p><strong>IP</strong><br><code>ifconfig eth0 192.168.1.110 netmask 255.255.255.0</code> 即时生效<br><code>vim /etc/sysconfig/network-scripts/ifcfg-eth0</code><br><code>service network restart</code></p>
+            <p><strong>IP</strong> <code>ifconfig eth0 192.168.1.110 netmask 255.255.255.0</code> 即时生效 <code>vim /etc/sysconfig/network-scripts/ifcfg-eth0</code> <code>service network restart</code></p>
           </div>
 <div class="note info">
-            <p><strong>hostname</strong><br><code>hostname name1</code><br><code>vim /etc/sysconfig/network</code><br><code>reboot</code></p>
+            <p><strong>hostname</strong> <code>hostname name1</code> <code>vim /etc/sysconfig/network</code> <code>reboot</code></p>
           </div>
 <div class="note info">
-            <p><strong>DNS</strong><br><code>vim /etc/resolv.conf</code><br><code>vim /etc/sysconfig/network-scripts/ifcfg-eth0</code></p>
+            <p><strong>DNS</strong> <code>vim /etc/resolv.conf</code> <code>vim /etc/sysconfig/network-scripts/ifcfg-eth0</code></p>
           </div>
-<h2 id="定时任务-crontab"><a class="markdownIt-Anchor" href="#定时任务-crontab"></a> 定时任务 crontab</h2>
-<p>任务格式：<br>
-minute hour day month week user  command<br>
-操作符：</p>
-<ul>
-<li><code>*</code> 取值范围内所有数字</li>
-<li><code>/</code> 每过多少时间单位，“0-23/2”表示每两小时执行一次，同时正斜线可以和星号一起使用，例如*/10，如果用在minute字段，表示每十分钟执行一次。</li>
-<li><code>-</code> 从何时到何时，例如“2-6”表示“2,3,4,5,6”</li>
-<li><code>,</code> 指定一个列表范围，例如“1,2,6,8,9”</li>
-</ul>
+<h2 id="定时任务-crontab">定时任务 crontab</h2>
+<p>任务格式： minute hour day month week user command 操作符： + <code>*</code> 取值范围内所有数字 + <code>/</code> 每过多少时间单位，“0-23/2”表示每两小时执行一次，同时正斜线可以和星号一起使用，例如*/10，如果用在minute字段，表示每十分钟执行一次。 + <code>-</code> 从何时到何时，例如“2-6”表示“2,3,4,5,6” + <code>,</code> 指定一个列表范围，例如“1,2,6,8,9”</p>
 <blockquote>
-<p><code>* * * * * user command</code> 每分钟执行一次<br>
-<code>20,45 * * * * user command</code> 每小时的第20和45分钟执行<br>
-<code>20,45 21-23 * * * user command</code> 每天的第21到23点的第20和45分钟执行<br>
-<code>20,45 21-23 */2 * * user command</code> 每两天的第21到23点的第20和45分钟执行<br>
-<code>20 3 * * 6 user command</code> 每两周六的3:20执行</p>
+<p><code>* * * * * user command</code> 每分钟执行一次 <code>20,45 * * * * user command</code> 每小时的第20和45分钟执行 <code>20,45 21-23 * * * user command</code> 每天的第21到23点的第20和45分钟执行 <code>20,45 21-23 */2 * * user command</code> 每两天的第21到23点的第20和45分钟执行 <code>20 3 * * 6 user command</code> 每两周六的3:20执行</p>
 </blockquote>
-<h2 id="tar归档压缩"><a class="markdownIt-Anchor" href="#tar归档压缩"></a> tar归档压缩</h2>
+<h2 id="tar归档压缩">tar归档压缩</h2>
 <p>打包是指将一大堆文件或目录变成一个总的文件；压缩则是将一个大的文件通过一些压缩算法变成一个小文件</p>
 <blockquote>
-<p>选项  -c 压缩<br>
--x 解压缩<br>
--f 文件名<br>
--v 显示<br>
-打包并压缩    tar -czvf 压缩后文件名 目标<br>
-解压缩  tar -xzvf 目标名<br>
--xzvf 目标名 -C 目标目录</p>
+<p>选项 -c 压缩 -x 解压缩 -f 文件名 -v 显示 打包并压缩 tar -czvf 压缩后文件名 目标 解压缩 tar -xzvf 目标名 -xzvf 目标名 -C 目标目录</p>
 </blockquote>
-<h2 id="chmod"><a class="markdownIt-Anchor" href="#chmod"></a> chmod</h2>
+<h2 id="chmod">chmod</h2>
 <p>文件权限等级：文件拥有者、群组、其他</p>
 <p><code>chmod mode file</code></p>
-<p>mode: [ugoa][[±=][rwxX]…]</p>
-<ul>
-<li>u表示文件拥有者，g表示与u同用户组的成员，o表示此外的人，a表示全部</li>
-<li>表示增加权限、- 表示取消权限、= 表示唯一设定权限</li>
-<li>r 表示可读取，w 表示可写入，x 表示可执行，X 表示只有当该文件是个子目录或者该文件已经被设定过为可执行</li>
-</ul>
+<p>mode: [ugoa][[+-=][rwxX]...] + u表示文件拥有者，g表示与u同用户组的成员，o表示此外的人，a表示全部 + 表示增加权限、- 表示取消权限、= 表示唯一设定权限 + r 表示可读取，w 表示可写入，x 表示可执行，X 表示只有当该文件是个子目录或者该文件已经被设定过为可执行</p>
 <p>User、Group、及Other的权限也可以用数字表示r=4、w=2、x=1</p>
-<h2 id="scp远程拷贝"><a class="markdownIt-Anchor" href="#scp远程拷贝"></a> scp远程拷贝</h2>
+<h2 id="scp远程拷贝">scp远程拷贝</h2>
 <p>scp [参数] [原路径] [目标路径]</p>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 复制文件</span></span><br><span class="line"><span class="variable">$scp</span> /opt/soft/demo.tar root@10.6.159.147:/opt/soft/scptest</span><br><span class="line"><span class="comment"># 复制目录 下载和上传</span></span><br><span class="line"><span class="variable">$scp</span> -r root@10.6.159.147:/opt/soft/<span class="built_in">test</span> /opt/soft/</span><br><span class="line"><span class="variable">$scp</span> -r /opt/soft/<span class="built_in">test</span> root@10.6.159.147:/opt/soft/scptest</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="其他"><a class="markdownIt-Anchor" href="#其他"></a> 其他</h2>
+<h2 id="其他">其他</h2>
 <ul>
 <li><strong>top</strong>: 实时显示process的动态</li>
 <li><strong>touch 文件名</strong>: 创建/更新文件</li>
 <li><strong>tail</strong>: 显示文件尾部几行内容，“+”指从第n行开始</li>
 <li><strong>cat</strong>: 显示文件内容；<code>cat m1 m1 &gt; file</code>将m1和m2合并后放入file中</li>
 </ul>
-<h1 id="mysql"><a class="markdownIt-Anchor" href="#mysql"></a> Mysql</h1>
-<h2 id="数据类型"><a class="markdownIt-Anchor" href="#数据类型"></a> 数据类型</h2>
+<h1 id="mysql">Mysql</h1>
+<h2 id="数据类型">数据类型</h2>
 <p>char 和 varchar 类型相似，但他们的保存和检索方式不同，最大长度和尾部空格是否被保留也不同，存储和检索过程中不进行大小写转换。</p>
-<h2 id="select"><a class="markdownIt-Anchor" href="#select"></a> select</h2>
+<h2 id="select">select</h2>
 <ul>
 <li>在 WHERE 子句中用 BINARY 表示字符串比较区分大小写</li>
 </ul>
-<h2 id="delete"><a class="markdownIt-Anchor" href="#delete"></a> delete</h2>
+<h2 id="delete">delete</h2>
 <ul>
 <li>delete和truncate仅删除表数据，drop连表数据和表结构一起删除</li>
 <li>delete是DML语句，操作完没有提交事务还可以回滚；truncate和drop是DDL语句，操作即时生效，不能回滚</li>
 <li>执行速度：drop &gt; truncate &gt; delete</li>
 </ul>
-<h2 id="like"><a class="markdownIt-Anchor" href="#like"></a> like</h2>
+<h2 id="like">like</h2>
 <p><code>%</code>匹配任意个字符，<code>_</code>匹配单个字符，<code>[]</code>表示括号内所列字符的一个，<code>[^]</code>表示不在括号内的字符。</p>
 <ul>
-<li><code>%a</code>     //以a结尾的数据</li>
-<li><code>a%</code>     //以a开头的数据</li>
-<li><code>%a%</code>    //含有a的数据</li>
-<li><code>_a_</code>    //三位且中间字母是a的</li>
-<li><code>_a</code>     //两位且结尾字母是a的</li>
-<li><code>a_</code>     //两位且开头字母是a的</li>
+<li><code>%a</code> //以a结尾的数据</li>
+<li><code>a%</code> //以a开头的数据</li>
+<li><code>%a%</code> //含有a的数据</li>
+<li><code>_a_</code> //三位且中间字母是a的</li>
+<li><code>_a</code> //两位且结尾字母是a的</li>
+<li><code>a_</code> //两位且开头字母是a的</li>
 </ul>
 
       </div>
@@ -388,7 +363,7 @@ minute hour day month week user  command<br>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C"><span class="nav-number">1.</span> <span class="nav-text"> 计算机网络</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#http%E5%92%8Chttps%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">1.1.</span> <span class="nav-text"> http和https的区别</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#linux"><span class="nav-number">2.</span> <span class="nav-text"> Linux</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B3%BB%E7%BB%9F%E7%9B%B8%E5%85%B3"><span class="nav-number">2.1.</span> <span class="nav-text"> 系统相关</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E6%9C%89%E5%87%A0%E9%A2%97%E7%89%A9%E7%90%86cpu%E5%92%8Ccpu%E6%A0%B8%E6%95%B0"><span class="nav-number">2.1.1.</span> <span class="nav-text"> 查看有几颗物理CPU和CPU核数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E7%B3%BB%E7%BB%9F%E8%B4%9F%E8%BD%BD"><span class="nav-number">2.1.2.</span> <span class="nav-text"> 查看系统负载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#buffer%E4%B8%8Ecache"><span class="nav-number">2.1.3.</span> <span class="nav-text"> buffer与cache</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ps%E6%9F%A5%E7%9C%8B%E5%BD%93%E5%89%8D%E7%B3%BB%E7%BB%9F%E9%83%BD%E6%9C%89%E5%93%AA%E4%BA%9B%E8%BF%9B%E7%A8%8B"><span class="nav-number">2.1.4.</span> <span class="nav-text"> ps查看当前系统都有哪些进程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#netstat%E6%9F%A5%E7%9C%8B%E7%AB%AF%E5%8F%A3%E5%92%8C%E7%BD%91%E7%BB%9C%E8%BF%9E%E6%8E%A5%E7%8A%B6%E5%86%B5"><span class="nav-number">2.1.5.</span> <span class="nav-text"> netstat查看端口和网络连接状况</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#free%E6%9F%A5%E8%AF%A2%E5%8F%AF%E7%94%A8%E5%86%85%E5%AD%98"><span class="nav-number">2.1.6.</span> <span class="nav-text"> free查询可用内存</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B4%E6%94%B9ip-dns-hostname"><span class="nav-number">2.2.</span> <span class="nav-text"> 更改ip、dns、hostname</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1-crontab"><span class="nav-number">2.3.</span> <span class="nav-text"> 定时任务 crontab</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tar%E5%BD%92%E6%A1%A3%E5%8E%8B%E7%BC%A9"><span class="nav-number">2.4.</span> <span class="nav-text"> tar归档压缩</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#chmod"><span class="nav-number">2.5.</span> <span class="nav-text"> chmod</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#scp%E8%BF%9C%E7%A8%8B%E6%8B%B7%E8%B4%9D"><span class="nav-number">2.6.</span> <span class="nav-text"> scp远程拷贝</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E4%BB%96"><span class="nav-number">2.7.</span> <span class="nav-text"> 其他</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#mysql"><span class="nav-number">3.</span> <span class="nav-text"> Mysql</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">3.1.</span> <span class="nav-text"> 数据类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#select"><span class="nav-number">3.2.</span> <span class="nav-text"> select</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#delete"><span class="nav-number">3.3.</span> <span class="nav-text"> delete</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#like"><span class="nav-number">3.4.</span> <span class="nav-text"> like</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C"><span class="nav-number">1.</span> <span class="nav-text">计算机网络</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#http%E5%92%8Chttps%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">1.1.</span> <span class="nav-text">http和https的区别</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#linux"><span class="nav-number">2.</span> <span class="nav-text">Linux</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B3%BB%E7%BB%9F%E7%9B%B8%E5%85%B3"><span class="nav-number">2.1.</span> <span class="nav-text">系统相关</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E6%9C%89%E5%87%A0%E9%A2%97%E7%89%A9%E7%90%86cpu%E5%92%8Ccpu%E6%A0%B8%E6%95%B0"><span class="nav-number">2.1.1.</span> <span class="nav-text">查看有几颗物理CPU和CPU核数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E7%B3%BB%E7%BB%9F%E8%B4%9F%E8%BD%BD"><span class="nav-number">2.1.2.</span> <span class="nav-text">查看系统负载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#buffer%E4%B8%8Ecache"><span class="nav-number">2.1.3.</span> <span class="nav-text">buffer与cache</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ps%E6%9F%A5%E7%9C%8B%E5%BD%93%E5%89%8D%E7%B3%BB%E7%BB%9F%E9%83%BD%E6%9C%89%E5%93%AA%E4%BA%9B%E8%BF%9B%E7%A8%8B"><span class="nav-number">2.1.4.</span> <span class="nav-text">ps查看当前系统都有哪些进程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#netstat%E6%9F%A5%E7%9C%8B%E7%AB%AF%E5%8F%A3%E5%92%8C%E7%BD%91%E7%BB%9C%E8%BF%9E%E6%8E%A5%E7%8A%B6%E5%86%B5"><span class="nav-number">2.1.5.</span> <span class="nav-text">netstat查看端口和网络连接状况</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#free%E6%9F%A5%E8%AF%A2%E5%8F%AF%E7%94%A8%E5%86%85%E5%AD%98"><span class="nav-number">2.1.6.</span> <span class="nav-text">free查询可用内存</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B4%E6%94%B9ipdnshostname"><span class="nav-number">2.2.</span> <span class="nav-text">更改ip、dns、hostname</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1-crontab"><span class="nav-number">2.3.</span> <span class="nav-text">定时任务 crontab</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tar%E5%BD%92%E6%A1%A3%E5%8E%8B%E7%BC%A9"><span class="nav-number">2.4.</span> <span class="nav-text">tar归档压缩</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#chmod"><span class="nav-number">2.5.</span> <span class="nav-text">chmod</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#scp%E8%BF%9C%E7%A8%8B%E6%8B%B7%E8%B4%9D"><span class="nav-number">2.6.</span> <span class="nav-text">scp远程拷贝</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E4%BB%96"><span class="nav-number">2.7.</span> <span class="nav-text">其他</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#mysql"><span class="nav-number">3.</span> <span class="nav-text">Mysql</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">3.1.</span> <span class="nav-text">数据类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#select"><span class="nav-number">3.2.</span> <span class="nav-text">select</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#delete"><span class="nav-number">3.3.</span> <span class="nav-text">delete</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#like"><span class="nav-number">3.4.</span> <span class="nav-text">like</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -468,12 +443,12 @@ minute hour day month week user  command<br>
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">84k</span>
+    <span title="站点总字数">91k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:17</span>
+    <span title="站点阅读时长">1:22</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
   </div>

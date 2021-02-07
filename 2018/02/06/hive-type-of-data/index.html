@@ -279,57 +279,52 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <blockquote><p>I cannot tell why this heart languishes in silence. It is for small needs it never asks, or knows or remembers.<br>
-我说不出这心为什么那样颓丧着，是为了它那不曾要求，不曾知道，不曾记得的小小的需要。</p>
+        <blockquote><p>I cannot tell why this heart languishes in silence. It is for small needs it never asks, or knows or remembers. 我说不出这心为什么那样颓丧着，是为了它那不曾要求，不曾知道，不曾记得的小小的需要。</p>
 <footer><strong>泰戈尔</strong><cite>飞鸟集</cite></footer></blockquote>
 <a id="more"></a>
-<h2 id="基本数据类型"><a class="markdownIt-Anchor" href="#基本数据类型"></a> 基本数据类型</h2>
+<h2 id="基本数据类型">基本数据类型</h2>
 <p>未完待续……</p>
-<h2 id="复杂数据类型"><a class="markdownIt-Anchor" href="#复杂数据类型"></a> 复杂数据类型</h2>
-<p>关系型数据库强烈不建议重复存储<br>
-我们接触过的大数据数据库比如 Hbase、Hive 不怕重复，但要求的是存储数据的文件不要太小。</p>
-<p>类型 | 说明 | 举例<br>
-Array （数组） | 一组数据类型相同的值 | [1,2,3]<br>
-Map（集合）| 一组 &lt;K, V&gt;，要求所有键类型相同，所有值类型相同 | {&lt;K, V&gt;, &lt;K, V&gt;}<br>
-Struct（结构） | 一组不同字段，且每个字段的类型可以不同 | (“str”, 1, 0)</p>
-<h3 id="数组"><a class="markdownIt-Anchor" href="#数组"></a> 数组</h3>
+<h2 id="复杂数据类型">复杂数据类型</h2>
+<p>关系型数据库强烈不建议重复存储 我们接触过的大数据数据库比如 Hbase、Hive 不怕重复，但要求的是存储数据的文件不要太小。</p>
+<p>类型 | 说明 | 举例 Array （数组） | 一组数据类型相同的值 | [1,2,3] Map（集合）| 一组 &lt;K, V&gt;，要求所有键类型相同，所有值类型相同 | {&lt;K, V&gt;, &lt;K, V&gt;} Struct（结构） | 一组不同字段，且每个字段的类型可以不同 | ("str", 1, 0)</p>
+<h3 id="数组">数组</h3>
 <p>假如我们有以下数据：</p>
-<p><img src="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2018-02-06-array.jpg" alt=""></p>
+<p><img src="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2018-02-06-array.jpg"></p>
 <p>在 Hive 里创建一个表：</p>
 <figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> loginArray(</span><br><span class="line">ip STRING,</span><br><span class="line">userid <span class="keyword">ARRAY</span><span class="operator">&lt;</span><span class="type">BIGINT</span><span class="operator">&gt;</span></span><br><span class="line">)</span><br><span class="line"><span class="type">ROW</span> FORMAT DELIMITED FIELDS TERMINATED <span class="keyword">BY</span> <span class="string">','</span></span><br><span class="line">COLLECTION ITEMS TERMINATED <span class="keyword">BY</span> <span class="string">'|'</span></span><br><span class="line">;</span><br></pre></td></tr></tbody></table></figure>
-<p>然后导入数据：` LOAD DATA LOCAL INPATH ‘/home/user/test_data/login_array.txt’ INTO TABLE loginArray```</p>
+<p>然后导入数据：` LOAD DATA LOCAL INPATH '/home/user/test_data/login_array.txt' INTO TABLE loginArray```</p>
 <p>查询数据：<code>SELECT id,userid FROM loginArray</code></p>
-<p><img src="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2018-02-06-array-id-userid.jpg" alt=""></p>
+<p><img src="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2018-02-06-array-id-userid.jpg"></p>
 <p>指定数组元素查询：</p>
 <p><code>SELECT id,userid[0] FROM loginArray</code></p>
-<p><img src="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2018-02-06-array-ip-userid%5B1%5D.jpg.jpg" alt=""></p>
+<p><img src="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2018-02-06-array-ip-userid%5B1%5D.jpg.jpg"></p>
 <p>查询数组长度（-1为空）：<code>SELECT size(userid) FROM loginArray</code></p>
-<p><img src="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2018-02-06-array-length.jpg" alt=""></p>
-<h3 id="集合"><a class="markdownIt-Anchor" href="#集合"></a> 集合</h3>
-<h4 id="标准数据表处理"><a class="markdownIt-Anchor" href="#标准数据表处理"></a> 标准数据表处理</h4>
+<p><img src="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2018-02-06-array-length.jpg"></p>
+<h3 id="集合">集合</h3>
+<h4 id="标准数据表处理">标准数据表处理</h4>
 <p>给定测试数据：</p>
-<p><img src="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2018-02-06-map-1.jpg" alt=""></p>
+<p><img src="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2018-02-06-map-1.jpg"></p>
 <p>数据表示某用户(id)，在某 IP 的主机上玩了哪些游戏以及游戏次数</p>
 <p>开始建表：</p>
 <figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> TBALE loginmap(</span><br><span class="line">IP STRING,</span><br><span class="line">userid <span class="type">BIGINT</span>,</span><br><span class="line">gameinfo MAP<span class="operator">&lt;</span>STRING, <span class="type">INT</span><span class="operator">&gt;</span></span><br><span class="line">)</span><br><span class="line"><span class="type">ROW</span> FORMAT DELIMITED FIELDS TERMINATED <span class="keyword">BY</span> <span class="string">','</span></span><br><span class="line">COLLECTION ITEMS TERMINATED <span class="keyword">BY</span> <span class="string">'|'</span></span><br><span class="line">MAP KEYS TERMINATED <span class="keyword">BY</span> <span class="string">':'</span></span><br><span class="line">;</span><br></pre></td></tr></tbody></table></figure>
 <p>导入数据：<code>LOAD DATA LOCAL INPATH '/home/user/test_data/loginmap1.txt' INTO TABLE loginmap;</code></p>
 <p>插入数据后表结构如图：</p>
-<p><img src="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2018-02-06-map-1-all.jpg" alt=""></p>
-<h4 id="含脏数据的表处理"><a class="markdownIt-Anchor" href="#含脏数据的表处理"></a> 含脏数据的表处理</h4>
+<p><img src="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2018-02-06-map-1-all.jpg"></p>
+<h4 id="含脏数据的表处理">含脏数据的表处理</h4>
 <p>测试数据：</p>
-<p><img src="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2018-02-06-map-2.jpg" alt=""></p>
+<p><img src="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2018-02-06-map-2.jpg"></p>
 <p>导入数据时可以直接覆盖上一张表：</p>
-<p><img src="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2018-02-06-map-2-all.jpg" alt=""></p>
+<p><img src="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2018-02-06-map-2-all.jpg"></p>
 <p>在查询某一个键时，因为数据的不统一（如“ wow” 和 “wow”，前者含空格）导致结果不同</p>
-<p><img src="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2018-02-06-map-different-info.jpg" alt=""></p>
-<h3 id="结构"><a class="markdownIt-Anchor" href="#结构"></a> 结构</h3>
+<p><img src="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2018-02-06-map-different-info.jpg"></p>
+<h3 id="结构">结构</h3>
 <p>数据：</p>
-<p><img src="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2018-02-06-struct.jpg" alt=""></p>
+<p><img src="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2018-02-06-struct.jpg"></p>
 <p>建表：</p>
 <figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> loginstruct(</span><br><span class="line">IP STRING,</span><br><span class="line">USRINFO STRUCT<span class="operator">&lt;</span>userid:<span class="type">BIGINT</span>, uname:STRING<span class="operator">&gt;</span></span><br><span class="line"><span class="type">ROW</span> FORMAT DELIMITED FIELDS TERMINATED <span class="keyword">BY</span> <span class="string">','</span></span><br><span class="line">COLLECTION ITEMS TERMINATED <span class="keyword">BY</span> <span class="string">'|'</span></span><br><span class="line">;</span><br></pre></td></tr></tbody></table></figure>
 <p>导入数据：<code>LOAD DATA LOCAL INPATH '/home/user/test_data/login_array/loginstruct.txt' INTO TABLE loginstruct</code></p>
 <p>插入后表信息：</p>
-<p><img src="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2018-02-06-struct-all.jpg" alt=""></p>
+<p><img src="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2018-02-06-struct-all.jpg"></p>
 
     </div>
 
@@ -414,7 +409,7 @@ Struct（结构） | 一组不同字段，且每个字段的类型可以不同 |
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.</span> <span class="nav-text"> 基本数据类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%8D%E6%9D%82%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">2.</span> <span class="nav-text"> 复杂数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E7%BB%84"><span class="nav-number">2.1.</span> <span class="nav-text"> 数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9B%86%E5%90%88"><span class="nav-number">2.2.</span> <span class="nav-text"> 集合</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%87%E5%87%86%E6%95%B0%E6%8D%AE%E8%A1%A8%E5%A4%84%E7%90%86"><span class="nav-number">2.2.1.</span> <span class="nav-text"> 标准数据表处理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%AB%E8%84%8F%E6%95%B0%E6%8D%AE%E7%9A%84%E8%A1%A8%E5%A4%84%E7%90%86"><span class="nav-number">2.2.2.</span> <span class="nav-text"> 含脏数据的表处理</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%93%E6%9E%84"><span class="nav-number">2.3.</span> <span class="nav-text"> 结构</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.</span> <span class="nav-text">基本数据类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%8D%E6%9D%82%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">2.</span> <span class="nav-text">复杂数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E7%BB%84"><span class="nav-number">2.1.</span> <span class="nav-text">数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9B%86%E5%90%88"><span class="nav-number">2.2.</span> <span class="nav-text">集合</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%87%E5%87%86%E6%95%B0%E6%8D%AE%E8%A1%A8%E5%A4%84%E7%90%86"><span class="nav-number">2.2.1.</span> <span class="nav-text">标准数据表处理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%AB%E8%84%8F%E6%95%B0%E6%8D%AE%E7%9A%84%E8%A1%A8%E5%A4%84%E7%90%86"><span class="nav-number">2.2.2.</span> <span class="nav-text">含脏数据的表处理</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%93%E6%9E%84"><span class="nav-number">2.3.</span> <span class="nav-text">结构</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -494,12 +489,12 @@ Struct（结构） | 一组不同字段，且每个字段的类型可以不同 |
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">84k</span>
+    <span title="站点总字数">91k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:17</span>
+    <span title="站点阅读时长">1:22</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
   </div>

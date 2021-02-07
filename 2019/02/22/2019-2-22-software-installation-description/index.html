@@ -274,7 +274,7 @@
             <i class="fa fa-quote-right"></i>
           </blockquote>
 <a id="more"></a>
-<h2 id="latexindent"><a class="markdownIt-Anchor" href="#latexindent"></a> latexindent</h2>
+<h2 id="latexindent">latexindent</h2>
 <ul>
 <li>来自：安装LaTex-formatter需要安装的工具</li>
 <li>方式：解压缩，（可数的）文件直接拖入目录</li>
@@ -284,26 +284,20 @@
 </ul>
 <p>注：更改了该目录下的<code>defaultSettings.yaml</code>的某些设置</p>
 <figure class="highlight yaml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># line222~line246</span></span><br><span class="line"><span class="attr">indentAfterHeadings:</span></span><br><span class="line">    <span class="attr">part:</span></span><br><span class="line">       <span class="attr">indentAfterThisHeading:</span> <span class="number">1</span></span><br><span class="line">       <span class="attr">level:</span> <span class="number">1</span></span><br><span class="line">    <span class="attr">chapter:</span> </span><br><span class="line">       <span class="attr">indentAfterThisHeading:</span> <span class="number">1</span></span><br><span class="line">       <span class="attr">level:</span> <span class="number">2</span></span><br><span class="line">    <span class="attr">section:</span></span><br><span class="line">       <span class="attr">indentAfterThisHeading:</span> <span class="number">1</span></span><br><span class="line">       <span class="attr">level:</span> <span class="number">3</span></span><br><span class="line">    <span class="attr">subsection:</span></span><br><span class="line">       <span class="attr">indentAfterThisHeading:</span> <span class="number">1</span></span><br><span class="line">       <span class="attr">level:</span> <span class="number">4</span></span><br><span class="line">    <span class="string">subsection*:</span></span><br><span class="line">       <span class="attr">indentAfterThisHeading:</span> <span class="number">1</span></span><br><span class="line">       <span class="attr">level:</span> <span class="number">4</span></span><br><span class="line">    <span class="attr">subsubsection:</span></span><br><span class="line">       <span class="attr">indentAfterThisHeading:</span> <span class="number">1</span></span><br><span class="line">       <span class="attr">level:</span> <span class="number">5</span></span><br><span class="line">    <span class="attr">paragraph:</span></span><br><span class="line">       <span class="attr">indentAfterThisHeading:</span> <span class="number">1</span></span><br><span class="line">       <span class="attr">level:</span> <span class="number">6</span></span><br><span class="line">    <span class="attr">subparagraph:</span></span><br><span class="line">       <span class="attr">indentAfterThisHeading:</span> <span class="number">1</span></span><br><span class="line">       <span class="attr">level:</span> <span class="number">7</span></span><br></pre></td></tr></tbody></table></figure>
-<h2 id="ruby-jekyll"><a class="markdownIt-Anchor" href="#ruby-jekyll"></a> ruby-jekyll</h2>
+<h2 id="ruby-jekyll">ruby-jekyll</h2>
 <p>大佬<a href="http://www.pchou.info/ssgithubPage/2014-07-04-build-github-blog-page-08.html">Pchou的博客</a></p>
-<ol>
-<li>安装<a href="https://rubyinstaller.org/downloads/">Ruby with Devkit</a>，所有组件都在这里了，注意安装路径不要出现空格</li>
-<li>ruby安装完，会提示安装MSYS2，跟着提示走就好。现在新版本的Ruby已经集成了<a href="%5BRubyGems%5D(https://rubygems.org/pages/download)">RubyGems</a></li>
-<li>环境安装好就可以安装Bundle和Jekyll了（<code>gem install jekyll</code>），但是在今天（2019-2-22）安装的过程中发现bundle是安装环境是已经安装好了的。</li>
-<li>到博客目录下依次执行以下命令：</li>
+<ol type="1">
+<li><p>安装<a href="https://rubyinstaller.org/downloads/">Ruby with Devkit</a>，所有组件都在这里了，注意安装路径不要出现空格</p></li>
+<li><p>ruby安装完，会提示安装MSYS2，跟着提示走就好。现在新版本的Ruby已经集成了<a href="%5BRubyGems%5D(https://rubygems.org/pages/download)">RubyGems</a></p></li>
+<li><p>环境安装好就可以安装Bundle和Jekyll了（<code>gem install jekyll</code>），但是在今天（2019-2-22）安装的过程中发现bundle是安装环境是已经安装好了的。</p></li>
+<li><p>到博客目录下依次执行以下命令： </p><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">bundle install</span><br><span class="line">bundle update</span><br><span class="line">bundle <span class="built_in">exec</span> jekyll serve</span><br></pre></td></tr></tbody></table></figure> ### 关于ryby及Jekyll的某些错误<p></p></li>
+<li><p><code>jekyll 3.7.4 | Error:  incompatible character encodings: UTF-8 and GBK</code> 不知道如何解决，尝试设置命令行字符编码<code>chcp 65001</code>（不行） 已知的可能解决方法：设置 -&gt; 时间和语言 -&gt; 区域 -&gt; 更改日期、时间或数字格式 -&gt; 管理 -&gt; 更改系统区域设置：选中“使用Unicode UTF-8 提供全球语言支持”，然后重启电脑，应该就解决了。</p></li>
+<li><p>执行<code>bundle</code>命令时出现<code>C:/Program/Ruby25-x64/lib/ruby/2.5.0/rubygems.rb:289:in 'find_spec_for_exe': can't find gem bundler (&gt;= 0.a) with executable bundle (Gem::GemNotFoundException)</code>，在<a href="https://stackoverflow.com/questions/47026174/find-spec-for-exe-cant-find-gem-bundler-0-a-gemgemnotfoundexception">StackOverflow</a>上找到答案：<code>Gemfile.lock</code>文件最后的<code>BUNDLED WITH</code>版本改为已安装的bundler版本。或者删除Gemfile.lock文件，重新<code>bundle exec jekyll serve</code></p></li>
 </ol>
-<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">bundle install</span><br><span class="line">bundle update</span><br><span class="line">bundle <span class="built_in">exec</span> jekyll serve</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="关于ryby及jekyll的某些错误"><a class="markdownIt-Anchor" href="#关于ryby及jekyll的某些错误"></a> 关于ryby及Jekyll的某些错误</h3>
-<ol>
-<li><code>jekyll 3.7.4 | Error: incompatible character encodings: UTF-8 and GBK</code><br>
-不知道如何解决，尝试设置命令行字符编码<code>chcp 65001</code>（不行）<br>
-已知的可能解决方法：设置 -&gt; 时间和语言 -&gt; 区域 -&gt; 更改日期、时间或数字格式 -&gt; 管理 -&gt; 更改系统区域设置：选中“使用Unicode UTF-8 提供全球语言支持”，然后重启电脑，应该就解决了。</li>
-<li>执行<code>bundle</code>命令时出现<code>C:/Program/Ruby25-x64/lib/ruby/2.5.0/rubygems.rb:289:in 'find_spec_for_exe': can't find gem bundler (&gt;= 0.a) with executable bundle (Gem::GemNotFoundException)</code>，在<a href="https://stackoverflow.com/questions/47026174/find-spec-for-exe-cant-find-gem-bundler-0-a-gemgemnotfoundexception">StackOverflow</a>上找到答案：<code>Gemfile.lock</code>文件最后的<code>BUNDLED WITH</code>版本改为已安装的bundler版本。或者删除Gemfile.lock文件，重新<code>bundle exec jekyll serve</code></li>
-</ol>
-<h2 id="vscode中cc找不到头文件"><a class="markdownIt-Anchor" href="#vscode中cc找不到头文件"></a> VSCode中C/C++找不到头文件</h2>
+<h2 id="vscode中cc找不到头文件">VSCode中C/C++找不到头文件</h2>
 <p>可能需要设置这些环境变量：</p>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">LIBRARY_PATH</span><br><span class="line">C:\Program\mingw64\lib\gcc\x86_64-w64-mingw32\7.3.0</span><br><span class="line"></span><br><span class="line">C_INCLUDE_PATH</span><br><span class="line">C:\Program\mingw64\include;</span><br><span class="line">C:\Program\mingw64\lib\gcc\x86_64-w64-mingw32\7.3.0\include;</span><br><span class="line"></span><br><span class="line">CPLUS_INCLUDE_PATH</span><br><span class="line">C:\Program\mingw64\include;</span><br><span class="line">C:\Program\mingw64\lib\gcc\x86_64-w64-mingw32\7.3.0\include\c++;</span><br><span class="line">C:\Program\mingw64\lib\gcc\x86_64-w64-mingw32\7.3.0\include\c++\backward;</span><br><span class="line">C:\Program\mingw64\lib\gcc\x86_64-w64-mingw32\7.3.0\include\c++\x86_64-w64-mingw32;</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="cuda-cudnn"><a class="markdownIt-Anchor" href="#cuda-cudnn"></a> CUDA cuDNN</h2>
+<h2 id="cuda-cudnn">CUDA cuDNN</h2>
 <p>复制cuDNN到CUDA目录</p>
 <figure class="highlight cmd"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function">C:\<span class="title">Program</span> <span class="title">Files</span>\<span class="title">NVIDIA</span> <span class="title">GPU</span> <span class="title">Computing</span> <span class="title">Toolkit</span>\<span class="title">CUDA</span>\<span class="title">v9</span>.0\<span class="title">bin</span>\<span class="title">cudnn64_7.dll</span></span></span><br><span class="line"><span class="function"><span class="title">C</span>:\<span class="title">Program</span> <span class="title">Files</span>\<span class="title">NVIDIA</span> <span class="title">GPU</span> <span class="title">Computing</span> <span class="title">Toolkit</span>\<span class="title">CUDA</span>\<span class="title">v9</span>.0\<span class="title">include</span>\<span class="title">cudnn.h</span></span></span><br><span class="line"><span class="function"><span class="title">C</span>:\<span class="title">Program</span> <span class="title">Files</span>\<span class="title">NVIDIA</span> <span class="title">GPU</span> <span class="title">Computing</span> <span class="title">Toolkit</span>\<span class="title">CUDA</span>\<span class="title">v9</span>.0\<span class="title">lib</span>\<span class="title">x64</span>\<span class="title">cudnn.lib</span></span></span><br></pre></td></tr></tbody></table></figure>
 
@@ -394,7 +388,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#latexindent"><span class="nav-number">1.</span> <span class="nav-text"> latexindent</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ruby-jekyll"><span class="nav-number">2.</span> <span class="nav-text"> ruby-jekyll</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B3%E4%BA%8Eryby%E5%8F%8Ajekyll%E7%9A%84%E6%9F%90%E4%BA%9B%E9%94%99%E8%AF%AF"><span class="nav-number">2.1.</span> <span class="nav-text"> 关于ryby及Jekyll的某些错误</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vscode%E4%B8%ADcc%E6%89%BE%E4%B8%8D%E5%88%B0%E5%A4%B4%E6%96%87%E4%BB%B6"><span class="nav-number">3.</span> <span class="nav-text"> VSCode中C&#x2F;C++找不到头文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cuda-cudnn"><span class="nav-number">4.</span> <span class="nav-text"> CUDA cuDNN</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#latexindent"><span class="nav-number">1.</span> <span class="nav-text">latexindent</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ruby-jekyll"><span class="nav-number">2.</span> <span class="nav-text">ruby-jekyll</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vscode%E4%B8%ADcc%E6%89%BE%E4%B8%8D%E5%88%B0%E5%A4%B4%E6%96%87%E4%BB%B6"><span class="nav-number">3.</span> <span class="nav-text">VSCode中C&#x2F;C++找不到头文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cuda-cudnn"><span class="nav-number">4.</span> <span class="nav-text">CUDA cuDNN</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -474,12 +468,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">84k</span>
+    <span title="站点总字数">91k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:17</span>
+    <span title="站点阅读时长">1:22</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
   </div>

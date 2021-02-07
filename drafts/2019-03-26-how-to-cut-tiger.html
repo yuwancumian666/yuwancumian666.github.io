@@ -222,31 +222,17 @@
       
       
       <div class="post-body">
-          <p>环境要求：python3、PS（或其他能准确获取指定像素点的软件）</p>
-<a id="more"></a>
-<ol>
-<li>在待处理图片文件夹里新建一个<code>cut</code>的文件夹，里边放入一批拍摄角度、对象在图片的位置均相似的图片。Windows的多选是<code>Ctrl+Shoft+左键</code>，MacOS不明:simple_smile:<img src="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2019/2019-03-26-cut-tiger-1.png" class="" title="新建cut文件夹">
-<img src="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2019/2019-03-26-cut-tiger-2.png" class="" title="选中相似的图片">
-</li>
-<li>在脚本的最上方填入“待处理图片的路径”和“输出图片的路径”，如：</li>
+          <p>环境要求：python3、PS（或其他能准确获取指定像素点的软件） <a id="more"></a></p>
+<ol type="1">
+<li><p>在待处理图片文件夹里新建一个<code>cut</code>的文件夹，里边放入一批拍摄角度、对象在图片的位置均相似的图片。Windows的多选是<code>Ctrl+Shoft+左键</code>，MacOS不明:simple_smile: <img src="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2019/2019-03-26-cut-tiger-1.png" class="" title="新建cut文件夹"> <img src="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2019/2019-03-26-cut-tiger-2.png" class="" title="选中相似的图片"></p></li>
+<li><p>在脚本的最上方填入“待处理图片的路径”和“输出图片的路径”，如： </p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># csv保存路径</span></span><br><span class="line">csv_path = <span class="string">r'D:\Users\Teemo Nicolas\Downloads\002\\'</span></span><br><span class="line"><span class="comment"># 待处理图片路径</span></span><br><span class="line">img_path = <span class="string">r'D:\Users\Teemo Nicolas\Downloads\002\right\cut\\'</span></span><br><span class="line"><span class="comment"># 新文件写入路径</span></span><br><span class="line">new_img_path = <span class="string">r'D:\Users\Teemo Nicolas\Downloads\02\right\\'</span></span><br></pre></td></tr></tbody></table></figure> 其中，csv是图片处理记录的数据，没什么重要性，选填，但是执行脚本的时候需要输入“n”或直接把这段功能的代码注释掉掉。<p></p></li>
+<li><p>在PS里获取信息。</p></li>
 </ol>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># csv保存路径</span></span><br><span class="line">csv_path = <span class="string">r'D:\Users\Teemo Nicolas\Downloads\002\\'</span></span><br><span class="line"><span class="comment"># 待处理图片路径</span></span><br><span class="line">img_path = <span class="string">r'D:\Users\Teemo Nicolas\Downloads\002\right\cut\\'</span></span><br><span class="line"><span class="comment"># 新文件写入路径</span></span><br><span class="line">new_img_path = <span class="string">r'D:\Users\Teemo Nicolas\Downloads\02\right\\'</span></span><br></pre></td></tr></tbody></table></figure>
-<p>其中，csv是图片处理记录的数据，没什么重要性，选填，但是执行脚本的时候需要输入“n”或直接把这段功能的代码注释掉掉。</p>
-<ol start="3">
-<li>在PS里获取信息。</li>
+<p>打开图片后，用矩形选框工具选好位置，其长宽比可固定为3:2；右键单击选框，选择“变换选区”，然后在“信息面板”查看该矩形选框的信息（左上角坐标：X、Y；选框长宽：W、H），将这四个数填入脚本下方对应位置。 </p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 起始点坐标，PhotoShop获得</span></span><br><span class="line">start_x = <span class="number">459</span></span><br><span class="line">start_y = <span class="number">231</span></span><br><span class="line"><span class="comment"># 切割尺寸，PhotoShop获得</span></span><br><span class="line">crop_length = <span class="number">2649</span></span><br><span class="line">crop_height = <span class="number">1766</span></span><br></pre></td></tr></tbody></table></figure> <img src="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2019/2019-03-26-cut-tiger-3.jpg" class="" title="变换选区"> <img src="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2019/2019-03-26-cut-tiger-4.png" class="" title="查看选框信息"> <img src="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2019/2019-03-26-5.jpg" class="" title="信息面板"><p></p>
+<ol start="4" type="1">
+<li>执行代码。 首先，脚本会对cut文件夹下中间的那张图片做测试，因为预览图中图片的方向并不一定是其真实方向，可能预览图中老虎头朝上，而文件信息中的老虎是头朝下的，就会出现错误。一般而言，将图片横向放置不会有错。如果测试图片和预期不一致，输入“n”退出程序，然后选一张图片调整为正确的方向重新获取XYWH执行脚本</li>
 </ol>
-<p>打开图片后，用矩形选框工具选好位置，其长宽比可固定为3:2；右键单击选框，选择“变换选区”，然后在“信息面板”查看该矩形选框的信息（左上角坐标：X、Y；选框长宽：W、H），将这四个数填入脚本下方对应位置。</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 起始点坐标，PhotoShop获得</span></span><br><span class="line">start_x = <span class="number">459</span></span><br><span class="line">start_y = <span class="number">231</span></span><br><span class="line"><span class="comment"># 切割尺寸，PhotoShop获得</span></span><br><span class="line">crop_length = <span class="number">2649</span></span><br><span class="line">crop_height = <span class="number">1766</span></span><br></pre></td></tr></tbody></table></figure>
-<img src="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2019/2019-03-26-cut-tiger-3.jpg" class="" title="变换选区">
-<img src="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2019/2019-03-26-cut-tiger-4.png" class="" title="查看选框信息">
-<img src="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2019/2019-03-26-5.jpg" class="" title="信息面板">
-<ol start="4">
-<li>执行代码。<br>
-首先，脚本会对cut文件夹下中间的那张图片做测试，因为预览图中图片的方向并不一定是其真实方向，可能预览图中老虎头朝上，而文件信息中的老虎是头朝下的，就会出现错误。一般而言，将图片横向放置不会有错。如果测试图片和预期不一致，输入“n”退出程序，然后选一张图片调整为正确的方向重新获取XYWH执行脚本</li>
-</ol>
-<p>确认无误后，回车继续，新文件将会保存到<code>new_img_path</code>指定位置（该文件夹必须存在）。</p>
-<img src="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2019/2019-03-26-cut-tiger-6.png" class="" title="输出测试图">
-<img src="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2019/2019-03-26-cut-tiger-7.png" class="" title="结果示例">
+<p>确认无误后，回车继续，新文件将会保存到<code>new_img_path</code>指定位置（该文件夹必须存在）。 <img src="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2019/2019-03-26-cut-tiger-6.png" class="" title="输出测试图"> <img src="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2019/2019-03-26-cut-tiger-7.png" class="" title="结果示例"></p>
 
       </div>
       
@@ -387,12 +373,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">84k</span>
+    <span title="站点总字数">91k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:17</span>
+    <span title="站点阅读时长">1:22</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
   </div>

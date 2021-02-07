@@ -269,25 +269,21 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <blockquote><p>Take my wine in my own cup, friend. It lose its wreath of foam when poured into that of others.<br>
-在我自己的杯中，饮了我的酒吧，朋友。一倒在别人的杯里，这酒的腾跳的泡沫便要消失了。</p>
+        <blockquote><p>Take my wine in my own cup, friend. It lose its wreath of foam when poured into that of others. 在我自己的杯中，饮了我的酒吧，朋友。一倒在别人的杯里，这酒的腾跳的泡沫便要消失了。</p>
 <footer><strong>泰戈尔</strong><cite>飞鸟集</cite></footer></blockquote>
 <a id="more"></a>
-<h3 id="环境变量配置"><a class="markdownIt-Anchor" href="#环境变量配置"></a> 环境变量配置</h3>
+<h3 id="环境变量配置">环境变量配置</h3>
 <p>在家目录的 “.bashrc” 文件里边配置环境变量，内容应当包括 JDK、Hadoop 和 Hbase。</p>
 <figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">export JAVA_HOME=/home/user/bigdata/jdk</span><br><span class="line">export HADOOP_HOME=/home/user/bigdata/hadoop</span><br><span class="line">export HBASE_HOME=/home/user/bigdata/hbase</span><br><span class="line">export CLASS_PATH=.:$CLASSPATH:$JAVA_HOME/lib:$JAVA_HOME/jre/lib</span><br><span class="line">export PATH=$PATH:$JAVA_HOME/bin:$JAVA_HOME/jre/bin:$HADOOP_HOME/bin:$HADOOP_HOME/sbin:$HABASE_HOME/bin:${PATH}</span><br></pre></td></tr></tbody></table></figure>
 <p>为了方便操作 hbase，以上已经添加了配置的 Hbase 环境变量： <em>HBASE_HOME</em> （非必须）</p>
-<h3 id="配置文件"><a class="markdownIt-Anchor" href="#配置文件"></a> 配置文件</h3>
-<p><strong><a href="http://hbase-env.sh">hbase-env.sh</a></strong></p>
-<p>在 hbase/conf 文件夹下，打开 <a href="http://hbase-env.sh">hbase-env.sh</a>，找到 jdk 的路径配置，添加 <code>export JAVA_HOME=/home/user/bigdata/jdk</code><br>
-配置完 jdk 路径后，在下方可以看到配置 HBASE_CLASSPATH 的提示，添加 <code>export HBASE_CLASSPATH=/home/user/bigdata/hadoop/etc/hadoop</code><br>
-<img src="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2018-01-29-hbase-env.png" alt="exp"></p>
+<h3 id="配置文件">配置文件</h3>
+<p><strong>hbase-env.sh</strong></p>
+<p>在 hbase/conf 文件夹下，打开 hbase-env.sh，找到 jdk 的路径配置，添加 <code>export JAVA_HOME=/home/user/bigdata/jdk</code> 配置完 jdk 路径后，在下方可以看到配置 HBASE_CLASSPATH 的提示，添加 <code>export HBASE_CLASSPATH=/home/user/bigdata/hadoop/etc/hadoop</code> <img src="https://github-pages-1253649638.cos.ap-beijing.myqcloud.com/post-images/2018-01-29-hbase-env.png" alt="exp"></p>
 <p><strong>hbase-site.xml</strong></p>
 <p>进入编辑模式，在 <code>&lt;configuration&gt;</code> 下添加以下字段：</p>
 <figure class="highlight xml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>hbase.zookeeper.property.dataDir<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">value</span>&gt;</span>/home/user/bigdata/zookeeper<span class="tag">&lt;/<span class="name">value</span>&gt;</span>  <span class="comment">&lt;!-- Zookeeper下载包解压的位置 --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>hbase.cluster.distributed<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">value</span>&gt;</span>true<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 使用hdfs：//// URI语法将hbase.rootdir从本地文件系统更改为HDFS实例的地址。 </span></span><br><span class="line"><span class="comment">	在此例中，HDFS在端口8020的本地主机上运行。 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>hbase.rootdir<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">value</span>&gt;</span>hdfs://localhost:8020/hbase<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>hbase.zookeeper.quorum<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">value</span>&gt;</span>node-a.example.com,node-b.example.com<span class="tag">&lt;/<span class="name">value</span>&gt;</span>  <span class="comment">&lt;!-- 这里填写集群中的主机名 --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">name</span>&gt;</span>hbase.zookeeper.property.clientPort<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">value</span>&gt;</span>2181<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
-<p>此外，如果应用单独Zookeeper，需发更改/conf/hbase-env.sh下配置参数HBASE_MANAGES_ZK的值为true，即：<br>
-<code>export HBASE_MANAGES_ZK=true</code></p>
-<h3 id="hbase-启动-停止-监控"><a class="markdownIt-Anchor" href="#hbase-启动-停止-监控"></a> Hbase 启动、停止、监控</h3>
+<p>此外，如果应用单独Zookeeper，需发更改/conf/hbase-env.sh下配置参数HBASE_MANAGES_ZK的值为true，即： <code>export HBASE_MANAGES_ZK=true</code></p>
+<h3 id="hbase-启动停止监控">Hbase 启动、停止、监控</h3>
 <p><strong>启动、停止</strong></p>
 <p><code>start-hbase.sh(stop-hbase.sh)</code>，该文件在 hbase/bin 文件夹下，已经添加环境变量，所以可以在任意目录执行。（同 Hadoop）</p>
 <p><strong>查看守护进程</strong></p>
@@ -378,7 +374,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E9%85%8D%E7%BD%AE"><span class="nav-number">1.</span> <span class="nav-text"> 环境变量配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-number">2.</span> <span class="nav-text"> 配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hbase-%E5%90%AF%E5%8A%A8-%E5%81%9C%E6%AD%A2-%E7%9B%91%E6%8E%A7"><span class="nav-number">3.</span> <span class="nav-text"> Hbase 启动、停止、监控</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E9%85%8D%E7%BD%AE"><span class="nav-number">1.</span> <span class="nav-text">环境变量配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-number">2.</span> <span class="nav-text">配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hbase-%E5%90%AF%E5%8A%A8%E5%81%9C%E6%AD%A2%E7%9B%91%E6%8E%A7"><span class="nav-number">3.</span> <span class="nav-text">Hbase 启动、停止、监控</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -458,12 +454,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">84k</span>
+    <span title="站点总字数">91k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:17</span>
+    <span title="站点阅读时长">1:22</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
   </div>

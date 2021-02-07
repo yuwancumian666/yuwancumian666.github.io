@@ -270,16 +270,17 @@
             <i class="fa fa-quote-right"></i>
           </blockquote>
 <a id="more"></a>
-<h1 id="安装shadowsocksr"><a class="markdownIt-Anchor" href="#安装shadowsocksr"></a> 安装ShadowsocksR</h1>
+<h1 id="安装shadowsocksr">安装ShadowsocksR</h1>
 <p>使用root用户登录，运行以下命令：</p>
 <figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 安装ShadowsocksR</span></span><br><span class="line">wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocksR.sh</span><br><span class="line">chmod +x shadowsocksR.sh</span><br><span class="line">./shadowsocksR.sh 2&gt;&amp;1 | tee shadowsocksR.log</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 卸载ShadowsocksR</span></span><br><span class="line">./shadowsocksR.sh uninstall</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 安装 BBR</span></span><br><span class="line">wget --no-check-certificate https://raw.githubusercontent.com/moeext/how-to-start-a-new-VPS/master/tcp.sh</span><br><span class="line">chmod +x tcp.sh</span><br><span class="line">./tcp.sh</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="多用户配置示例"><a class="markdownIt-Anchor" href="#多用户配置示例"></a> 多用户配置示例</h2>
+<h2 id="多用户配置示例">多用户配置示例</h2>
 <figure class="highlight json"><table><tbody><tr><td class="code"><pre><span class="line">{</span><br><span class="line">    <span class="attr">"server"</span>:<span class="string">"0.0.0.0"</span>,</span><br><span class="line">    <span class="attr">"server_ipv6"</span>:<span class="string">"[::]"</span>,</span><br><span class="line">    <span class="attr">"local_address"</span>:<span class="string">"127.0.0.1"</span>,</span><br><span class="line">    <span class="attr">"local_port"</span>:<span class="number">1080</span>,</span><br><span class="line">    <span class="attr">"port_password"</span>:{</span><br><span class="line">        <span class="attr">"10657"</span>:<span class="string">"***"</span>,</span><br><span class="line">        <span class="attr">"10658"</span>:<span class="string">"***"</span>,</span><br><span class="line">        <span class="attr">"10659"</span>:<span class="string">"***"</span>,</span><br><span class="line">        <span class="attr">"10660"</span>:<span class="string">"***"</span></span><br><span class="line">    },</span><br><span class="line">    <span class="attr">"timeout"</span>:<span class="number">120</span>,</span><br><span class="line">    <span class="attr">"method"</span>:<span class="string">"aes-256-cfb"</span>,</span><br><span class="line">    <span class="attr">"protocol"</span>:<span class="string">"origin"</span>,</span><br><span class="line">    <span class="attr">"protocol_param"</span>:<span class="string">""</span>,</span><br><span class="line">    <span class="attr">"obfs"</span>:<span class="string">"plain"</span>,</span><br><span class="line">    <span class="attr">"obfs_param"</span>:<span class="string">""</span>,</span><br><span class="line">    <span class="attr">"redirect"</span>:<span class="string">""</span>,</span><br><span class="line">    <span class="attr">"dns_ipv6"</span>:<span class="literal">false</span>,</span><br><span class="line">    <span class="attr">"fast_open"</span>:<span class="literal">false</span>,</span><br><span class="line">    <span class="attr">"workers"</span>:<span class="number">1</span></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<h1 id="更改python软连接"><a class="markdownIt-Anchor" href="#更改python软连接"></a> 更改Python软连接</h1>
+<h1 id="更改python软连接">更改Python软连接</h1>
 <p>查看已安装python版本 <code>ls /usr/bin</code></p>
 <figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">rm /usr/bin/python</span><br><span class="line">ln -s /usr/bin/python3.5 /usr/bin/python</span><br></pre></td></tr></tbody></table></figure>
-<h1 id="定时任务-crontab"><a class="markdownIt-Anchor" href="#定时任务-crontab"></a> 定时任务 crontab</h1>
+<h1 id="定时任务-crontab">定时任务 crontab</h1>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">crontab -e</span><br><span class="line"><span class="comment">#30 22 * * * python ~/email/pymail.py &gt;&gt; ~/email/pymail.log</span></span><br><span class="line"><span class="comment"># 修改默认编辑器</span></span><br><span class="line">select-editor</span><br></pre></td></tr></tbody></table></figure>
+
     </div>
 
     
@@ -363,7 +364,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%85shadowsocksr"><span class="nav-number">1.</span> <span class="nav-text"> 安装ShadowsocksR</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%9A%E7%94%A8%E6%88%B7%E9%85%8D%E7%BD%AE%E7%A4%BA%E4%BE%8B"><span class="nav-number">1.1.</span> <span class="nav-text"> 多用户配置示例</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9B%B4%E6%94%B9python%E8%BD%AF%E8%BF%9E%E6%8E%A5"><span class="nav-number">2.</span> <span class="nav-text"> 更改Python软连接</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1-crontab"><span class="nav-number">3.</span> <span class="nav-text"> 定时任务 crontab</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%85shadowsocksr"><span class="nav-number">1.</span> <span class="nav-text">安装ShadowsocksR</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%9A%E7%94%A8%E6%88%B7%E9%85%8D%E7%BD%AE%E7%A4%BA%E4%BE%8B"><span class="nav-number">1.1.</span> <span class="nav-text">多用户配置示例</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9B%B4%E6%94%B9python%E8%BD%AF%E8%BF%9E%E6%8E%A5"><span class="nav-number">2.</span> <span class="nav-text">更改Python软连接</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1-crontab"><span class="nav-number">3.</span> <span class="nav-text">定时任务 crontab</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -443,12 +444,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">84k</span>
+    <span title="站点总字数">91k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:17</span>
+    <span title="站点阅读时长">1:22</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
   </div>

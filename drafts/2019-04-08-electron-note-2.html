@@ -219,19 +219,10 @@
       <div class="post-body">
           <p>在基本功能完成以后，开启debug模式。</p>
 <a id="more"></a>
-<h1 id="图表"><a class="markdownIt-Anchor" href="#图表"></a> 图表</h1>
-<h2 id="echarts"><a class="markdownIt-Anchor" href="#echarts"></a> Echarts</h2>
-<p>Buper中的图表是借助<a href="https://echarts.baidu.com/index.html">Echarts</a>构建的。</p>
-<h3 id="主题"><a class="markdownIt-Anchor" href="#主题"></a> 主题</h3>
-<p>在<a href="https://echarts.baidu.com/theme-builder/">Echarts 主题在线构建工具</a>可以下载默认主题。当然，你也可以借助此工具自定义更加炫酷的主题。</p>
-<p>在此项目中直接按照说明加载主题是不成功的，解决方式有两个：</p>
-<ol>
-<li>把主题的json另存为<code>*.js</code>文件，然后</li>
-</ol>
-<figure class="highlight js"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// theme.js</span></span><br><span class="line"><span class="keyword">const</span> theme = {<span class="comment">/*json*/</span>}</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> theme;</span><br><span class="line"></span><br><span class="line"><span class="comment">// *.vue</span></span><br><span class="line"><span class="keyword">import</span> theme <span class="keyword">from</span> <span class="string">'./themes/theme'</span></span><br><span class="line">echarts.registerTheme(<span class="string">'themename'</span>, theme);</span><br><span class="line">echarts.init(<span class="built_in">document</span>.getElementById(<span class="string">'chart'</span>), <span class="string">'themename'</span>);</span><br></pre></td></tr></tbody></table></figure>
-<ol start="2">
-<li>把下载的js（不是json）文件中<code>root.echarts</code>改为<code>echarts</code>，然后在该文件里 <code>import echarts from 'echarts'</code>。然后在vue组件中可以直接使用<code>*.js</code>中注册的主题名字。</li>
-</ol>
+<h1 id="图表">图表</h1>
+<h2 id="echarts">Echarts</h2>
+<p>Buper中的图表是借助<a href="https://echarts.baidu.com/index.html">Echarts</a>构建的。 ### 主题 在<a href="https://echarts.baidu.com/theme-builder/">Echarts 主题在线构建工具</a>可以下载默认主题。当然，你也可以借助此工具自定义更加炫酷的主题。</p>
+<p>在此项目中直接按照说明加载主题是不成功的，解决方式有两个： 1. 把主题的json另存为<code>*.js</code>文件，然后 </p><figure class="highlight js"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// theme.js</span></span><br><span class="line"><span class="keyword">const</span> theme = {<span class="comment">/*json*/</span>}</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> theme;</span><br><span class="line"></span><br><span class="line"><span class="comment">// *.vue</span></span><br><span class="line"><span class="keyword">import</span> theme <span class="keyword">from</span> <span class="string">'./themes/theme'</span></span><br><span class="line">echarts.registerTheme(<span class="string">'themename'</span>, theme);</span><br><span class="line">echarts.init(<span class="built_in">document</span>.getElementById(<span class="string">'chart'</span>), <span class="string">'themename'</span>);</span><br></pre></td></tr></tbody></table></figure> 2. 把下载的js（不是json）文件中<code>root.echarts</code>改为<code>echarts</code>，然后在该文件里 <code>import echarts from 'echarts'</code>。然后在vue组件中可以直接使用<code>*.js</code>中注册的主题名字。<p></p>
 
       </div>
       
@@ -293,7 +284,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%BE%E8%A1%A8"><span class="nav-number">1.</span> <span class="nav-text"> 图表</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#echarts"><span class="nav-number">1.1.</span> <span class="nav-text"> Echarts</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BB%E9%A2%98"><span class="nav-number">1.1.1.</span> <span class="nav-text"> 主题</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%BE%E8%A1%A8"><span class="nav-number">1.</span> <span class="nav-text">图表</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#echarts"><span class="nav-number">1.1.</span> <span class="nav-text">Echarts</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -373,12 +364,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">84k</span>
+    <span title="站点总字数">91k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:17</span>
+    <span title="站点阅读时长">1:22</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
   </div>

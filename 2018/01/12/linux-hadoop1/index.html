@@ -23,12 +23,12 @@
     var CONFIG = {"hostname":"moeext.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="My heart beats her waves at the shore of the world and writes upon it her signature in tears with the words, “I love thee.” 我的心冲激着她的波浪在“世界”的海岸上，蘸着眼泪在上边写着她的题记：“我爱你。” 泰戈尔飞鸟集">
+  <meta name="description" content="My heart beats her waves at the shore of the world and writes upon it her signature in tears with the words, &quot;I love thee.&quot; 我的心冲激着她的波浪在“世界”的海岸上，蘸着眼泪在上边写着她的题记：“我爱你。” 泰戈尔飞鸟集">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hadoop 的安装">
 <meta property="og:url" content="https://moeext.github.io/2018/01/12/linux-hadoop1/index.html">
 <meta property="og:site_name" content="Hummer&#39;s Blog">
-<meta property="og:description" content="My heart beats her waves at the shore of the world and writes upon it her signature in tears with the words, “I love thee.” 我的心冲激着她的波浪在“世界”的海岸上，蘸着眼泪在上边写着她的题记：“我爱你。” 泰戈尔飞鸟集">
+<meta property="og:description" content="My heart beats her waves at the shore of the world and writes upon it her signature in tears with the words, &quot;I love thee.&quot; 我的心冲激着她的波浪在“世界”的海岸上，蘸着眼泪在上边写着她的题记：“我爱你。” 泰戈尔飞鸟集">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2018-01-12T00:00:00.000Z">
 <meta property="article:modified_time" content="2019-03-04T13:15:13.394Z">
@@ -267,62 +267,39 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <blockquote><p>My heart beats her waves at the shore of the world and writes upon it her signature in tears with the words, “I love thee.”<br>
-我的心冲激着她的波浪在“世界”的海岸上，蘸着眼泪在上边写着她的题记：“我爱你。”</p>
+        <blockquote><p>My heart beats her waves at the shore of the world and writes upon it her signature in tears with the words, "I love thee." 我的心冲激着她的波浪在“世界”的海岸上，蘸着眼泪在上边写着她的题记：“我爱你。”</p>
 <footer><strong>泰戈尔</strong><cite>飞鸟集</cite></footer></blockquote>
 <a id="more"></a>
-<h3 id="大数据与-hadoop-简单介绍"><a class="markdownIt-Anchor" href="#大数据与-hadoop-简单介绍"></a> 大数据与 Hadoop 简单介绍</h3>
+<h3 id="大数据与-hadoop-简单介绍">大数据与 Hadoop 简单介绍</h3>
 <p><strong>什么是大数据？</strong></p>
 <p>大数据的4V特性：海量的数据规模（volume）、快速的数据流转和动态的数据体系（velocity）、多样的数据类型（variety）和巨大的数据价值（value）。</p>
 <p><strong>Hadoop</strong></p>
 <p>Hadoop 解决的就是 数据的存储（HDFS）和计算分析（MapReduce）的问题。</p>
 <p>分布式集群：集群里的每台机器叫一个节点，伪分布式只有一个节点。master 节点负责管理元数据 (Name Node)，slave 负责存储数据 (Data Node)。</p>
-<p>保存数据块的信息的数据叫元数据，数据块默认为128MB(Hadoop2)，默认备份3份。</p>
-<h3 id="hadoop-平台的搭建"><a class="markdownIt-Anchor" href="#hadoop-平台的搭建"></a> Hadoop 平台的搭建</h3>
-<p>**Hadoop 搭建前提：**需要安装 jdk 和 SSH 免密。</p>
+<p>保存数据块的信息的数据叫元数据，数据块默认为128MB(Hadoop2)，默认备份3份。 ### Hadoop 平台的搭建</p>
+<p><strong>Hadoop 搭建前提：</strong>需要安装 jdk 和 SSH 免密。</p>
 <p><strong>搭建步骤</strong></p>
-<ol>
+<ol type="1">
 <li>上传 Jdk 和 Hadoop 的包到服务器</li>
 <li>解压</li>
 <li>修改解压后文件夹名，方便以后升级而不用修改环境变量</li>
-<li>配置环境变量，路径：用户家目录的 “.bashrc”</li>
-</ol>
-<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">export JAVA_HOME=/home/groot/soft/jdk</span><br><span class="line">export HADOOP_HOME=/home/groot/soft/hadoop</span><br><span class="line">export PATH=$JAVA_HOME/bin:$HADOOP_HOME/bin:$HADOOP_HOME/sbin:${PATH}</span><br></pre></td></tr></tbody></table></figure>
-<ol start="5">
-<li>修改配置文件，路径 /home/groot/hadoop/etc/hadoop/</li>
-</ol>
-<blockquote>
-<p><code>A: hadoop-env.sh 找到 “# export JAVA_HOME=${JAVA_HOME}” 字样，在下方修改 jdk 的安装路径</code> <br><br>
-<code>B: core-site.xml 配置访问的主机名和端口 (8020)，&lt;name&gt;fs.default.name&lt;/name&gt; &lt;value&gt;hdfs://master:8020&lt;/value&gt;</code> <br><br>
-<code>C: hdfs-site 配置备份数，指定元数据和数据块的存储目录</code> <br><br>
-<code>D: 用户名不一样的地方都需要改</code> <br><br>
-<code>E: 配置主机名：/etc/sysconfig/network 文件中，修改为 master/slave</code> <br><br>
-<code>F: 配置 IP 和主机名的映射：/etc/hosts 文件，master 和 slave 都要改</code> <br><br>
-<code>G: 配置 SSH 免密，假设在 master 节点家目录的 “.ssh” 文件夹</code> <br></p>
-<blockquote>
-<p><code>a: 生成密钥，ssh-keygen -t rsa -p ''</code> <br><br>
-<code>b: 这是本机免密，cat id_rsa.pub &gt;&gt; authorized_keys</code> <br><br>
-<code>c: 上传公钥到slave，scp id_rsa.pub groot@slave:/home/groot/.ssh/aa.pub</code> <br><br>
-<code>d: 免密登陆另一台机器，cat aa.pub &gt;&gt; authorized_keys</code> <br><br>
-<code>e: slave 节点重复 master 节点的做法</code> <br></p>
-</blockquote>
-</blockquote>
-<ol start="6">
+<li>配置环境变量，路径：用户家目录的 “.bashrc” <figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">export JAVA_HOME=/home/groot/soft/jdk</span><br><span class="line">export HADOOP_HOME=/home/groot/soft/hadoop</span><br><span class="line">export PATH=$JAVA_HOME/bin:$HADOOP_HOME/bin:$HADOOP_HOME/sbin:${PATH}</span><br></pre></td></tr></tbody></table></figure></li>
+<li>修改配置文件，路径 /home/groot/hadoop/etc/hadoop/ &gt; <code>A: hadoop-env.sh 找到 “# export JAVA_HOME=${JAVA_HOME}” 字样，在下方修改 jdk 的安装路径</code> <br> &gt; <code>B: core-site.xml 配置访问的主机名和端口 (8020)，&lt;name&gt;fs.default.name&lt;/name&gt; &lt;value&gt;hdfs://master:8020&lt;/value&gt;</code> <br> &gt; <code>C: hdfs-site 配置备份数，指定元数据和数据块的存储目录</code> <br> &gt; <code>D: 用户名不一样的地方都需要改</code> <br> &gt; <code>E: 配置主机名：/etc/sysconfig/network 文件中，修改为 master/slave</code> <br> &gt; <code>F: 配置 IP 和主机名的映射：/etc/hosts 文件，master 和 slave 都要改</code> <br> &gt; <code>G: 配置 SSH 免密，假设在 master 节点家目录的 “.ssh” 文件夹</code> <br> &gt;&gt; <code>a: 生成密钥，ssh-keygen -t rsa -p ''</code> <br> &gt;&gt; <code>b: 这是本机免密，cat id_rsa.pub &gt;&gt; authorized_keys</code> <br> &gt;&gt; <code>c: 上传公钥到slave，scp id_rsa.pub groot@slave:/home/groot/.ssh/aa.pub</code> <br> &gt;&gt; <code>d: 免密登陆另一台机器，cat aa.pub &gt;&gt; authorized_keys</code> <br> &gt;&gt; <code>e: slave 节点重复 master 节点的做法</code> <br></li>
 <li><code>./start-all.sh</code> 启动 Hadoop</li>
 <li>关闭防火墙（需要 root 权限）：<code>service iptables stop</code> <br></li>
 <li>浏览器访问50070端口进入 HDFS 的管理界面</li>
 <li>jps 命令查看进程 主要是查看 Name Node 和 Data Node</li>
 </ol>
-<h3 id="hdfs-的-shell-命令"><a class="markdownIt-Anchor" href="#hdfs-的-shell-命令"></a> HDFS 的 shell 命令</h3>
+<h3 id="hdfs-的-shell-命令">HDFS 的 shell 命令</h3>
 <p><strong>操作 HDFS 的三种手段</strong></p>
-<ol>
+<ol type="1">
 <li>通过客户端管理界面查看</li>
 <li>通过 HDFS 的 shell 命令</li>
 <li>通过 Java 的 API</li>
 </ol>
 <p><strong>Shell 命令</strong></p>
 <p>执行 Shell 命令的根目录应该是 <code>hdfs:192.168.208.132:8020/</code>，但是我们一般用 / 代替</p>
-<ol>
+<ol type="1">
 <li>创建目录：<code>hadoop fs -mkdir</code> 目录名</li>
 <li>查看目录：<code>hadoop fs -ls</code></li>
 <li>上传文件：<code>hadoop fs -put</code> 文件名 路径名</li>
@@ -411,7 +388,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%A7%E6%95%B0%E6%8D%AE%E4%B8%8E-hadoop-%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.</span> <span class="nav-text"> 大数据与 Hadoop 简单介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hadoop-%E5%B9%B3%E5%8F%B0%E7%9A%84%E6%90%AD%E5%BB%BA"><span class="nav-number">2.</span> <span class="nav-text"> Hadoop 平台的搭建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hdfs-%E7%9A%84-shell-%E5%91%BD%E4%BB%A4"><span class="nav-number">3.</span> <span class="nav-text"> HDFS 的 shell 命令</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%A7%E6%95%B0%E6%8D%AE%E4%B8%8E-hadoop-%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.</span> <span class="nav-text">大数据与 Hadoop 简单介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hdfs-%E7%9A%84-shell-%E5%91%BD%E4%BB%A4"><span class="nav-number">2.</span> <span class="nav-text">HDFS 的 shell 命令</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -491,12 +468,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">84k</span>
+    <span title="站点总字数">91k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:17</span>
+    <span title="站点阅读时长">1:22</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
   </div>
